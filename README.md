@@ -139,4 +139,8 @@ self.TIME_TO_ALERT = 90     # Wait ~3 seconds before alerting
 
 This project is open-source and free to use for personal health and educational purposes.
 
-```
+---
+
+<p align="center">
+  <b>PostureGuard</b> • Created by <a href="https://github.com/Dharm3112"><b>Dharm Patel</b></a>
+</p>
