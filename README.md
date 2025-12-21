@@ -1,3 +1,4 @@
+
 # 🧘 PostureGuard
 
 **PostureGuard** is a lightweight, real-time desktop application designed to help you maintain healthy posture while working at your computer. 
