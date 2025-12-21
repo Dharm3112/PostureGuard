@@ -1,5 +1,4 @@
 opencv-python
-mediapipe
 numpy
 plyer
 Pillow
