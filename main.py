@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import Label, Button
 from PIL import Image, ImageTk
 import cv2
-import time
 from plyer import notification
 from posture_detector import PostureDetector
 
@@ -12,19 +11,18 @@ class PostureApp:
         self.window = window
         self.window.title(window_title)
 
-        # Initialize Camera and Detector
         self.cap = cv2.VideoCapture(0)
         self.detector = PostureDetector()
 
-        # Application State
         self.running = True
         self.calibrated = False
-        self.slouch_counter = 0
-        self.slouch_threshold = 15  # Degrees deviation allowed
-        self.time_threshold = 50  # Frames (~2-3 seconds)
-        self.frames_bad = 0
 
-        # UI Elements
+        # LOGIC SETTINGS
+        self.slouch_threshold = 40  # If face drops 40 pixels, it's a slouch
+        self.frames_bad = 0
+        self.TIME_TO_ALERT = 50  # Approx 2-3 seconds
+
+        # UI Setup
         self.top_frame = tk.Frame(window)
         self.top_frame.pack(pady=10)
 
@@ -38,11 +36,9 @@ class PostureApp:
         self.status_label = Label(window, text="Status: Not Calibrated", font=("Helvetica", 12))
         self.status_label.pack(pady=5)
 
-        # Video Canvas
         self.video_label = Label(window)
         self.video_label.pack()
 
-        # Start Loop
         self.update()
         self.window.mainloop()
 
@@ -50,47 +46,44 @@ class PostureApp:
         baseline = self.detector.calibrate()
         if baseline:
             self.calibrated = True
-            self.status_label.config(text=f"Calibrated! Baseline: {int(baseline)}°", fg="green")
+            self.status_label.config(text=f"Calibrated! Face Y: {int(baseline)}", fg="green")
             self.frames_bad = 0
+        else:
+            self.status_label.config(text="Calibration Failed: No face detected", fg="orange")
 
-    def check_posture(self, current_angle):
-        if not self.calibrated or current_angle is None:
+    def check_posture(self, current_y):
+        if not self.calibrated or current_y is None:
             return
 
-        baseline = self.detector.baseline_angle
+        baseline = self.detector.baseline_y
 
-        # Check if angle deviates too much (e.g., > 15 degrees from baseline)
-        # Note: If you lean forward, angle usually increases or decreases depending on camera side.
-        # We check absolute difference.
-        if abs(current_angle - baseline) > self.slouch_threshold:
+        # LOGIC: In images, Y increases as you go DOWN.
+        # So, if Current Y > Baseline + Threshold, you have dropped down (slouched).
+        if current_y > (baseline + self.slouch_threshold):
             self.frames_bad += 1
         else:
             self.frames_bad = 0
 
-        # Trigger Alert
-        if self.frames_bad > self.time_threshold:
-            self.status_label.config(text="⚠️ SLOUCHING DETECTED! ⚠️", fg="red")
+        # Alerting
+        if self.frames_bad > self.TIME_TO_ALERT:
+            self.status_label.config(text="⚠️ SLOUCHING! SIT UP! ⚠️", fg="red")
 
-            # Send Notification (only once every 100 frames to avoid spam)
-            if self.frames_bad % 100 == 0:
+            if self.frames_bad % 100 == 0:  # Sound alert occasionally
                 notification.notify(
                     title='PostureGuard',
-                    message='Sit up straight! You are hurting your back.',
+                    message='You are slouching! Sit up straight.',
                     timeout=2
                 )
         elif self.frames_bad == 0:
-            self.status_label.config(text=f"Posture Good. Angle: {int(current_angle)}°", fg="green")
+            self.status_label.config(text=f"Posture Good. Deviation: {int(current_y - baseline)}px", fg="green")
 
     def update(self):
         ret, frame = self.cap.read()
         if ret:
-            # 1. Process with AI
-            frame, angle = self.detector.process_frame(frame)
+            frame, current_y = self.detector.process_frame(frame)
+            self.check_posture(current_y)
 
-            # 2. Check Logic
-            self.check_posture(angle)
-
-            # 3. Convert to Tkinter Image
+            # Convert for Tkinter
             img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             img = Image.fromarray(img)
             imgtk = ImageTk.PhotoImage(image=img)
@@ -106,7 +99,6 @@ class PostureApp:
         self.window.destroy()
 
 
-# Run the App
 if __name__ == "__main__":
     root = tk.Tk()
-    app = PostureApp(root, "PostureGuard AI")
+    app = PostureApp(root, "PostureGuard (Lite Mode)")
