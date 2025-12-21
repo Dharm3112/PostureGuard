@@ -35,6 +35,7 @@ class PostureDetector:
             center_y = y + (h // 2)
             center_x = x + (w // 2)
 
+            
             # Draw rectangle around face and a center dot
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
             cv2.circle(frame, (center_x, center_y), 5, (0, 0, 255), -1)
