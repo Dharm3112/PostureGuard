@@ -5,6 +5,7 @@ import cv2
 from plyer import notification
 from posture_detector import PostureDetector
 
+
 class PostureApp:
     def __init__(self, window, window_title):
         self.window = window
