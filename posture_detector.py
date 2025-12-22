@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 from collections import deque
 
-
 class PostureDetector:
     def __init__(self, buffer_size=10):
         # Load the pre-trained face detector from OpenCV
