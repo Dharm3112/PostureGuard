@@ -140,6 +140,7 @@ self.TIME_TO_ALERT = 90     # Wait ~3 seconds before alerting
 This project is open-source and free to use for personal health and educational purposes.
 [LICENSE](https://github.com/Dharm3112/PostureGuard/blob/main/LICENSE)
 
+
 ---
 
 <p align="center">
