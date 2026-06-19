@@ -240,9 +240,27 @@ class PostureApp:
         self.entry_delay.insert(0, str(self.frame_delay_ms))
         self.entry_delay.grid(row=2, column=1, padx=15, pady=10)
 
+        # Camera Index selection (Dropdown OptionMenu)
+        lbl_camera = Label(settings_win, text="Webcam Device:", bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 10))
+        lbl_camera.grid(row=3, column=0, padx=15, pady=10, sticky="w")
+        
+        self.camera_choices = ["0", "1", "2", "3"]
+        self.camera_var = tk.StringVar(settings_win)
+        current_camera = str(self.config_manager.get("camera_index", 0))
+        self.camera_var.set(current_camera)
+        
+        self.opt_camera = tk.OptionMenu(settings_win, self.camera_var, *self.camera_choices)
+        self.opt_camera.config(
+            font=("Segoe UI", 9), bg="#313244", fg=self.fg_color,
+            activebackground="#313244", activeforeground=self.fg_color,
+            highlightthickness=0, bd=0
+        )
+        self.opt_camera["menu"].config(bg="#313244", fg=self.fg_color)
+        self.opt_camera.grid(row=3, column=1, padx=15, pady=10, sticky="ew")
+
         # Buttons Frame
         btn_frame = tk.Frame(settings_win, bg=self.bg_color)
-        btn_frame.grid(row=3, column=0, columnspan=2, pady=15)
+        btn_frame.grid(row=4, column=0, columnspan=2, pady=15)
 
         btn_save = Button(
             btn_frame, text="💾 Save", width=10, command=lambda: self.save_settings_from_ui(settings_win),
@@ -283,6 +301,27 @@ class PostureApp:
         self.config_manager.set("slouch_threshold_px", threshold)
         self.config_manager.set("time_to_alert_frames", alert_time)
         self.config_manager.set("frame_delay_ms", delay)
+
+        # Camera Index change dynamic reinitialization
+        try:
+            camera_idx = int(self.camera_var.get())
+            old_camera_index = self.config_manager.get("camera_index", 0)
+            if camera_idx != old_camera_index:
+                self.logger.info(f"Camera index changed from {old_camera_index} to {camera_idx}. Reinitializing camera...")
+                self.cap.release()
+                self.cap = cv2.VideoCapture(camera_idx)
+                if not self.cap.isOpened():
+                    raise CameraNotFoundError(camera_idx, "Failed to open newly selected webcam device index.")
+                self.config_manager.set("camera_index", camera_idx)
+                # Re-apply current resolution setting to new capture
+                width = self.config_manager.get("camera_width", 640)
+                height = self.config_manager.get("camera_height", 480)
+                self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
+                self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
+        except Exception as e:
+            self.logger.error(f"Error switching camera devices: {e}")
+            messagebox.showwarning("Camera Error", f"Could not switch to camera index {self.camera_var.get()}: {e}", parent=settings_win)
+
         self.logger.info("Settings validated, updated in memory, and saved to file.")
         settings_win.destroy()
 
