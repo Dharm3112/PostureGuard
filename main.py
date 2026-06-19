@@ -29,6 +29,16 @@ class PostureApp:
         self.logger = setup_logger()
         self.logger.info("Starting PostureGuard Application...")
 
+        # Set Window Icon
+        try:
+            icon_img = Image.open("assets/icon.png")
+            photo_icon = ImageTk.PhotoImage(icon_img)
+            self.window.iconphoto(False, photo_icon)
+            self.window.photo_icon = photo_icon  # Keep reference
+            self.logger.info("Application window icon loaded successfully.")
+        except Exception as e:
+            self.logger.warning(f"Could not load application window icon: {e}")
+
         # Load configuration settings
         self.config_manager: ConfigManager = ConfigManager()
         camera_index: int = self.config_manager.get("camera_index", 0)
