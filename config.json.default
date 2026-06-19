@@ -1,0 +1,10 @@
+{
+  "camera_index": 0,
+  "slouch_threshold_px": 40,
+  "time_to_alert_frames": 50,
+  "frame_delay_ms": 15,
+  "camera_width": 640,
+  "camera_height": 480,
+  "save_history": true,
+  "saved_baseline_y": null
+}
