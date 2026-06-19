@@ -4,6 +4,7 @@ from PIL import Image, ImageTk
 import cv2
 from plyer import notification
 from posture_detector import PostureDetector
+from config_manager import ConfigManager
 from typing import Optional
 
 
@@ -22,16 +23,27 @@ class PostureApp:
         self.window: tk.Tk = window
         self.window.title(window_title)
 
-        self.cap: cv2.VideoCapture = cv2.VideoCapture(0)
+        # Load configuration settings
+        self.config_manager: ConfigManager = ConfigManager()
+        camera_index: int = self.config_manager.get("camera_index", 0)
+        camera_width: int = self.config_manager.get("camera_width", 640)
+        camera_height: int = self.config_manager.get("camera_height", 480)
+
+        self.cap: cv2.VideoCapture = cv2.VideoCapture(camera_index)
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, camera_width)
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, camera_height)
+
         self.detector: PostureDetector = PostureDetector()
 
         self.running: bool = True
         self.calibrated: bool = False
 
         # LOGIC SETTINGS
-        self.slouch_threshold: int = 40  # If face drops 40 pixels, it's a slouch
+        self.slouch_threshold: int = self.config_manager.get("slouch_threshold_px", 40)
         self.frames_bad: int = 0
-        self.TIME_TO_ALERT: int = 50  # Approx 2-3 seconds
+        self.TIME_TO_ALERT: int = self.config_manager.get("time_to_alert_frames", 50)
+        self.frame_delay_ms: int = self.config_manager.get("frame_delay_ms", 15)
+
 
         # UI Setup
         self.top_frame: tk.Frame = tk.Frame(window)
@@ -122,7 +134,7 @@ class PostureApp:
             self.video_label.configure(image=imgtk)
 
         if self.running:
-            self.window.after(15, self.update)
+            self.window.after(self.frame_delay_ms, self.update)
 
     def close_app(self) -> None:
         """
