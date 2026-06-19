@@ -67,32 +67,53 @@ class PostureApp:
             self.window.destroy()
             return
 
+        # Modern Color Palette (Sleek Dark Theme)
+        self.bg_color: str = "#1e1e2e"
+        self.fg_color: str = "#cdd6f4"
+        self.accent_color: str = "#89b4fa"       # Blue status
+        self.success_color: str = "#a6e3a1"      # Green status/calibrate
+        self.warning_color: str = "#f9e2af"      # Yellow warnings
+        self.danger_color: str = "#f38ba8"       # Red alerts/quit
+        self.btn_bg: str = "#313244"
+        self.btn_fg: str = "#11111b"
+
+        self.window.configure(bg=self.bg_color)
+
         # LOGIC SETTINGS
         self.slouch_threshold: int = self.config_manager.get("slouch_threshold_px", 40)
         self.frames_bad: int = 0
         self.TIME_TO_ALERT: int = self.config_manager.get("time_to_alert_frames", 50)
         self.frame_delay_ms: int = self.config_manager.get("frame_delay_ms", 15)
 
-
         # UI Setup
-        self.top_frame: tk.Frame = tk.Frame(window)
-        self.top_frame.pack(pady=10)
+        self.top_frame: tk.Frame = tk.Frame(window, bg=self.bg_color)
+        self.top_frame.pack(pady=15)
 
         self.btn_calibrate: Button = Button(
-            self.top_frame, text="Sit Straight & Calibrate", width=25, command=self.calibrate,
-            bg="#4CAF50", fg="white"
+            self.top_frame, text="📸 Sit Straight & Calibrate", width=22, command=self.calibrate,
+            bg=self.success_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
+            activebackground="#89dceb", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
-        self.btn_calibrate.pack(side=tk.LEFT, padx=10)
+        self.btn_calibrate.pack(side=tk.LEFT, padx=8)
 
         self.btn_quit: Button = Button(
-            self.top_frame, text="Quit", width=10, command=self.close_app, bg="#f44336", fg="white"
+            self.top_frame, text="❌ Quit", width=10, command=self.close_app,
+            bg=self.danger_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
+            activebackground="#f38ba8", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
-        self.btn_quit.pack(side=tk.LEFT, padx=10)
+        self.btn_quit.pack(side=tk.LEFT, padx=8)
 
-        self.status_label: Label = Label(window, text="Status: Not Calibrated", font=("Helvetica", 12))
-        self.status_label.pack(pady=5)
+        self.status_label: Label = Label(
+            window, text="Status: Not Calibrated", font=("Segoe UI", 12, "bold"),
+            bg=self.bg_color, fg=self.accent_color
+        )
+        self.status_label.pack(pady=10)
 
-        self.video_label: Label = Label(window)
+        # A beautiful frame to hold the webcam feed with a border
+        self.video_frame: tk.Frame = tk.Frame(window, bg="#313244", bd=2, relief="groove")
+        self.video_frame.pack(padx=15, pady=10)
+
+        self.video_label: Label = Label(self.video_frame, bg="#11111b")
         self.video_label.pack()
 
         self.update()
@@ -107,11 +128,11 @@ class PostureApp:
         baseline = self.detector.calibrate()
         if baseline:
             self.calibrated = True
-            self.status_label.config(text=f"Calibrated! Face Y: {int(baseline)}", fg="green")
+            self.status_label.config(text=f"Calibrated! Face Y: {int(baseline)}", fg=self.success_color)
             self.frames_bad = 0
             self.logger.info(f"App calibrated. Baseline Face Y set to {baseline:.2f}")
         else:
-            self.status_label.config(text="Calibration Failed: No face detected", fg="orange")
+            self.status_label.config(text="Calibration Failed: No face detected", fg=self.warning_color)
             self.logger.warning("App calibration failed: no face detected.")
 
     def check_posture(self, current_y: Optional[float]) -> None:
@@ -137,7 +158,7 @@ class PostureApp:
 
         # Alerting
         if self.frames_bad > self.TIME_TO_ALERT:
-            self.status_label.config(text="⚠️ SLOUCHING! SIT UP! ⚠️", fg="red")
+            self.status_label.config(text="⚠️ SLOUCHING! SIT UP! ⚠️", fg=self.danger_color)
 
             if self.frames_bad % 100 == 0:  # Sound alert occasionally
                 self.logger.warning(f"Slouching detected for {self.frames_bad} frames. Sending system notification.")
@@ -147,7 +168,7 @@ class PostureApp:
                     timeout=2
                 )
         elif self.frames_bad == 0:
-            self.status_label.config(text=f"Posture Good. Deviation: {int(current_y - baseline)}px", fg="green")
+            self.status_label.config(text=f"Posture Good. Deviation: {int(current_y - baseline)}px", fg=self.success_color)
 
     def update(self) -> None:
         """
