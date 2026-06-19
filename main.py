@@ -96,6 +96,13 @@ class PostureApp:
         )
         self.btn_calibrate.pack(side=tk.LEFT, padx=8)
 
+        self.btn_settings: Button = Button(
+            self.top_frame, text="⚙️ Settings", width=12, command=self.open_settings,
+            bg=self.accent_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
+            activebackground="#74c7ec", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
+        )
+        self.btn_settings.pack(side=tk.LEFT, padx=8)
+
         self.btn_quit: Button = Button(
             self.top_frame, text="❌ Quit", width=10, command=self.close_app,
             bg=self.danger_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
@@ -199,6 +206,61 @@ class PostureApp:
         self.cap.release()
         self.window.destroy()
         self.logger.info("Application closed successfully.")
+
+    def open_settings(self) -> None:
+        """
+        Opens a settings modal dialog allowing the user to configure posture threshold and alert parameters.
+        """
+        self.logger.info("Opening settings dialog.")
+        settings_win = tk.Toplevel(self.window)
+        settings_win.title("PostureGuard Settings")
+        settings_win.configure(bg=self.bg_color)
+        settings_win.transient(self.window)
+        settings_win.grab_set()
+
+        # Labels & Entry fields
+        # Threshold
+        lbl_threshold = Label(settings_win, text="Slouch Threshold (px):", bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 10))
+        lbl_threshold.grid(row=0, column=0, padx=15, pady=10, sticky="w")
+        self.entry_threshold = tk.Entry(settings_win, font=("Segoe UI", 10), bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
+        self.entry_threshold.insert(0, str(self.slouch_threshold))
+        self.entry_threshold.grid(row=0, column=1, padx=15, pady=10)
+
+        # Time to Alert
+        lbl_alert_time = Label(settings_win, text="Time to Alert (frames):", bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 10))
+        lbl_alert_time.grid(row=1, column=0, padx=15, pady=10, sticky="w")
+        self.entry_alert_time = tk.Entry(settings_win, font=("Segoe UI", 10), bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
+        self.entry_alert_time.insert(0, str(self.TIME_TO_ALERT))
+        self.entry_alert_time.grid(row=1, column=1, padx=15, pady=10)
+
+        # Frame Delay
+        lbl_delay = Label(settings_win, text="Frame Delay (ms):", bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 10))
+        lbl_delay.grid(row=2, column=0, padx=15, pady=10, sticky="w")
+        self.entry_delay = tk.Entry(settings_win, font=("Segoe UI", 10), bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
+        self.entry_delay.insert(0, str(self.frame_delay_ms))
+        self.entry_delay.grid(row=2, column=1, padx=15, pady=10)
+
+        # Buttons Frame
+        btn_frame = tk.Frame(settings_win, bg=self.bg_color)
+        btn_frame.grid(row=3, column=0, columnspan=2, pady=15)
+
+        btn_save = Button(
+            btn_frame, text="💾 Save", width=10, command=lambda: self.save_settings_from_ui(settings_win),
+            bg=self.success_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat", cursor="hand2"
+        )
+        btn_save.pack(side=tk.LEFT, padx=10)
+
+        btn_cancel = Button(
+            btn_frame, text="❌ Cancel", width=10, command=settings_win.destroy,
+            bg=self.danger_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat", cursor="hand2"
+        )
+        btn_cancel.pack(side=tk.LEFT, padx=10)
+
+    def save_settings_from_ui(self, settings_win: tk.Toplevel) -> None:
+        """
+        Stub to save UI configuration. To be implemented.
+        """
+        settings_win.destroy()
 
 
 if __name__ == "__main__":
