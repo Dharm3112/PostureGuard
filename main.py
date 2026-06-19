@@ -82,6 +82,7 @@ class PostureApp:
         # LOGIC SETTINGS
         self.slouch_threshold: int = self.config_manager.get("slouch_threshold_px", 40)
         self.frames_bad: int = 0
+        self.log_counter: int = 0
         self.TIME_TO_ALERT: int = self.config_manager.get("time_to_alert_frames", 50)
         self.frame_delay_ms: int = self.config_manager.get("frame_delay_ms", 15)
 
@@ -196,6 +197,12 @@ class PostureApp:
         elif self.frames_bad == 0:
             self.status_label.config(text=f"Posture Good. Deviation: {int(current_y - baseline)}px", fg=self.success_color)
 
+        # Periodic posture history logging
+        self.log_counter += 1
+        if self.log_counter >= 100:
+            self.log_counter = 0
+            self.log_posture_history(current_y)
+
     def update(self) -> None:
         """
         Periodic update method that reads frames from the camera, processes them
@@ -247,6 +254,33 @@ class PostureApp:
             self.btn_pause.config(text="▶️ Resume", bg=self.success_color)
             self.status_label.config(text="Status: Monitoring Paused", fg=self.warning_color)
             self.logger.info("Posture monitoring paused.")
+
+    def log_posture_history(self, current_y: float) -> None:
+        """
+        Appends the current posture state (good or slouching) along with timestamp and deviation
+        to the local CSV file posture_history.csv.
+        """
+        import datetime
+        import csv
+        import os
+
+        if not self.config_manager.get("save_history", True):
+            return
+
+        file_exists = os.path.exists("posture_history.csv")
+        try:
+            with open("posture_history.csv", "a", newline="", encoding="utf-8") as f:
+                writer = csv.writer(f)
+                if not file_exists:
+                    writer.writerow(["timestamp", "deviation_px", "state"])
+
+                state = "Slouching" if self.frames_bad > self.TIME_TO_ALERT else "Good"
+                deviation = int(current_y - self.detector.baseline_y)
+                timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+                writer.writerow([timestamp, deviation, state])
+        except OSError as e:
+            self.logger.warning(f"Failed to write posture history to CSV: {e}")
 
     def open_settings(self) -> None:
         """
