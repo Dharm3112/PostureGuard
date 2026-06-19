@@ -5,6 +5,7 @@ import cv2
 from plyer import notification
 from posture_detector import PostureDetector
 from config_manager import ConfigManager
+from logger_config import setup_logger
 from typing import Optional
 
 
@@ -23,6 +24,10 @@ class PostureApp:
         self.window: tk.Tk = window
         self.window.title(window_title)
 
+        # Setup logging
+        self.logger = setup_logger()
+        self.logger.info("Starting PostureGuard Application...")
+
         # Load configuration settings
         self.config_manager: ConfigManager = ConfigManager()
         camera_index: int = self.config_manager.get("camera_index", 0)
@@ -30,6 +35,10 @@ class PostureApp:
         camera_height: int = self.config_manager.get("camera_height", 480)
 
         self.cap: cv2.VideoCapture = cv2.VideoCapture(camera_index)
+        if not self.cap.isOpened():
+            self.logger.error(f"Failed to open webcam with index {camera_index}.")
+        else:
+            self.logger.info(f"Webcam with index {camera_index} opened successfully.")
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, camera_width)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, camera_height)
 
@@ -74,13 +83,16 @@ class PostureApp:
         Calibrates the target posture baseline from the detector.
         Updates the UI state based on success or failure of face detection.
         """
+        self.logger.info("Calibration requested...")
         baseline = self.detector.calibrate()
         if baseline:
             self.calibrated = True
             self.status_label.config(text=f"Calibrated! Face Y: {int(baseline)}", fg="green")
             self.frames_bad = 0
+            self.logger.info(f"App calibrated. Baseline Face Y set to {baseline:.2f}")
         else:
             self.status_label.config(text="Calibration Failed: No face detected", fg="orange")
+            self.logger.warning("App calibration failed: no face detected.")
 
     def check_posture(self, current_y: Optional[float]) -> None:
         """
@@ -108,6 +120,7 @@ class PostureApp:
             self.status_label.config(text="⚠️ SLOUCHING! SIT UP! ⚠️", fg="red")
 
             if self.frames_bad % 100 == 0:  # Sound alert occasionally
+                self.logger.warning(f"Slouching detected for {self.frames_bad} frames. Sending system notification.")
                 notification.notify(
                     title='PostureGuard',
                     message='You are slouching! Sit up straight.',
@@ -140,9 +153,11 @@ class PostureApp:
         """
         Stops the application update loop, releases resources, and closes the window.
         """
+        self.logger.info("Closing application...")
         self.running = False
         self.cap.release()
         self.window.destroy()
+        self.logger.info("Application closed successfully.")
 
 
 if __name__ == "__main__":

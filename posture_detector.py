@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 from collections import deque
 from typing import Tuple, Optional
+from logger_config import setup_logger
 
 
 class PostureDetector:
@@ -15,10 +16,17 @@ class PostureDetector:
 
         :param buffer_size: Number of frames to average for smoothing vertical movement jitter.
         """
+        self.logger = setup_logger()
+        self.logger.info("Initializing PostureDetector...")
+
         # Load the pre-trained face detector from OpenCV
         self.face_cascade: cv2.CascadeClassifier = cv2.CascadeClassifier(
             cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
         )
+        if self.face_cascade.empty():
+            self.logger.error("Failed to load OpenCV face Haar Cascade XML file.")
+        else:
+            self.logger.info("OpenCV Haar cascade classifier loaded successfully.")
 
         # Buffer to smooth out jitter
         self.y_buffer: deque = deque(maxlen=buffer_size)
@@ -78,6 +86,9 @@ class PostureDetector:
         if len(self.y_buffer) > 0:
             # Average the last few frames to get a stable baseline
             self.baseline_y = sum(self.y_buffer) / len(self.y_buffer)
+            self.logger.info(f"Calibration successful. Baseline established at Y = {self.baseline_y:.2f}")
             return self.baseline_y
+        self.logger.warning("Calibration failed: no face detection history in buffer.")
         return None
+
 
