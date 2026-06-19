@@ -125,6 +125,14 @@ class PostureApp:
         )
         self.status_label.pack(pady=10)
 
+        # Check for persisted baseline calibration
+        saved_baseline = self.config_manager.get("saved_baseline_y", None)
+        if saved_baseline is not None:
+            self.detector.baseline_y = float(saved_baseline)
+            self.calibrated = True
+            self.status_label.config(text=f"Calibrated! (Loaded baseline Y: {int(saved_baseline)})", fg=self.success_color)
+            self.logger.info(f"Loaded saved baseline Face Y: {saved_baseline:.2f} from configuration.")
+
         # A beautiful frame to hold the webcam feed with a border
         self.video_frame: tk.Frame = tk.Frame(window, bg="#313244", bd=2, relief="groove")
         self.video_frame.pack(padx=15, pady=10)
@@ -146,7 +154,9 @@ class PostureApp:
             self.calibrated = True
             self.status_label.config(text=f"Calibrated! Face Y: {int(baseline)}", fg=self.success_color)
             self.frames_bad = 0
-            self.logger.info(f"App calibrated. Baseline Face Y set to {baseline:.2f}")
+            # Persist baseline calibration
+            self.config_manager.set("saved_baseline_y", baseline)
+            self.logger.info(f"App calibrated. Baseline Face Y set and saved to {baseline:.2f}")
         else:
             self.status_label.config(text="Calibration Failed: No face detected", fg=self.warning_color)
             self.logger.warning("App calibration failed: no face detected.")
