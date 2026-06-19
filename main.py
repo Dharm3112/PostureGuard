@@ -1,11 +1,12 @@
 import tkinter as tk
-from tkinter import Label, Button
+from tkinter import Label, Button, messagebox
 from PIL import Image, ImageTk
 import cv2
 from plyer import notification
 from posture_detector import PostureDetector
 from config_manager import ConfigManager
 from logger_config import setup_logger
+from exceptions import CameraNotFoundError, ModelLoadError
 from typing import Optional
 
 
@@ -34,18 +35,27 @@ class PostureApp:
         camera_width: int = self.config_manager.get("camera_width", 640)
         camera_height: int = self.config_manager.get("camera_height", 480)
 
-        self.cap: cv2.VideoCapture = cv2.VideoCapture(camera_index)
-        if not self.cap.isOpened():
-            self.logger.error(f"Failed to open webcam with index {camera_index}.")
-        else:
-            self.logger.info(f"Webcam with index {camera_index} opened successfully.")
-        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, camera_width)
-        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, camera_height)
-
-        self.detector: PostureDetector = PostureDetector()
-
         self.running: bool = True
         self.calibrated: bool = False
+
+        try:
+            self.cap: cv2.VideoCapture = cv2.VideoCapture(camera_index)
+            if not self.cap.isOpened():
+                raise CameraNotFoundError(camera_index)
+            
+            self.logger.info(f"Webcam with index {camera_index} opened successfully.")
+            self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, camera_width)
+            self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, camera_height)
+
+            self.detector: PostureDetector = PostureDetector()
+        except (CameraNotFoundError, ModelLoadError) as e:
+            self.logger.error(f"Initialization error: {e}")
+            messagebox.showerror("Initialization Error", str(e))
+            self.running = False
+            if hasattr(self, 'cap') and self.cap is not None:
+                self.cap.release()
+            self.window.destroy()
+            return
 
         # LOGIC SETTINGS
         self.slouch_threshold: int = self.config_manager.get("slouch_threshold_px", 40)
