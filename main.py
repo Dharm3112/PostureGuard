@@ -258,9 +258,28 @@ class PostureApp:
         self.opt_camera["menu"].config(bg="#313244", fg=self.fg_color)
         self.opt_camera.grid(row=3, column=1, padx=15, pady=10, sticky="ew")
 
+        # Resolution selection (Dropdown OptionMenu)
+        lbl_resolution = Label(settings_win, text="Video Resolution:", bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 10))
+        lbl_resolution.grid(row=4, column=0, padx=15, pady=10, sticky="w")
+        
+        self.resolution_choices = ["320x240", "640x480", "1280x720"]
+        self.resolution_var = tk.StringVar(settings_win)
+        w_val = self.config_manager.get("camera_width", 640)
+        h_val = self.config_manager.get("camera_height", 480)
+        self.resolution_var.set(f"{w_val}x{h_val}")
+        
+        self.opt_resolution = tk.OptionMenu(settings_win, self.resolution_var, *self.resolution_choices)
+        self.opt_resolution.config(
+            font=("Segoe UI", 9), bg="#313244", fg=self.fg_color,
+            activebackground="#313244", activeforeground=self.fg_color,
+            highlightthickness=0, bd=0
+        )
+        self.opt_resolution["menu"].config(bg="#313244", fg=self.fg_color)
+        self.opt_resolution.grid(row=4, column=1, padx=15, pady=10, sticky="ew")
+
         # Buttons Frame
         btn_frame = tk.Frame(settings_win, bg=self.bg_color)
-        btn_frame.grid(row=4, column=0, columnspan=2, pady=15)
+        btn_frame.grid(row=5, column=0, columnspan=2, pady=15)
 
         btn_save = Button(
             btn_frame, text="💾 Save", width=10, command=lambda: self.save_settings_from_ui(settings_win),
@@ -313,14 +332,29 @@ class PostureApp:
                 if not self.cap.isOpened():
                     raise CameraNotFoundError(camera_idx, "Failed to open newly selected webcam device index.")
                 self.config_manager.set("camera_index", camera_idx)
-                # Re-apply current resolution setting to new capture
-                width = self.config_manager.get("camera_width", 640)
-                height = self.config_manager.get("camera_height", 480)
-                self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
-                self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
         except Exception as e:
             self.logger.error(f"Error switching camera devices: {e}")
             messagebox.showwarning("Camera Error", f"Could not switch to camera index {self.camera_var.get()}: {e}", parent=settings_win)
+
+        # Camera Resolution change dynamic update
+        try:
+            res_str = self.resolution_var.get()
+            w_str, h_str = res_str.split('x')
+            camera_width = int(w_str)
+            camera_height = int(h_str)
+
+            old_w = self.config_manager.get("camera_width", 640)
+            old_h = self.config_manager.get("camera_height", 480)
+
+            if camera_width != old_w or camera_height != old_h or camera_idx != old_camera_index:
+                self.logger.info(f"Setting camera resolution to {camera_width}x{camera_height}...")
+                self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, camera_width)
+                self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, camera_height)
+                self.config_manager.set("camera_width", camera_width)
+                self.config_manager.set("camera_height", camera_height)
+        except Exception as e:
+            self.logger.error(f"Error setting camera resolution: {e}")
+            messagebox.showwarning("Resolution Error", f"Could not set resolution to {self.resolution_var.get()}: {e}", parent=settings_win)
 
         self.logger.info("Settings validated, updated in memory, and saved to file.")
         settings_win.destroy()
