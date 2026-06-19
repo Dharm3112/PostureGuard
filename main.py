@@ -276,11 +276,14 @@ class PostureApp:
             messagebox.showwarning("Invalid Input", str(e), parent=settings_win)
             return
 
-        # Updates properties in memory (Commit 19 validation)
+        # Updates properties in memory and writes to config file
         self.slouch_threshold = threshold
         self.TIME_TO_ALERT = alert_time
         self.frame_delay_ms = delay
-        self.logger.info("Settings validated and updated in memory.")
+        self.config_manager.set("slouch_threshold_px", threshold)
+        self.config_manager.set("time_to_alert_frames", alert_time)
+        self.config_manager.set("frame_delay_ms", delay)
+        self.logger.info("Settings validated, updated in memory, and saved to file.")
         settings_win.destroy()
 
 
