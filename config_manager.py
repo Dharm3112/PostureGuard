@@ -19,6 +19,7 @@ class ConfigManager:
         """
         self.config_data: Dict[str, Any] = {}
         self._ensure_config_exists()
+        self.load()
 
     def _ensure_config_exists(self) -> None:
         """
@@ -40,3 +41,62 @@ class ConfigManager:
                     "saved_baseline_y": None
                 }
                 self._save_to_file()
+
+    def load(self) -> None:
+        """
+        Loads configuration dictionary from the local file.
+        """
+        try:
+            with open(self.LOCAL_CONFIG_FILE, "r") as f:
+                self.config_data = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            if os.path.exists(self.DEFAULT_CONFIG_FILE):
+                shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
+                with open(self.LOCAL_CONFIG_FILE, "r") as f:
+                    self.config_data = json.load(f)
+            else:
+                self.reset_to_defaults()
+
+    def get(self, key: str, default: Any = None) -> Any:
+        """
+        Retrieves a configuration value.
+        """
+        return self.config_data.get(key, default)
+
+    def set(self, key: str, value: Any) -> None:
+        """
+        Sets a configuration value and saves changes to file.
+        """
+        self.config_data[key] = value
+        self._save_to_file()
+
+    def _save_to_file(self) -> None:
+        """
+        Saves current config dictionary to JSON file.
+        """
+        try:
+            with open(self.LOCAL_CONFIG_FILE, "w") as f:
+                json.dump(self.config_data, f, indent=2)
+        except OSError:
+            pass
+
+    def reset_to_defaults(self) -> None:
+        """
+        Resets configurations to the default template.
+        """
+        if os.path.exists(self.DEFAULT_CONFIG_FILE):
+            shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
+            self.load()
+        else:
+            self.config_data = {
+                "camera_index": 0,
+                "slouch_threshold_px": 40,
+                "time_to_alert_frames": 50,
+                "frame_delay_ms": 15,
+                "camera_width": 640,
+                "camera_height": 480,
+                "save_history": True,
+                "saved_baseline_y": None
+            }
+            self._save_to_file()
+
