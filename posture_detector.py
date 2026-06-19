@@ -1,30 +1,47 @@
 import cv2
 import numpy as np
 from collections import deque
+from typing import Tuple, Optional
 
 
 class PostureDetector:
-    def __init__(self, buffer_size=10):
+    """
+    Core engine for posture detection.
+    Uses OpenCV face detection (Haar Cascades) and handles smoothing of face coordinate values.
+    """
+    def __init__(self, buffer_size: int = 10) -> None:
+        """
+        Initializes the PostureDetector with a face cascade classifier and moving average buffer.
+
+        :param buffer_size: Number of frames to average for smoothing vertical movement jitter.
+        """
         # Load the pre-trained face detector from OpenCV
-        # This comes built-in with opencv-python, no extra download needed usually.
-        self.face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+        self.face_cascade: cv2.CascadeClassifier = cv2.CascadeClassifier(
+            cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+        )
 
         # Buffer to smooth out jitter
-        self.y_buffer = deque(maxlen=buffer_size)
+        self.y_buffer: deque = deque(maxlen=buffer_size)
 
         # Baseline: The Y-coordinate of your face when sitting straight
-        self.baseline_y = None
+        self.baseline_y: Optional[float] = None
 
-    def process_frame(self, frame):
+    def process_frame(self, frame: np.ndarray) -> Tuple[np.ndarray, Optional[float]]:
         """
-        Detects face and returns the Y-coordinate of the face center.
+        Detects the user's face in the frame, updates the smoothing buffer, and computes
+        the average Y-coordinate of the face center.
+
+        :param frame: The BGR frame capture from the webcam.
+        :return: A tuple containing:
+                 - The annotated frame with bounding boxes and line markings.
+                 - The smoothed current center Y-coordinate of the face (or None if no face is detected).
         """
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
         # Detect faces
         faces = self.face_cascade.detectMultiScale(gray, 1.1, 5, minSize=(30, 30))
 
-        current_y = None
+        current_y: Optional[float] = None
 
         if len(faces) > 0:
             # Find the largest face (assuming it's the user)
@@ -52,10 +69,15 @@ class PostureDetector:
 
         return frame, current_y
 
-    def calibrate(self):
-        """Sets the current face height as the 'Good Posture' baseline."""
+    def calibrate(self) -> Optional[float]:
+        """
+        Establishes the 'Good Posture' baseline by averaging the current Y coordinates in the buffer.
+
+        :return: The calibrated baseline Y-coordinate, or None if no face data exists in the buffer.
+        """
         if len(self.y_buffer) > 0:
             # Average the last few frames to get a stable baseline
             self.baseline_y = sum(self.y_buffer) / len(self.y_buffer)
             return self.baseline_y
         return None
+
