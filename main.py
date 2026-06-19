@@ -8,6 +8,38 @@ from config_manager import ConfigManager
 from logger_config import setup_logger
 from exceptions import CameraNotFoundError, ModelLoadError
 from typing import Optional
+import threading
+import time
+
+
+class CameraStream:
+    """
+    A helper class that captures video frames from cv2.VideoCapture in a separate daemon thread
+    to prevent blocking the Tkinter event loop.
+    """
+    def __init__(self, cap: cv2.VideoCapture) -> None:
+        self.cap = cap
+        self.frame = None
+        self.ret = False
+        self.running = True
+        self.thread = threading.Thread(target=self._update, daemon=True)
+        self.thread.start()
+
+    def _update(self) -> None:
+        while self.running:
+            if self.cap.isOpened():
+                ret, frame = self.cap.read()
+                if ret:
+                    self.ret = ret
+                    self.frame = frame
+            time.sleep(0.01)
+
+    def read(self):
+        return self.ret, self.frame
+
+    def release(self) -> None:
+        self.running = False
+        self.thread.join(timeout=0.5)
 
 
 class PostureApp:
@@ -56,6 +88,9 @@ class PostureApp:
             self.logger.info(f"Webcam with index {camera_index} opened successfully.")
             self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, camera_width)
             self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, camera_height)
+
+            # Start camera stream background thread
+            self.stream: CameraStream = CameraStream(self.cap)
 
             self.detector: PostureDetector = PostureDetector()
         except (CameraNotFoundError, ModelLoadError) as e:
@@ -215,8 +250,10 @@ class PostureApp:
         Periodic update method that reads frames from the camera, processes them
         using the posture detector, updates GUI widgets, and schedules the next update.
         """
-        ret, frame = self.cap.read()
-        if ret:
+        ret, frame = self.stream.read()
+        if ret and frame is not None:
+            # Create a copy to prevent thread frame modifications during processing
+            frame = frame.copy()
             if self.monitoring_active:
                 frame, current_y = self.detector.process_frame(frame)
                 self.check_posture(current_y)
@@ -244,6 +281,7 @@ class PostureApp:
         """
         self.logger.info("Closing application...")
         self.running = False
+        self.stream.release()
         self.cap.release()
         self.window.destroy()
         self.logger.info("Application closed successfully.")
@@ -409,6 +447,7 @@ class PostureApp:
             old_camera_index = self.config_manager.get("camera_index", 0)
             if camera_idx != old_camera_index:
                 self.logger.info(f"Camera index changed from {old_camera_index} to {camera_idx}. Reinitializing camera...")
+                self.stream.release()
                 self.cap.release()
                 self.cap = cv2.VideoCapture(camera_idx)
                 if not self.cap.isOpened():
@@ -434,6 +473,9 @@ class PostureApp:
                 self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, camera_height)
                 self.config_manager.set("camera_width", camera_width)
                 self.config_manager.set("camera_height", camera_height)
+
+            if camera_idx != old_camera_index:
+                self.stream = CameraStream(self.cap)
         except Exception as e:
             self.logger.error(f"Error setting camera resolution: {e}")
             messagebox.showwarning("Resolution Error", f"Could not set resolution to {self.resolution_var.get()}: {e}", parent=settings_win)
