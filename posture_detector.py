@@ -3,6 +3,7 @@ import numpy as np
 from collections import deque
 from typing import Tuple, Optional
 from logger_config import setup_logger
+from exceptions import ModelLoadError
 
 
 class PostureDetector:
@@ -25,6 +26,7 @@ class PostureDetector:
         )
         if self.face_cascade.empty():
             self.logger.error("Failed to load OpenCV face Haar Cascade XML file.")
+            raise ModelLoadError()
         else:
             self.logger.info("OpenCV Haar cascade classifier loaded successfully.")
 
