@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "posture-guard"
+version = "1.0.0"
+description = "A lightweight, real-time desktop application to help you maintain healthy posture using computer vision."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Dharm Patel", email = "dharmpatel311287@gmail.com" }
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Healthy :: Desktop Application",
+]
+dependencies = [
+  "opencv-python>=4.8.0",
+  "numpy>=1.24.0",
+  "plyer>=2.1.0",
+  "Pillow>=9.5.0",
+]
+
+[project.gui-scripts]
+posture-guard = "main:main"
