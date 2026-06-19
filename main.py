@@ -258,8 +258,29 @@ class PostureApp:
 
     def save_settings_from_ui(self, settings_win: tk.Toplevel) -> None:
         """
-        Stub to save UI configuration. To be implemented.
+        Validates settings entries from the UI. If valid, updates application attributes.
         """
+        try:
+            threshold = int(self.entry_threshold.get().strip())
+            alert_time = int(self.entry_alert_time.get().strip())
+            delay = int(self.entry_delay.get().strip())
+
+            if not (5 <= threshold <= 200):
+                raise ValueError("Slouch threshold must be an integer between 5 and 200 pixels.")
+            if not (10 <= alert_time <= 500):
+                raise ValueError("Time to alert must be an integer between 10 and 500 frames.")
+            if not (5 <= delay <= 200):
+                raise ValueError("Frame delay must be an integer between 5 and 200 milliseconds.")
+        except ValueError as e:
+            self.logger.warning(f"Settings validation failed: {e}")
+            messagebox.showwarning("Invalid Input", str(e), parent=settings_win)
+            return
+
+        # Updates properties in memory (Commit 19 validation)
+        self.slouch_threshold = threshold
+        self.TIME_TO_ALERT = alert_time
+        self.frame_delay_ms = delay
+        self.logger.info("Settings validated and updated in memory.")
         settings_win.destroy()
 
 
