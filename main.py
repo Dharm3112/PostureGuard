@@ -96,6 +96,13 @@ class PostureApp:
         )
         self.btn_calibrate.pack(side=tk.LEFT, padx=8)
 
+        self.btn_pause: Button = Button(
+            self.top_frame, text="⏸️ Pause", width=10, command=self.toggle_monitoring,
+            bg=self.accent_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
+            activebackground="#b4befe", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
+        )
+        self.btn_pause.pack(side=tk.LEFT, padx=8)
+
         self.btn_settings: Button = Button(
             self.top_frame, text="⚙️ Settings", width=12, command=self.open_settings,
             bg=self.accent_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
@@ -109,6 +116,8 @@ class PostureApp:
             activebackground="#f38ba8", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
         self.btn_quit.pack(side=tk.LEFT, padx=8)
+
+        self.monitoring_active: bool = True
 
         self.status_label: Label = Label(
             window, text="Status: Not Calibrated", font=("Segoe UI", 12, "bold"),
@@ -184,8 +193,16 @@ class PostureApp:
         """
         ret, frame = self.cap.read()
         if ret:
-            frame, current_y = self.detector.process_frame(frame)
-            self.check_posture(current_y)
+            if self.monitoring_active:
+                frame, current_y = self.detector.process_frame(frame)
+                self.check_posture(current_y)
+            else:
+                # Bypassed - draw text indicating paused state
+                h, w, _ = frame.shape
+                cv2.putText(
+                    frame, "MONITORING PAUSED", (w // 2 - 120, h // 2),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 165, 255), 2
+                )
 
             # Convert for Tkinter
             img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
@@ -206,6 +223,20 @@ class PostureApp:
         self.cap.release()
         self.window.destroy()
         self.logger.info("Application closed successfully.")
+
+    def toggle_monitoring(self) -> None:
+        """
+        Toggles posture monitoring state between active and paused.
+        """
+        self.monitoring_active = not self.monitoring_active
+        if self.monitoring_active:
+            self.btn_pause.config(text="⏸️ Pause", bg=self.accent_color)
+            self.status_label.config(text="Status: Monitoring Active", fg=self.accent_color)
+            self.logger.info("Posture monitoring resumed.")
+        else:
+            self.btn_pause.config(text="▶️ Resume", bg=self.success_color)
+            self.status_label.config(text="Status: Monitoring Paused", fg=self.warning_color)
+            self.logger.info("Posture monitoring paused.")
 
     def open_settings(self) -> None:
         """
