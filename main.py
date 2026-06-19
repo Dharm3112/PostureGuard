@@ -111,6 +111,13 @@ class PostureApp:
         )
         self.btn_settings.pack(side=tk.LEFT, padx=8)
 
+        self.btn_stats: Button = Button(
+            self.top_frame, text="📊 Stats", width=10, command=self.show_statistics,
+            bg=self.accent_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
+            activebackground="#b4befe", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
+        )
+        self.btn_stats.pack(side=tk.LEFT, padx=8)
+
         self.btn_quit: Button = Button(
             self.top_frame, text="❌ Quit", width=10, command=self.close_app,
             bg=self.danger_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
@@ -433,6 +440,55 @@ class PostureApp:
 
         self.logger.info("Settings validated, updated in memory, and saved to file.")
         settings_win.destroy()
+
+    def show_statistics(self) -> None:
+        """
+        Opens a modal display window showing aggregate posture statistics from stats.py.
+        """
+        from stats import get_posture_stats
+
+        self.logger.info("Opening posture statistics window.")
+        stats = get_posture_stats("posture_history.csv")
+
+        stats_win = tk.Toplevel(self.window)
+        stats_win.title("Posture History Statistics")
+        stats_win.configure(bg=self.bg_color)
+        stats_win.transient(self.window)
+        stats_win.grab_set()
+
+        # Design a clean layout
+        lbl_title = Label(stats_win, text="📊 Posture History Overview", font=("Segoe UI", 12, "bold"), bg=self.bg_color, fg=self.accent_color)
+        lbl_title.pack(pady=15, padx=20)
+
+        frame = tk.Frame(stats_win, bg="#313244", padx=15, pady=15, bd=1, relief="solid")
+        frame.pack(padx=20, pady=10, fill="both", expand=True)
+
+        details = [
+            ("Total Records logged:", f"{stats['total_records']}"),
+            ("Good Posture Count:", f"{stats['good_count']}"),
+            ("Slouching Count:", f"{stats['slouch_count']}"),
+            ("Good Posture %:", f"{stats['good_percent']:.1f}%"),
+            ("Slouching Posture %:", f"{stats['slouch_percent']:.1f}%"),
+            ("Avg Deviation (pixels):", f"{stats['avg_deviation']:.1f} px")
+        ]
+
+        for i, (label_text, val_text) in enumerate(details):
+            lbl_l = Label(frame, text=label_text, font=("Segoe UI", 10), bg="#313244", fg=self.fg_color)
+            lbl_l.grid(row=i, column=0, sticky="w", pady=5, padx=5)
+
+            # Highlight values
+            color = self.success_color if "Good" in label_text or "total" in label_text.lower() else self.fg_color
+            if "%" in val_text and "Slouching" in label_text:
+                color = self.danger_color
+
+            lbl_r = Label(frame, text=val_text, font=("Segoe UI", 10, "bold"), bg="#313244", fg=color)
+            lbl_r.grid(row=i, column=1, sticky="e", pady=5, padx=5)
+
+        btn_close = Button(
+            stats_win, text="Close", width=12, command=stats_win.destroy,
+            bg=self.btn_bg, fg=self.fg_color, font=("Segoe UI", 10, "bold"), relief="flat", cursor="hand2"
+        )
+        btn_close.pack(pady=15)
 
 
 if __name__ == "__main__":
