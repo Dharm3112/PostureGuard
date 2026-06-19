@@ -533,7 +533,14 @@ class PostureApp:
         btn_close.pack(pady=15)
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """
+    Main entry point for starting the PostureGuard application.
+    """
     root = tk.Tk()
     app = PostureApp(root, "PostureGuard (Lite Mode)")
+
+
+if __name__ == "__main__":
+    main()
 
