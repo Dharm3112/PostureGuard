@@ -78,6 +78,15 @@ class TestConfigManager(unittest.TestCase):
         manager.set(ConfigManager.CAMERA_WIDTH, 99999)
         self.assertFalse(manager.validate_config())
 
+    def test_corrupted_config_fallback(self) -> None:
+        """Checks ConfigManager falls back to defaults if config.json is corrupted."""
+        # Write corrupted config.json
+        with open("config.json", "w") as f:
+            f.write("{invalid_json:")
+        manager = ConfigManager()
+        # Verify fallback loaded mock defaults (camera_index = 99)
+        self.assertEqual(manager.get("camera_index"), 99)
+
     def test_reset_to_defaults(self) -> None:
         """Verifies config resetting capability."""
         manager = ConfigManager()
