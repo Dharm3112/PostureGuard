@@ -88,6 +88,12 @@ class ConfigManager:
         slouch_th = self.config_data.get(self.SLOUCH_THRESHOLD, 40)
         if not isinstance(slouch_th, (int, float)) or not (5 <= slouch_th <= 500):
             return False
+        frame_delay = self.config_data.get(self.FRAME_DELAY, 15)
+        alert_frames = self.config_data.get(self.TIME_TO_ALERT, 50)
+        if not isinstance(frame_delay, int) or not isinstance(alert_frames, int):
+            return False
+        if not (1 <= frame_delay <= 1000) or not (5 <= alert_frames <= 2000):
+            return False
         return True
 
     def get(self, key: str, default: Any = None) -> Any:
