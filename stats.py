@@ -30,6 +30,8 @@ def get_posture_stats(filepath: str = "posture_history.csv") -> Dict[str, Any]:
         with open(filepath, "r", newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
+                if not row or not row.get("timestamp"):
+                    continue
                 stats["total_records"] += 1
                 try:
                     dev = int(row.get("deviation_px", 0))
