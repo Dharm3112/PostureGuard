@@ -346,6 +346,7 @@ class PostureApp:
         except OSError as e:
             self.logger.warning(f"Failed to write posture history to CSV: {e}")
 
+    # Subclass / separated layout for Settings UI
     def open_settings(self) -> None:
         """
         Opens a settings modal dialog allowing the user to configure posture threshold and alert parameters.
