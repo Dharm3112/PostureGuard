@@ -36,6 +36,14 @@ class TestPostureDetector(unittest.TestCase):
         self.assertFalse(self.detector.is_slouching(120.0, 30.0))
         self.assertFalse(self.detector.is_slouching(80.0, 30.0))
 
+    def test_buffer_boundary(self) -> None:
+        """Verifies buffer sliding average calculation and max size preservation."""
+        for val in [10, 20, 30, 40, 50, 60]:
+            self.detector.y_buffer.append(val)
+        self.assertEqual(len(self.detector.y_buffer), 5)
+        # Average of 20, 30, 40, 50, 60 = 40.0
+        self.assertEqual(self.detector._get_average_y(), 40.0)
+
     def test_process_frame_no_face(self) -> None:
         """Checks frame processing does not crash and returns None when no face is present."""
         frame = np.zeros((100, 100, 3), dtype=np.uint8)
