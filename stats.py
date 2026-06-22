@@ -39,7 +39,9 @@ def get_posture_stats(filepath: str = "posture_history.csv") -> Dict[str, Any]:
                     stats["good_count"] += 1
                 else:
                     stats["slouch_count"] += 1
-    except OSError:
+    except OSError as e:
+        from logger_config import setup_logger
+        setup_logger().error(f"Failed to read posture history file: {e}")
         return stats
 
     total = stats["total_records"]
