@@ -17,6 +17,15 @@ class TestStats(unittest.TestCase):
         stats = get_posture_stats("nonexistent_file.csv")
         self.assertEqual(stats["total_records"], 0)
 
+    def test_empty_file_stats(self) -> None:
+        # Write only header
+        with open(self.filename, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["timestamp", "deviation_px", "state"])
+        stats = get_posture_stats(self.filename)
+        self.assertEqual(stats["total_records"], 0)
+        self.assertEqual(stats["good_percent"], 0.0)
+
     def test_get_posture_stats_valid(self) -> None:
         with open(self.filename, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
