@@ -117,7 +117,8 @@ class ConfigManager:
             with open(self.LOCAL_CONFIG_FILE, "w") as f:
                 json.dump(self.config_data, f, indent=2)
         except OSError:
-            pass
+            from logger_config import setup_logger
+            setup_logger().error("Failed to write config data to local file.")
 
     def reset_to_defaults(self) -> None:
         """
