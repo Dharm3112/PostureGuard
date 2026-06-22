@@ -194,6 +194,10 @@ class PostureApp:
         # A beautiful frame to hold the webcam feed with a border
         self.video_frame: tk.Frame = tk.Frame(window, bg="#313244", bd=2, relief="groove")
         self.video_frame.pack(padx=15, pady=10)
+        
+        # Add simple status label bar at the bottom
+        self.status_bar: Label = Label(window, text="Camera Stream: Active", bd=1, relief=tk.SUNKEN, anchor=tk.W, bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 8))
+        self.status_bar.pack(side=tk.BOTTOM, fill=tk.X)
 
         self.video_label: Label = Label(self.video_frame, bg="#11111b")
         self.video_label.pack()
