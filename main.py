@@ -83,7 +83,12 @@ class PostureApp:
         try:
             self.cap: cv2.VideoCapture = cv2.VideoCapture(camera_index)
             if not self.cap.isOpened():
-                raise CameraNotFoundError(camera_index)
+                # Fallback to default index 0 if configured was different and failed
+                if camera_index != 0:
+                    self.logger.warning(f"Camera index {camera_index} failed, trying fallback index 0...")
+                    self.cap = cv2.VideoCapture(0)
+                if not self.cap.isOpened():
+                    raise CameraNotFoundError(camera_index)
             
             self.logger.info(f"Webcam with index {camera_index} opened successfully.")
             self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, camera_width)
