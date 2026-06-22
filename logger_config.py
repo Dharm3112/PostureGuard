@@ -31,7 +31,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO)
         file_handler = RotatingFileHandler(log_file, maxBytes=1024 * 1024, backupCount=3, encoding='utf-8')
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
-    except OSError:
-        logger.warning("Could not initialize file logging handler. Logging only to standard console output.")
+    except (OSError, PermissionError) as e:
+        logger.warning(f"Could not initialize file logging handler: {e}. Logging only to standard console output.")
 
     return logger
