@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-06-22
+
+### Added
+- **Configuration Parameter Validation:** Added checks for slouch thresholds, camera widths/heights, and frame timings.
+- **Robust Exception Logging:** Custom exceptions are fully documented and file logs capture write errors.
+- **Unit Test Suites:** Expanded unittest coverages for configs, statistics calculators, and detector geometries.
+- **Keyboard Shortcuts:** Added `Ctrl+C` for clean closure and `Ctrl+L` for instant calibration trigger.
+
+
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
