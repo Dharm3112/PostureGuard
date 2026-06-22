@@ -13,7 +13,7 @@ class PostureDetector:
     """
     CASCADE_PATH = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
 
-    def __init__(self, buffer_size: int = 10) -> None:
+    def __init__(self, buffer_size: int = 10, scale_factor: float = 1.1, min_neighbors: int = 5) -> None:
         """
         Initializes the PostureDetector with a face cascade classifier and moving average buffer.
 
@@ -29,6 +29,9 @@ class PostureDetector:
             raise ModelLoadError()
         else:
             self.logger.info("OpenCV Haar cascade classifier loaded successfully.")
+
+        self.scale_factor = scale_factor
+        self.min_neighbors = min_neighbors
 
         # Buffer to smooth out jitter
         self.y_buffer: deque = deque(maxlen=buffer_size)
@@ -49,7 +52,9 @@ class PostureDetector:
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
         # Detect faces
-        faces = self.face_cascade.detectMultiScale(gray, 1.1, 5, minSize=(30, 30))
+        faces = self.face_cascade.detectMultiScale(
+            gray, self.scale_factor, self.min_neighbors, minSize=(30, 30)
+        )
 
         current_y: Optional[float] = None
 
