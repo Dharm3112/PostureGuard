@@ -22,6 +22,8 @@ To ensure clean and maintainable code, we enforce the following:
 - **Formatting:** Use **Black** for code formatting and **isort** for import sorting.
   * Run Black: `black .`
   * Run isort: `isort .`
+- **Linting:** Use **flake8** for syntax checking and PEP-8 code style verification:
+  * Run Flake8: `flake8 .`
 - **Typing Checks:** Run **mypy** to verify type annotation correctness:
   * `mypy .`
 
