@@ -59,11 +59,16 @@ class ConfigManager:
         try:
             with open(self.LOCAL_CONFIG_FILE, "r") as f:
                 self.config_data = json.load(f)
-        except (json.JSONDecodeError, OSError):
+                if not isinstance(self.config_data, dict):
+                    raise ValueError("Config format invalid, must be a dictionary")
+        except (json.JSONDecodeError, OSError, ValueError):
             if os.path.exists(self.DEFAULT_CONFIG_FILE):
-                shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
-                with open(self.LOCAL_CONFIG_FILE, "r") as f:
-                    self.config_data = json.load(f)
+                try:
+                    shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
+                    with open(self.LOCAL_CONFIG_FILE, "r") as f:
+                        self.config_data = json.load(f)
+                except Exception:
+                    self.reset_to_defaults()
             else:
                 self.reset_to_defaults()
 
