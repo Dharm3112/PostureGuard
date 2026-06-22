@@ -102,17 +102,27 @@ class PostureApp:
             self.window.destroy()
             return
 
-        # Modern Color Palette (Sleek Dark Theme)
-        self.bg_color: str = "#1e1e2e"
-        self.fg_color: str = "#cdd6f4"
-        self.accent_color: str = "#89b4fa"       # Blue status
-        self.success_color: str = "#a6e3a1"      # Green status/calibrate
-        self.warning_color: str = "#f9e2af"      # Yellow warnings
-        self.danger_color: str = "#f38ba8"       # Red alerts/quit
-        self.btn_bg: str = "#313244"
-        self.btn_fg: str = "#11111b"
+        # Modern Color Palette Theme Dictionary
+        self.theme: dict = {
+            "bg": "#1e1e2e",
+            "fg": "#cdd6f4",
+            "accent": "#89b4fa",
+            "success": "#a6e3a1",
+            "warning": "#f9e2af",
+            "danger": "#f38ba8",
+            "btn_bg": "#313244",
+            "btn_fg": "#11111b"
+        }
+        self.bg_color = self.theme["bg"]
+        self.fg_color = self.theme["fg"]
+        self.accent_color = self.theme["accent"]
+        self.success_color = self.theme["success"]
+        self.warning_color = self.theme["warning"]
+        self.danger_color = self.theme["danger"]
+        self.btn_bg = self.theme["btn_bg"]
+        self.btn_fg = self.theme["btn_fg"]
 
-        self.window.configure(bg=self.bg_color)
+        self.window.configure(bg=self.theme["bg"])
 
         # LOGIC SETTINGS
         self.slouch_threshold: int = self.config_manager.get("slouch_threshold_px", 40)
