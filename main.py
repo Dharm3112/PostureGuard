@@ -1,3 +1,4 @@
+import sys
 import tkinter as tk
 from tkinter import Label, Button, messagebox
 from PIL import Image, ImageTk
@@ -64,7 +65,9 @@ class PostureApp:
         self.window.title(window_title)
 
         # Setup logging
-        self.logger = setup_logger()
+        log_level_val = self.config_manager.get("log_level", "INFO")
+        log_level = getattr(sys.modules['logging'], log_level_val, sys.modules['logging'].INFO) if 'logging' in sys.modules else 20
+        self.logger = setup_logger(level=log_level)
         self.logger.info("Starting PostureGuard Application...")
 
         # Set Window Icon
