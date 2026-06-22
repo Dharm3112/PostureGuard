@@ -26,6 +26,19 @@ class TestStats(unittest.TestCase):
         self.assertEqual(stats["total_records"], 0)
         self.assertEqual(stats["good_percent"], 0.0)
 
+    def test_malformed_rows_stats(self) -> None:
+        with open(self.filename, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["timestamp", "deviation_px", "state"])
+            writer.writerow(["", "", ""]) # Empty row
+            writer.writerow(["2026-06-22 12:00:00", "invalid_dev", "Good"])
+            writer.writerow(["2026-06-22 12:01:00", "50", "Slouching"])
+            
+        stats = get_posture_stats(self.filename)
+        self.assertEqual(stats["total_records"], 2) # Empty row is skipped
+        self.assertEqual(stats["good_count"], 1)
+        self.assertEqual(stats["avg_deviation"], 25.0) # (0 + 50) / 2
+
     def test_get_posture_stats_valid(self) -> None:
         with open(self.filename, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
