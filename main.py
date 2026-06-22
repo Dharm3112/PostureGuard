@@ -174,6 +174,8 @@ class PostureApp:
         
         # Bind Ctrl+C to clean exit
         self.window.bind("<Control-c>", lambda event: self.close_app())
+        # Bind Ctrl+L to calibrate
+        self.window.bind("<Control-l>", lambda event: self.calibrate())
 
         self.status_label: Label = Label(
             window, text="Status: Not Calibrated", font=("Segoe UI", 12, "bold"),
