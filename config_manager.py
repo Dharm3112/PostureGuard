@@ -85,6 +85,9 @@ class ConfigManager:
             return False
         if not (160 <= width <= 3840) or not (120 <= height <= 2160):
             return False
+        slouch_th = self.config_data.get(self.SLOUCH_THRESHOLD, 40)
+        if not isinstance(slouch_th, (int, float)) or not (5 <= slouch_th <= 500):
+            return False
         return True
 
     def get(self, key: str, default: Any = None) -> Any:
