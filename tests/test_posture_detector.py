@@ -28,6 +28,14 @@ class TestPostureDetector(unittest.TestCase):
         self.assertEqual(baseline, 100.0)
         self.assertEqual(self.detector.baseline_y, 100.0)
 
+    def test_is_slouching(self) -> None:
+        """Checks slouch detection method behaves correctly based on threshold offsets."""
+        self.detector.baseline_y = 100.0
+        # Slouch threshold is 30px
+        self.assertTrue(self.detector.is_slouching(135.0, 30.0))
+        self.assertFalse(self.detector.is_slouching(120.0, 30.0))
+        self.assertFalse(self.detector.is_slouching(80.0, 30.0))
+
     def test_process_frame_no_face(self) -> None:
         """Checks frame processing does not crash and returns None when no face is present."""
         frame = np.zeros((100, 100, 3), dtype=np.uint8)
