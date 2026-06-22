@@ -11,6 +11,16 @@ class ConfigManager:
     """
     DEFAULT_CONFIG_FILE = "config.json.default"
     LOCAL_CONFIG_FILE = "config.json"
+    
+    # Key Constants
+    CAMERA_INDEX = "camera_index"
+    SLOUCH_THRESHOLD = "slouch_threshold_px"
+    TIME_TO_ALERT = "time_to_alert_frames"
+    FRAME_DELAY = "frame_delay_ms"
+    CAMERA_WIDTH = "camera_width"
+    CAMERA_HEIGHT = "camera_height"
+    SAVE_HISTORY = "save_history"
+    SAVED_BASELINE_Y = "saved_baseline_y"
 
     def __init__(self) -> None:
         """
