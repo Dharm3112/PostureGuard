@@ -48,7 +48,9 @@ class ConfigManager:
                     "camera_width": 640,
                     "camera_height": 480,
                     "save_history": True,
-                    "saved_baseline_y": None
+                    "saved_baseline_y": None,
+                    "scale_factor": 1.1,
+                    "min_neighbors": 5
                 }
                 self._save_to_file()
 
