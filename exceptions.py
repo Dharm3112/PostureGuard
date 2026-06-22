@@ -1,6 +1,11 @@
 class PostureGuardException(Exception):
-    """Base exception class for PostureGuard errors."""
-    pass
+    """
+    Base exception class for PostureGuard errors.
+    All custom exceptions in PostureGuard inherit from this base class.
+    """
+    def __init__(self, message: str = "An error occurred within PostureGuard.") -> None:
+        self.message = message
+        super().__init__(self.message)
 
 
 class CameraNotFoundError(PostureGuardException):
