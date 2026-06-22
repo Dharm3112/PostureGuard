@@ -3,7 +3,7 @@ from logging.handlers import RotatingFileHandler
 from typing import Optional
 
 
-def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO) -> logging.Logger:
+def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO, log_format: Optional[str] = None) -> logging.Logger:
     """
     Configures and returns a logger that prints to the console and writes to a rotating log file.
 
@@ -19,7 +19,8 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO)
         return logger
 
     # Format config
-    formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(name)s: %(message)s')
+    fmt_str = log_format or '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+    formatter = logging.Formatter(fmt_str)
 
     # Console output handler
     console_handler = logging.StreamHandler()
