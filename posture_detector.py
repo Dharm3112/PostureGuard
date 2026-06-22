@@ -11,6 +11,8 @@ class PostureDetector:
     Core engine for posture detection.
     Uses OpenCV face detection (Haar Cascades) and handles smoothing of face coordinate values.
     """
+    CASCADE_PATH = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+
     def __init__(self, buffer_size: int = 10) -> None:
         """
         Initializes the PostureDetector with a face cascade classifier and moving average buffer.
@@ -21,9 +23,7 @@ class PostureDetector:
         self.logger.info("Initializing PostureDetector...")
 
         # Load the pre-trained face detector from OpenCV
-        self.face_cascade: cv2.CascadeClassifier = cv2.CascadeClassifier(
-            cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
-        )
+        self.face_cascade: cv2.CascadeClassifier = cv2.CascadeClassifier(self.CASCADE_PATH)
         if self.face_cascade.empty():
             self.logger.error("Failed to load OpenCV face Haar Cascade XML file.")
             raise ModelLoadError()
