@@ -32,6 +32,7 @@ class PostureDetector:
 
         self.scale_factor = scale_factor
         self.min_neighbors = min_neighbors
+        self.consecutive_failures = 0
 
         # Buffer to smooth out jitter
         self.y_buffer: deque = deque(maxlen=buffer_size)
@@ -59,6 +60,7 @@ class PostureDetector:
         current_y: Optional[float] = None
 
         if len(faces) > 0:
+            self.consecutive_failures = 0
             # Find the largest face (assuming it's the user)
             largest_face = max(faces, key=lambda rect: rect[2] * rect[3])
             (x, y, w, h) = largest_face
@@ -82,6 +84,10 @@ class PostureDetector:
                 cv2.line(frame, (0, limit_y), (frame.shape[1], limit_y), (0, 255, 255), 1)
                 cv2.putText(frame, "Limit", (10, limit_y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 1)
 
+        else:
+            self.consecutive_failures += 1
+            if self.consecutive_failures % 30 == 0:
+                self.logger.warning(f"No face detected for {self.consecutive_failures} frames.")
         return frame, current_y
 
     def is_slouching(self, current_y: float, threshold_px: float) -> bool:
