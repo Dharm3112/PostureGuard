@@ -75,7 +75,7 @@ class PostureDetector:
 
             # Add to buffer and smooth
             self.y_buffer.append(center_y)
-            current_y = sum(self.y_buffer) / len(self.y_buffer)
+            current_y = self._get_average_y()
 
             # Visualization: Draw the Baseline Line if calibrated
             if self.baseline_y is not None:
@@ -114,10 +114,16 @@ class PostureDetector:
         """
         if len(self.y_buffer) > 0:
             # Average the last few frames to get a stable baseline
-            self.baseline_y = sum(self.y_buffer) / len(self.y_buffer)
+            self.baseline_y = self._get_average_y()
             self.logger.info(f"Calibration successful. Baseline established at Y = {self.baseline_y:.2f}")
             return self.baseline_y
         self.logger.warning("Calibration failed: no face detection history in buffer.")
         return None
 
+
+
+    def _get_average_y(self) -> float:
+        if not self.y_buffer:
+            return 0.0
+        return sum(self.y_buffer) / len(self.y_buffer)
 
