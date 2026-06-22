@@ -25,6 +25,12 @@ class CameraStream:
         self.thread = threading.Thread(target=self._update, daemon=True)
         self.thread.start()
 
+    def __enter__(self) -> 'CameraStream':
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb) -> None:
+        self.release()
+
     def _update(self) -> None:
         while self.running:
             if self.cap.isOpened():
