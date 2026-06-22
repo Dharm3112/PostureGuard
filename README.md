@@ -101,6 +101,7 @@ pip install -r requirements.txt
 
 3. **Custom Settings:**
    Click **"Settings"** to change webcam index, resolution, slouch threshold (default: 40 pixels), time to alert, and refresh delay. Saving settings automatically re-applies configurations and re-initializes the webcam if device index changes.
+   * **Keyboard Shortcuts:** Use `Ctrl+L` to calibrate instantly, or `Ctrl+C` to quit the app from the GUI window focus.
 
 4. **Pause/Resume:**
    Click **"Pause"** to pause posture tracking when stepping away, and click **"Resume"** to restart monitoring.
