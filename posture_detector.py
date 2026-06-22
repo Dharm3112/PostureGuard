@@ -84,6 +84,14 @@ class PostureDetector:
 
         return frame, current_y
 
+    def is_slouching(self, current_y: float, threshold_px: float) -> bool:
+        """
+        Checks if the current face Y coordinate deviates past the baseline by threshold.
+        """
+        if self.baseline_y is None:
+            return False
+        return current_y > (self.baseline_y + threshold_px)
+
     def calibrate(self) -> Optional[float]:
         """
         Establishes the 'Good Posture' baseline by averaging the current Y coordinates in the buffer.
