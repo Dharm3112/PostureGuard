@@ -10,6 +10,9 @@ def get_posture_stats(filepath: str = "posture_history.csv") -> Dict[str, Any]:
     :param filepath: File path to the posture history CSV file.
     :return: Dictionary containing calculated posture statistics.
     """
+    from logger_config import setup_logger
+    logger = setup_logger()
+    logger.debug(f"Calculating posture stats for file: {filepath}")
     stats = {
         "total_records": 0,
         "good_count": 0,
