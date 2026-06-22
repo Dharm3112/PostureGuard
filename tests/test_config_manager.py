@@ -64,6 +64,20 @@ class TestConfigManager(unittest.TestCase):
             data = json.load(f)
         self.assertEqual(data["camera_index"], 2)
 
+    def test_validate_config_bounds(self) -> None:
+        """Verifies config validation logic accepts standard settings and rejects bad settings."""
+        manager = ConfigManager()
+        self.assertTrue(manager.validate_config())
+        
+        # Test invalid threshold
+        manager.set(ConfigManager.SLOUCH_THRESHOLD, 1)
+        self.assertFalse(manager.validate_config())
+        manager.set(ConfigManager.SLOUCH_THRESHOLD, 40)
+        
+        # Test invalid width
+        manager.set(ConfigManager.CAMERA_WIDTH, 99999)
+        self.assertFalse(manager.validate_config())
+
     def test_reset_to_defaults(self) -> None:
         """Verifies config resetting capability."""
         manager = ConfigManager()
