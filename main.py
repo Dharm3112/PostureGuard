@@ -290,6 +290,10 @@ class PostureApp:
         if self.running:
             self.window.after(self.frame_delay_ms, self.update)
 
+    def set_tooltip(self, widget: tk.Widget, text: str) -> None:
+        """Helper to bind hover information to a specific widget."""
+        widget.bind("<Enter>", lambda e: widget.config(caption=text) if hasattr(widget, 'caption') else None)
+
     def close_app(self) -> None:
         """
         Stops the application update loop, releases resources, and closes the window.
