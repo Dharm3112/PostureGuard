@@ -92,6 +92,14 @@ class PostureDetector:
             return False
         return current_y > (self.baseline_y + threshold_px)
 
+    @property
+    def has_baseline(self) -> bool:
+        return self.baseline_y is not None
+
+    @property
+    def current_buffer_size(self) -> int:
+        return len(self.y_buffer)
+
     def calibrate(self) -> Optional[float]:
         """
         Establishes the 'Good Posture' baseline by averaging the current Y coordinates in the buffer.
