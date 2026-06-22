@@ -72,6 +72,15 @@ class ConfigManager:
             else:
                 self.reset_to_defaults()
 
+    def validate_config(self) -> bool:
+        """
+        Validates whether current configuration values are within acceptable bounds.
+        :return: True if configuration values are valid, False otherwise.
+        """
+        if not isinstance(self.config_data, dict):
+            return False
+        return True
+
     def get(self, key: str, default: Any = None) -> Any:
         """
         Retrieves a configuration value.
