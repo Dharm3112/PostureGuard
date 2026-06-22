@@ -171,6 +171,9 @@ class PostureApp:
         self.btn_quit.pack(side=tk.LEFT, padx=8)
 
         self.monitoring_active: bool = True
+        
+        # Bind Ctrl+C to clean exit
+        self.window.bind("<Control-c>", lambda event: self.close_app())
 
         self.status_label: Label = Label(
             window, text="Status: Not Calibrated", font=("Segoe UI", 12, "bold"),
