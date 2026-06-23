@@ -36,6 +36,7 @@ We use Python's built-in `unittest` framework. All new logic, config loaders, an
   ```bash
   python -m unittest discover -s tests
   ```
+- Make sure to review code coverage metrics regularly to ensure critical boundaries remain verified.
 
 ## 📝 Commit Message Guidelines
 
