@@ -33,13 +33,17 @@ class CameraStream:
         self.release()
 
     def _update(self) -> None:
-        while self.running:
-            if self.cap.isOpened():
-                ret, frame = self.cap.read()
-                if ret:
-                    self.ret = ret
-                    self.frame = frame
-            time.sleep(0.01)
+        try:
+            while self.running:
+                if self.cap.isOpened():
+                    ret, frame = self.cap.read()
+                    if ret:
+                        self.ret = ret
+                        self.frame = frame
+                time.sleep(0.01)
+        except Exception as e:
+            # Silence logging thread error
+            pass
 
     def read(self):
         return self.ret, self.frame
