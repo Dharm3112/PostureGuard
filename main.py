@@ -192,6 +192,11 @@ class PostureApp:
         self.btn_quit.pack(side=tk.LEFT, padx=8)
 
         self.monitoring_active: bool = True
+        self.bind_hover_highlight(self.btn_calibrate, "#89dceb", self.success_color)
+        self.bind_hover_highlight(self.btn_pause, "#b4befe", self.accent_color)
+        self.bind_hover_highlight(self.btn_settings, "#74c7ec", self.accent_color)
+        self.bind_hover_highlight(self.btn_stats, "#b4befe", self.accent_color)
+        self.bind_hover_highlight(self.btn_quit, "#f38ba8", self.danger_color)
         
         # Bind Ctrl+C to clean exit
         self.window.bind("<Control-c>", lambda event: self.close_app())
@@ -320,6 +325,11 @@ class PostureApp:
     def set_tooltip(self, widget: tk.Widget, text: str) -> None:
         """Helper to bind hover information to a specific widget."""
         widget.bind("<Enter>", lambda e: widget.config(caption=text) if hasattr(widget, 'caption') else None)
+
+    def bind_hover_highlight(self, button: tk.Button, hover_bg: str, normal_bg: str) -> None:
+        """Applies visual button highlights on hover transitions."""
+        button.bind("<Enter>", lambda e: button.config(bg=hover_bg))
+        button.bind("<Leave>", lambda e: button.config(bg=normal_bg))
 
     def close_app(self) -> None:
         """
