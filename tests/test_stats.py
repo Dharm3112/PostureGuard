@@ -59,6 +59,16 @@ class TestStats(unittest.TestCase):
         stats = get_posture_stats(self.filename)
         self.assertEqual(stats["total_records"], 0)
 
+    def test_out_of_bounds_date_filtering(self) -> None:
+        """Verifies out of bounds inputs filters correctly."""
+        with open(self.filename, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["timestamp", "deviation_px", "state"])
+            writer.writerow(["2026-06-22 12:00:00", "10", "Good"])
+            
+        stats = get_posture_stats(self.filename, start_date="2027-01-01 00:00:00")
+        self.assertEqual(stats["total_records"], 0)
+
     def test_get_posture_stats_valid(self) -> None:
         with open(self.filename, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
