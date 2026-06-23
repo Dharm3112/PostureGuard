@@ -59,6 +59,8 @@ class PostureApp:
     FONT_MEDIUM = ("Segoe UI", 10, "bold")
     FONT_NORMAL = ("Segoe UI", 10)
     FONT_SMALL = ("Segoe UI", 8)
+    PAD_X = 15
+    PAD_Y = 10
     def __init__(self, window: tk.Tk, window_title: str) -> None:
         """
         Initializes the PostureApp GUI window, camera stream, and detector.
@@ -152,7 +154,7 @@ class PostureApp:
 
         # UI Setup
         self.top_frame: tk.Frame = tk.Frame(window, bg=self.bg_color)
-        self.top_frame.pack(pady=15)
+        self.top_frame.pack(pady=self.PAD_Y)
 
         self.btn_calibrate: Button = Button(
             self.top_frame, text="📸 Sit Straight & Calibrate", width=22, command=self.calibrate,
@@ -212,7 +214,7 @@ class PostureApp:
 
         # A beautiful frame to hold the webcam feed with a border
         self.video_frame: tk.Frame = tk.Frame(window, bg="#313244", bd=2, relief="groove")
-        self.video_frame.pack(padx=15, pady=10)
+        self.video_frame.pack(padx=self.PAD_X, pady=10)
         
         # Add simple status label bar at the bottom
         self.status_bar: Label = Label(window, text="Camera Stream: Active", bd=1, relief=tk.SUNKEN, anchor=tk.W, bg=self.bg_color, fg=self.fg_color, font=self.FONT_SMALL)
@@ -384,28 +386,28 @@ class PostureApp:
         # Labels & Entry fields
         # Threshold
         lbl_threshold = Label(settings_win, text="Slouch Threshold (px):", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
-        lbl_threshold.grid(row=0, column=0, padx=15, pady=10, sticky="w")
+        lbl_threshold.grid(row=0, column=0, padx=self.PAD_X, pady=10, sticky="w")
         self.entry_threshold = tk.Entry(settings_win, font=self.FONT_NORMAL, bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
         self.entry_threshold.insert(0, str(self.slouch_threshold))
-        self.entry_threshold.grid(row=0, column=1, padx=15, pady=10)
+        self.entry_threshold.grid(row=0, column=1, padx=self.PAD_X, pady=10)
 
         # Time to Alert
         lbl_alert_time = Label(settings_win, text="Time to Alert (frames):", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
-        lbl_alert_time.grid(row=1, column=0, padx=15, pady=10, sticky="w")
+        lbl_alert_time.grid(row=1, column=0, padx=self.PAD_X, pady=10, sticky="w")
         self.entry_alert_time = tk.Entry(settings_win, font=self.FONT_NORMAL, bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
         self.entry_alert_time.insert(0, str(self.TIME_TO_ALERT))
-        self.entry_alert_time.grid(row=1, column=1, padx=15, pady=10)
+        self.entry_alert_time.grid(row=1, column=1, padx=self.PAD_X, pady=10)
 
         # Frame Delay
         lbl_delay = Label(settings_win, text="Frame Delay (ms):", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
-        lbl_delay.grid(row=2, column=0, padx=15, pady=10, sticky="w")
+        lbl_delay.grid(row=2, column=0, padx=self.PAD_X, pady=10, sticky="w")
         self.entry_delay = tk.Entry(settings_win, font=self.FONT_NORMAL, bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
         self.entry_delay.insert(0, str(self.frame_delay_ms))
-        self.entry_delay.grid(row=2, column=1, padx=15, pady=10)
+        self.entry_delay.grid(row=2, column=1, padx=self.PAD_X, pady=10)
 
         # Camera Index selection (Dropdown OptionMenu)
         lbl_camera = Label(settings_win, text="Webcam Device:", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
-        lbl_camera.grid(row=3, column=0, padx=15, pady=10, sticky="w")
+        lbl_camera.grid(row=3, column=0, padx=self.PAD_X, pady=10, sticky="w")
         
         self.camera_choices = ["0", "1", "2", "3"]
         self.camera_var = tk.StringVar(settings_win)
@@ -419,11 +421,11 @@ class PostureApp:
             highlightthickness=0, bd=0
         )
         self.opt_camera["menu"].config(bg="#313244", fg=self.fg_color)
-        self.opt_camera.grid(row=3, column=1, padx=15, pady=10, sticky="ew")
+        self.opt_camera.grid(row=3, column=1, padx=self.PAD_X, pady=10, sticky="ew")
 
         # Resolution selection (Dropdown OptionMenu)
         lbl_resolution = Label(settings_win, text="Video Resolution:", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
-        lbl_resolution.grid(row=4, column=0, padx=15, pady=10, sticky="w")
+        lbl_resolution.grid(row=4, column=0, padx=self.PAD_X, pady=10, sticky="w")
         
         self.resolution_choices = ["320x240", "640x480", "1280x720"]
         self.resolution_var = tk.StringVar(settings_win)
@@ -438,11 +440,11 @@ class PostureApp:
             highlightthickness=0, bd=0
         )
         self.opt_resolution["menu"].config(bg="#313244", fg=self.fg_color)
-        self.opt_resolution.grid(row=4, column=1, padx=15, pady=10, sticky="ew")
+        self.opt_resolution.grid(row=4, column=1, padx=self.PAD_X, pady=10, sticky="ew")
 
         # Buttons Frame
         btn_frame = tk.Frame(settings_win, bg=self.bg_color)
-        btn_frame.grid(row=5, column=0, columnspan=2, pady=15)
+        btn_frame.grid(row=5, column=0, columnspan=2, pady=self.PAD_Y)
 
         btn_save = Button(
             btn_frame, text="💾 Save", width=10, command=lambda: self.save_settings_from_ui(settings_win),
@@ -543,9 +545,9 @@ class PostureApp:
 
         # Design a clean layout
         lbl_title = Label(stats_win, text="📊 Posture History Overview", font=self.FONT_LARGE, bg=self.bg_color, fg=self.accent_color)
-        lbl_title.pack(pady=15, padx=20)
+        lbl_title.pack(pady=self.PAD_Y, padx=20)
 
-        frame = tk.Frame(stats_win, bg="#313244", padx=15, pady=15, bd=1, relief="solid")
+        frame = tk.Frame(stats_win, bg="#313244", padx=self.PAD_X, pady=self.PAD_Y, bd=1, relief="solid")
         frame.pack(padx=20, pady=10, fill="both", expand=True)
 
         details = [
@@ -573,7 +575,7 @@ class PostureApp:
             stats_win, text="Close", width=12, command=stats_win.destroy,
             bg=self.btn_bg, fg=self.fg_color, font=self.FONT_MEDIUM, relief="flat", cursor="hand2"
         )
-        btn_close.pack(pady=15)
+        btn_close.pack(pady=self.PAD_Y)
 
 
 def main() -> None:
