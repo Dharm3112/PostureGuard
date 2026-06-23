@@ -505,6 +505,8 @@ class PostureApp:
         # Camera Resolution change dynamic update
         try:
             res_str = self.resolution_var.get()
+            if 'x' not in res_str:
+                raise ValueError("Invalid resolution format selection.")
             w_str, h_str = res_str.split('x')
             camera_width = int(w_str)
             camera_height = int(h_str)
