@@ -3,7 +3,7 @@ from logging.handlers import RotatingFileHandler
 from typing import Optional
 
 
-def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO, log_format: Optional[str] = None) -> logging.Logger:
+def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO, log_format: Optional[str] = None, encoding: str = "utf-8") -> logging.Logger:
     """
     Configures and returns a logger that prints to the console and writes to a rotating log file.
 
@@ -29,7 +29,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
 
     # Rotating file handler
     try:
-        file_handler = RotatingFileHandler(log_file, maxBytes=1024 * 1024, backupCount=3, encoding='utf-8')
+        file_handler = RotatingFileHandler(log_file, maxBytes=1024 * 1024, backupCount=3, encoding=encoding)
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
     except (OSError, PermissionError) as e:
