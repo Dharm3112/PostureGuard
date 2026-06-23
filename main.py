@@ -551,7 +551,14 @@ class PostureApp:
         from stats import get_posture_stats
 
         self.logger.info("Opening posture statistics window.")
-        stats = get_posture_stats("posture_history.csv")
+        try:
+            stats = get_posture_stats("posture_history.csv")
+        except Exception as e:
+            self.logger.error(f"Error loading stats file: {e}")
+            stats = {
+                "total_records": 0, "good_count": 0, "slouch_count": 0,
+                "good_percent": 0.0, "slouch_percent": 0.0, "avg_deviation": 0.0
+            }
 
         stats_win = tk.Toplevel(self.window)
         stats_win.title("Posture History Statistics")
