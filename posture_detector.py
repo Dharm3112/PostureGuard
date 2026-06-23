@@ -118,6 +118,7 @@ class PostureDetector:
         :return: The calibrated baseline Y-coordinate, or None if no face data exists in the buffer.
         """
         if len(self.y_buffer) > 0:
+            self.consecutive_failures = 0
             # Average the last few frames to get a stable baseline
             self.baseline_y = self._get_average_y()
             self.logger.info(f"Calibration successful. Baseline established at Y = {self.baseline_y:.2f}")
