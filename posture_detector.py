@@ -23,8 +23,8 @@ class PostureDetector:
         self.logger.info("Initializing PostureDetector...")
 
         # Load the pre-trained face detector from OpenCV
-        self.face_cascade: cv2.CascadeClassifier = cv2.CascadeClassifier(self.CASCADE_PATH)
-        if self.face_cascade.empty():
+        self.face_cascade: cv2.CascadeClassifier = cv2.CascadeClassifier()
+        if not self.face_cascade.load(self.CASCADE_PATH) or self.face_cascade.empty():
             self.logger.error("Failed to load OpenCV face Haar Cascade XML file.")
             raise ModelLoadError()
         else:
