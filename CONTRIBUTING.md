@@ -38,6 +38,11 @@ We use Python's built-in `unittest` framework. All new logic, config loaders, an
   ```
 - Make sure to review code coverage metrics regularly to ensure critical boundaries remain verified.
 
+## 📐 Code Quality Metrics
+- Keep functions length under 100 lines.
+- Ensure all parameters have type hints.
+- Every module must describe its design target in module header.
+
 ## 📝 Commit Message Guidelines
 
 Keep commit messages concise, imperative, and structured:
