@@ -103,6 +103,12 @@ class ConfigManager:
             return False
         if not (1 <= frame_delay <= 1000) or not (5 <= alert_frames <= 2000):
             return False
+        log_bytes = self.config_data.get("log_max_bytes", 1048576)
+        log_backups = self.config_data.get("log_backup_count", 3)
+        if not isinstance(log_bytes, int) or not isinstance(log_backups, int):
+            return False
+        if not (1024 <= log_bytes <= 104857600) or not (0 <= log_backups <= 20):
+            return False
         return True
 
     def get(self, key: str, default: Any = None) -> Any:
