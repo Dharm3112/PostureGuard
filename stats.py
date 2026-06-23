@@ -51,9 +51,9 @@ def get_posture_stats(filepath: str = "posture_history.csv") -> Dict[str, Any]:
 
     total = stats["total_records"]
     if total > 0:
-        stats["good_percent"] = (stats["good_count"] / total) * 100.0
-        stats["slouch_percent"] = (stats["slouch_count"] / total) * 100.0
-        stats["avg_deviation"] = total_deviation / total
+        stats["good_percent"] = round((stats["good_count"] / total) * 100.0, 2)
+        stats["slouch_percent"] = round((stats["slouch_count"] / total) * 100.0, 2)
+        stats["avg_deviation"] = round(total_deviation / total, 2)
 
     return stats
 
