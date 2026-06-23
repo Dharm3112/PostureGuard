@@ -54,6 +54,11 @@ class PostureApp:
     Main desktop GUI application for PostureGuard.
     Handles the Tkinter window layout, video frame capture, event loop, and alert logic.
     """
+    FONT_FAMILY = "Segoe UI"
+    FONT_LARGE = ("Segoe UI", 12, "bold")
+    FONT_MEDIUM = ("Segoe UI", 10, "bold")
+    FONT_NORMAL = ("Segoe UI", 10)
+    FONT_SMALL = ("Segoe UI", 8)
     def __init__(self, window: tk.Tk, window_title: str) -> None:
         """
         Initializes the PostureApp GUI window, camera stream, and detector.
@@ -151,35 +156,35 @@ class PostureApp:
 
         self.btn_calibrate: Button = Button(
             self.top_frame, text="📸 Sit Straight & Calibrate", width=22, command=self.calibrate,
-            bg=self.success_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
+            bg=self.success_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat",
             activebackground="#89dceb", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
         self.btn_calibrate.pack(side=tk.LEFT, padx=8)
 
         self.btn_pause: Button = Button(
             self.top_frame, text="⏸️ Pause", width=10, command=self.toggle_monitoring,
-            bg=self.accent_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
+            bg=self.accent_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat",
             activebackground="#b4befe", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
         self.btn_pause.pack(side=tk.LEFT, padx=8)
 
         self.btn_settings: Button = Button(
             self.top_frame, text="⚙️ Settings", width=12, command=self.open_settings,
-            bg=self.accent_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
+            bg=self.accent_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat",
             activebackground="#74c7ec", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
         self.btn_settings.pack(side=tk.LEFT, padx=8)
 
         self.btn_stats: Button = Button(
             self.top_frame, text="📊 Stats", width=10, command=self.show_statistics,
-            bg=self.accent_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
+            bg=self.accent_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat",
             activebackground="#b4befe", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
         self.btn_stats.pack(side=tk.LEFT, padx=8)
 
         self.btn_quit: Button = Button(
             self.top_frame, text="❌ Quit", width=10, command=self.close_app,
-            bg=self.danger_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat",
+            bg=self.danger_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat",
             activebackground="#f38ba8", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
         self.btn_quit.pack(side=tk.LEFT, padx=8)
@@ -192,7 +197,7 @@ class PostureApp:
         self.window.bind("<Control-l>", lambda event: self.calibrate())
 
         self.status_label: Label = Label(
-            window, text="Status: Not Calibrated", font=("Segoe UI", 12, "bold"),
+            window, text="Status: Not Calibrated", font=self.FONT_LARGE,
             bg=self.bg_color, fg=self.accent_color
         )
         self.status_label.pack(pady=10)
@@ -210,7 +215,7 @@ class PostureApp:
         self.video_frame.pack(padx=15, pady=10)
         
         # Add simple status label bar at the bottom
-        self.status_bar: Label = Label(window, text="Camera Stream: Active", bd=1, relief=tk.SUNKEN, anchor=tk.W, bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 8))
+        self.status_bar: Label = Label(window, text="Camera Stream: Active", bd=1, relief=tk.SUNKEN, anchor=tk.W, bg=self.bg_color, fg=self.fg_color, font=self.FONT_SMALL)
         self.status_bar.pack(side=tk.BOTTOM, fill=tk.X)
 
         self.video_label: Label = Label(self.video_frame, bg="#11111b")
@@ -378,28 +383,28 @@ class PostureApp:
 
         # Labels & Entry fields
         # Threshold
-        lbl_threshold = Label(settings_win, text="Slouch Threshold (px):", bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 10))
+        lbl_threshold = Label(settings_win, text="Slouch Threshold (px):", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
         lbl_threshold.grid(row=0, column=0, padx=15, pady=10, sticky="w")
-        self.entry_threshold = tk.Entry(settings_win, font=("Segoe UI", 10), bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
+        self.entry_threshold = tk.Entry(settings_win, font=self.FONT_NORMAL, bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
         self.entry_threshold.insert(0, str(self.slouch_threshold))
         self.entry_threshold.grid(row=0, column=1, padx=15, pady=10)
 
         # Time to Alert
-        lbl_alert_time = Label(settings_win, text="Time to Alert (frames):", bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 10))
+        lbl_alert_time = Label(settings_win, text="Time to Alert (frames):", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
         lbl_alert_time.grid(row=1, column=0, padx=15, pady=10, sticky="w")
-        self.entry_alert_time = tk.Entry(settings_win, font=("Segoe UI", 10), bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
+        self.entry_alert_time = tk.Entry(settings_win, font=self.FONT_NORMAL, bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
         self.entry_alert_time.insert(0, str(self.TIME_TO_ALERT))
         self.entry_alert_time.grid(row=1, column=1, padx=15, pady=10)
 
         # Frame Delay
-        lbl_delay = Label(settings_win, text="Frame Delay (ms):", bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 10))
+        lbl_delay = Label(settings_win, text="Frame Delay (ms):", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
         lbl_delay.grid(row=2, column=0, padx=15, pady=10, sticky="w")
-        self.entry_delay = tk.Entry(settings_win, font=("Segoe UI", 10), bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
+        self.entry_delay = tk.Entry(settings_win, font=self.FONT_NORMAL, bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
         self.entry_delay.insert(0, str(self.frame_delay_ms))
         self.entry_delay.grid(row=2, column=1, padx=15, pady=10)
 
         # Camera Index selection (Dropdown OptionMenu)
-        lbl_camera = Label(settings_win, text="Webcam Device:", bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 10))
+        lbl_camera = Label(settings_win, text="Webcam Device:", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
         lbl_camera.grid(row=3, column=0, padx=15, pady=10, sticky="w")
         
         self.camera_choices = ["0", "1", "2", "3"]
@@ -417,7 +422,7 @@ class PostureApp:
         self.opt_camera.grid(row=3, column=1, padx=15, pady=10, sticky="ew")
 
         # Resolution selection (Dropdown OptionMenu)
-        lbl_resolution = Label(settings_win, text="Video Resolution:", bg=self.bg_color, fg=self.fg_color, font=("Segoe UI", 10))
+        lbl_resolution = Label(settings_win, text="Video Resolution:", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
         lbl_resolution.grid(row=4, column=0, padx=15, pady=10, sticky="w")
         
         self.resolution_choices = ["320x240", "640x480", "1280x720"]
@@ -441,13 +446,13 @@ class PostureApp:
 
         btn_save = Button(
             btn_frame, text="💾 Save", width=10, command=lambda: self.save_settings_from_ui(settings_win),
-            bg=self.success_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat", cursor="hand2"
+            bg=self.success_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat", cursor="hand2"
         )
         btn_save.pack(side=tk.LEFT, padx=10)
 
         btn_cancel = Button(
             btn_frame, text="❌ Cancel", width=10, command=settings_win.destroy,
-            bg=self.danger_color, fg=self.btn_fg, font=("Segoe UI", 10, "bold"), relief="flat", cursor="hand2"
+            bg=self.danger_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat", cursor="hand2"
         )
         btn_cancel.pack(side=tk.LEFT, padx=10)
 
@@ -537,7 +542,7 @@ class PostureApp:
         stats_win.grab_set()
 
         # Design a clean layout
-        lbl_title = Label(stats_win, text="📊 Posture History Overview", font=("Segoe UI", 12, "bold"), bg=self.bg_color, fg=self.accent_color)
+        lbl_title = Label(stats_win, text="📊 Posture History Overview", font=self.FONT_LARGE, bg=self.bg_color, fg=self.accent_color)
         lbl_title.pack(pady=15, padx=20)
 
         frame = tk.Frame(stats_win, bg="#313244", padx=15, pady=15, bd=1, relief="solid")
@@ -553,7 +558,7 @@ class PostureApp:
         ]
 
         for i, (label_text, val_text) in enumerate(details):
-            lbl_l = Label(frame, text=label_text, font=("Segoe UI", 10), bg="#313244", fg=self.fg_color)
+            lbl_l = Label(frame, text=label_text, font=self.FONT_NORMAL, bg="#313244", fg=self.fg_color)
             lbl_l.grid(row=i, column=0, sticky="w", pady=5, padx=5)
 
             # Highlight values
@@ -561,12 +566,12 @@ class PostureApp:
             if "%" in val_text and "Slouching" in label_text:
                 color = self.danger_color
 
-            lbl_r = Label(frame, text=val_text, font=("Segoe UI", 10, "bold"), bg="#313244", fg=color)
+            lbl_r = Label(frame, text=val_text, font=self.FONT_MEDIUM, bg="#313244", fg=color)
             lbl_r.grid(row=i, column=1, sticky="e", pady=5, padx=5)
 
         btn_close = Button(
             stats_win, text="Close", width=12, command=stats_win.destroy,
-            bg=self.btn_bg, fg=self.fg_color, font=("Segoe UI", 10, "bold"), relief="flat", cursor="hand2"
+            bg=self.btn_bg, fg=self.fg_color, font=self.FONT_MEDIUM, relief="flat", cursor="hand2"
         )
         btn_close.pack(pady=15)
 
