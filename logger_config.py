@@ -22,8 +22,9 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
     fmt_str = log_format or '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
     formatter = logging.Formatter(fmt_str)
 
-    # Console output handler
-    console_handler = logging.StreamHandler()
+    # Console output handler (redirecting errors/warnings to stderr)
+    import sys
+    console_handler = logging.StreamHandler(sys.stderr)
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
 
