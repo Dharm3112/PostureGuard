@@ -27,3 +27,7 @@ class ModelLoadError(PostureGuardException):
 class CalibrationError(PostureGuardException):
     """Exception raised when a calibration request is invalid or baseline cannot be established."""
     pass
+
+class LoggingConfigurationError(PostureGuardException):
+    """Exception raised when logging parameters are misconfigured or file write fails."""
+    pass
