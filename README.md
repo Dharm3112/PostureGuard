@@ -13,6 +13,7 @@ It acts as a private "digital health coach" that runs in the background. By usin
 * **Real-Time Monitoring:** Tracks vertical head movement at 30 FPS using local OpenCV face detection.
 * **Multithreaded Camera Stream:** Utilizes a separate background grabber thread (`CameraStream`) to eliminate GUI stutter and latency.
 * **Persistent Calibration:** Remembers your ideal calibration baseline coordinates between application runs so you only calibrate once.
+* **Flexible Logs Management:** Custom rotation limit configurations keep log sizes in control automatically.
 * **Dynamic Settings Panel:** Configure webcam device index, video resolution, slouch pixels threshold, system frame timing, and refresh delays directly inside the GUI at runtime.
 * **Privacy Focused:** All processing happens locally on your CPU. No images or video are ever sent to the cloud.
 * **Smart Alerts:**
