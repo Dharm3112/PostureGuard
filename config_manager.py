@@ -135,14 +135,18 @@ class ConfigManager:
             from logger_config import setup_logger
             setup_logger().error("Failed to write config data to local file.")
 
-    def reset_to_defaults(self) -> None:
+    def reset_to_defaults(self) -> bool:
         """
         Resets configurations to the default template.
         """
-        if os.path.exists(self.DEFAULT_CONFIG_FILE):
-            shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
-            self.load()
-        else:
-            self.config_data = self.DEFAULT_SETTINGS.copy()
-            self._save_to_file()
+        try:
+            if os.path.exists(self.DEFAULT_CONFIG_FILE):
+                shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
+                self.load()
+            else:
+                self.config_data = self.DEFAULT_SETTINGS.copy()
+                self._save_to_file()
+            return True
+        except Exception:
+            return False
 
