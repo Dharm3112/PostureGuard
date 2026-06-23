@@ -80,6 +80,8 @@ class PostureApp:
         # Setup logging
         log_level_val = self.config_manager.get("log_level", "INFO")
         log_level = getattr(sys.modules['logging'], log_level_val, sys.modules['logging'].INFO) if 'logging' in sys.modules else 20
+        # Load rotation configs from manager dynamically
+        log_bytes = self.config_manager.get("log_max_bytes", 1048576)
         self.logger = setup_logger(level=log_level)
         self.logger.info("Starting PostureGuard Application...")
 
