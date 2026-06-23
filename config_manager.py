@@ -35,7 +35,9 @@ class ConfigManager:
         "save_history": True,
         "saved_baseline_y": None,
         "scale_factor": 1.1,
-        "min_neighbors": 5
+        "min_neighbors": 5,
+        "log_max_bytes": 1048576,
+        "log_backup_count": 3
     }
 
     def __init__(self) -> None:
