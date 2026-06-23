@@ -74,6 +74,13 @@ class TestConfigManager(unittest.TestCase):
         manager.set("log_backup_count", 50)  # Max is 20
         self.assertFalse(manager.validate_config())
 
+    def test_dict_initialization_overload(self) -> None:
+        """Checks constructor logic when initial config dictionary is provided."""
+        custom_config = {"camera_index": 7, "slouch_threshold_px": 80}
+        manager = ConfigManager(initial_config=custom_config)
+        self.assertEqual(manager.get("camera_index"), 7)
+        self.assertEqual(manager.get("slouch_threshold_px"), 80)
+
     def test_validate_config_bounds(self) -> None:
         """Verifies config validation logic accepts standard settings and rejects bad settings."""
         manager = ConfigManager()
