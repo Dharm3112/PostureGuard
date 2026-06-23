@@ -21,6 +21,18 @@ class TestLoggerConfig(unittest.TestCase):
                 logger.removeHandler(handler)
         if os.path.exists(test_log):
             os.remove(test_log)
+    def test_logger_encoding(self) -> None:
+        """Tests logger file encoding config settings."""
+        test_log = "test_encoding.log"
+        logger = setup_logger(test_log, logging.DEBUG, encoding="ascii")
+        for handler in logger.handlers:
+            if isinstance(handler, logging.FileHandler):
+                self.assertEqual(handler.encoding, "ascii")
+                handler.close()
+                logger.removeHandler(handler)
+        if os.path.exists(test_log):
+            os.remove(test_log)
+
     def test_logger_setup(self) -> None:
         test_log = "test_setup.log"
         if os.path.exists(test_log):
