@@ -64,6 +64,16 @@ class TestConfigManager(unittest.TestCase):
             data = json.load(f)
         self.assertEqual(data["camera_index"], 2)
 
+    def test_log_rotation_validation(self) -> None:
+        """Verifies validation catches invalid logging configuration values."""
+        manager = ConfigManager()
+        manager.set("log_max_bytes", 500)  # Min is 1024
+        self.assertFalse(manager.validate_config())
+        
+        manager.set("log_max_bytes", 2048)
+        manager.set("log_backup_count", 50)  # Max is 20
+        self.assertFalse(manager.validate_config())
+
     def test_validate_config_bounds(self) -> None:
         """Verifies config validation logic accepts standard settings and rejects bad settings."""
         manager = ConfigManager()
