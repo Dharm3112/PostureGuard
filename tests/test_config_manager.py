@@ -109,7 +109,8 @@ class TestConfigManager(unittest.TestCase):
         manager = ConfigManager()
         manager.set("camera_index", 5)
         self.assertEqual(manager.get("camera_index"), 5)
-        manager.reset_to_defaults()
+        status = manager.reset_to_defaults()
+        self.assertTrue(status)
         self.assertEqual(manager.get("camera_index"), 99)
 
 
