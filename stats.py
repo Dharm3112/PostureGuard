@@ -3,7 +3,7 @@ import os
 from typing import Dict, Any
 
 
-def get_posture_stats(filepath: str = "posture_history.csv") -> Dict[str, Any]:
+def get_posture_stats(filepath: str = "posture_history.csv", start_date: str = None, end_date: str = None) -> Dict[str, Any]:
     """
     Parses the posture history CSV file and returns aggregate statistics.
 
