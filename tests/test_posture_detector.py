@@ -50,6 +50,12 @@ class TestPostureDetector(unittest.TestCase):
         # Average of 20, 30, 40, 50, 60 = 40.0
         self.assertEqual(self.detector._get_average_y(), 40.0)
 
+    def test_empty_frame_handling(self) -> None:
+        """Verifies process_frame handles empty/invalid images gracefully."""
+        empty_frame = np.zeros((0, 0, 0), dtype=np.uint8)
+        frame, current_y = self.detector.process_frame(empty_frame)
+        self.assertIsNone(current_y)
+
     def test_process_frame_no_face(self) -> None:
         """Checks frame processing does not crash and returns None when no face is present."""
         frame = np.zeros((100, 100, 3), dtype=np.uint8)
