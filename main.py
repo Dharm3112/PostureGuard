@@ -201,7 +201,7 @@ class PostureApp:
         self.bind_hover_highlight(self.btn_quit, "#f38ba8", self.danger_color)
         
         # Bind Ctrl+C to clean exit
-        self.window.bind("<Control-c>", lambda event: self.close_app())
+        self.window.bind("<Control-c>", lambda event: self.close_app(confirm=False))
         # Bind Ctrl+L to calibrate
         self.window.bind("<Control-l>", lambda event: self.calibrate())
 
@@ -333,10 +333,13 @@ class PostureApp:
         button.bind("<Enter>", lambda e: button.config(bg=hover_bg))
         button.bind("<Leave>", lambda e: button.config(bg=normal_bg))
 
-    def close_app(self) -> None:
+    def close_app(self, confirm: bool = True) -> None:
         """
         Stops the application update loop, releases resources, and closes the window.
         """
+        if confirm:
+            if not messagebox.askokcancel("Quit PostureGuard", "Are you sure you want to exit?"):
+                return
         self.logger.info("Closing application...")
         self.running = False
         self.stream.release()
