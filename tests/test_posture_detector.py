@@ -10,6 +10,12 @@ class TestPostureDetector(unittest.TestCase):
     def setUp(self) -> None:
         self.detector = PostureDetector(buffer_size=5)
 
+    def test_is_calibrated(self) -> None:
+        """Verifies is_calibrated behavior."""
+        self.assertFalse(self.detector.is_calibrated)
+        self.detector.baseline_y = 150.0
+        self.assertTrue(self.detector.is_calibrated)
+
     def test_initialization(self) -> None:
         """Verifies buffer limits and baseline Y defaults on setup."""
         self.assertEqual(self.detector.y_buffer.maxlen, 5)
