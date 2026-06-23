@@ -56,3 +56,13 @@ def get_posture_stats(filepath: str = "posture_history.csv") -> Dict[str, Any]:
         stats["avg_deviation"] = total_deviation / total
 
     return stats
+
+def reset_statistics_file(filepath: str = "posture_history.csv") -> bool:
+    """Re-creates the history log file with header columns."""
+    try:
+        with open(filepath, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["timestamp", "deviation_px", "state"])
+        return True
+    except OSError:
+        return False
