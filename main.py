@@ -202,6 +202,8 @@ class PostureApp:
             window, text="Status: Not Calibrated", font=self.FONT_LARGE,
             bg=self.bg_color, fg=self.accent_color
         )
+        if not hasattr(self, 'detector') or self.detector.face_cascade.empty():
+            self.status_label.config(text="Status: Classifier Load Warning", fg=self.warning_color)
         self.status_label.pack(pady=10)
 
         # Check for persisted baseline calibration
