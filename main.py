@@ -500,7 +500,7 @@ class PostureApp:
                 self.config_manager.set("camera_index", camera_idx)
         except Exception as e:
             self.logger.error(f"Error switching camera devices: {e}")
-            messagebox.showwarning("Camera Error", f"Could not switch to camera index {self.camera_var.get()}: {e}", parent=settings_win)
+            messagebox.showwarning("Camera Error", f"Warning: Switching to camera index {self.camera_var.get()} failed. Falling back. Detail: {e}", parent=settings_win)
 
         # Camera Resolution change dynamic update
         try:
