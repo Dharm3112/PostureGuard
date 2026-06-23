@@ -41,6 +41,8 @@ class PostureDetector:
         self.baseline_y: Optional[float] = None
 
     def process_frame(self, frame: np.ndarray) -> Tuple[np.ndarray, Optional[float]]:
+        if frame is None or frame.size == 0 or len(frame.shape) < 3:
+            return frame, None
         """
         Detects the user's face in the frame, updates the smoothing buffer, and computes
         the average Y-coordinate of the face center.
