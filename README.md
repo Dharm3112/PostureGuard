@@ -55,6 +55,7 @@ PostureGuard/
 
 * Python 3.10 or higher
 * A webcam
+* Operating System permissions to execute standard GUI frames (Tkinter window bindings)
 
 ### Step 1: Clone or Download
 
