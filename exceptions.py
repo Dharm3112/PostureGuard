@@ -7,6 +7,10 @@ class PostureGuardException(Exception):
         self.message = message
         super().__init__(self.message)
 
+    @property
+    def error_code(self) -> str:
+        return self.__class__.__name__
+
 
 class CameraNotFoundError(PostureGuardException):
     """Exception raised when the configured webcam cannot be initialized or accessed."""
