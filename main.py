@@ -70,6 +70,8 @@ class PostureApp:
         """
         self.window: tk.Tk = window
         self.window.title(window_title)
+        # Position the window in the center of the screen
+        self.window.geometry("700x600")
 
         # Setup logging
         log_level_val = self.config_manager.get("log_level", "INFO")
