@@ -37,3 +37,10 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
         logger.warning(f"Could not initialize file logging handler: {e}. Logging only to standard console output.")
 
     return logger
+
+def get_log_filepath(logger: logging.Logger) -> Optional[str]:
+    """Utility to retrieve path of file handler log file."""
+    for handler in logger.handlers:
+        if isinstance(handler, RotatingFileHandler):
+            return handler.baseFilename
+    return None
