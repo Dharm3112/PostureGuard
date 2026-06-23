@@ -140,6 +140,9 @@ class ConfigManager:
         Resets configurations to the default template.
         """
         try:
+            from logger_config import setup_logger
+            logger = setup_logger()
+            logger.info("Resetting configuration parameters to factory defaults...")
             if os.path.exists(self.DEFAULT_CONFIG_FILE):
                 shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
                 self.load()
