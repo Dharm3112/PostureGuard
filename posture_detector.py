@@ -108,6 +108,11 @@ class PostureDetector:
         return self.baseline_y is not None
 
     @property
+    def buffer_data(self) -> list:
+        """Returns copy of elements in buffer."""
+        return list(self.y_buffer)
+
+    @property
     def has_baseline(self) -> bool:
         return self.baseline_y is not None
 
