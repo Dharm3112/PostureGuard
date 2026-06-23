@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2026-06-23
+
+### Added
+- **Hover Highlights on Buttons:** Enhances UI navigation feedback visual details.
+- **Quit Confirmations Dialogs:** Prevents accidental closures of the app tracker.
+- **Centralized Layout paddings:** Cleaner UI alignment definitions constants.
+- **Log rotation parameter loading:** Dynamic configs load rotation limits parameter bounds checks.
+- **Stats File Reset Capability:** Clear logs instantly without manually searching directory logs.
+
+
 ## [1.1.0] - 2026-06-22
 
 ### Added
