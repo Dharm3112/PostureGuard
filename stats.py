@@ -32,6 +32,11 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: str = N
             for row in reader:
                 if not row or not row.get("timestamp"):
                     continue
+                ts = row.get("timestamp")
+                if start_date and ts < start_date:
+                    continue
+                if end_date and ts > end_date:
+                    continue
                 stats["total_records"] += 1
                 try:
                     dev = int(row.get("deviation_px", 0))
