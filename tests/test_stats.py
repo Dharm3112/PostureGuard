@@ -39,6 +39,19 @@ class TestStats(unittest.TestCase):
         self.assertEqual(stats["good_count"], 1)
         self.assertEqual(stats["avg_deviation"], 25.0) # (0 + 50) / 2
 
+    def test_date_range_filtering(self) -> None:
+        """Tests stats filtering with dates bounds parameters."""
+        with open(self.filename, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["timestamp", "deviation_px", "state"])
+            writer.writerow(["2026-06-22 12:00:00", "10", "Good"])
+            writer.writerow(["2026-06-22 12:05:00", "20", "Good"])
+            writer.writerow(["2026-06-22 12:10:00", "30", "Good"])
+            
+        stats = get_posture_stats(self.filename, start_date="2026-06-22 12:02:00", end_date="2026-06-22 12:08:00")
+        self.assertEqual(stats["total_records"], 1)
+        self.assertEqual(stats["avg_deviation"], 20.0)
+
     def test_get_posture_stats_valid(self) -> None:
         with open(self.filename, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
