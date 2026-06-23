@@ -21,6 +21,22 @@ class ConfigManager:
     CAMERA_HEIGHT = "camera_height"
     SAVE_HISTORY = "save_history"
     SAVED_BASELINE_Y = "saved_baseline_y"
+    
+    SCALE_FACTOR = "scale_factor"
+    MIN_NEIGHBORS = "min_neighbors"
+    
+    DEFAULT_SETTINGS = {
+        "camera_index": 0,
+        "slouch_threshold_px": 40,
+        "time_to_alert_frames": 50,
+        "frame_delay_ms": 15,
+        "camera_width": 640,
+        "camera_height": 480,
+        "save_history": True,
+        "saved_baseline_y": None,
+        "scale_factor": 1.1,
+        "min_neighbors": 5
+    }
 
     def __init__(self) -> None:
         """
@@ -40,18 +56,7 @@ class ConfigManager:
                 shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
             else:
                 # Fallback internal defaults if config.json.default is also missing
-                self.config_data = {
-                    "camera_index": 0,
-                    "slouch_threshold_px": 40,
-                    "time_to_alert_frames": 50,
-                    "frame_delay_ms": 15,
-                    "camera_width": 640,
-                    "camera_height": 480,
-                    "save_history": True,
-                    "saved_baseline_y": None,
-                    "scale_factor": 1.1,
-                    "min_neighbors": 5
-                }
+                self.config_data = self.DEFAULT_SETTINGS.copy()
                 self._save_to_file()
 
     def load(self) -> None:
@@ -130,15 +135,6 @@ class ConfigManager:
             shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
             self.load()
         else:
-            self.config_data = {
-                "camera_index": 0,
-                "slouch_threshold_px": 40,
-                "time_to_alert_frames": 50,
-                "frame_delay_ms": 15,
-                "camera_width": 640,
-                "camera_height": 480,
-                "save_history": True,
-                "saved_baseline_y": None
-            }
+            self.config_data = self.DEFAULT_SETTINGS.copy()
             self._save_to_file()
 
