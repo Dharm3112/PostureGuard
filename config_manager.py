@@ -40,14 +40,17 @@ class ConfigManager:
         "log_backup_count": 3
     }
 
-    def __init__(self) -> None:
+    def __init__(self, initial_config: Dict[str, Any] = None) -> None:
         """
         Initializes the ConfigManager, ensuring that a local config.json exists.
         Loads the config into an in-memory dictionary.
         """
         self.config_data: Dict[str, Any] = {}
-        self._ensure_config_exists()
-        self.load()
+        if initial_config is not None:
+            self.config_data = initial_config.copy()
+        else:
+            self._ensure_config_exists()
+            self.load()
 
     def _ensure_config_exists(self) -> None:
         """
