@@ -142,3 +142,12 @@ class PostureDetector:
             return 0.0
         return sum(self.y_buffer) / len(self.y_buffer)
 
+    def reset_buffer(self) -> None:
+        """
+        Clears the moving average Y coordinate buffer, resets consecutive failures
+        counter, and clears the baseline Y value.
+        """
+        self.y_buffer.clear()
+        self.consecutive_failures = 0
+        self.baseline_y = None
+
