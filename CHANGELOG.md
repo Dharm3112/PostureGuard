@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2026-06-25
+
+### Added
+- **Hover Status Bar Descriptions:** Buttons update the status bar helper text dynamically on hover transitions.
+- **Config Path Retrieval Method:** Added `get_config_filepath()` helper to fetch the configuration JSON path.
+- **Buffer Reset Capabilities:** Added `reset_buffer()` to clean the posture tracker's active buffers.
+- **Configuration Save Exception:** Introduced `ConfigurationSaveError` custom class to handle configuration writing issues.
+
+### Changed
+- **Type Annotations in Stats Engine:** Expanded type hint clarity and safety inside statistics parsing functions.
+
+
 ## [1.2.0] - 2026-06-23
 
 ### Added
