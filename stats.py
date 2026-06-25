@@ -1,9 +1,10 @@
 import csv
 import os
-from typing import Dict, Any
+from typing import Dict, Any, Optional
+BaseDirectory = os.path.dirname(os.path.abspath(__file__))
 
 
-def get_posture_stats(filepath: str = "posture_history.csv", start_date: str = None, end_date: str = None) -> Dict[str, Any]:
+def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optional[str] = None, end_date: Optional[str] = None) -> Dict[str, Any]:
     """
     Parses the posture history CSV file and returns aggregate statistics.
 
