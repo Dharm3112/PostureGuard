@@ -82,5 +82,13 @@ class TestStats(unittest.TestCase):
         self.assertEqual(stats["slouch_count"], 1)
         self.assertEqual(stats["good_percent"], 50.0)
 
+    def test_reset_statistics_file_failure(self) -> None:
+        """Verifies reset_statistics_file returns False upon OSError."""
+        from unittest.mock import patch, mock_open
+        with patch("builtins.open", mock_open()) as mock_file:
+            mock_file.side_effect = OSError("Write permission denied")
+            status = reset_statistics_file("dummy.csv")
+            self.assertFalse(status)
+
 if __name__ == "__main__":
     unittest.main()
