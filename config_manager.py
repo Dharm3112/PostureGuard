@@ -156,3 +156,9 @@ class ConfigManager:
         except Exception:
             return False
 
+    def get_config_filepath(self) -> str:
+        """
+        Returns the absolute path of the configuration file.
+        """
+        return os.path.abspath(self.LOCAL_CONFIG_FILE)
+
