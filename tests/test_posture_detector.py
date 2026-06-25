@@ -70,6 +70,15 @@ class TestPostureDetector(unittest.TestCase):
         self.assertEqual(processed_frame.shape, (100, 100, 3))
         self.assertIsNone(current_y)
 
+    def test_reset_buffer(self) -> None:
+        """Verifies reset_buffer clears buffer, baseline_y, and failures count."""
+        self.detector.y_buffer.append(120.0)
+        self.detector.baseline_y = 110.0
+        self.detector.consecutive_failures = 5
+        self.detector.reset_buffer()
+        self.assertEqual(len(self.detector.y_buffer), 0)
+        self.assertIsNone(self.detector.baseline_y)
+        self.assertEqual(self.detector.consecutive_failures, 0)
 
 if __name__ == "__main__":
     unittest.main()
