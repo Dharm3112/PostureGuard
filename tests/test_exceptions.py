@@ -1,5 +1,5 @@
 import unittest
-from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError
+from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError
 
 class TestExceptions(unittest.TestCase):
     def test_exception_properties(self) -> None:
@@ -13,6 +13,10 @@ class TestExceptions(unittest.TestCase):
         
         log_exc = LoggingConfigurationError("Config failed")
         self.assertEqual(log_exc.error_code, "LoggingConfigurationError")
+
+        save_exc = ConfigurationSaveError("Save failed")
+        self.assertEqual(save_exc.error_code, "ConfigurationSaveError")
+        self.assertEqual(save_exc.message, "Save failed")
 
 if __name__ == "__main__":
     unittest.main()
