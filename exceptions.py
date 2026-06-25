@@ -35,3 +35,7 @@ class CalibrationError(PostureGuardException):
 class LoggingConfigurationError(PostureGuardException):
     """Exception raised when logging parameters are misconfigured or file write fails."""
     pass
+
+class ConfigurationSaveError(PostureGuardException):
+    """Exception raised when configuration file writing fails due to permission or OS errors."""
+    pass
