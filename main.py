@@ -200,11 +200,11 @@ class PostureApp:
         self.btn_quit.pack(side=tk.LEFT, padx=8)
 
         self.monitoring_active: bool = True
-        self.bind_hover_highlight(self.btn_calibrate, "#89dceb", self.success_color)
-        self.bind_hover_highlight(self.btn_pause, "#b4befe", self.accent_color)
-        self.bind_hover_highlight(self.btn_settings, "#74c7ec", self.accent_color)
-        self.bind_hover_highlight(self.btn_stats, "#b4befe", self.accent_color)
-        self.bind_hover_highlight(self.btn_quit, "#f38ba8", self.danger_color)
+        self.bind_hover_highlight(self.btn_calibrate, "#89dceb", self.success_color, "Calibrate baseline sitting position")
+        self.bind_hover_highlight(self.btn_pause, "#b4befe", self.accent_color, "Pause or resume posture monitoring")
+        self.bind_hover_highlight(self.btn_settings, "#74c7ec", self.accent_color, "Open settings configuration panel")
+        self.bind_hover_highlight(self.btn_stats, "#b4befe", self.accent_color, "View posture history statistics")
+        self.bind_hover_highlight(self.btn_quit, "#f38ba8", self.danger_color, "Quit application")
         
         # Bind Ctrl+C to clean exit
         self.window.bind("<Control-c>", lambda event: self.close_app(confirm=False))
@@ -334,10 +334,20 @@ class PostureApp:
         """Helper to bind hover information to a specific widget."""
         widget.bind("<Enter>", lambda e: widget.config(caption=text) if hasattr(widget, 'caption') else None)
 
-    def bind_hover_highlight(self, button: tk.Button, hover_bg: str, normal_bg: str) -> None:
-        """Applies visual button highlights on hover transitions."""
-        button.bind("<Enter>", lambda e: button.config(bg=hover_bg))
-        button.bind("<Leave>", lambda e: button.config(bg=normal_bg))
+    def bind_hover_highlight(self, button: tk.Button, hover_bg: str, normal_bg: str, status_text: str = "") -> None:
+        """Applies visual button highlights and updates status bar descriptions on hover."""
+        def on_enter(e):
+            button.config(bg=hover_bg)
+            if status_text and hasattr(self, 'status_bar'):
+                self.status_bar.config(text=f"Camera Stream: Active | {status_text}")
+
+        def on_leave(e):
+            button.config(bg=normal_bg)
+            if hasattr(self, 'status_bar'):
+                self.status_bar.config(text="Camera Stream: Active")
+
+        button.bind("<Enter>", on_enter)
+        button.bind("<Leave>", on_leave)
 
     def close_app(self, confirm: bool = True) -> None:
         """
