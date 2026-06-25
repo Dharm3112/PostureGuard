@@ -113,6 +113,12 @@ class TestConfigManager(unittest.TestCase):
         self.assertTrue(status)
         self.assertEqual(manager.get("camera_index"), 99)
 
+    def test_get_config_filepath(self) -> None:
+        """Verifies get_config_filepath returns the correct absolute path."""
+        manager = ConfigManager()
+        path = manager.get_config_filepath()
+        self.assertTrue(os.path.isabs(path))
+        self.assertTrue(path.endswith("config.json"))
 
 if __name__ == "__main__":
     unittest.main()
