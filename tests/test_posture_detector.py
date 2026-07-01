@@ -8,6 +8,7 @@ class TestPostureDetector(unittest.TestCase):
     Tests for the PostureDetector class.
     """
     def setUp(self) -> None:
+        # Set buffer boundaries parameter limit
         self.detector = PostureDetector(buffer_size=5)
 
     def test_is_calibrated(self) -> None:
