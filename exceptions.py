@@ -64,6 +64,10 @@ class InvalidConfigFormatError(PostureGuardException):
     """Exception raised when config file format is invalid (not a dict)."""
     pass
 
+class ConfigFileNotFoundError(PostureGuardException):
+    """Exception raised when local config file is missing and default is not found."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
