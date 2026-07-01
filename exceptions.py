@@ -48,6 +48,10 @@ class InvalidDelayError(PostureGuardException):
     """Exception raised when frame delay is negative or too large."""
     pass
 
+class InvalidAlertFramesError(PostureGuardException):
+    """Exception raised when alert frames limit value is invalid."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
