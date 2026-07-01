@@ -70,7 +70,7 @@ class PostureDetector:
         # Face target lists checks validation
         if len(faces) > 0:
             self.consecutive_failures = 0
-            # Find the largest face (assuming it's the user)
+            # Find the largest face rect coordinate dimensions (assumed user proximity target)
             largest_face = max(faces, key=lambda rect: rect[2] * rect[3])
             (x, y, w, h) = largest_face
 
