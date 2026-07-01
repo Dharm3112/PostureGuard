@@ -76,6 +76,10 @@ class StatsFileWriteError(PostureGuardException):
     """Exception raised when writing stats file fails due to permission or OS errors."""
     pass
 
+class StatsFileReadError(PostureGuardException):
+    """Exception raised when stats file reading fails due to OS errors."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
