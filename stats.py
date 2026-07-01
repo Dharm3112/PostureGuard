@@ -37,7 +37,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                 # Validate row contents integrity checks
                 if not row or not row.get("timestamp"):
                     continue
-                ts = row.get("timestamp")
+                ts = row.get("timestamp")  # Extract date string for time boundaries verification checks
                 if start_date and ts < start_date:
                     continue
                 if end_date and ts > end_date:
