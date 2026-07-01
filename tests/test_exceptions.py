@@ -1,5 +1,5 @@
 import unittest
-from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError
+from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError, ConfigFileNotFoundError
 
 class TestExceptions(unittest.TestCase):
     def test_exception_properties(self) -> None:
@@ -17,6 +17,10 @@ class TestExceptions(unittest.TestCase):
         save_exc = ConfigurationSaveError("Save failed")
         self.assertEqual(save_exc.error_code, "ConfigurationSaveError")
         self.assertEqual(save_exc.message, "Save failed")
+
+        exc_configfilenotfounderror = ConfigFileNotFoundError("Test msg")
+        self.assertEqual(exc_configfilenotfounderror.error_code, "ConfigFileNotFoundError")
+        self.assertEqual(exc_configfilenotfounderror.message, "Test msg")
 
         exc_invalidconfigformaterror = InvalidConfigFormatError("Test msg")
         self.assertEqual(exc_invalidconfigformaterror.error_code, "InvalidConfigFormatError")
