@@ -39,7 +39,7 @@ class PostureDetector:
         self.consecutive_failures = 0  # Counter tracking frames with no face coordinates identified
 
         # Buffer to smooth out jitter
-        self.y_buffer: deque = deque(maxlen=buffer_size)
+        self.y_buffer: deque = deque(maxlen=buffer_size)  # Double-ended queue storing smoothed coordinates history
 
         # Baseline: The Y-coordinate of your face when sitting straight
         self.baseline_y: Optional[float] = None
