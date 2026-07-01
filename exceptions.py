@@ -44,6 +44,10 @@ class InvalidThresholdError(PostureGuardException):
     """Exception raised when slouch threshold value is out of bounds."""
     pass
 
+class InvalidDelayError(PostureGuardException):
+    """Exception raised when frame delay is negative or too large."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
