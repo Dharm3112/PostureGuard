@@ -26,6 +26,7 @@ class TestPostureDetector(unittest.TestCase):
         self.detector.calibrate()
         self.assertEqual(self.detector.consecutive_failures, 0)
 
+    # Test initialization parameter states check
     def test_initialization(self) -> None:
         """Verifies buffer limits and baseline Y defaults on setup."""
         self.assertEqual(self.detector.y_buffer.maxlen, 5)
