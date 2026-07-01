@@ -18,6 +18,7 @@ class TestPostureDetector(unittest.TestCase):
         self.detector.baseline_y = 150.0
         self.assertTrue(self.detector.is_calibrated)
 
+    # Test consecutive failure counter resets
     def test_consecutive_failures_reset_on_calibrate(self) -> None:
         """Verifies that calibration resets consecutive failures count."""
         self.detector.consecutive_failures = 10
