@@ -41,6 +41,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                 # Apply chronological limits
                 if start_date and ts < start_date:
                     continue
+                # Apply end dates boundary check thresholds limit
                 if end_date and ts > end_date:
                     continue
                 stats["total_records"] += 1
