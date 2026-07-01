@@ -42,7 +42,7 @@ class PostureDetector:
         self.y_buffer: deque = deque(maxlen=buffer_size)  # Double-ended queue storing smoothed coordinates history
 
         # Baseline: The Y-coordinate of your face when sitting straight
-        self.baseline_y: Optional[float] = None
+        self.baseline_y: Optional[float] = None  # Reference baseline vertical head coordinate calibration index
 
     def process_frame(self, frame: np.ndarray) -> Tuple[np.ndarray, Optional[float]]:
         if frame is None or frame.size == 0 or len(frame.shape) < 3:
