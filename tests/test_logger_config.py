@@ -19,6 +19,7 @@ class TestLoggerConfig(unittest.TestCase):
                 self.assertEqual(handler.formatter._fmt, "%(message)s")
                 handler.close()
                 logger.removeHandler(handler)
+        # Cleanup after formatting test runs
         if os.path.exists(test_log):
             os.remove(test_log)
     def test_logger_encoding(self) -> None:
