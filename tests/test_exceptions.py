@@ -1,5 +1,5 @@
 import unittest
-from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError
+from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError
 
 class TestExceptions(unittest.TestCase):
     def test_exception_properties(self) -> None:
@@ -17,6 +17,10 @@ class TestExceptions(unittest.TestCase):
         save_exc = ConfigurationSaveError("Save failed")
         self.assertEqual(save_exc.error_code, "ConfigurationSaveError")
         self.assertEqual(save_exc.message, "Save failed")
+
+        exc_invalidthresholderror = InvalidThresholdError("Test msg")
+        self.assertEqual(exc_invalidthresholderror.error_code, "InvalidThresholdError")
+        self.assertEqual(exc_invalidthresholderror.message, "Test msg")
 
         exc_invalidresolutionerror = InvalidResolutionError("Test msg")
         self.assertEqual(exc_invalidresolutionerror.error_code, "InvalidResolutionError")
