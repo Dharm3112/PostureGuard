@@ -60,6 +60,10 @@ class InvalidBackupCountError(PostureGuardException):
     """Exception raised when log backup count value is out of bounds."""
     pass
 
+class InvalidConfigFormatError(PostureGuardException):
+    """Exception raised when config file format is invalid (not a dict)."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
