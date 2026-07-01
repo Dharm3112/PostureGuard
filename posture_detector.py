@@ -45,6 +45,7 @@ class PostureDetector:
         self.baseline_y: Optional[float] = None  # Reference baseline vertical head coordinate calibration index
 
     def process_frame(self, frame: np.ndarray) -> Tuple[np.ndarray, Optional[float]]:
+        # Process raw frame data to locate face coordinates
         if frame is None or frame.size == 0 or len(frame.shape) < 3:
             return frame, None
         """
