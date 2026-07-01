@@ -34,6 +34,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
             # Parse target stream via csv dictionary mapping rows handler
             reader = csv.DictReader(f)
             for row in reader:
+                # Validate row contents integrity checks
                 if not row or not row.get("timestamp"):
                     continue
                 ts = row.get("timestamp")
