@@ -11,7 +11,7 @@ class PostureDetector:
     Core engine for posture detection.
     Uses OpenCV face detection (Haar Cascades) and handles smoothing of face coordinate values.
     """
-    CASCADE_PATH = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+    CASCADE_PATH = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'  # Central XML classifier file locator name
 
     def __init__(self, buffer_size: int = 10, scale_factor: float = 1.1, min_neighbors: int = 5) -> None:
         """
