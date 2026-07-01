@@ -15,6 +15,7 @@ class TestStats(unittest.TestCase):
         if os.path.exists(self.filename):
             os.remove(self.filename)
 
+    # Test nonexistent path parsing validation
     def test_get_posture_stats_nonexistent(self) -> None:
         stats = get_posture_stats("nonexistent_file.csv")
         self.assertEqual(stats["total_records"], 0)
