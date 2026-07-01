@@ -22,6 +22,8 @@ class TestLoggerConfig(unittest.TestCase):
         # Cleanup after formatting test runs
         if os.path.exists(test_log):
             os.remove(test_log)
+
+    # Test double setup safety bounds checks
     def test_logger_encoding(self) -> None:
         """Tests logger file encoding config settings."""
         test_log = "test_encoding.log"
