@@ -1,5 +1,5 @@
 import unittest
-from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError
+from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError
 
 class TestExceptions(unittest.TestCase):
     def test_exception_properties(self) -> None:
@@ -17,6 +17,10 @@ class TestExceptions(unittest.TestCase):
         save_exc = ConfigurationSaveError("Save failed")
         self.assertEqual(save_exc.error_code, "ConfigurationSaveError")
         self.assertEqual(save_exc.message, "Save failed")
+
+        exc_invalidlogbyteserror = InvalidLogBytesError("Test msg")
+        self.assertEqual(exc_invalidlogbyteserror.error_code, "InvalidLogBytesError")
+        self.assertEqual(exc_invalidlogbyteserror.message, "Test msg")
 
         exc_invalidalertframeserror = InvalidAlertFramesError("Test msg")
         self.assertEqual(exc_invalidalertframeserror.error_code, "InvalidAlertFramesError")
