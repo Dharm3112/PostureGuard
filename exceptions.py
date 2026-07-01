@@ -40,6 +40,10 @@ class InvalidResolutionError(PostureGuardException):
     """Exception raised when camera resolution is not supported or out of bounds."""
     pass
 
+class InvalidThresholdError(PostureGuardException):
+    """Exception raised when slouch threshold value is out of bounds."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
