@@ -28,7 +28,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
     if not os.path.exists(filepath):
         return stats
 
-    total_deviation = 0
+    total_deviation = 0  # Cumulative tracking for head tracking deviation pixels
     try:
         with open(filepath, "r", newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
