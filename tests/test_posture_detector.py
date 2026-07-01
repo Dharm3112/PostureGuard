@@ -11,6 +11,7 @@ class TestPostureDetector(unittest.TestCase):
         # Set buffer boundaries parameter limit
         self.detector = PostureDetector(buffer_size=5)
 
+    # Test calibration status transitions checks
     def test_is_calibrated(self) -> None:
         """Verifies is_calibrated behavior."""
         self.assertFalse(self.detector.is_calibrated)
