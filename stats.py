@@ -24,6 +24,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
         "avg_deviation": 0.0
     }
 
+    # Guard statement checking file existence bounds target path config
     if not os.path.exists(filepath):
         return stats
 
