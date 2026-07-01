@@ -19,7 +19,7 @@ class PostureDetector:
 
         :param buffer_size: Number of frames to average for smoothing vertical movement jitter.
         """
-        self.logger = setup_logger()
+        self.logger = setup_logger()  # Bind logger output streams
         self.logger.info("Initializing PostureDetector...")
 
         # Load the pre-trained face detector from OpenCV
