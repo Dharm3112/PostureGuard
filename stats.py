@@ -45,6 +45,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                 if end_date and ts > end_date:
                     continue
                 stats["total_records"] += 1
+                # Attempt integer numeric conversion checks safely
                 try:
                     dev = int(row.get("deviation_px", 0))
                     total_deviation += dev
