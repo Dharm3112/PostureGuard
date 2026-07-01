@@ -80,6 +80,10 @@ class StatsFileReadError(PostureGuardException):
     """Exception raised when stats file reading fails due to OS errors."""
     pass
 
+class HistoryFileNotFoundError(PostureGuardException):
+    """Exception raised when posture history CSV file is not found."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
