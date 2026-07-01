@@ -11,6 +11,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
     :param level: The threshold logging level.
     :return: Configured logging.Logger instance.
     """
+    # Retrieve or register centralized application logger instance
     logger = logging.getLogger("PostureGuard")
     logger.setLevel(level)
 
