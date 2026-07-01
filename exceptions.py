@@ -68,6 +68,10 @@ class ConfigFileNotFoundError(PostureGuardException):
     """Exception raised when local config file is missing and default is not found."""
     pass
 
+class ConfigWritePermissionError(PostureGuardException):
+    """Exception raised when writing config file fails due to permission error."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
