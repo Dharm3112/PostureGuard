@@ -72,6 +72,10 @@ class ConfigWritePermissionError(PostureGuardException):
     """Exception raised when writing config file fails due to permission error."""
     pass
 
+class StatsFileWriteError(PostureGuardException):
+    """Exception raised when writing stats file fails due to permission or OS errors."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
