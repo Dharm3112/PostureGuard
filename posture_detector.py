@@ -57,6 +57,7 @@ class PostureDetector:
                  - The annotated frame with bounding boxes and line markings.
                  - The smoothed current center Y-coordinate of the face (or None if no face is detected).
         """
+        # Reduce color space channels safely for cascade evaluation parameters
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
         # Detect faces
