@@ -67,6 +67,7 @@ class PostureDetector:
 
         current_y: Optional[float] = None
 
+        # Face target lists checks validation
         if len(faces) > 0:
             self.consecutive_failures = 0
             # Find the largest face (assuming it's the user)
