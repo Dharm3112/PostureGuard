@@ -1,5 +1,5 @@
 import unittest
-from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError, ConfigFileNotFoundError, ConfigWritePermissionError
+from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError, ConfigFileNotFoundError, ConfigWritePermissionError, StatsFileWriteError
 
 class TestExceptions(unittest.TestCase):
     def test_exception_properties(self) -> None:
@@ -17,6 +17,10 @@ class TestExceptions(unittest.TestCase):
         save_exc = ConfigurationSaveError("Save failed")
         self.assertEqual(save_exc.error_code, "ConfigurationSaveError")
         self.assertEqual(save_exc.message, "Save failed")
+
+        exc_statsfilewriteerror = StatsFileWriteError("Test msg")
+        self.assertEqual(exc_statsfilewriteerror.error_code, "StatsFileWriteError")
+        self.assertEqual(exc_statsfilewriteerror.message, "Test msg")
 
         exc_configwritepermissionerror = ConfigWritePermissionError("Test msg")
         self.assertEqual(exc_configwritepermissionerror.error_code, "ConfigWritePermissionError")
