@@ -17,6 +17,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
     logger.setLevel(level)
 
     # Avoid adding duplicate handlers if the logger has already been setup
+    # Check if any logging handlers have already been configured
     if logger.handlers:
         if log_format:
             formatter = logging.Formatter(log_format)
