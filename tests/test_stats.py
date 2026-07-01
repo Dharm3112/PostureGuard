@@ -5,6 +5,7 @@ from stats import get_posture_stats, reset_statistics_file
 
 class TestStats(unittest.TestCase):
     def setUp(self) -> None:
+        # Set target file name path configurations
         self.filename = "test_history.csv"
         if os.path.exists(self.filename):
             os.remove(self.filename)
