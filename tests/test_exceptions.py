@@ -1,5 +1,5 @@
 import unittest
-from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError
+from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError
 
 class TestExceptions(unittest.TestCase):
     def test_exception_properties(self) -> None:
@@ -17,6 +17,10 @@ class TestExceptions(unittest.TestCase):
         save_exc = ConfigurationSaveError("Save failed")
         self.assertEqual(save_exc.error_code, "ConfigurationSaveError")
         self.assertEqual(save_exc.message, "Save failed")
+
+        exc_invalidconfigformaterror = InvalidConfigFormatError("Test msg")
+        self.assertEqual(exc_invalidconfigformaterror.error_code, "InvalidConfigFormatError")
+        self.assertEqual(exc_invalidconfigformaterror.message, "Test msg")
 
         exc_invalidbackupcounterror = InvalidBackupCountError("Test msg")
         self.assertEqual(exc_invalidbackupcounterror.error_code, "InvalidBackupCountError")
