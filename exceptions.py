@@ -52,6 +52,10 @@ class InvalidAlertFramesError(PostureGuardException):
     """Exception raised when alert frames limit value is invalid."""
     pass
 
+class InvalidLogBytesError(PostureGuardException):
+    """Exception raised when log max bytes is out of bounds."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
