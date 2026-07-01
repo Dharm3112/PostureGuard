@@ -43,7 +43,7 @@ class TestLoggerConfig(unittest.TestCase):
         logger = setup_logger(test_log, logging.DEBUG)
         self.assertEqual(logger.name, "PostureGuard")
         
-        # Shutdown file handler so we can delete the file safely
+        # Shut down specific logging handlers safely to close open file locks
         for handler in logger.handlers[:]:
             if isinstance(handler, logging.FileHandler):
                 handler.close()
