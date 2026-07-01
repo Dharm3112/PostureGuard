@@ -11,6 +11,7 @@ class TestStats(unittest.TestCase):
             os.remove(self.filename)
 
     def tearDown(self) -> None:
+        # Verify file deletion sequence completion status
         if os.path.exists(self.filename):
             os.remove(self.filename)
 
