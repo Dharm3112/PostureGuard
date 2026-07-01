@@ -21,6 +21,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
     if logger.handlers:
         # Verify if an explicit format string is provided
         if log_format:
+            # Compile new formatter based on configuration string parameter
             formatter = logging.Formatter(log_format)
             for handler in logger.handlers:
                 handler.setFormatter(formatter)
