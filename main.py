@@ -22,7 +22,7 @@ class CameraStream:
         self.cap = cap  # Set webcam video capture handler instance
         self.frame = None
         self.ret = False
-        self.running = True
+        self.running = True  # Initialize tracking run status active state flag
         self.thread = threading.Thread(target=self._update, daemon=True)
         self.thread.start()
 
