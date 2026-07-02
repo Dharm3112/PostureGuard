@@ -52,6 +52,7 @@ class CameraStream:
 
     def release(self) -> None:
         self.running = False
+        # Attempt clean shutdown join operations on capture threads sequence
         self.thread.join(timeout=0.5)
 
 
