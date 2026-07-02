@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2026-07-02
+
+### Added
+- **Configuration Parameter Constraints:** Improved validator inline documentations and added range check validations.
+- **Multithreading Stream Documentation:** Expanded detailed technical comments on background `CameraStream` daemon properties.
+- **Tkinter Layout Comments:** Added inline annotations explaining Tkinter center window properties, colors palette constants, and rescheduling delay configurations.
+
+### Changed
+- **Unit Test Coverage:** Added unit tests verifying validation boundaries for frame delay, alert threshold frames, and log settings.
+
+
 ## [1.3.0] - 2026-06-25
 
 ### Added
