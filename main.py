@@ -216,6 +216,7 @@ class PostureApp:
         self.bind_hover_highlight(self.btn_quit, "#f38ba8", self.danger_color, "Quit application")
         
         # Bind Ctrl+C to clean exit
+        # Bind Control-C keyboard shortcut triggers for clean closure exits
         self.window.bind("<Control-c>", lambda event: self.close_app(confirm=False))
         # Bind Ctrl+L to calibrate
         self.window.bind("<Control-l>", lambda event: self.calibrate())
