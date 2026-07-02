@@ -109,6 +109,7 @@ class ConfigManager:
         alert_frames = self.config_data.get(self.TIME_TO_ALERT, 50)
         if not isinstance(frame_delay, int) or not isinstance(alert_frames, int):
             return False
+        # Validate frame delay and alert frames constraints threshold values in range check
         if not (1 <= frame_delay <= 1000) or not (5 <= alert_frames <= 2000):
             return False
         log_bytes = self.config_data.get("log_max_bytes", 1048576)
