@@ -43,6 +43,7 @@ class TestStats(unittest.TestCase):
         self.assertEqual(stats["avg_deviation"], 25.0) # (0 + 50) / 2
 
     def test_date_range_filtering(self) -> None:
+        """Verifies start and end bounds limits dynamic filtering calculations results."""
         """Tests stats filtering with dates bounds parameters."""
         with open(self.filename, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
