@@ -120,5 +120,11 @@ class TestConfigManager(unittest.TestCase):
         self.assertTrue(os.path.isabs(path))
         self.assertTrue(path.endswith("config.json"))
 
+    def test_invalid_frame_delay(self) -> None:
+        """Verifies validation catches invalid frame delay settings."""
+        manager = ConfigManager()
+        manager.set(ConfigManager.FRAME_DELAY, 0)
+        self.assertFalse(manager.validate_config())
+
 if __name__ == "__main__":
     unittest.main()
