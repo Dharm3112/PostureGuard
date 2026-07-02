@@ -47,6 +47,7 @@ class CameraStream:
             pass
 
     def read(self):
+        # Return last captured frame buffer status and frame data tuple
         return self.ret, self.frame
 
     def release(self) -> None:
