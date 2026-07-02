@@ -138,5 +138,11 @@ class TestConfigManager(unittest.TestCase):
         manager.set("log_max_bytes", 500)
         self.assertFalse(manager.validate_config())
 
+    def test_invalid_log_backup_count(self) -> None:
+        """Verifies validation catches invalid log backup count settings."""
+        manager = ConfigManager()
+        manager.set("log_backup_count", 25)
+        self.assertFalse(manager.validate_config())
+
 if __name__ == "__main__":
     unittest.main()
