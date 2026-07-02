@@ -633,7 +633,7 @@ class PostureApp:
             lbl_r.grid(row=i, column=1, sticky="e", pady=5, padx=5)
 
         btn_close = Button(
-            stats_win, text="Close", width=12, command=stats_win.destroy,
+            stats_win, text="Close", width=12, command=stats_win.destroy,  # Exit statistics pane screen
             bg=self.btn_bg, fg=self.fg_color, font=self.FONT_MEDIUM, relief="flat", cursor="hand2"
         )
         btn_close.pack(pady=self.PAD_Y)
