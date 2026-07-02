@@ -37,6 +37,7 @@ class TestLoggerConfig(unittest.TestCase):
             os.remove(test_log)
 
     def test_logger_setup(self) -> None:
+        """Verifies default name properties mapping outputs matching standard settings."""
         test_log = "test_setup.log"
         if os.path.exists(test_log):
             os.remove(test_log)
