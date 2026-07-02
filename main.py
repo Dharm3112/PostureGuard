@@ -231,6 +231,7 @@ class PostureApp:
         self.status_label.pack(pady=10)
 
         # Check for persisted baseline calibration
+        # Extract configuration template baseline index variables dynamically
         saved_baseline = self.config_manager.get("saved_baseline_y", None)
         if saved_baseline is not None:
             self.detector.baseline_y = float(saved_baseline)
