@@ -121,6 +121,7 @@ class PostureApp:
                     raise CameraNotFoundError(camera_index)
             
             self.logger.info(f"Webcam with index {camera_index} opened successfully.")
+            # Initialize webcam resolution frame width settings bounds check
             self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, camera_width)
             self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, camera_height)
 
