@@ -219,6 +219,7 @@ class PostureApp:
         # Bind Control-C keyboard shortcut triggers for clean closure exits
         self.window.bind("<Control-c>", lambda event: self.close_app(confirm=False))
         # Bind Ctrl+L to calibrate
+        # Bind Control-L keyboard shortcut triggers for baseline calibrations
         self.window.bind("<Control-l>", lambda event: self.calibrate())
 
         self.status_label: Label = Label(
