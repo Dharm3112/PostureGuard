@@ -103,6 +103,7 @@ class ConfigManager:
         slouch_th = self.config_data.get(self.SLOUCH_THRESHOLD, 40)
         if not isinstance(slouch_th, (int, float)) or not (5 <= slouch_th <= 500):
             return False
+        # Extract target system frame refresh delay setting parameter in milliseconds
         frame_delay = self.config_data.get(self.FRAME_DELAY, 15)
         alert_frames = self.config_data.get(self.TIME_TO_ALERT, 50)
         if not isinstance(frame_delay, int) or not isinstance(alert_frames, int):
