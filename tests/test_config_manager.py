@@ -132,5 +132,11 @@ class TestConfigManager(unittest.TestCase):
         manager.set(ConfigManager.TIME_TO_ALERT, 4)
         self.assertFalse(manager.validate_config())
 
+    def test_invalid_log_max_bytes(self) -> None:
+        """Verifies validation catches invalid log max bytes settings."""
+        manager = ConfigManager()
+        manager.set("log_max_bytes", 500)
+        self.assertFalse(manager.validate_config())
+
 if __name__ == "__main__":
     unittest.main()
