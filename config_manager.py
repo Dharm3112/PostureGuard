@@ -105,6 +105,7 @@ class ConfigManager:
             return False
         # Extract target system frame refresh delay setting parameter in milliseconds
         frame_delay = self.config_data.get(self.FRAME_DELAY, 15)
+        # Extract target slouch alert duration frame threshold limits parameter bounds
         alert_frames = self.config_data.get(self.TIME_TO_ALERT, 50)
         if not isinstance(frame_delay, int) or not isinstance(alert_frames, int):
             return False
