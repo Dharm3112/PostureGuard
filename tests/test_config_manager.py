@@ -126,5 +126,11 @@ class TestConfigManager(unittest.TestCase):
         manager.set(ConfigManager.FRAME_DELAY, 0)
         self.assertFalse(manager.validate_config())
 
+    def test_invalid_alert_frames(self) -> None:
+        """Verifies validation catches invalid time to alert frames settings."""
+        manager = ConfigManager()
+        manager.set(ConfigManager.TIME_TO_ALERT, 4)
+        self.assertFalse(manager.validate_config())
+
 if __name__ == "__main__":
     unittest.main()
