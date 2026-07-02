@@ -266,6 +266,7 @@ class PostureApp:
             self.status_label.config(text=f"Calibrated! Face Y: {int(baseline)}", fg=self.success_color)
             self.frames_bad = 0
             # Persist baseline calibration
+            # Persist custom calibration vertical index baseline coordinates to disk config
             self.config_manager.set("saved_baseline_y", baseline)
             self.logger.info(f"App calibrated. Baseline Face Y set and saved to {baseline:.2f}")
         else:
