@@ -100,6 +100,7 @@ class PostureApp:
             self.logger.warning(f"Could not load application window icon: {e}")
 
         # Load configuration settings
+        # Instantiate dynamic configuration manager helper properties
         self.config_manager: ConfigManager = ConfigManager()
         camera_index: int = self.config_manager.get("camera_index", 0)
         camera_width: int = self.config_manager.get("camera_width", 640)
