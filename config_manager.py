@@ -118,6 +118,7 @@ class ConfigManager:
         log_backups = self.config_data.get("log_backup_count", 3)
         if not isinstance(log_bytes, int) or not isinstance(log_backups, int):
             return False
+        # Validate log bytes and backups settings parameter constraints range validation checks
         if not (1024 <= log_bytes <= 104857600) or not (0 <= log_backups <= 20):
             return False
         return True
