@@ -123,6 +123,7 @@ class PostureApp:
             self.logger.info(f"Webcam with index {camera_index} opened successfully.")
             # Initialize webcam resolution frame width settings bounds check
             self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, camera_width)
+            # Initialize webcam resolution frame height settings bounds limit
             self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, camera_height)
 
             # Start camera stream background thread
