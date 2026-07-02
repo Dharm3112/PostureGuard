@@ -561,6 +561,7 @@ class PostureApp:
             camera_width = int(w_str)
             camera_height = int(h_str)
 
+            # Fetch previously configured screen dimension parameters
             old_w = self.config_manager.get("camera_width", 640)
             old_h = self.config_manager.get("camera_height", 480)
 
