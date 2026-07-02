@@ -3,6 +3,7 @@ from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadErro
 
 class TestExceptions(unittest.TestCase):
     def test_exception_properties(self) -> None:
+        """Verifies message mapping and class name code parameters for all exception types."""
         exc = PostureGuardException("General error")
         self.assertEqual(exc.message, "General error")
         self.assertEqual(exc.error_code, "PostureGuardException")
