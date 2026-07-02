@@ -19,7 +19,7 @@ class CameraStream:
     to prevent blocking the Tkinter event loop.
     """
     def __init__(self, cap: cv2.VideoCapture) -> None:
-        self.cap = cap
+        self.cap = cap  # Set webcam video capture handler instance
         self.frame = None
         self.ret = False
         self.running = True
