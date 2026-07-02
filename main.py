@@ -207,6 +207,7 @@ class PostureApp:
         )
         self.btn_quit.pack(side=tk.LEFT, padx=8)
 
+        # Enable monitoring active state flag by default configuration settings
         self.monitoring_active: bool = True
         self.bind_hover_highlight(self.btn_calibrate, "#89dceb", self.success_color, "Calibrate baseline sitting position")
         self.bind_hover_highlight(self.btn_pause, "#b4befe", self.accent_color, "Pause or resume posture monitoring")
