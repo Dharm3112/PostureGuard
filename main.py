@@ -296,6 +296,7 @@ class PostureApp:
             self.frames_bad = 0
 
         # Alerting
+        # Check if slouch tracking duration exceeds limit settings constraints
         if self.frames_bad > self.TIME_TO_ALERT:
             self.status_label.config(text="⚠️ SLOUCHING! SIT UP! ⚠️", fg=self.danger_color)
 
