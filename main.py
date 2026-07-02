@@ -620,6 +620,7 @@ class PostureApp:
         ]
 
         for i, (label_text, val_text) in enumerate(details):
+            # Create specific label container widgets dynamically
             lbl_l = Label(frame, text=label_text, font=self.FONT_NORMAL, bg="#313244", fg=self.fg_color)
             lbl_l.grid(row=i, column=0, sticky="w", pady=5, padx=5)
 
