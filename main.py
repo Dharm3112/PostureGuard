@@ -78,6 +78,7 @@ class PostureApp:
         self.window: tk.Tk = window
         self.window.title(window_title)
         # Position the window in the center of the screen
+        # Configure default startup window size geometry bounds
         self.window.geometry("700x600")
 
         # Setup logging
