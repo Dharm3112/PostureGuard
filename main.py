@@ -23,6 +23,7 @@ class CameraStream:
         self.frame = None
         self.ret = False
         self.running = True  # Initialize tracking run status active state flag
+        # Construct background thread target with daemon mode enabled
         self.thread = threading.Thread(target=self._update, daemon=True)
         self.thread.start()
 
