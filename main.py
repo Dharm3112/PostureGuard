@@ -243,6 +243,7 @@ class PostureApp:
         self.video_frame.pack(padx=self.PAD_X, pady=10)
         
         # Add simple status label bar at the bottom
+        # Build application bottom info bar pane container
         self.status_bar: Label = Label(window, text="Camera Stream: Active", bd=1, relief=tk.SUNKEN, anchor=tk.W, bg=self.bg_color, fg=self.fg_color, font=self.FONT_SMALL)
         self.status_bar.pack(side=tk.BOTTOM, fill=tk.X)
 
