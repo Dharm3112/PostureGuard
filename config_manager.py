@@ -112,6 +112,7 @@ class ConfigManager:
         # Validate frame delay and alert frames constraints threshold values in range check
         if not (1 <= frame_delay <= 1000) or not (5 <= alert_frames <= 2000):
             return False
+        # Retrieve maximum log size in bytes dynamically from configuration limits
         log_bytes = self.config_data.get("log_max_bytes", 1048576)
         log_backups = self.config_data.get("log_backup_count", 3)
         if not isinstance(log_bytes, int) or not isinstance(log_backups, int):
