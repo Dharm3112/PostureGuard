@@ -114,6 +114,7 @@ class ConfigManager:
             return False
         # Retrieve maximum log size in bytes dynamically from configuration limits
         log_bytes = self.config_data.get("log_max_bytes", 1048576)
+        # Retrieve max backup files count threshold constraint from configurations parameter
         log_backups = self.config_data.get("log_backup_count", 3)
         if not isinstance(log_bytes, int) or not isinstance(log_backups, int):
             return False
