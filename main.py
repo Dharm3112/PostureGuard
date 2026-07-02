@@ -87,6 +87,7 @@ class PostureApp:
         # Load rotation configs from manager dynamically
         log_bytes = self.config_manager.get("log_max_bytes", 1048576)
         self.logger = setup_logger(level=log_level)
+        # Log initialization message parameters settings checks
         self.logger.info("Starting PostureGuard Application...")
 
         # Set Window Icon
