@@ -344,6 +344,7 @@ class PostureApp:
             self.video_label.configure(image=imgtk)
 
         if self.running:
+            # Reschedule layout refresh task checks dynamically
             self.window.after(self.frame_delay_ms, self.update)
 
     def set_tooltip(self, widget: tk.Widget, text: str) -> None:
