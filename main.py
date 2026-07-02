@@ -289,6 +289,7 @@ class PostureApp:
 
         # LOGIC: In images, Y increases as you go DOWN.
         # So, if Current Y > Baseline + Threshold, you have dropped down (slouched).
+        # Check if vertical pixel offset exceeds standard calibration range
         if current_y > (baseline + self.slouch_threshold):
             self.frames_bad += 1
         else:
