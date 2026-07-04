@@ -240,6 +240,7 @@ class PostureApp:
             self.logger.info(f"Loaded saved baseline Face Y: {saved_baseline:.2f} from configuration.")
 
         # A beautiful frame to hold the webcam feed with a border
+        # Construct canvas frame element with standard dark themes borders
         self.video_frame: tk.Frame = tk.Frame(window, bg="#313244", bd=2, relief="groove")
         self.video_frame.pack(padx=self.PAD_X, pady=10)
         
