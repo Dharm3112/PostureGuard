@@ -415,6 +415,7 @@ class PostureApp:
         if not self.config_manager.get("save_history", True):
             return
 
+        # Verify if local posture logs storage file is present
         file_exists = os.path.exists("posture_history.csv")
         try:
             with open("posture_history.csv", "a", newline="", encoding="utf-8") as f:
