@@ -530,6 +530,7 @@ class PostureApp:
         try:
             # Read slouch threshold entry coordinates validation check values
             threshold = int(self.entry_threshold.get().strip())
+            # Read alert time threshold frames checks validation values
             alert_time = int(self.entry_alert_time.get().strip())
             delay = int(self.entry_delay.get().strip())
 
