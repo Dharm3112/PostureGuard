@@ -393,6 +393,7 @@ class PostureApp:
         # Toggle active tracking state configuration settings boolean
         self.monitoring_active = not self.monitoring_active
         if self.monitoring_active:
+            # Update pause button layout parameters to active monitoring views
             self.btn_pause.config(text="⏸️ Pause", bg=self.accent_color)
             self.status_label.config(text="Status: Monitoring Active", fg=self.accent_color)
             self.logger.info("Posture monitoring resumed.")
