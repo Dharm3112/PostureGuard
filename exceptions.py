@@ -128,6 +128,10 @@ class LoggerConfigResetError(PostureGuardException):
     """Exception raised when logging handlers cleanup operations fail."""
     pass
 
+class CSVFormatMismatchError(PostureGuardException):
+    """Exception raised when statistics log rows contains invalid headers."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
