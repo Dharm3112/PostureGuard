@@ -622,6 +622,7 @@ class PostureApp:
         stats_win.configure(bg=self.bg_color)
         # Bind stats details modal relations to main parent window
         stats_win.transient(self.window)
+        # Focus GUI events exclusively onto stats details modals container
         stats_win.grab_set()
 
         # Design a clean layout
