@@ -120,6 +120,10 @@ class BaselineNotEstablishedError(PostureGuardException):
     """Exception raised when calibration status lookup fails on active checks."""
     pass
 
+class SoundNotificationError(PostureGuardException):
+    """Exception raised when plyer desktop status notification calls fail."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
