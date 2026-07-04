@@ -443,6 +443,7 @@ class PostureApp:
         settings_win.configure(bg=self.bg_color)
         # Bind settings dialog modal relations to main parent window
         settings_win.transient(self.window)
+        # Focus GUI events exclusively onto settings dialog modals
         settings_win.grab_set()
 
         # Labels & Entry fields
