@@ -398,6 +398,7 @@ class PostureApp:
             self.status_label.config(text="Status: Monitoring Active", fg=self.accent_color)
             self.logger.info("Posture monitoring resumed.")
         else:
+            # Update pause button layout parameters to paused views
             self.btn_pause.config(text="▶️ Resume", bg=self.success_color)
             self.status_label.config(text="Status: Monitoring Paused", fg=self.warning_color)
             self.logger.info("Posture monitoring paused.")
