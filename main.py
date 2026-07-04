@@ -261,6 +261,7 @@ class PostureApp:
         Updates the UI state based on success or failure of face detection.
         """
         self.logger.info("Calibration requested...")
+        # Execute calibration procedures to establish baseline heights
         baseline = self.detector.calibrate()
         if baseline:
             self.calibrated = True
