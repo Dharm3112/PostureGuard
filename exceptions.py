@@ -92,6 +92,10 @@ class WidgetBindingError(PostureGuardException):
     """Exception raised when layout event bindings initialization fails."""
     pass
 
+class ThemeLoadingError(PostureGuardException):
+    """Exception raised when visual custom theme properties lookup fails."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
