@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2026-07-04
+
+### Added
+- **GUI Exception System:** Declared 12 specialized exception subclasses for specific GUI and camera thread components.
+- **Detailed Layout Comments:** Added inline explanations inside `main.py` and `posture_detector.py` documenting frame rendering, buttons grid parameters, and stats modals layout configurations.
+
+### Changed
+- **Unit Test Coverage:** Added unit test suites verifying messages and class mapping properties for all new exceptions.
+
+
 ## [1.4.0] - 2026-07-02
 
 ### Added
