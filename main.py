@@ -620,6 +620,7 @@ class PostureApp:
         stats_win = tk.Toplevel(self.window)
         stats_win.title("Posture History Statistics")
         stats_win.configure(bg=self.bg_color)
+        # Bind stats details modal relations to main parent window
         stats_win.transient(self.window)
         stats_win.grab_set()
 
