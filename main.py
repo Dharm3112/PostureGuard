@@ -424,6 +424,7 @@ class PostureApp:
                     writer.writerow(["timestamp", "deviation_px", "state"])
 
                 state = "Slouching" if self.frames_bad > self.TIME_TO_ALERT else "Good"
+                # Compute absolute deviation pixels compared to baseline Y
                 deviation = int(current_y - self.detector.baseline_y)
                 timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
