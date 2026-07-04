@@ -112,6 +112,10 @@ class CameraStreamThreadError(PostureGuardException):
     """Exception raised when background frame capture daemon thread setup fails."""
     pass
 
+class FrameProcessingError(PostureGuardException):
+    """Exception raised when OpenCV frame annotation or parsing operations fail."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
