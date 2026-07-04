@@ -74,7 +74,7 @@ class PostureDetector:
             largest_face = max(faces, key=lambda rect: rect[2] * rect[3])
             (x, y, w, h) = largest_face  # Unpack bounds tuple segments coordinates
 
-            # Calculate center Y of the face
+            # Calculate center Y coordinates of the face rect
             center_y = y + (h // 2)
             center_x = x + (w // 2)
             
