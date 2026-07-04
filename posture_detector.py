@@ -84,7 +84,7 @@ class PostureDetector:
             # Render center point red dot indicator layout parameters
             cv2.circle(frame, (center_x, center_y), 5, (0, 0, 255), -1)
 
-            # Add to buffer and smooth
+            # Add target center coordinate vertical heights to smoothing buffer
             self.y_buffer.append(center_y)
             current_y = self._get_average_y()
 
