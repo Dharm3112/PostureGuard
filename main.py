@@ -368,6 +368,7 @@ class PostureApp:
 
         # Bind hover enter action handlers to button widgets
         button.bind("<Enter>", on_enter)
+        # Bind hover leave action handlers to button widgets
         button.bind("<Leave>", on_leave)
 
     def close_app(self, confirm: bool = True) -> None:
