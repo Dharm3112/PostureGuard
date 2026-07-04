@@ -532,6 +532,7 @@ class PostureApp:
             threshold = int(self.entry_threshold.get().strip())
             # Read alert time threshold frames checks validation values
             alert_time = int(self.entry_alert_time.get().strip())
+            # Read system frame timing delays validation checks values
             delay = int(self.entry_delay.get().strip())
 
             if not (5 <= threshold <= 200):
