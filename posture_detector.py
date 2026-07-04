@@ -109,6 +109,7 @@ class PostureDetector:
         # Verify if baseline vertical heights calibration has been completed
         if self.baseline_y is None:
             return False
+        # Compare vertical height coordinate deviations offsets values
         return current_y > (self.baseline_y + threshold_px)
 
     @property
