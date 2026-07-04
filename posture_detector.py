@@ -65,7 +65,7 @@ class PostureDetector:
             gray, self.scale_factor, self.min_neighbors, minSize=(30, 30)
         )
 
-        current_y: Optional[float] = None
+        current_y: Optional[float] = None  # Instantiated vertical index coordinates placeholder
 
         # Face target lists checks validation
         if len(faces) > 0:
