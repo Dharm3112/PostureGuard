@@ -556,6 +556,7 @@ class PostureApp:
 
         # Camera Index change dynamic reinitialization
         try:
+            # Read selected camera index setting value configurations checks
             camera_idx = int(self.camera_var.get())
             old_camera_index = self.config_manager.get("camera_index", 0)
             if camera_idx != old_camera_index:
