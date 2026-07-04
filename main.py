@@ -191,7 +191,7 @@ class PostureApp:
             bg=self.accent_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat",
             activebackground="#74c7ec", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
-        self.btn_settings.pack(side=tk.LEFT, padx=8)
+        self.btn_settings.pack(side=tk.LEFT, padx=8)  # Render settings trigger button
 
         self.btn_stats: Button = Button(
             self.top_frame, text="📊 Stats", width=10, command=self.show_statistics,
