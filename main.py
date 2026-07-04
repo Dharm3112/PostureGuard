@@ -198,7 +198,7 @@ class PostureApp:
             bg=self.accent_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat",
             activebackground="#b4befe", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
-        self.btn_stats.pack(side=tk.LEFT, padx=8)
+        self.btn_stats.pack(side=tk.LEFT, padx=8)  # Render statistics trigger button
 
         self.btn_quit: Button = Button(
             self.top_frame, text="❌ Quit", width=10, command=self.close_app,
