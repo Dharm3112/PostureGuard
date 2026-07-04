@@ -390,6 +390,7 @@ class PostureApp:
         """
         Toggles posture monitoring state between active and paused.
         """
+        # Toggle active tracking state configuration settings boolean
         self.monitoring_active = not self.monitoring_active
         if self.monitoring_active:
             self.btn_pause.config(text="⏸️ Pause", bg=self.accent_color)
