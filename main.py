@@ -177,7 +177,7 @@ class PostureApp:
             bg=self.success_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat",
             activebackground="#89dceb", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
-        self.btn_calibrate.pack(side=tk.LEFT, padx=8)
+        self.btn_calibrate.pack(side=tk.LEFT, padx=8)  # Render calibration trigger button
 
         self.btn_pause: Button = Button(
             self.top_frame, text="⏸️ Pause", width=10, command=self.toggle_monitoring,
