@@ -205,7 +205,7 @@ class PostureApp:
             bg=self.danger_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat",
             activebackground="#f38ba8", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
-        self.btn_quit.pack(side=tk.LEFT, padx=8)
+        self.btn_quit.pack(side=tk.LEFT, padx=8)  # Render quit trigger button
 
         # Enable monitoring active state flag by default configuration settings
         self.monitoring_active: bool = True
