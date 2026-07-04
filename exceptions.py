@@ -116,6 +116,10 @@ class FrameProcessingError(PostureGuardException):
     """Exception raised when OpenCV frame annotation or parsing operations fail."""
     pass
 
+class BaselineNotEstablishedError(PostureGuardException):
+    """Exception raised when calibration status lookup fails on active checks."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
