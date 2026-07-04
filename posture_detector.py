@@ -79,6 +79,7 @@ class PostureDetector:
             center_x = x + (w // 2)
             
             # Annotate visual bounding box rect layouts around face targets
+            # Render color border boundaries layout parameters
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
             cv2.circle(frame, (center_x, center_y), 5, (0, 0, 255), -1)
 
