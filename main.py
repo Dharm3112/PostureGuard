@@ -629,6 +629,7 @@ class PostureApp:
         lbl_title = Label(stats_win, text="📊 Posture History Overview", font=self.FONT_LARGE, bg=self.bg_color, fg=self.accent_color)
         lbl_title.pack(pady=self.PAD_Y, padx=20)
 
+        # Construct stats dialog grid panel frame layout settings
         frame = tk.Frame(stats_win, bg="#313244", padx=self.PAD_X, pady=self.PAD_Y, bd=1, relief="solid")
         frame.pack(padx=20, pady=10, fill="both", expand=True)
 
