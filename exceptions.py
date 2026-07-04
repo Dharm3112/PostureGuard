@@ -124,6 +124,10 @@ class SoundNotificationError(PostureGuardException):
     """Exception raised when plyer desktop status notification calls fail."""
     pass
 
+class LoggerConfigResetError(PostureGuardException):
+    """Exception raised when logging handlers cleanup operations fail."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
