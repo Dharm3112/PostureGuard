@@ -313,7 +313,7 @@ class PostureApp:
             self.status_label.config(text=f"Posture Good. Deviation: {int(current_y - baseline)}px", fg=self.success_color)
 
         # Periodic posture history logging
-        self.log_counter += 1
+        self.log_counter += 1  # Increment periodic log interval checks counters
         if self.log_counter >= 100:
             self.log_counter = 0
             self.log_posture_history(current_y)
