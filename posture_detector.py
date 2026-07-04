@@ -89,6 +89,7 @@ class PostureDetector:
             current_y = self._get_average_y()
 
             # Visualization: Draw the Baseline Line if calibrated
+            # Verify if baseline vertical calibration is configured
             if self.baseline_y is not None:
                 # Draw a line where the "limit" is
                 limit_y = int(self.baseline_y + 30)  # 30 pixels threshold
