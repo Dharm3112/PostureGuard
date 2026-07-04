@@ -1,5 +1,5 @@
 import unittest
-from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError, ConfigFileNotFoundError, ConfigWritePermissionError, StatsFileWriteError, StatsFileReadError, HistoryFileNotFoundError, GUIWindowInitializationError, WidgetBindingError, ThemeLoadingError, TooltipConfigurationError, SettingsDialogError, StatisticsWindowError, CameraStreamThreadError, FrameProcessingError, BaselineNotEstablishedError, SoundNotificationError
+from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError, ConfigFileNotFoundError, ConfigWritePermissionError, StatsFileWriteError, StatsFileReadError, HistoryFileNotFoundError, GUIWindowInitializationError, WidgetBindingError, ThemeLoadingError, TooltipConfigurationError, SettingsDialogError, StatisticsWindowError, CameraStreamThreadError, FrameProcessingError, BaselineNotEstablishedError, SoundNotificationError, LoggerConfigResetError
 
 class TestExceptions(unittest.TestCase):
     def test_exception_properties(self) -> None:
@@ -18,6 +18,10 @@ class TestExceptions(unittest.TestCase):
         save_exc = ConfigurationSaveError("Save failed")
         self.assertEqual(save_exc.error_code, "ConfigurationSaveError")
         self.assertEqual(save_exc.message, "Save failed")
+
+        exc_loggerconfigreseterror = LoggerConfigResetError("Test msg")
+        self.assertEqual(exc_loggerconfigreseterror.error_code, "LoggerConfigResetError")
+        self.assertEqual(exc_loggerconfigreseterror.message, "Test msg")
 
         exc_soundnotificationerror = SoundNotificationError("Test msg")
         self.assertEqual(exc_soundnotificationerror.error_code, "SoundNotificationError")
