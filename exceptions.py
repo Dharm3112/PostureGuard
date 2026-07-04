@@ -104,6 +104,10 @@ class SettingsDialogError(PostureGuardException):
     """Exception raised when configuration dialog modal initialization fails."""
     pass
 
+class StatisticsWindowError(PostureGuardException):
+    """Exception raised when statistics modal window setup fails."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
