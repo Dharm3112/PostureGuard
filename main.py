@@ -573,6 +573,7 @@ class PostureApp:
 
         # Camera Resolution change dynamic update
         try:
+            # Read selected resolution constraints values configurations checks
             res_str = self.resolution_var.get()
             if 'x' not in res_str:
                 raise ValueError("Invalid resolution format selection.")
