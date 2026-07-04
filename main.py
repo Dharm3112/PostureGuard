@@ -184,7 +184,7 @@ class PostureApp:
             bg=self.accent_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat",
             activebackground="#b4befe", activeforeground=self.btn_fg, cursor="hand2", padx=5, pady=5
         )
-        self.btn_pause.pack(side=tk.LEFT, padx=8)
+        self.btn_pause.pack(side=tk.LEFT, padx=8)  # Render pause trigger button
 
         self.btn_settings: Button = Button(
             self.top_frame, text="⚙️ Settings", width=12, command=self.open_settings,
