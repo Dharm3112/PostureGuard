@@ -366,6 +366,7 @@ class PostureApp:
             if hasattr(self, 'status_bar'):
                 self.status_bar.config(text="Camera Stream: Active")
 
+        # Bind hover enter action handlers to button widgets
         button.bind("<Enter>", on_enter)
         button.bind("<Leave>", on_leave)
 
