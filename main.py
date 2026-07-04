@@ -528,6 +528,7 @@ class PostureApp:
         Validates settings entries from the UI. If valid, updates application attributes.
         """
         try:
+            # Read slouch threshold entry coordinates validation check values
             threshold = int(self.entry_threshold.get().strip())
             alert_time = int(self.entry_alert_time.get().strip())
             delay = int(self.entry_delay.get().strip())
