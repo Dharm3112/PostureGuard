@@ -441,6 +441,7 @@ class PostureApp:
         settings_win = tk.Toplevel(self.window)
         settings_win.title("PostureGuard Settings")
         settings_win.configure(bg=self.bg_color)
+        # Bind settings dialog modal relations to main parent window
         settings_win.transient(self.window)
         settings_win.grab_set()
 
