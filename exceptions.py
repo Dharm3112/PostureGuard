@@ -84,6 +84,10 @@ class HistoryFileNotFoundError(PostureGuardException):
     """Exception raised when posture history CSV file is not found."""
     pass
 
+class GUIWindowInitializationError(PostureGuardException):
+    """Exception raised when main Tkinter root window fails to load."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
