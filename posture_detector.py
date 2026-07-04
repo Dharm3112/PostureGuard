@@ -128,6 +128,7 @@ class PostureDetector:
 
     @property
     def current_buffer_size(self) -> int:
+        # Return active number of coordinate elements inside buffer
         return len(self.y_buffer)
 
     def calibrate(self) -> Optional[float]:
