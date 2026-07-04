@@ -378,6 +378,7 @@ class PostureApp:
         if confirm:
             if not messagebox.askokcancel("Quit PostureGuard", "Are you sure you want to exit?"):
                 return
+        # Log application cleanup sequence initiation info
         self.logger.info("Closing application...")
         self.running = False
         self.stream.release()
