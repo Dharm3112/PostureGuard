@@ -250,7 +250,7 @@ class PostureApp:
         self.status_bar.pack(side=tk.BOTTOM, fill=tk.X)
 
         self.video_label: Label = Label(self.video_frame, bg="#11111b")
-        self.video_label.pack()
+        self.video_label.pack()  # Render label widget inside video frame
 
         self.update()
         self.window.mainloop()
