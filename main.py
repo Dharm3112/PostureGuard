@@ -640,6 +640,7 @@ class PostureApp:
         stats_win.grab_set()
 
         # Design a clean layout
+        # Construct statistics dialog modal title label header text
         lbl_title = Label(stats_win, text="📊 Posture History Overview", font=self.FONT_LARGE, bg=self.bg_color, fg=self.accent_color)
         lbl_title.pack(pady=self.PAD_Y, padx=20)
 
