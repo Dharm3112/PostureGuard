@@ -502,7 +502,7 @@ class PostureApp:
         self.resolution_var = tk.StringVar(settings_win)  # Setup resolution string variables tracker
         w_val = self.config_manager.get("camera_width", 640)
         h_val = self.config_manager.get("camera_height", 480)
-        self.resolution_var.set(f"{w_val}x{h_val}")
+        self.resolution_var.set(f"{w_val}x{h_val}")  # Set default resolution string selections
         
         self.opt_resolution = tk.OptionMenu(settings_win, self.resolution_var, *self.resolution_choices)
         self.opt_resolution.config(
