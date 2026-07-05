@@ -515,6 +515,7 @@ class PostureApp:
         self.opt_resolution.grid(row=4, column=1, padx=self.PAD_X, pady=10, sticky="ew")
 
         # Buttons Frame
+        # Construct settings pane buttons layout frame wrapper container
         btn_frame = tk.Frame(settings_win, bg=self.bg_color)
         btn_frame.grid(row=5, column=0, columnspan=2, pady=self.PAD_Y)
 
