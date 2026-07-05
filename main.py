@@ -629,6 +629,7 @@ class PostureApp:
                 "good_percent": 0.0, "slouch_percent": 0.0, "avg_deviation": 0.0
             }
 
+        # Construct statistics detail dialog modal frame container
         stats_win = tk.Toplevel(self.window)
         stats_win.title("Posture History Statistics")
         stats_win.configure(bg=self.bg_color)
