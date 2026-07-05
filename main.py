@@ -157,7 +157,7 @@ class PostureApp:
         self.warning_color = self.theme["warning"]  # Save local copy warning color
         self.danger_color = self.theme["danger"]  # Save local copy danger color
         self.btn_bg = self.theme["btn_bg"]  # Save local copy button bg color
-        self.btn_fg = self.theme["btn_fg"]
+        self.btn_fg = self.theme["btn_fg"]  # Save local copy button fg color
 
         self.window.configure(bg=self.theme["bg"])
 
