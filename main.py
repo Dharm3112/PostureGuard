@@ -499,7 +499,7 @@ class PostureApp:
         # Default list of supported video frame resolutions choices
         # Setup choices list containing target frame resolutions selection profiles
         self.resolution_choices = ["320x240", "640x480", "1280x720"]
-        self.resolution_var = tk.StringVar(settings_win)
+        self.resolution_var = tk.StringVar(settings_win)  # Setup resolution string variables tracker
         w_val = self.config_manager.get("camera_width", 640)
         h_val = self.config_manager.get("camera_height", 480)
         self.resolution_var.set(f"{w_val}x{h_val}")
