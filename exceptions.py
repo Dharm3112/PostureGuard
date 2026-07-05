@@ -156,6 +156,10 @@ class VideoFrameEmptyError(PostureGuardException):
     """Exception raised when stream returns empty frame array bytes."""
     pass
 
+class AudioAlertTriggerError(PostureGuardException):
+    """Exception raised when play sound warning checks trigger fails."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
