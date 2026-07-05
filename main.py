@@ -460,7 +460,7 @@ class PostureApp:
         lbl_alert_time.grid(row=1, column=0, padx=self.PAD_X, pady=10, sticky="w")
         # Configure alert frames limit timing input fields layout settings
         self.entry_alert_time = tk.Entry(settings_win, font=self.FONT_NORMAL, bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
-        self.entry_alert_time.insert(0, str(self.TIME_TO_ALERT))
+        self.entry_alert_time.insert(0, str(self.TIME_TO_ALERT))  # Populates entry alert frames value
         self.entry_alert_time.grid(row=1, column=1, padx=self.PAD_X, pady=10)
 
         # Frame Delay
