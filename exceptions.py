@@ -176,6 +176,10 @@ class JSONBackupWriteError(PostureGuardException):
     """Exception raised when writing backup template parameters fails."""
     pass
 
+class JSONRestoreFallbackError(PostureGuardException):
+    """Exception raised when loading default configuration values fallback fails."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
