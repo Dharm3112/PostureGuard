@@ -74,7 +74,7 @@ class PostureDetector:
             # Identify the largest face rectangle coordinate values (user proximity target)
             # Select largest rectangle bounding box to target nearest face coordinates
             largest_face = max(faces, key=lambda rect: rect[2] * rect[3])
-            (x, y, w, h) = largest_face  # Unpack bounds tuple segments coordinates
+            (x, y, w, h) = largest_face  # Unpack face coordinate offsets boundary dimensions parameters
 
             # Calculate center Y coordinates of the face rect
             center_y = y + (h // 2)
