@@ -164,6 +164,10 @@ class NotificationServiceError(PostureGuardException):
     """Exception raised when plyer desktop warnings background task fail."""
     pass
 
+class CSVFieldFormatError(PostureGuardException):
+    """Exception raised when csv parsing checks fails due to row fields data mismatch."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
