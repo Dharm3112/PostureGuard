@@ -132,6 +132,10 @@ class CSVFormatMismatchError(PostureGuardException):
     """Exception raised when statistics log rows contains invalid headers."""
     pass
 
+class GUIThemeKeyError(PostureGuardException):
+    """Exception raised when theme dictionary does not contain requested visual keys."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
