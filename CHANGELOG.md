@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.0] - 2026-07-05
+
+### Added
+- **Dynamic File Exceptions:** Declared 12 specialized exception subclasses for stats files reads, config restores, and JSON backups.
+- **Detailed Layout Comments:** Added inline annotations inside `main.py` and `posture_detector.py` explaining dropdown selections, coordinate buffer counts, and color parameters mapping.
+
+### Changed
+- **Unit Test Coverage:** Added unit test validation checks for all new exceptions.
+
+
 ## [1.5.0] - 2026-07-04
 
 ### Added
