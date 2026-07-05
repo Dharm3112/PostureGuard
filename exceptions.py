@@ -160,6 +160,10 @@ class AudioAlertTriggerError(PostureGuardException):
     """Exception raised when play sound warning checks trigger fails."""
     pass
 
+class NotificationServiceError(PostureGuardException):
+    """Exception raised when plyer desktop warnings background task fail."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
