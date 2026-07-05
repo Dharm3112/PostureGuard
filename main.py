@@ -476,6 +476,7 @@ class PostureApp:
         lbl_camera.grid(row=3, column=0, padx=self.PAD_X, pady=10, sticky="w")
         
         # Default list of supported camera devices indices dropdown choices
+        # Setup choices containing list of available camera device hardware indexes
         self.camera_choices = ["0", "1", "2", "3"]
         self.camera_var = tk.StringVar(settings_win)
         current_camera = str(self.config_manager.get("camera_index", 0))
