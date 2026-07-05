@@ -618,6 +618,7 @@ class PostureApp:
         """
         from stats import get_posture_stats
 
+        # Log initialization message for statistics modal window
         self.logger.info("Opening posture statistics window.")
         try:
             stats = get_posture_stats("posture_history.csv")
