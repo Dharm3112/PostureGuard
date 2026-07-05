@@ -140,6 +140,10 @@ class WidgetAlignmentError(PostureGuardException):
     """Exception raised when main control layout elements alignment fails."""
     pass
 
+class MenuOptionIndexError(PostureGuardException):
+    """Exception raised when option dropdown menus indexes selections are out of range."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
