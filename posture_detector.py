@@ -41,7 +41,7 @@ class PostureDetector:
         # Double-ended collection storage tracks recent coordinate histories buffer
         self.y_buffer: deque = deque(maxlen=buffer_size)  # Double-ended queue storing smoothed coordinates history
 
-        # Baseline: The Y-coordinate of your face when sitting straight
+        # Established calibration target baseline vertical heights check variable metrics
         self.baseline_y: Optional[float] = None  # Reference baseline vertical head coordinate calibration index
 
     def process_frame(self, frame: np.ndarray) -> Tuple[np.ndarray, Optional[float]]:
