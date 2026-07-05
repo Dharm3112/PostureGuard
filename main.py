@@ -478,7 +478,7 @@ class PostureApp:
         # Default list of supported camera devices indices dropdown choices
         # Setup choices containing list of available camera device hardware indexes
         self.camera_choices = ["0", "1", "2", "3"]
-        self.camera_var = tk.StringVar(settings_win)
+        self.camera_var = tk.StringVar(settings_win)  # Setup string variable tracker
         current_camera = str(self.config_manager.get("camera_index", 0))
         self.camera_var.set(current_camera)
         
