@@ -152,6 +152,10 @@ class ResolutionSwitchError(PostureGuardException):
     """Exception raised when setting new width/height properties fails."""
     pass
 
+class VideoFrameEmptyError(PostureGuardException):
+    """Exception raised when stream returns empty frame array bytes."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
