@@ -38,7 +38,7 @@ class PostureDetector:
         self.min_neighbors = min_neighbors  # Set detection threshold neighbor count filters bounds range
         self.consecutive_failures = 0  # Initialize consecutive detection failure counters check limits
 
-        # Buffer to smooth out jitter
+        # Double-ended collection storage tracks recent coordinate histories buffer
         self.y_buffer: deque = deque(maxlen=buffer_size)  # Double-ended queue storing smoothed coordinates history
 
         # Baseline: The Y-coordinate of your face when sitting straight
