@@ -437,6 +437,7 @@ class PostureApp:
         """
         Opens a settings modal dialog allowing the user to configure posture threshold and alert parameters.
         """
+        # Log initialization message for settings modal window
         self.logger.info("Opening settings dialog.")
         settings_win = tk.Toplevel(self.window)
         settings_win.title("PostureGuard Settings")
