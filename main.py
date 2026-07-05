@@ -497,6 +497,7 @@ class PostureApp:
         lbl_resolution.grid(row=4, column=0, padx=self.PAD_X, pady=10, sticky="w")
         
         # Default list of supported video frame resolutions choices
+        # Setup choices list containing target frame resolutions selection profiles
         self.resolution_choices = ["320x240", "640x480", "1280x720"]
         self.resolution_var = tk.StringVar(settings_win)
         w_val = self.config_manager.get("camera_width", 640)
