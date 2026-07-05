@@ -482,6 +482,7 @@ class PostureApp:
         current_camera = str(self.config_manager.get("camera_index", 0))  # Retrieve current index settings
         self.camera_var.set(current_camera)  # Set camera variables selection bounds
         
+        # Construct camera devices options dropdown selection menu widget
         self.opt_camera = tk.OptionMenu(settings_win, self.camera_var, *self.camera_choices)
         self.opt_camera.config(
             font=("Segoe UI", 9), bg="#313244", fg=self.fg_color,
