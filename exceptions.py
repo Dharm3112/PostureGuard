@@ -172,6 +172,10 @@ class CSVWriterAccessError(PostureGuardException):
     """Exception raised when appending records to history files fails due to permission errors."""
     pass
 
+class JSONBackupWriteError(PostureGuardException):
+    """Exception raised when writing backup template parameters fails."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
