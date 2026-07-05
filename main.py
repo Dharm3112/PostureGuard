@@ -519,6 +519,7 @@ class PostureApp:
         btn_frame = tk.Frame(settings_win, bg=self.bg_color)
         btn_frame.grid(row=5, column=0, columnspan=2, pady=self.PAD_Y)
 
+        # Construct save settings dialog modal submission button widgets
         btn_save = Button(
             btn_frame, text="💾 Save", width=10, command=lambda: self.save_settings_from_ui(settings_win),
             bg=self.success_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat", cursor="hand2"
