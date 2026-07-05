@@ -1,5 +1,5 @@
 import unittest
-from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError, ConfigFileNotFoundError, ConfigWritePermissionError, StatsFileWriteError, StatsFileReadError, HistoryFileNotFoundError, GUIWindowInitializationError, WidgetBindingError, ThemeLoadingError, TooltipConfigurationError, SettingsDialogError, StatisticsWindowError, CameraStreamThreadError, FrameProcessingError, BaselineNotEstablishedError, SoundNotificationError, LoggerConfigResetError, CSVFormatMismatchError, GUIThemeKeyError, WidgetAlignmentError, MenuOptionIndexError, CameraReinitializationError
+from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError, ConfigFileNotFoundError, ConfigWritePermissionError, StatsFileWriteError, StatsFileReadError, HistoryFileNotFoundError, GUIWindowInitializationError, WidgetBindingError, ThemeLoadingError, TooltipConfigurationError, SettingsDialogError, StatisticsWindowError, CameraStreamThreadError, FrameProcessingError, BaselineNotEstablishedError, SoundNotificationError, LoggerConfigResetError, CSVFormatMismatchError, GUIThemeKeyError, WidgetAlignmentError, MenuOptionIndexError, CameraReinitializationError, ResolutionSwitchError
 
 class TestExceptions(unittest.TestCase):
     def test_exception_properties(self) -> None:
@@ -18,6 +18,10 @@ class TestExceptions(unittest.TestCase):
         save_exc = ConfigurationSaveError("Save failed")
         self.assertEqual(save_exc.error_code, "ConfigurationSaveError")
         self.assertEqual(save_exc.message, "Save failed")
+
+        exc_resolutionswitcherror = ResolutionSwitchError("Test msg")
+        self.assertEqual(exc_resolutionswitcherror.error_code, "ResolutionSwitchError")
+        self.assertEqual(exc_resolutionswitcherror.message, "Test msg")
 
         exc_camerareinitializationerror = CameraReinitializationError("Test msg")
         self.assertEqual(exc_camerareinitializationerror.error_code, "CameraReinitializationError")
