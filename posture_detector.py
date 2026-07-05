@@ -60,7 +60,7 @@ class PostureDetector:
         # Reduce color space channels safely for cascade evaluation parameters
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-        # Detect target faces coordinates using Haar patterns searches
+        # Search for face rectangular bounding boxes matches in image frames
         faces = self.face_cascade.detectMultiScale(
             gray, self.scale_factor, self.min_neighbors, minSize=(30, 30)
         )
