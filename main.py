@@ -153,7 +153,7 @@ class PostureApp:
         self.bg_color = self.theme["bg"]  # Save local copy bg color
         self.fg_color = self.theme["fg"]  # Save local copy fg color
         self.accent_color = self.theme["accent"]  # Save local copy accent color
-        self.success_color = self.theme["success"]
+        self.success_color = self.theme["success"]  # Save local copy success color
         self.warning_color = self.theme["warning"]
         self.danger_color = self.theme["danger"]
         self.btn_bg = self.theme["btn_bg"]
