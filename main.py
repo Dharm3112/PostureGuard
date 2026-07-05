@@ -526,6 +526,7 @@ class PostureApp:
         )
         btn_save.pack(side=tk.LEFT, padx=10)  # Render save triggers button
 
+        # Construct cancel settings dialog modal triggers button widgets
         btn_cancel = Button(
             btn_frame, text="❌ Cancel", width=10, command=settings_win.destroy,  # Close settings modal window
             bg=self.danger_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat", cursor="hand2"
