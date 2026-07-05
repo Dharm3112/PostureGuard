@@ -524,7 +524,7 @@ class PostureApp:
             btn_frame, text="💾 Save", width=10, command=lambda: self.save_settings_from_ui(settings_win),
             bg=self.success_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat", cursor="hand2"
         )
-        btn_save.pack(side=tk.LEFT, padx=10)
+        btn_save.pack(side=tk.LEFT, padx=10)  # Render save triggers button
 
         btn_cancel = Button(
             btn_frame, text="❌ Cancel", width=10, command=settings_win.destroy,  # Close settings modal window
