@@ -450,6 +450,7 @@ class PostureApp:
         # Threshold
         lbl_threshold = Label(settings_win, text="Slouch Threshold (px):", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
         lbl_threshold.grid(row=0, column=0, padx=self.PAD_X, pady=10, sticky="w")
+        # Configure slouch threshold coordinates input fields layout settings
         self.entry_threshold = tk.Entry(settings_win, font=self.FONT_NORMAL, bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
         self.entry_threshold.insert(0, str(self.slouch_threshold))
         self.entry_threshold.grid(row=0, column=1, padx=self.PAD_X, pady=10)
