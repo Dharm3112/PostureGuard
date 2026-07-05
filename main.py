@@ -631,6 +631,7 @@ class PostureApp:
 
         # Construct statistics detail dialog modal frame container
         stats_win = tk.Toplevel(self.window)
+        # Configure statistics dialog modal frame window titles text
         stats_win.title("Posture History Statistics")
         stats_win.configure(bg=self.bg_color)
         # Bind stats details modal relations to main parent window
