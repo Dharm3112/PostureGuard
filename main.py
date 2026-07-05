@@ -531,7 +531,7 @@ class PostureApp:
             btn_frame, text="❌ Cancel", width=10, command=settings_win.destroy,  # Close settings modal window
             bg=self.danger_color, fg=self.btn_fg, font=self.FONT_MEDIUM, relief="flat", cursor="hand2"
         )
-        btn_cancel.pack(side=tk.LEFT, padx=10)
+        btn_cancel.pack(side=tk.LEFT, padx=10)  # Render cancel triggers button
 
     def save_settings_from_ui(self, settings_win: tk.Toplevel) -> None:
         """
