@@ -148,6 +148,10 @@ class CameraReinitializationError(PostureGuardException):
     """Exception raised when re-instantiating camera feed device fails."""
     pass
 
+class ResolutionSwitchError(PostureGuardException):
+    """Exception raised when setting new width/height properties fails."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
