@@ -1,5 +1,5 @@
 import unittest
-from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError, ConfigFileNotFoundError, ConfigWritePermissionError, StatsFileWriteError, StatsFileReadError, HistoryFileNotFoundError, GUIWindowInitializationError, WidgetBindingError, ThemeLoadingError, TooltipConfigurationError, SettingsDialogError, StatisticsWindowError, CameraStreamThreadError, FrameProcessingError, BaselineNotEstablishedError, SoundNotificationError, LoggerConfigResetError, CSVFormatMismatchError, GUIThemeKeyError, WidgetAlignmentError, MenuOptionIndexError, CameraReinitializationError, ResolutionSwitchError, VideoFrameEmptyError
+from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError, ConfigFileNotFoundError, ConfigWritePermissionError, StatsFileWriteError, StatsFileReadError, HistoryFileNotFoundError, GUIWindowInitializationError, WidgetBindingError, ThemeLoadingError, TooltipConfigurationError, SettingsDialogError, StatisticsWindowError, CameraStreamThreadError, FrameProcessingError, BaselineNotEstablishedError, SoundNotificationError, LoggerConfigResetError, CSVFormatMismatchError, GUIThemeKeyError, WidgetAlignmentError, MenuOptionIndexError, CameraReinitializationError, ResolutionSwitchError, VideoFrameEmptyError, AudioAlertTriggerError
 
 class TestExceptions(unittest.TestCase):
     def test_exception_properties(self) -> None:
@@ -18,6 +18,10 @@ class TestExceptions(unittest.TestCase):
         save_exc = ConfigurationSaveError("Save failed")
         self.assertEqual(save_exc.error_code, "ConfigurationSaveError")
         self.assertEqual(save_exc.message, "Save failed")
+
+        exc_audioalerttriggererror = AudioAlertTriggerError("Test msg")
+        self.assertEqual(exc_audioalerttriggererror.error_code, "AudioAlertTriggerError")
+        self.assertEqual(exc_audioalerttriggererror.message, "Test msg")
 
         exc_videoframeemptyerror = VideoFrameEmptyError("Test msg")
         self.assertEqual(exc_videoframeemptyerror.error_code, "VideoFrameEmptyError")
