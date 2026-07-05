@@ -466,6 +466,7 @@ class PostureApp:
         # Frame Delay
         lbl_delay = Label(settings_win, text="Frame Delay (ms):", bg=self.bg_color, fg=self.fg_color, font=self.FONT_NORMAL)
         lbl_delay.grid(row=2, column=0, padx=self.PAD_X, pady=10, sticky="w")
+        # Configure refresh timings delay inputs fields layout settings
         self.entry_delay = tk.Entry(settings_win, font=self.FONT_NORMAL, bg="#313244", fg=self.fg_color, insertbackground="white", bd=0)
         self.entry_delay.insert(0, str(self.frame_delay_ms))
         self.entry_delay.grid(row=2, column=1, padx=self.PAD_X, pady=10)
