@@ -144,6 +144,10 @@ class MenuOptionIndexError(PostureGuardException):
     """Exception raised when option dropdown menus indexes selections are out of range."""
     pass
 
+class CameraReinitializationError(PostureGuardException):
+    """Exception raised when re-instantiating camera feed device fails."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
