@@ -216,6 +216,10 @@ class JSONSchemaValidationError(PostureGuardException):
     """Exception raised when configuration JSON document does not match expected schema schemas."""
     pass
 
+class ConfigurationWriteConflictError(PostureGuardException):
+    """Exception raised when saving parameters configs file locks matches concurrent edits."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
