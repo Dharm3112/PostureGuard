@@ -22,7 +22,7 @@ class PostureDetector:
         self.logger = setup_logger()  # Bind logger output streams
         self.logger.info("Initializing PostureDetector...")
 
-        # Setup localized cascade file parameters from libraries tracker
+        # Setup localized cascade file parameters from libraries tracker loader
         # Verify path config integrity check
         if not self.CASCADE_PATH:
             raise ModelLoadError(message="Cascade path is empty.")
