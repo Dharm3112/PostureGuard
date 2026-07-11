@@ -334,7 +334,7 @@ class PostureApp:
         Periodic update method that reads frames from the camera, processes them
         using the posture detector, updates GUI widgets, and schedules the next update.
         """
-        ret, frame = self.stream.read()
+        ret, frame = self.stream.read()  # Read latest frame from camera thread
         if ret and frame is not None:
             # Create a copy to prevent thread frame modifications during processing
             frame = frame.copy()
