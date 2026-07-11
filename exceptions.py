@@ -212,6 +212,10 @@ class CascadeModelFileFormatError(PostureGuardException):
     """Exception raised when loaded cascade model classifier XML structure gets parser errors."""
     pass
 
+class JSONSchemaValidationError(PostureGuardException):
+    """Exception raised when configuration JSON document does not match expected schema schemas."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
