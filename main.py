@@ -326,7 +326,7 @@ class PostureApp:
         self.log_counter += 1  # Increment periodic log interval checks counters tracker
         if self.log_counter >= 100:
             self.log_counter = 0
-            # Write current deviation metric to CSV history storage
+            # Write current deviation metric to CSV history storage file
             self.log_posture_history(current_y)
 
     def update(self) -> None:
