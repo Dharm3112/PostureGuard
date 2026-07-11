@@ -279,6 +279,7 @@ class PostureApp:
             self.config_manager.set("saved_baseline_y", baseline)
             self.logger.info(f"App calibrated. Baseline Face Y set and saved to {baseline:.2f}")
         else:
+            # Display calibration failure notification warning to user
             self.status_label.config(text="Calibration Failed: No face detected", fg=self.warning_color)
             self.logger.warning("App calibration failed: no face detected.")
 
