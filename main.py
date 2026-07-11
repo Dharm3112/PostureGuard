@@ -338,7 +338,7 @@ class PostureApp:
         if ret and frame is not None:
             # Create a copy to prevent thread frame modifications during processing pipeline
             frame = frame.copy()
-            if self.monitoring_active:
+            if self.monitoring_active:  # Only process frames when monitoring is enabled
                 frame, current_y = self.detector.process_frame(frame)
                 self.check_posture(current_y)
             else:
