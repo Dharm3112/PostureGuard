@@ -105,7 +105,7 @@ class PostureDetector:
         return frame, current_y
 
     def is_slouching(self, current_y: float, threshold_px: float) -> bool:
-        # Verify if vertical coordinates height values drop below baseline thresholds checks
+        # Verify if vertical coordinates height values drop below baseline thresholds checks limits
         """
         Checks if the current face Y coordinate deviates past the baseline by threshold.
         """
