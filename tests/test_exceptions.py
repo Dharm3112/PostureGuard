@@ -1,5 +1,5 @@
 import unittest
-from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError, ConfigFileNotFoundError, ConfigWritePermissionError, StatsFileWriteError, StatsFileReadError, HistoryFileNotFoundError, GUIWindowInitializationError, WidgetBindingError, ThemeLoadingError, TooltipConfigurationError, SettingsDialogError, StatisticsWindowError, CameraStreamThreadError, FrameProcessingError, BaselineNotEstablishedError, SoundNotificationError, LoggerConfigResetError, CSVFormatMismatchError, GUIThemeKeyError, WidgetAlignmentError, MenuOptionIndexError, CameraReinitializationError, ResolutionSwitchError, VideoFrameEmptyError, AudioAlertTriggerError, NotificationServiceError, CSVFieldFormatError, CSVWriterAccessError, JSONBackupWriteError, JSONRestoreFallbackError, CanvasWidgetRenderError, DynamicTooltipTimeoutError, SettingsWindowDismissalError
+from exceptions import PostureGuardException, CameraNotFoundError, ModelLoadError, LoggingConfigurationError, ConfigurationSaveError, InvalidResolutionError, InvalidThresholdError, InvalidDelayError, InvalidAlertFramesError, InvalidLogBytesError, InvalidBackupCountError, InvalidConfigFormatError, ConfigFileNotFoundError, ConfigWritePermissionError, StatsFileWriteError, StatsFileReadError, HistoryFileNotFoundError, GUIWindowInitializationError, WidgetBindingError, ThemeLoadingError, TooltipConfigurationError, SettingsDialogError, StatisticsWindowError, CameraStreamThreadError, FrameProcessingError, BaselineNotEstablishedError, SoundNotificationError, LoggerConfigResetError, CSVFormatMismatchError, GUIThemeKeyError, WidgetAlignmentError, MenuOptionIndexError, CameraReinitializationError, ResolutionSwitchError, VideoFrameEmptyError, AudioAlertTriggerError, NotificationServiceError, CSVFieldFormatError, CSVWriterAccessError, JSONBackupWriteError, JSONRestoreFallbackError, CanvasWidgetRenderError, DynamicTooltipTimeoutError, SettingsWindowDismissalError, DatabaseStatsRowFormatError
 
 class TestExceptions(unittest.TestCase):
     def test_exception_properties(self) -> None:
@@ -18,6 +18,10 @@ class TestExceptions(unittest.TestCase):
         save_exc = ConfigurationSaveError("Save failed")
         self.assertEqual(save_exc.error_code, "ConfigurationSaveError")
         self.assertEqual(save_exc.message, "Save failed")
+
+        exc_databasestatsrowformaterror = DatabaseStatsRowFormatError("Test msg")
+        self.assertEqual(exc_databasestatsrowformaterror.error_code, "DatabaseStatsRowFormatError")
+        self.assertEqual(exc_databasestatsrowformaterror.message, "Test msg")
 
         exc_settingswindowdismissalerror = SettingsWindowDismissalError("Test msg")
         self.assertEqual(exc_settingswindowdismissalerror.error_code, "SettingsWindowDismissalError")
