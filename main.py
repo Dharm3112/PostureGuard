@@ -247,7 +247,7 @@ class PostureApp:
         # Construct canvas frame element with standard dark themes borders
         # Construct image canvas panel wrapper frames element
         self.video_frame: tk.Frame = tk.Frame(window, bg="#313244", bd=2, relief="groove")
-        self.video_frame.pack(padx=self.PAD_X, pady=10)
+        self.video_frame.pack(padx=self.PAD_X, pady=10)  # Pack border elements around image screens
         
         # Add simple status label bar at the bottom
         # Build application bottom info bar pane container
