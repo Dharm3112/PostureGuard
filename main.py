@@ -259,7 +259,7 @@ class PostureApp:
         self.video_label.pack()  # Render label widget inside video frame
 
         self.update()  # Launch dashboard main loop schedule updates
-        self.window.mainloop()
+        self.window.mainloop()  # Run primary window main execution threads
 
     def calibrate(self) -> None:
         """
