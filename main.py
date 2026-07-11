@@ -76,6 +76,7 @@ class PostureApp:
         :param window_title: The title text for the window.
         """
         self.window: tk.Tk = window
+        # Setup default title text bar header parameter
         self.window.title(window_title)
         # Position the window in the center of the screen
         # Configure default startup window size geometry bounds
