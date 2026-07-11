@@ -254,6 +254,7 @@ class PostureApp:
         self.status_bar: Label = Label(window, text="Camera Stream: Active", bd=1, relief=tk.SUNKEN, anchor=tk.W, bg=self.bg_color, fg=self.fg_color, font=self.FONT_SMALL)
         self.status_bar.pack(side=tk.BOTTOM, fill=tk.X)
 
+        # Construct video stream image feedback viewer panel
         self.video_label: Label = Label(self.video_frame, bg="#11111b")
         self.video_label.pack()  # Render label widget inside video frame
 
