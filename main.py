@@ -225,6 +225,7 @@ class PostureApp:
         # Bind Control-L keyboard shortcut triggers for baseline calibrations
         self.window.bind("<Control-l>", lambda event: self.calibrate())
 
+        # Construct status bar text display elements container widget
         self.status_label: Label = Label(
             window, text="Status: Not Calibrated", font=self.FONT_LARGE,
             bg=self.bg_color, fg=self.accent_color
