@@ -311,7 +311,7 @@ class PostureApp:
         if self.frames_bad > self.TIME_TO_ALERT:
             self.status_label.config(text="⚠️ SLOUCHING! SIT UP! ⚠️", fg=self.danger_color)
 
-            if self.frames_bad % 100 == 0:  # Sound alert occasionally
+            if self.frames_bad % 100 == 0:  # Sound alert occasionally to avoid spam
                 self.logger.warning(f"Slouching detected for {self.frames_bad} frames. Sending system notification.")
                 notification.notify(
                     title='PostureGuard',
