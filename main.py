@@ -349,7 +349,7 @@ class PostureApp:
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 165, 255), 2
                 )
 
-            # Convert for Tkinter
+            # Convert OpenCV BGR frame to RGB for Tkinter display
             img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             img = Image.fromarray(img)
             imgtk = ImageTk.PhotoImage(image=img)
