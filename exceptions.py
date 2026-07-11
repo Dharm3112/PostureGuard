@@ -220,6 +220,10 @@ class ConfigurationWriteConflictError(PostureGuardException):
     """Exception raised when saving parameters configs file locks matches concurrent edits."""
     pass
 
+class SystemNotificationPermissionError(PostureGuardException):
+    """Exception raised when requesting desktop warning popup triggers gets permissions denied."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
