@@ -294,7 +294,7 @@ class PostureApp:
         if not self.calibrated or current_y is None:
             return
 
-        baseline = self.detector.baseline_y
+        baseline = self.detector.baseline_y  # Retrieve stored baseline Y coordinate
         if baseline is None:
             return
 
