@@ -200,6 +200,10 @@ class LogRotationIntervalError(PostureGuardException):
     """Exception raised when logging directory rolls files encounters bounds limits errors."""
     pass
 
+class SoundPlayerNotAvailableError(PostureGuardException):
+    """Exception raised when default audio alarm triggers cannot find speaker hardware devices."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
