@@ -140,6 +140,7 @@ class PostureApp:
             return
 
         # Modern Color Palette Theme Dictionary
+        # Retrieve default GUI visual style colors mappings settings
         self.theme: dict = {
             "bg": "#1e1e2e",
             "fg": "#cdd6f4",
