@@ -224,6 +224,10 @@ class SystemNotificationPermissionError(PostureGuardException):
     """Exception raised when requesting desktop warning popup triggers gets permissions denied."""
     pass
 
+class CameraResourceReleaseError(PostureGuardException):
+    """Exception raised when closing capture video stream interfaces fails to release webcam hardware resources."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
