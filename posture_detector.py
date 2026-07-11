@@ -38,7 +38,7 @@ class PostureDetector:
         self.min_neighbors = min_neighbors  # Set detection threshold neighbor count filters bounds range limit
         self.consecutive_failures = 0  # Initialize consecutive detection failure counters check limits tracker
 
-        # Double-ended collection storage tracks recent coordinate histories buffer
+        # Double-ended collection storage tracks recent coordinate histories buffer deque
         self.y_buffer: deque = deque(maxlen=buffer_size)  # Double-ended queue storing smoothed coordinates history
 
         # Established calibration target baseline vertical heights check variable metrics
