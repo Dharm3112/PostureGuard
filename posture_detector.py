@@ -72,7 +72,7 @@ class PostureDetector:
             self.consecutive_failures = 0  # Clear consecutive tracking failure stats counters checks verification reset
             # Find the largest face rect coordinate dimensions (assumed user proximity target)
             # Identify the largest face rectangle coordinate values (user proximity target)
-            # Select largest rectangle bounding box to target nearest face coordinates
+            # Select largest rectangle bounding box to target nearest face coordinates metrics
             largest_face = max(faces, key=lambda rect: rect[2] * rect[3])
             (x, y, w, h) = largest_face  # Unpack face coordinate offsets boundary dimensions parameters
 
