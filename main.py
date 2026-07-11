@@ -232,7 +232,7 @@ class PostureApp:
         )
         if not hasattr(self, 'detector') or self.detector.face_cascade.empty():
             self.status_label.config(text="Status: Classifier Load Warning", fg=self.warning_color)
-        self.status_label.pack(pady=10)
+        self.status_label.pack(pady=10)  # Render status labels on root canvas view
 
         # Check for persisted baseline calibration
         # Extract configuration template baseline index variables dynamically
