@@ -204,6 +204,10 @@ class SoundPlayerNotAvailableError(PostureGuardException):
     """Exception raised when default audio alarm triggers cannot find speaker hardware devices."""
     pass
 
+class CalibrationBaselineMismatchError(PostureGuardException):
+    """Exception raised when target coordinate indices values mismatch custom thresholds ranges."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
