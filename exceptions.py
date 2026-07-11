@@ -208,6 +208,10 @@ class CalibrationBaselineMismatchError(PostureGuardException):
     """Exception raised when target coordinate indices values mismatch custom thresholds ranges."""
     pass
 
+class CascadeModelFileFormatError(PostureGuardException):
+    """Exception raised when loaded cascade model classifier XML structure gets parser errors."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
