@@ -184,6 +184,10 @@ class CanvasWidgetRenderError(PostureGuardException):
     """Exception raised when drawing OpenCV frame bytes on Tkinter canvas widget fails."""
     pass
 
+class DynamicTooltipTimeoutError(PostureGuardException):
+    """Exception raised when rendering dynamic tooltip status indicators timed out."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
