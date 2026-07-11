@@ -342,7 +342,7 @@ class PostureApp:
                 frame, current_y = self.detector.process_frame(frame)
                 self.check_posture(current_y)
             else:
-                # Bypassed - draw text indicating paused state
+                # Bypassed - draw overlay text indicating monitoring paused state
                 h, w, _ = frame.shape
                 cv2.putText(
                     frame, "MONITORING PAUSED", (w // 2 - 120, h // 2),
