@@ -320,7 +320,7 @@ class PostureApp:
                     timeout=2
                 )
         elif self.frames_bad == 0:
-            self.status_label.config(text=f"Posture Good. Deviation: {int(current_y - baseline)}px", fg=self.success_color)
+            self.status_label.config(text=f"Posture Good. Deviation: {int(current_y - baseline)}px", fg=self.success_color)  # Show positive posture feedback
 
         # Periodic posture history logging
         self.log_counter += 1  # Increment periodic log interval checks counters
