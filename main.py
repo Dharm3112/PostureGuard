@@ -262,6 +262,7 @@ class PostureApp:
         self.window.mainloop()  # Run primary window main execution threads
 
     def calibrate(self) -> None:
+        # Establish new baseline straight posture coordinate indicators checks
         """
         Calibrates the target posture baseline from the detector.
         Updates the UI state based on success or failure of face detection.
