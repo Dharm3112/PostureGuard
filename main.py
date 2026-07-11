@@ -336,7 +336,7 @@ class PostureApp:
         """
         ret, frame = self.stream.read()  # Read latest frame from camera thread
         if ret and frame is not None:
-            # Create a copy to prevent thread frame modifications during processing
+            # Create a copy to prevent thread frame modifications during processing pipeline
             frame = frame.copy()
             if self.monitoring_active:
                 frame, current_y = self.detector.process_frame(frame)
