@@ -290,6 +290,7 @@ class PostureApp:
 
         :param current_y: The current vertical position of the face (smoothed center coordinate).
         """
+        # Guard clause: skip posture checks if not calibrated or no face data
         if not self.calibrated or current_y is None:
             return
 
