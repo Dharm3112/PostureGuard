@@ -271,7 +271,7 @@ class PostureApp:
         # Execute calibration procedures to establish baseline heights metrics
         baseline = self.detector.calibrate()
         if baseline:
-            self.calibrated = True
+            self.calibrated = True  # Mark calibration as completed
             self.status_label.config(text=f"Calibrated! Face Y: {int(baseline)}", fg=self.success_color)
             self.frames_bad = 0
             # Persist baseline calibration
