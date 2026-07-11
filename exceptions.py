@@ -196,6 +196,10 @@ class DatabaseStatsRowFormatError(PostureGuardException):
     """Exception raised when statistics details parsing gets corrupt logs rows data."""
     pass
 
+class LogRotationIntervalError(PostureGuardException):
+    """Exception raised when logging directory rolls files encounters bounds limits errors."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
