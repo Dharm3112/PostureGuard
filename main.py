@@ -82,6 +82,10 @@ class PostureApp:
         # Configure default startup window size geometry bounds
         self.window.geometry("700x600")
 
+        # Load configuration settings
+        # Instantiate dynamic configuration manager helper properties
+        self.config_manager: ConfigManager = ConfigManager()
+
         # Setup logging
         log_level_val = self.config_manager.get("log_level", "INFO")
         log_level = getattr(sys.modules['logging'], log_level_val, sys.modules['logging'].INFO) if 'logging' in sys.modules else 20
@@ -100,10 +104,6 @@ class PostureApp:
             self.logger.info("Application window icon loaded successfully.")
         except Exception as e:
             self.logger.warning(f"Could not load application window icon: {e}")
-
-        # Load configuration settings
-        # Instantiate dynamic configuration manager helper properties
-        self.config_manager: ConfigManager = ConfigManager()
         camera_index: int = self.config_manager.get("camera_index", 0)
         camera_width: int = self.config_manager.get("camera_width", 640)
         camera_height: int = self.config_manager.get("camera_height", 480)
