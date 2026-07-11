@@ -304,7 +304,7 @@ class PostureApp:
         if current_y > (baseline + self.slouch_threshold):
             self.frames_bad += 1  # Increment consecutive slouch frame counter
         else:
-            self.frames_bad = 0
+            self.frames_bad = 0  # Reset slouch counter on good posture
 
         # Alerting
         # Check if slouch tracking duration exceeds limit settings constraints
