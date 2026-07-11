@@ -188,6 +188,10 @@ class DynamicTooltipTimeoutError(PostureGuardException):
     """Exception raised when rendering dynamic tooltip status indicators timed out."""
     pass
 
+class SettingsWindowDismissalError(PostureGuardException):
+    """Exception raised when disposing settings popup modal windows fails."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
