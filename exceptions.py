@@ -180,6 +180,10 @@ class JSONRestoreFallbackError(PostureGuardException):
     """Exception raised when loading default configuration values fallback fails."""
     pass
 
+class CanvasWidgetRenderError(PostureGuardException):
+    """Exception raised when drawing OpenCV frame bytes on Tkinter canvas widget fails."""
+    pass
+
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
