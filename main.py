@@ -160,6 +160,7 @@ class PostureApp:
         self.btn_bg = self.theme["btn_bg"]  # Save local copy button bg color
         self.btn_fg = self.theme["btn_fg"]  # Save local copy button fg color
 
+        # Configure dashboard background color layouts properties
         self.window.configure(bg=self.theme["bg"])
 
         # LOGIC SETTINGS
