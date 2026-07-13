@@ -251,3 +251,8 @@ class LogFileOpenError(PostureGuardException):
 class LogRotationLockError(PostureGuardException):
     """Exception raised when rotating log files encounters a system lock."""
     pass
+
+
+class LogFormattingError(PostureGuardException):
+    """Exception raised when log formatter template parameters fail to compile."""
+    pass
