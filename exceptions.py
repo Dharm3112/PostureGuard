@@ -351,3 +351,8 @@ class SmoothBufferEmptyError(PostureGuardException):
 class CalibrateFaceNotFoundError(PostureGuardException):
     """Exception raised when calibration baseline cannot locate face features in buffer."""
     pass
+
+
+class CalibrateBaselineZeroError(PostureGuardException):
+    """Exception raised when calibration baseline Y is zero or negative."""
+    pass
