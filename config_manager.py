@@ -123,7 +123,7 @@ class ConfigManager:
             return False
         return True
 
-    def get(self, key: str, default: Any = None) -> Any:
+    def get(self, key: str, default: Any = None) -> Any:  # Retrieve target setting by configuration key mapping
         """
         Retrieves a configuration value.
         """
