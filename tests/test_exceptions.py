@@ -319,5 +319,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraCaptureDeviceBusyError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameraaccessblockederror(self) -> None:
+        from exceptions import CameraAccessBlockedError
+        exc = CameraAccessBlockedError("Test msg")
+        self.assertEqual(exc.error_code, "CameraAccessBlockedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
