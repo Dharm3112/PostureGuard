@@ -286,3 +286,8 @@ class CSVBackupError(PostureGuardException):
 class UIElementNotFoundError(PostureGuardException):
     """Exception raised when Tkinter UI elements lookup by name or reference fails."""
     pass
+
+
+class FontLoadingError(PostureGuardException):
+    """Exception raised when custom system fonts fail to load or compile."""
+    pass
