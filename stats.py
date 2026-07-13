@@ -1,7 +1,7 @@
 import csv
 import os
 from typing import Dict, Any, Optional
-BaseDirectory = os.path.dirname(os.path.abspath(__file__))
+BaseDirectory = os.path.dirname(os.path.abspath(__file__))  # Retrieve canonical parent root path directory settings
 
 
 def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optional[str] = None, end_date: Optional[str] = None) -> Dict[str, Any]:
