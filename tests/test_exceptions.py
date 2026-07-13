@@ -343,5 +343,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ModelDetectionTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_smoothbufferemptyerror(self) -> None:
+        from exceptions import SmoothBufferEmptyError
+        exc = SmoothBufferEmptyError("Test msg")
+        self.assertEqual(exc.error_code, "SmoothBufferEmptyError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
