@@ -165,7 +165,7 @@ class ConfigManager:
         except Exception:
             return False
 
-    def get_config_filepath(self) -> str:
+    def get_config_filepath(self) -> str:  # Get canonical absolute pathname for active configuration settings
         """
         Returns the absolute path of the configuration file.
         """
