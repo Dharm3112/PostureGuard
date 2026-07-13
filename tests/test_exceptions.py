@@ -313,5 +313,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ThreadTerminationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameracapturedevicebusyerror(self) -> None:
+        from exceptions import CameraCaptureDeviceBusyError
+        exc = CameraCaptureDeviceBusyError("Test msg")
+        self.assertEqual(exc.error_code, "CameraCaptureDeviceBusyError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
