@@ -326,3 +326,8 @@ class CameraCaptureDeviceBusyError(PostureGuardException):
 class CameraAccessBlockedError(PostureGuardException):
     """Exception raised when OS security policies deny access to the camera hardware."""
     pass
+
+
+class FrameBufferOverflowError(PostureGuardException):
+    """Exception raised when queue buffer size of camera stream frames exceeds limits."""
+    pass
