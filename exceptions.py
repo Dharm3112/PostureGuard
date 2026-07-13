@@ -231,3 +231,8 @@ class CameraResourceReleaseError(PostureGuardException):
 class ConfigurationSaveError(PostureGuardException):
     """Exception raised when configuration file writing fails due to permission or OS errors."""
     pass
+
+
+class ConfigFileLockError(PostureGuardException):
+    """Exception raised when configuration file is locked by another process."""
+    pass
