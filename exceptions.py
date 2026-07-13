@@ -246,3 +246,8 @@ class LoggerInitializationError(PostureGuardException):
 class LogFileOpenError(PostureGuardException):
     """Exception raised when logging directory exists but log file cannot be opened for writing."""
     pass
+
+
+class LogRotationLockError(PostureGuardException):
+    """Exception raised when rotating log files encounters a system lock."""
+    pass
