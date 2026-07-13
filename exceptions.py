@@ -276,3 +276,8 @@ class CSVLineEndingError(PostureGuardException):
 class CSVTempFileCreationError(PostureGuardException):
     """Exception raised when temporary CSV file for stats recovery cannot be created."""
     pass
+
+
+class CSVBackupError(PostureGuardException):
+    """Exception raised when creating backup copies of history CSV logs fails."""
+    pass
