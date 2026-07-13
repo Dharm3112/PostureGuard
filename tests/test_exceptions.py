@@ -211,5 +211,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc_invalidresolutionerror.error_code, "InvalidResolutionError")
         self.assertEqual(exc_invalidresolutionerror.message, "Test msg")
 
+    def test_configfilelockerror(self) -> None:
+        from exceptions import ConfigFileLockError
+        exc = ConfigFileLockError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigFileLockError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
