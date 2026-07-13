@@ -336,3 +336,8 @@ class FrameBufferOverflowError(PostureGuardException):
 class FaceCascadeXMLCorruptError(PostureGuardException):
     """Exception raised when loaded cascade model classifier XML structure is corrupt."""
     pass
+
+
+class ModelDetectionTimeoutError(PostureGuardException):
+    """Exception raised when face classifier detection model takes too long to run."""
+    pass
