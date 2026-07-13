@@ -3,7 +3,7 @@ from logging.handlers import RotatingFileHandler
 from typing import Optional
 
 
-def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO, log_format: Optional[str] = None, encoding: str = "utf-8") -> logging.Logger:
+def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO, log_format: Optional[str] = None, encoding: str = "utf-8") -> logging.Logger:  # Setup centralized logger instance with default parameters
     """
     Configures and returns a logger that prints to the console and writes to a rotating log file.
 
