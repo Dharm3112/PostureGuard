@@ -325,5 +325,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraAccessBlockedError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_framebufferoverflowerror(self) -> None:
+        from exceptions import FrameBufferOverflowError
+        exc = FrameBufferOverflowError("Test msg")
+        self.assertEqual(exc.error_code, "FrameBufferOverflowError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
