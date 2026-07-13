@@ -296,3 +296,8 @@ class FontLoadingError(PostureGuardException):
 class ImageAssetLoadingError(PostureGuardException):
     """Exception raised when visual graphic asset files cannot be loaded."""
     pass
+
+
+class IconAssetFormatError(PostureGuardException):
+    """Exception raised when visual window icon file format is corrupted."""
+    pass
