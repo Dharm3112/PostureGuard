@@ -9,7 +9,7 @@ class ConfigManager:
     Manages local application configuration JSON files.
     Copies default settings, reads config parameters, and handles runtime updates.
     """
-    DEFAULT_CONFIG_FILE = "config.json.default"
+    DEFAULT_CONFIG_FILE = "config.json.default"  # Default configuration template filename
     LOCAL_CONFIG_FILE = "config.json"
     
     # Key Constants
