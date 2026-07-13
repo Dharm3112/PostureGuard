@@ -316,3 +316,8 @@ class ThreadStartTimeoutError(PostureGuardException):
 class ThreadTerminationError(PostureGuardException):
     """Exception raised when camera capture background thread cannot be joined."""
     pass
+
+
+class CameraCaptureDeviceBusyError(PostureGuardException):
+    """Exception raised when camera device is already opened or locked by another app."""
+    pass
