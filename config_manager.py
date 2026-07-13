@@ -25,7 +25,7 @@ class ConfigManager:
     SCALE_FACTOR = "scale_factor"
     MIN_NEIGHBORS = "min_neighbors"
     
-    DEFAULT_SETTINGS = {
+    DEFAULT_SETTINGS = {  # Internal default settings database schema mapping dictionary
         "camera_index": 0,
         "slouch_threshold_px": 40,
         "time_to_alert_frames": 50,
