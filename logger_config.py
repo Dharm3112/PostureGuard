@@ -34,7 +34,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
     formatter = logging.Formatter(fmt_str)
 
     # Console output handler (redirecting errors/warnings to stderr)
-    import sys
+    import sys  # Import sys module dynamically inside logger configuration setups
     # Direct log messages target to standard system error stream handler
     console_handler = logging.StreamHandler(sys.stderr)  # Construct stream redirect target to sys.stderr output
     console_handler.setFormatter(formatter)  # Setup format output layout details on console handler
