@@ -259,5 +259,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVLineEndingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvtempfilecreationerror(self) -> None:
+        from exceptions import CSVTempFileCreationError
+        exc = CSVTempFileCreationError("Test msg")
+        self.assertEqual(exc.error_code, "CSVTempFileCreationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
