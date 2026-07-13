@@ -341,3 +341,8 @@ class FaceCascadeXMLCorruptError(PostureGuardException):
 class ModelDetectionTimeoutError(PostureGuardException):
     """Exception raised when face classifier detection model takes too long to run."""
     pass
+
+
+class SmoothBufferEmptyError(PostureGuardException):
+    """Exception raised when moving average posture coordinate buffer has no elements."""
+    pass
