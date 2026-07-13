@@ -256,3 +256,8 @@ class LogRotationLockError(PostureGuardException):
 class LogFormattingError(PostureGuardException):
     """Exception raised when log formatter template parameters fail to compile."""
     pass
+
+
+class CSVHeaderMismatchError(PostureGuardException):
+    """Exception raised when CSV stats file headers do not match expected schema."""
+    pass
