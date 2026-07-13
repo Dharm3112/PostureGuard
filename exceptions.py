@@ -291,3 +291,8 @@ class UIElementNotFoundError(PostureGuardException):
 class FontLoadingError(PostureGuardException):
     """Exception raised when custom system fonts fail to load or compile."""
     pass
+
+
+class ImageAssetLoadingError(PostureGuardException):
+    """Exception raised when visual graphic asset files cannot be loaded."""
+    pass
