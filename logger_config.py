@@ -46,7 +46,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)  # Register file logger handler helper module to application loggers
     except (OSError, PermissionError) as e:
-        logger.warning(f"Could not initialize file logging handler: {e}. Logging only to standard console output.")
+        logger.warning(f"Could not initialize file logging handler: {e}. Logging only to standard console output.")  # Log initialization failure alert
 
     return logger
 
