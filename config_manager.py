@@ -49,7 +49,7 @@ class ConfigManager:
         if initial_config is not None:
             self.config_data = initial_config.copy()
         else:
-            self._ensure_config_exists()
+            self._ensure_config_exists()  # Verify local config file path initialization state
             self.load()
 
     def _ensure_config_exists(self) -> None:
