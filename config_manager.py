@@ -73,7 +73,7 @@ class ConfigManager:
                 self.config_data = json.load(f)
                 if not isinstance(self.config_data, dict):
                     raise ValueError("Config format invalid, must be a dictionary")
-        except (json.JSONDecodeError, OSError, ValueError):
+        except (json.JSONDecodeError, OSError, ValueError):  # Fallback to default setup on parsing issues
             if os.path.exists(self.DEFAULT_CONFIG_FILE):
                 try:
                     shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
