@@ -261,3 +261,8 @@ class LogFormattingError(PostureGuardException):
 class CSVHeaderMismatchError(PostureGuardException):
     """Exception raised when CSV stats file headers do not match expected schema."""
     pass
+
+
+class CSVEncodingError(PostureGuardException):
+    """Exception raised when CSV file encoding contains invalid characters."""
+    pass
