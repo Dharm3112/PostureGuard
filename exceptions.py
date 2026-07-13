@@ -331,3 +331,8 @@ class CameraAccessBlockedError(PostureGuardException):
 class FrameBufferOverflowError(PostureGuardException):
     """Exception raised when queue buffer size of camera stream frames exceeds limits."""
     pass
+
+
+class FaceCascadeXMLCorruptError(PostureGuardException):
+    """Exception raised when loaded cascade model classifier XML structure is corrupt."""
+    pass
