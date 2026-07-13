@@ -289,5 +289,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ImageAssetLoadingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_iconassetformaterror(self) -> None:
+        from exceptions import IconAssetFormatError
+        exc = IconAssetFormatError("Test msg")
+        self.assertEqual(exc.error_code, "IconAssetFormatError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
