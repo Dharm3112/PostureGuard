@@ -349,5 +349,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "SmoothBufferEmptyError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_calibratefacenotfounderror(self) -> None:
+        from exceptions import CalibrateFaceNotFoundError
+        exc = CalibrateFaceNotFoundError("Test msg")
+        self.assertEqual(exc.error_code, "CalibrateFaceNotFoundError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
