@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.0] - 2026-07-13
+
+### Added
+- **Extended Diagnostics Exceptions:** Added 25 diagnostic exception classes covering file locks, system permissions, capture timeouts, assets corruption, and buffer states.
+- **Robust Exception Coverage:** Added 25 unit test cases verifying correct initialization, error codes, and message bindings for all diagnostic exceptions.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py` and `logger_config.py` clarifying stream configurations.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [1.7.0] - 2026-07-11
 
 ### Added
