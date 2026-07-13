@@ -281,3 +281,8 @@ class CSVTempFileCreationError(PostureGuardException):
 class CSVBackupError(PostureGuardException):
     """Exception raised when creating backup copies of history CSV logs fails."""
     pass
+
+
+class UIElementNotFoundError(PostureGuardException):
+    """Exception raised when Tkinter UI elements lookup by name or reference fails."""
+    pass
