@@ -236,3 +236,8 @@ class ConfigurationSaveError(PostureGuardException):
 class ConfigFileLockError(PostureGuardException):
     """Exception raised when configuration file is locked by another process."""
     pass
+
+
+class LoggerInitializationError(PostureGuardException):
+    """Exception raised when logger initialization encounters critical filesystem errors."""
+    pass
