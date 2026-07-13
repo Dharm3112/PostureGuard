@@ -331,5 +331,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "FrameBufferOverflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_facecascadexmlcorrupterror(self) -> None:
+        from exceptions import FaceCascadeXMLCorruptError
+        exc = FaceCascadeXMLCorruptError("Test msg")
+        self.assertEqual(exc.error_code, "FaceCascadeXMLCorruptError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
