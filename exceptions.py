@@ -321,3 +321,8 @@ class ThreadTerminationError(PostureGuardException):
 class CameraCaptureDeviceBusyError(PostureGuardException):
     """Exception raised when camera device is already opened or locked by another app."""
     pass
+
+
+class CameraAccessBlockedError(PostureGuardException):
+    """Exception raised when OS security policies deny access to the camera hardware."""
+    pass
