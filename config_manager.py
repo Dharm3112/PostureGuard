@@ -129,7 +129,7 @@ class ConfigManager:
         """
         return self.config_data.get(key, default)
 
-    def set(self, key: str, value: Any) -> None:
+    def set(self, key: str, value: Any) -> None:  # Set target configuration parameter value and commit changes
         """
         Sets a configuration value and saves changes to file.
         """
