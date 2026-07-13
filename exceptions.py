@@ -306,3 +306,8 @@ class IconAssetFormatError(PostureGuardException):
 class WindowStateRestoreError(PostureGuardException):
     """Exception raised when restoring window coordinates or minimized status fails."""
     pass
+
+
+class ThreadStartTimeoutError(PostureGuardException):
+    """Exception raised when background frame stream daemon thread fails to start in time."""
+    pass
