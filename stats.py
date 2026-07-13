@@ -32,7 +32,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
     try:
         with open(filepath, "r", newline="", encoding="utf-8") as f:
             # Parse target stream via csv dictionary mapping rows handler
-            reader = csv.DictReader(f)
+            reader = csv.DictReader(f)  # Parse target stream via csv dictionary mapping rows handler helper
             for row in reader:
                 # Validate row contents integrity checks
                 if not row or not row.get("timestamp"):
