@@ -346,3 +346,8 @@ class ModelDetectionTimeoutError(PostureGuardException):
 class SmoothBufferEmptyError(PostureGuardException):
     """Exception raised when moving average posture coordinate buffer has no elements."""
     pass
+
+
+class CalibrateFaceNotFoundError(PostureGuardException):
+    """Exception raised when calibration baseline cannot locate face features in buffer."""
+    pass
