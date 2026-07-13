@@ -271,5 +271,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVBackupError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uielementnotfounderror(self) -> None:
+        from exceptions import UIElementNotFoundError
+        exc = UIElementNotFoundError("Test msg")
+        self.assertEqual(exc.error_code, "UIElementNotFoundError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
