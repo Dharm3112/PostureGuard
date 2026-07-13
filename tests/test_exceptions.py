@@ -247,5 +247,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVHeaderMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvencodingerror(self) -> None:
+        from exceptions import CSVEncodingError
+        exc = CSVEncodingError("Test msg")
+        self.assertEqual(exc.error_code, "CSVEncodingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
