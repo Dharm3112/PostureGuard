@@ -266,3 +266,8 @@ class CSVHeaderMismatchError(PostureGuardException):
 class CSVEncodingError(PostureGuardException):
     """Exception raised when CSV file encoding contains invalid characters."""
     pass
+
+
+class CSVLineEndingError(PostureGuardException):
+    """Exception raised when CSV file contains inconsistent or corrupt line endings."""
+    pass
