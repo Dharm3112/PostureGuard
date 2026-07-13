@@ -295,5 +295,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "IconAssetFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_windowstaterestoreerror(self) -> None:
+        from exceptions import WindowStateRestoreError
+        exc = WindowStateRestoreError("Test msg")
+        self.assertEqual(exc.error_code, "WindowStateRestoreError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
