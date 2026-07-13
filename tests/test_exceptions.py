@@ -241,5 +241,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogFormattingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvheadermismatcherror(self) -> None:
+        from exceptions import CSVHeaderMismatchError
+        exc = CSVHeaderMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "CSVHeaderMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
