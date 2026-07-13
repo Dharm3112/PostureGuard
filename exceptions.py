@@ -271,3 +271,8 @@ class CSVEncodingError(PostureGuardException):
 class CSVLineEndingError(PostureGuardException):
     """Exception raised when CSV file contains inconsistent or corrupt line endings."""
     pass
+
+
+class CSVTempFileCreationError(PostureGuardException):
+    """Exception raised when temporary CSV file for stats recovery cannot be created."""
+    pass
