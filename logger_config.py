@@ -42,7 +42,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
 
     # Rotating file handler
     try:
-        file_handler = RotatingFileHandler(log_file, maxBytes=1024 * 1024, backupCount=3, encoding=encoding)
+        file_handler = RotatingFileHandler(log_file, maxBytes=1024 * 1024, backupCount=3, encoding=encoding)  # Construct rotating file logs backup storage writer
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)  # Register file logger handler helper module to application loggers
     except (OSError, PermissionError) as e:
