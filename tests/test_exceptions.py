@@ -265,5 +265,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVTempFileCreationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvbackuperror(self) -> None:
+        from exceptions import CSVBackupError
+        exc = CSVBackupError("Test msg")
+        self.assertEqual(exc.error_code, "CSVBackupError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
