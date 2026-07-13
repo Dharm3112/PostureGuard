@@ -311,3 +311,8 @@ class WindowStateRestoreError(PostureGuardException):
 class ThreadStartTimeoutError(PostureGuardException):
     """Exception raised when background frame stream daemon thread fails to start in time."""
     pass
+
+
+class ThreadTerminationError(PostureGuardException):
+    """Exception raised when camera capture background thread cannot be joined."""
+    pass
