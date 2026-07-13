@@ -301,3 +301,8 @@ class ImageAssetLoadingError(PostureGuardException):
 class IconAssetFormatError(PostureGuardException):
     """Exception raised when visual window icon file format is corrupted."""
     pass
+
+
+class WindowStateRestoreError(PostureGuardException):
+    """Exception raised when restoring window coordinates or minimized status fails."""
+    pass
