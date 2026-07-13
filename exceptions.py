@@ -241,3 +241,8 @@ class ConfigFileLockError(PostureGuardException):
 class LoggerInitializationError(PostureGuardException):
     """Exception raised when logger initialization encounters critical filesystem errors."""
     pass
+
+
+class LogFileOpenError(PostureGuardException):
+    """Exception raised when logging directory exists but log file cannot be opened for writing."""
+    pass
