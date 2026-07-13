@@ -34,7 +34,7 @@ class ConfigManager:
         "camera_height": 480,
         "save_history": True,
         "saved_baseline_y": None,
-        "scale_factor": 1.1,
+        "scale_factor": 1.1,  # Default scale factor multiplier for Haar cascades
         "min_neighbors": 5,
         "log_max_bytes": 1048576,
         "log_backup_count": 3
