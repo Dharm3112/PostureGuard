@@ -229,5 +229,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogFileOpenError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logrotationlockerror(self) -> None:
+        from exceptions import LogRotationLockError
+        exc = LogRotationLockError("Test msg")
+        self.assertEqual(exc.error_code, "LogRotationLockError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
