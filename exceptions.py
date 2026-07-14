@@ -436,3 +436,8 @@ class ThreadPriorityAdjustmentError(PostureGuardException):
 class CameraFrameCaptureError(PostureGuardException):
     """Exception raised when reading image frame arrays from webcam feed fails."""
     pass
+
+
+class CameraFPSRateError(PostureGuardException):
+    """Exception raised when camera capture stream frames per second setup is invalid."""
+    pass
