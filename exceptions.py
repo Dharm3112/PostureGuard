@@ -421,3 +421,8 @@ class TooltipRenderError(PostureGuardException):
 class SettingsModalDismissError(PostureGuardException):
     """Exception raised when setting window modal cannot be disposed cleanly."""
     pass
+
+
+class StatisticsParseError(PostureGuardException):
+    """Exception raised when parsing posture history stats calculations fails."""
+    pass
