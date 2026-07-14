@@ -451,5 +451,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ThreadPriorityAdjustmentError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameraframecaptureerror(self) -> None:
+        from exceptions import CameraFrameCaptureError
+        exc = CameraFrameCaptureError("Test msg")
+        self.assertEqual(exc.error_code, "CameraFrameCaptureError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
