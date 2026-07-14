@@ -373,5 +373,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyNotFoundError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logdirectorycreationerror(self) -> None:
+        from exceptions import LogDirectoryCreationError
+        exc = LogDirectoryCreationError("Test msg")
+        self.assertEqual(exc.error_code, "LogDirectoryCreationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
