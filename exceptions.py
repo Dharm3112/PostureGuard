@@ -361,3 +361,8 @@ class CalibrateBaselineZeroError(PostureGuardException):
 class ConfigSchemaMismatchError(PostureGuardException):
     """Exception raised when configuration JSON structure violates validation schemas."""
     pass
+
+
+class ConfigKeyNotFoundError(PostureGuardException):
+    """Exception raised when a required parameter key is missing from configuration dictionary."""
+    pass
