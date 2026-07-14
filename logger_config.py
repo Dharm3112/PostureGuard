@@ -25,7 +25,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
             formatter = logging.Formatter(log_format)
             for handler in logger.handlers:  # Reconfigure format bounds templates on active logging handlers
                 handler.setFormatter(formatter)
-        return logger
+        return logger  # Return fully initialized logger module reference
 
     # Format config
     # Fallback to default output pattern if format is empty
