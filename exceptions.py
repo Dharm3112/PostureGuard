@@ -366,3 +366,8 @@ class ConfigSchemaMismatchError(PostureGuardException):
 class ConfigKeyNotFoundError(PostureGuardException):
     """Exception raised when a required parameter key is missing from configuration dictionary."""
     pass
+
+
+class LogDirectoryCreationError(PostureGuardException):
+    """Exception raised when local logging directory cannot be created."""
+    pass
