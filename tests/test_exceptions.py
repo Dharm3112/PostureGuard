@@ -397,5 +397,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRowOverflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvclosefileerror(self) -> None:
+        from exceptions import CSVCloseFileError
+        exc = CSVCloseFileError("Test msg")
+        self.assertEqual(exc.error_code, "CSVCloseFileError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
