@@ -361,5 +361,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CalibrateBaselineZeroError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configschemamismatcherror(self) -> None:
+        from exceptions import ConfigSchemaMismatchError
+        exc = ConfigSchemaMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigSchemaMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
