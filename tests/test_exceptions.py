@@ -415,5 +415,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetGeometryError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_themekeynotfounderror(self) -> None:
+        from exceptions import ThemeKeyNotFoundError
+        exc = ThemeKeyNotFoundError("Test msg")
+        self.assertEqual(exc.error_code, "ThemeKeyNotFoundError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
