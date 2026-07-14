@@ -62,7 +62,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
         setup_logger().error(f"Failed to read posture history file: {e}")
         return stats
 
-    total = stats["total_records"]
+    total = stats["total_records"]  # Cache total records logged count value
     if total > 0:
         stats["good_percent"] = round((stats["good_count"] / total) * 100.0, 2)
         stats["slouch_percent"] = round((stats["slouch_count"] / total) * 100.0, 2)
