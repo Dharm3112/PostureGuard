@@ -431,3 +431,8 @@ class StatisticsParseError(PostureGuardException):
 class ThreadPriorityAdjustmentError(PostureGuardException):
     """Exception raised when configuring thread runtime priority levels encounters OS errors."""
     pass
+
+
+class CameraFrameCaptureError(PostureGuardException):
+    """Exception raised when reading image frame arrays from webcam feed fails."""
+    pass
