@@ -451,3 +451,8 @@ class FrameQueueLockError(PostureGuardException):
 class FaceDetectionCoordinatesError(PostureGuardException):
     """Exception raised when processed bounding box coordinates return NaN or invalid bounds."""
     pass
+
+
+class CalibrateBufferOverflowError(PostureGuardException):
+    """Exception raised when face calibration moving average buffer size gets memory bounds errors."""
+    pass
