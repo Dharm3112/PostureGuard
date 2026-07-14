@@ -416,3 +416,8 @@ class HoverHighlightBindingError(PostureGuardException):
 class TooltipRenderError(PostureGuardException):
     """Exception raised when drawing dynamic tooltip status label bubbles fails."""
     pass
+
+
+class SettingsModalDismissError(PostureGuardException):
+    """Exception raised when setting window modal cannot be disposed cleanly."""
+    pass
