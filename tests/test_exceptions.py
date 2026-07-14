@@ -469,5 +469,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "FrameQueueLockError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_facedetectioncoordinateserror(self) -> None:
+        from exceptions import FaceDetectionCoordinatesError
+        exc = FaceDetectionCoordinatesError("Test msg")
+        self.assertEqual(exc.error_code, "FaceDetectionCoordinatesError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
