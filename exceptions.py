@@ -386,3 +386,8 @@ class CSVCellFormatError(PostureGuardException):
 class CSVRowOverflowError(PostureGuardException):
     """Exception raised when row size of history CSV logs exceeds system limits."""
     pass
+
+
+class CSVCloseFileError(PostureGuardException):
+    """Exception raised when CSV stats file stream cannot be closed cleanly."""
+    pass
