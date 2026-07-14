@@ -446,3 +446,8 @@ class CameraFPSRateError(PostureGuardException):
 class FrameQueueLockError(PostureGuardException):
     """Exception raised when frame buffer thread queues acquire lock timeouts."""
     pass
+
+
+class FaceDetectionCoordinatesError(PostureGuardException):
+    """Exception raised when processed bounding box coordinates return NaN or invalid bounds."""
+    pass
