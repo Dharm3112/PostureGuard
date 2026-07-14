@@ -427,5 +427,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "HoverHighlightBindingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_tooltiprendererror(self) -> None:
+        from exceptions import TooltipRenderError
+        exc = TooltipRenderError("Test msg")
+        self.assertEqual(exc.error_code, "TooltipRenderError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
