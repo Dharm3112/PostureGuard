@@ -371,3 +371,8 @@ class ConfigKeyNotFoundError(PostureGuardException):
 class LogDirectoryCreationError(PostureGuardException):
     """Exception raised when local logging directory cannot be created."""
     pass
+
+
+class LogFileWritePermissionError(PostureGuardException):
+    """Exception raised when log files cannot be modified due to insufficient OS privileges."""
+    pass
