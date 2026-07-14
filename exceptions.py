@@ -426,3 +426,8 @@ class SettingsModalDismissError(PostureGuardException):
 class StatisticsParseError(PostureGuardException):
     """Exception raised when parsing posture history stats calculations fails."""
     pass
+
+
+class ThreadPriorityAdjustmentError(PostureGuardException):
+    """Exception raised when configuring thread runtime priority levels encounters OS errors."""
+    pass
