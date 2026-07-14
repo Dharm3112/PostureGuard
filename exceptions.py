@@ -411,3 +411,8 @@ class ThemeKeyNotFoundError(PostureGuardException):
 class HoverHighlightBindingError(PostureGuardException):
     """Exception raised when hover highlights mouse bindings fail to initialize."""
     pass
+
+
+class TooltipRenderError(PostureGuardException):
+    """Exception raised when drawing dynamic tooltip status label bubbles fails."""
+    pass
