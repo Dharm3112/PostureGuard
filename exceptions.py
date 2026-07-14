@@ -376,3 +376,8 @@ class LogDirectoryCreationError(PostureGuardException):
 class LogFileWritePermissionError(PostureGuardException):
     """Exception raised when log files cannot be modified due to insufficient OS privileges."""
     pass
+
+
+class CSVCellFormatError(PostureGuardException):
+    """Exception raised when posture logs cell parsing gets corrupt fields data."""
+    pass
