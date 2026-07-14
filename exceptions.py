@@ -356,3 +356,8 @@ class CalibrateFaceNotFoundError(PostureGuardException):
 class CalibrateBaselineZeroError(PostureGuardException):
     """Exception raised when calibration baseline Y is zero or negative."""
     pass
+
+
+class ConfigSchemaMismatchError(PostureGuardException):
+    """Exception raised when configuration JSON structure violates validation schemas."""
+    pass
