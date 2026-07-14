@@ -35,7 +35,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
             reader = csv.DictReader(f)  # Parse target stream via csv dictionary mapping rows handler helper
             for row in reader:
                 # Validate row contents integrity checks
-                if not row or not row.get("timestamp"):
+                if not row or not row.get("timestamp"):  # Skip malformed or empty row items check
                     continue
                 ts = row.get("timestamp")  # Extract date string for time boundaries verification checks
                 # Apply chronological limits
