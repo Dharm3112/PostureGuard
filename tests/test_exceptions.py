@@ -439,5 +439,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "SettingsModalDismissError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statisticsparseerror(self) -> None:
+        from exceptions import StatisticsParseError
+        exc = StatisticsParseError("Test msg")
+        self.assertEqual(exc.error_code, "StatisticsParseError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
