@@ -396,3 +396,8 @@ class CSVCloseFileError(PostureGuardException):
 class CSVTempFileRenameError(PostureGuardException):
     """Exception raised when temporary CSV file for stats recovery cannot be renamed."""
     pass
+
+
+class UIWidgetGeometryError(PostureGuardException):
+    """Exception raised when setting width or height geometry coordinates fails."""
+    pass
