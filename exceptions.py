@@ -381,3 +381,8 @@ class LogFileWritePermissionError(PostureGuardException):
 class CSVCellFormatError(PostureGuardException):
     """Exception raised when posture logs cell parsing gets corrupt fields data."""
     pass
+
+
+class CSVRowOverflowError(PostureGuardException):
+    """Exception raised when row size of history CSV logs exceeds system limits."""
+    pass
