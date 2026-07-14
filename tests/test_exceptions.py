@@ -463,5 +463,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraFPSRateError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_framequeuelockerror(self) -> None:
+        from exceptions import FrameQueueLockError
+        exc = FrameQueueLockError("Test msg")
+        self.assertEqual(exc.error_code, "FrameQueueLockError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
