@@ -475,5 +475,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "FaceDetectionCoordinatesError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_calibratebufferoverflowerror(self) -> None:
+        from exceptions import CalibrateBufferOverflowError
+        exc = CalibrateBufferOverflowError("Test msg")
+        self.assertEqual(exc.error_code, "CalibrateBufferOverflowError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
