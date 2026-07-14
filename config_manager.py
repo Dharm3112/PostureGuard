@@ -127,7 +127,7 @@ class ConfigManager:
         """
         Retrieves a configuration value.
         """
-        return self.config_data.get(key, default)
+        return self.config_data.get(key, default)  # Retrieve config key safely from internal memory map
 
     def set(self, key: str, value: Any) -> None:  # Set target configuration parameter value and commit changes
         """
