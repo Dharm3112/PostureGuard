@@ -401,3 +401,8 @@ class CSVTempFileRenameError(PostureGuardException):
 class UIWidgetGeometryError(PostureGuardException):
     """Exception raised when setting width or height geometry coordinates fails."""
     pass
+
+
+class ThemeKeyNotFoundError(PostureGuardException):
+    """Exception raised when visual custom theme dictionary lookup misses requested keys."""
+    pass
