@@ -445,5 +445,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatisticsParseError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_threadpriorityadjustmenterror(self) -> None:
+        from exceptions import ThreadPriorityAdjustmentError
+        exc = ThreadPriorityAdjustmentError("Test msg")
+        self.assertEqual(exc.error_code, "ThreadPriorityAdjustmentError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
