@@ -441,3 +441,8 @@ class CameraFrameCaptureError(PostureGuardException):
 class CameraFPSRateError(PostureGuardException):
     """Exception raised when camera capture stream frames per second setup is invalid."""
     pass
+
+
+class FrameQueueLockError(PostureGuardException):
+    """Exception raised when frame buffer thread queues acquire lock timeouts."""
+    pass
