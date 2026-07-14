@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.9.0] - 2026-07-14
+
+### Added
+- **System and Stream Diagnostic Exceptions:** Declared 20 new exception classes for camera FPS rates, configuration schema formats, coordinate errors, and frame queue locks.
+- **Robust Exception Checking:** Appended 20 unit test cases verifying correct subclass mapping and standard message construction checks for all new diagnostics exceptions.
+- **Inline Comment Improvements:** Expanded documentation coverage inside configuration parser settings, logging output format properties, and statistics history logs parsing.
+
+### Changed
+- **Regression Checks:** Executed automated unit tests for all incremental commits.
+
+
 ## [1.8.0] - 2026-07-13
 
 ### Added
