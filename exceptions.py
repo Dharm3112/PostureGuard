@@ -391,3 +391,8 @@ class CSVRowOverflowError(PostureGuardException):
 class CSVCloseFileError(PostureGuardException):
     """Exception raised when CSV stats file stream cannot be closed cleanly."""
     pass
+
+
+class CSVTempFileRenameError(PostureGuardException):
+    """Exception raised when temporary CSV file for stats recovery cannot be renamed."""
+    pass
