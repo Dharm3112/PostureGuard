@@ -406,3 +406,8 @@ class UIWidgetGeometryError(PostureGuardException):
 class ThemeKeyNotFoundError(PostureGuardException):
     """Exception raised when visual custom theme dictionary lookup misses requested keys."""
     pass
+
+
+class HoverHighlightBindingError(PostureGuardException):
+    """Exception raised when hover highlights mouse bindings fail to initialize."""
+    pass
