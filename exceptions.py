@@ -521,3 +521,8 @@ class UIFontRegistryError(PostureGuardException):
 class UIImageScaleError(PostureGuardException):
     """Exception raised when scaling icon or preview image assets fails."""
     pass
+
+
+class UIWidgetZOrderError(PostureGuardException):
+    """Exception raised when adjusting widget stacking order or window focus fails."""
+    pass
