@@ -461,3 +461,8 @@ class CalibrateBufferOverflowError(PostureGuardException):
 class ConfigPathResolutionError(PostureGuardException):
     """Exception raised when absolute path lookup for configuration file fails."""
     pass
+
+
+class ConfigDirectoryAccessError(PostureGuardException):
+    """Exception raised when configuration folder is inaccessible due to OS permissions."""
+    pass
