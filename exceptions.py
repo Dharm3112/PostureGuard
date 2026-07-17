@@ -466,3 +466,8 @@ class ConfigPathResolutionError(PostureGuardException):
 class ConfigDirectoryAccessError(PostureGuardException):
     """Exception raised when configuration folder is inaccessible due to OS permissions."""
     pass
+
+
+class ConfigEncodingMismatchError(PostureGuardException):
+    """Exception raised when config file encoding does not match standard UTF-8."""
+    pass
