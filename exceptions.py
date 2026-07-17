@@ -481,3 +481,8 @@ class ConfigBackupDeletionError(PostureGuardException):
 class ConfigLockTimeoutError(PostureGuardException):
     """Exception raised when waiting to acquire configuration file lock times out."""
     pass
+
+
+class LogFileWriteLockError(PostureGuardException):
+    """Exception raised when log files cannot be written due to thread concurrency issues."""
+    pass
