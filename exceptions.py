@@ -511,3 +511,8 @@ class CSVStreamClosedError(PostureGuardException):
 class CSVFileLockError(PostureGuardException):
     """Exception raised when writing history records encounters file system locks."""
     pass
+
+
+class UIFontRegistryError(PostureGuardException):
+    """Exception raised when registering custom Segoe UI fonts with Tkinter core fails."""
+    pass
