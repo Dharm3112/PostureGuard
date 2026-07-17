@@ -531,3 +531,8 @@ class UIWidgetZOrderError(PostureGuardException):
 class UIMenuPopulationError(PostureGuardException):
     """Exception raised when populating settings dropdown options menu fails."""
     pass
+
+
+class UIThemeInvalidColorError(PostureGuardException):
+    """Exception raised when visual custom theme colors contain invalid hex formats."""
+    pass
