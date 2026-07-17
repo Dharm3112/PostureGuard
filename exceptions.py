@@ -486,3 +486,8 @@ class ConfigLockTimeoutError(PostureGuardException):
 class LogFileWriteLockError(PostureGuardException):
     """Exception raised when log files cannot be written due to thread concurrency issues."""
     pass
+
+
+class LogHandlerCleanupError(PostureGuardException):
+    """Exception raised when closing log file descriptors encounters system errors."""
+    pass
