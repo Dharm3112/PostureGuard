@@ -613,5 +613,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ModelWeightFileLoadError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_facecascademultidetectionerror(self) -> None:
+        from exceptions import FaceCascadeMultiDetectionError
+        exc = FaceCascadeMultiDetectionError("Test msg")
+        self.assertEqual(exc.error_code, "FaceCascadeMultiDetectionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
