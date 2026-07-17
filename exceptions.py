@@ -536,3 +536,8 @@ class UIMenuPopulationError(PostureGuardException):
 class UIThemeInvalidColorError(PostureGuardException):
     """Exception raised when visual custom theme colors contain invalid hex formats."""
     pass
+
+
+class StatsCalculationDivisionByZeroError(PostureGuardException):
+    """Exception raised when posture calculation values are divided by zero."""
+    pass
