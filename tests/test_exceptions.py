@@ -487,5 +487,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigPathResolutionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configdirectoryaccesserror(self) -> None:
+        from exceptions import ConfigDirectoryAccessError
+        exc = ConfigDirectoryAccessError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigDirectoryAccessError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
