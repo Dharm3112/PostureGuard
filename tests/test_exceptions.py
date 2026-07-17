@@ -499,5 +499,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigEncodingMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configbackupdeletionerror(self) -> None:
+        from exceptions import ConfigBackupDeletionError
+        exc = ConfigBackupDeletionError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigBackupDeletionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
