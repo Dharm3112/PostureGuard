@@ -516,3 +516,8 @@ class CSVFileLockError(PostureGuardException):
 class UIFontRegistryError(PostureGuardException):
     """Exception raised when registering custom Segoe UI fonts with Tkinter core fails."""
     pass
+
+
+class UIImageScaleError(PostureGuardException):
+    """Exception raised when scaling icon or preview image assets fails."""
+    pass
