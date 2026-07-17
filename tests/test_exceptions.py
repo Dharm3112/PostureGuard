@@ -607,5 +607,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraDeviceDisconnectionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_modelweightfileloaderror(self) -> None:
+        from exceptions import ModelWeightFileLoadError
+        exc = ModelWeightFileLoadError("Test msg")
+        self.assertEqual(exc.error_code, "ModelWeightFileLoadError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
