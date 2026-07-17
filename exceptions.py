@@ -546,3 +546,8 @@ class StatsCalculationDivisionByZeroError(PostureGuardException):
 class StatsCSVDataCorruptionError(PostureGuardException):
     """Exception raised when statistics parser detects corrupted float coordinates."""
     pass
+
+
+class CameraResolutionHardwareMismatchError(PostureGuardException):
+    """Exception raised when configured width or height is unsupported by hardware."""
+    pass
