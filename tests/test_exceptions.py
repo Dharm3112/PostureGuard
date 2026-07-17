@@ -481,5 +481,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CalibrateBufferOverflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configpathresolutionerror(self) -> None:
+        from exceptions import ConfigPathResolutionError
+        exc = ConfigPathResolutionError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigPathResolutionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
