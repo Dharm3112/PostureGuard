@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2026-07-17
+
+### Added
+- **Hardware and Resolution Diagnostic Exceptions:** Declared 25 new exception classes for camera buffer states, font registry operations, color mapping errors, and system lock configurations.
+- **Robust Exception Checking:** Appended 25 unit test cases verifying correct initialization and standard properties mapping.
+- **Inline Comment Improvements:** Expanded documentation coverage inside configuration caches, logging fallback handlers, and statistics categorization routines.
+
+### Changed
+- **Branch Test Suite Validation:** Executed regression unit tests for all incremental commits.
+
+
 ## [1.9.0] - 2026-07-14
 
 ### Added
