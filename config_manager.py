@@ -107,7 +107,7 @@ class ConfigManager:
         frame_delay = self.config_data.get(self.FRAME_DELAY, 15)
         # Extract target slouch alert duration frame threshold limits parameter bounds
         alert_frames = self.config_data.get(self.TIME_TO_ALERT, 50)
-        if not isinstance(frame_delay, int) or not isinstance(alert_frames, int):
+        if not isinstance(frame_delay, int) or not isinstance(alert_frames, int):  # Verify framing delay variables type safety
             return False
         # Validate frame delay and alert frames constraints threshold values in range check
         if not (1 <= frame_delay <= 1000) or not (5 <= alert_frames <= 2000):
