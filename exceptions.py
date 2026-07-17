@@ -571,3 +571,8 @@ class ModelWeightFileLoadError(PostureGuardException):
 class FaceCascadeMultiDetectionError(PostureGuardException):
     """Exception raised when face detector gets overwhelmed with too many face coordinates."""
     pass
+
+
+class CalibrateBaselineOutOfBoundsError(PostureGuardException):
+    """Exception raised when calibrated baseline coordinates fall out of image canvas bounds."""
+    pass
