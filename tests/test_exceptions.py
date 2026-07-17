@@ -601,5 +601,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraBufferEmptyError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameradevicedisconnectionerror(self) -> None:
+        from exceptions import CameraDeviceDisconnectionError
+        exc = CameraDeviceDisconnectionError("Test msg")
+        self.assertEqual(exc.error_code, "CameraDeviceDisconnectionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
