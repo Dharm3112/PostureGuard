@@ -529,5 +529,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogSymlinkCreationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvheadervalidationerror(self) -> None:
+        from exceptions import CSVHeaderValidationError
+        exc = CSVHeaderValidationError("Test msg")
+        self.assertEqual(exc.error_code, "CSVHeaderValidationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
