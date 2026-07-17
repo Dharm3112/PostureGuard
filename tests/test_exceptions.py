@@ -547,5 +547,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVFileLockError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uifontregistryerror(self) -> None:
+        from exceptions import UIFontRegistryError
+        exc = UIFontRegistryError("Test msg")
+        self.assertEqual(exc.error_code, "UIFontRegistryError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
