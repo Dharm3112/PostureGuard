@@ -471,3 +471,8 @@ class ConfigDirectoryAccessError(PostureGuardException):
 class ConfigEncodingMismatchError(PostureGuardException):
     """Exception raised when config file encoding does not match standard UTF-8."""
     pass
+
+
+class ConfigBackupDeletionError(PostureGuardException):
+    """Exception raised when removing deprecated configuration backup files fails."""
+    pass
