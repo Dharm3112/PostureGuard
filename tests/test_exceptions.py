@@ -523,5 +523,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogHandlerCleanupError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logsymlinkcreationerror(self) -> None:
+        from exceptions import LogSymlinkCreationError
+        exc = LogSymlinkCreationError("Test msg")
+        self.assertEqual(exc.error_code, "LogSymlinkCreationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
