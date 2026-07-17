@@ -95,7 +95,7 @@ class ConfigManager:
         width = self.config_data.get(self.CAMERA_WIDTH, 640)
         # Extract target camera screen height settings parameter bounds limit check
         height = self.config_data.get(self.CAMERA_HEIGHT, 480)
-        if not isinstance(width, int) or not isinstance(height, int):
+        if not isinstance(width, int) or not isinstance(height, int):  # Ensure resolution parameters are clean integers
             return False
         if not (160 <= width <= 3840) or not (120 <= height <= 2160):
             return False
