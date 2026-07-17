@@ -496,3 +496,8 @@ class LogHandlerCleanupError(PostureGuardException):
 class LogSymlinkCreationError(PostureGuardException):
     """Exception raised when creating symbolic links to active log files fails."""
     pass
+
+
+class CSVHeaderValidationError(PostureGuardException):
+    """Exception raised when parsed CSV files does not match standard column headers."""
+    pass
