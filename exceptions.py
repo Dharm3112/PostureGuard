@@ -566,3 +566,8 @@ class CameraDeviceDisconnectionError(PostureGuardException):
 class ModelWeightFileLoadError(PostureGuardException):
     """Exception raised when face classifier model weights file has invalid read access."""
     pass
+
+
+class FaceCascadeMultiDetectionError(PostureGuardException):
+    """Exception raised when face detector gets overwhelmed with too many face coordinates."""
+    pass
