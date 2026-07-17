@@ -551,3 +551,8 @@ class StatsCSVDataCorruptionError(PostureGuardException):
 class CameraResolutionHardwareMismatchError(PostureGuardException):
     """Exception raised when configured width or height is unsupported by hardware."""
     pass
+
+
+class CameraBufferEmptyError(PostureGuardException):
+    """Exception raised when camera capture stream returns empty frame queues."""
+    pass
