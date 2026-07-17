@@ -526,3 +526,8 @@ class UIImageScaleError(PostureGuardException):
 class UIWidgetZOrderError(PostureGuardException):
     """Exception raised when adjusting widget stacking order or window focus fails."""
     pass
+
+
+class UIMenuPopulationError(PostureGuardException):
+    """Exception raised when populating settings dropdown options menu fails."""
+    pass
