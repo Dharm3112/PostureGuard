@@ -456,3 +456,8 @@ class FaceDetectionCoordinatesError(PostureGuardException):
 class CalibrateBufferOverflowError(PostureGuardException):
     """Exception raised when face calibration moving average buffer size gets memory bounds errors."""
     pass
+
+
+class ConfigPathResolutionError(PostureGuardException):
+    """Exception raised when absolute path lookup for configuration file fails."""
+    pass
