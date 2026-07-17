@@ -561,3 +561,8 @@ class CameraBufferEmptyError(PostureGuardException):
 class CameraDeviceDisconnectionError(PostureGuardException):
     """Exception raised when active webcam capture stream disconnects unexpectedly."""
     pass
+
+
+class ModelWeightFileLoadError(PostureGuardException):
+    """Exception raised when face classifier model weights file has invalid read access."""
+    pass
