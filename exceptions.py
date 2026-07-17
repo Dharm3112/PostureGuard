@@ -541,3 +541,8 @@ class UIThemeInvalidColorError(PostureGuardException):
 class StatsCalculationDivisionByZeroError(PostureGuardException):
     """Exception raised when posture calculation values are divided by zero."""
     pass
+
+
+class StatsCSVDataCorruptionError(PostureGuardException):
+    """Exception raised when statistics parser detects corrupted float coordinates."""
+    pass
