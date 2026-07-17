@@ -565,5 +565,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetZOrderError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uimenupopulationerror(self) -> None:
+        from exceptions import UIMenuPopulationError
+        exc = UIMenuPopulationError("Test msg")
+        self.assertEqual(exc.error_code, "UIMenuPopulationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
