@@ -506,3 +506,8 @@ class CSVHeaderValidationError(PostureGuardException):
 class CSVStreamClosedError(PostureGuardException):
     """Exception raised when appending rows to CSV files on a closed stream."""
     pass
+
+
+class CSVFileLockError(PostureGuardException):
+    """Exception raised when writing history records encounters file system locks."""
+    pass
