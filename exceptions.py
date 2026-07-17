@@ -491,3 +491,8 @@ class LogFileWriteLockError(PostureGuardException):
 class LogHandlerCleanupError(PostureGuardException):
     """Exception raised when closing log file descriptors encounters system errors."""
     pass
+
+
+class LogSymlinkCreationError(PostureGuardException):
+    """Exception raised when creating symbolic links to active log files fails."""
+    pass
