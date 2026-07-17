@@ -501,3 +501,8 @@ class LogSymlinkCreationError(PostureGuardException):
 class CSVHeaderValidationError(PostureGuardException):
     """Exception raised when parsed CSV files does not match standard column headers."""
     pass
+
+
+class CSVStreamClosedError(PostureGuardException):
+    """Exception raised when appending rows to CSV files on a closed stream."""
+    pass
