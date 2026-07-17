@@ -476,3 +476,8 @@ class ConfigEncodingMismatchError(PostureGuardException):
 class ConfigBackupDeletionError(PostureGuardException):
     """Exception raised when removing deprecated configuration backup files fails."""
     pass
+
+
+class ConfigLockTimeoutError(PostureGuardException):
+    """Exception raised when waiting to acquire configuration file lock times out."""
+    pass
