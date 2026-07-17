@@ -576,3 +576,8 @@ class FaceCascadeMultiDetectionError(PostureGuardException):
 class CalibrateBaselineOutOfBoundsError(PostureGuardException):
     """Exception raised when calibrated baseline coordinates fall out of image canvas bounds."""
     pass
+
+
+class AudioPlaybackDeviceNotFoundError(PostureGuardException):
+    """Exception raised when alert plays warnings but no sound output device is connected."""
+    pass
