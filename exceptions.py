@@ -556,3 +556,8 @@ class CameraResolutionHardwareMismatchError(PostureGuardException):
 class CameraBufferEmptyError(PostureGuardException):
     """Exception raised when camera capture stream returns empty frame queues."""
     pass
+
+
+class CameraDeviceDisconnectionError(PostureGuardException):
+    """Exception raised when active webcam capture stream disconnects unexpectedly."""
+    pass
