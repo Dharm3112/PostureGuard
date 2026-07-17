@@ -559,5 +559,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIImageScaleError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetzordererror(self) -> None:
+        from exceptions import UIWidgetZOrderError
+        exc = UIWidgetZOrderError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetZOrderError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
