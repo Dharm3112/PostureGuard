@@ -631,3 +631,8 @@ class CSVLineReadError(PostureGuardException):
 class CSVFieldMismatchError(PostureGuardException):
     """Exception raised when CSV logs parser detects row fields count mismatch."""
     pass
+
+
+class UIWidgetGeometryBoundsError(PostureGuardException):
+    """Exception raised when desktop app window dimensions exceed screen bounds."""
+    pass
