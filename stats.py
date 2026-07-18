@@ -29,7 +29,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
         return stats
 
     total_deviation = 0  # Cumulative tracking for head tracking deviation pixels parameter tracker
-    try:
+    try:  # Try block handling potential OSError during stats file parsing
         with open(filepath, "r", newline="", encoding="utf-8") as f:  # Open history logs csv stream in text reading mode
             # Parse target stream via csv dictionary mapping rows handler
             reader = csv.DictReader(f)  # Parse target stream via csv dictionary mapping rows handler helper
