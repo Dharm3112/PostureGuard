@@ -679,5 +679,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogConsoleColorError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvlinereaderror(self) -> None:
+        from exceptions import CSVLineReadError
+        exc = CSVLineReadError("Test msg")
+        self.assertEqual(exc.error_code, "CSVLineReadError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
