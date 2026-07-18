@@ -666,3 +666,8 @@ class ModelConfigFormatError(PostureGuardException):
 class FaceDetectionSmoothingError(PostureGuardException):
     """Exception raised when posture detector smoothing queue gets infinite coordinate values."""
     pass
+
+
+class CalibratebaselineInvalidYError(PostureGuardException):
+    """Exception raised when calibrated posture baseline Y falls on screen margins."""
+    pass
