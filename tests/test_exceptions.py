@@ -727,5 +727,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ModelConfigFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_facedetectionsmoothingerror(self) -> None:
+        from exceptions import FaceDetectionSmoothingError
+        exc = FaceDetectionSmoothingError("Test msg")
+        self.assertEqual(exc.error_code, "FaceDetectionSmoothingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
