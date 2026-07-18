@@ -581,3 +581,8 @@ class CalibrateBaselineOutOfBoundsError(PostureGuardException):
 class AudioPlaybackDeviceNotFoundError(PostureGuardException):
     """Exception raised when alert plays warnings but no sound output device is connected."""
     pass
+
+
+class AudioVolumeOutOfBoundsError(PostureGuardException):
+    """Exception raised when system alert volume configuration is out of range."""
+    pass
