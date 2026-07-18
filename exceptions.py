@@ -646,3 +646,8 @@ class UIThemeInvalidPaletteError(PostureGuardException):
 class UIHoverTimeoutError(PostureGuardException):
     """Exception raised when hover highlights tooltip elements fail to draw in time."""
     pass
+
+
+class CameraFPSOutofRangeError(PostureGuardException):
+    """Exception raised when webcam capture stream target FPS bounds are invalid."""
+    pass
