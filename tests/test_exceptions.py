@@ -643,5 +643,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioAlertDurationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationiconnotfounderror(self) -> None:
+        from exceptions import NotificationIconNotFoundError
+        exc = NotificationIconNotFoundError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconNotFoundError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
