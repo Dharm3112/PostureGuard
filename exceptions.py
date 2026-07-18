@@ -626,3 +626,8 @@ class LogConsoleColorError(PostureGuardException):
 class CSVLineReadError(PostureGuardException):
     """Exception raised when statistics reader gets file read error at specific line."""
     pass
+
+
+class CSVFieldMismatchError(PostureGuardException):
+    """Exception raised when CSV logs parser detects row fields count mismatch."""
+    pass
