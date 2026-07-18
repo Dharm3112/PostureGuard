@@ -601,3 +601,8 @@ class NotificationIconNotFoundError(PostureGuardException):
 class NotificationPayloadFormatError(PostureGuardException):
     """Exception raised when plyer desktop notification body contains malformed details."""
     pass
+
+
+class ConfigAutoSaveError(PostureGuardException):
+    """Exception raised when auto-saving configuration parameters to disk fails."""
+    pass
