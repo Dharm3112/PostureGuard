@@ -651,3 +651,8 @@ class UIHoverTimeoutError(PostureGuardException):
 class CameraFPSOutofRangeError(PostureGuardException):
     """Exception raised when webcam capture stream target FPS bounds are invalid."""
     pass
+
+
+class CameraWarmupTimeoutError(PostureGuardException):
+    """Exception raised when webcam initialization stream warmup takes too long."""
+    pass
