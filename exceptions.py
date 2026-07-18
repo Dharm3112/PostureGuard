@@ -676,3 +676,8 @@ class CalibratebaselineInvalidYError(PostureGuardException):
 class StatsGraphGenerationError(PostureGuardException):
     """Exception raised when statistics plotter engine fails to draw graphs."""
     pass
+
+
+class StatsDataCorruptError(PostureGuardException):
+    """Exception raised when posture records logs have invalid timestamps."""
+    pass
