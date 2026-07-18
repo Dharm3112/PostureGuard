@@ -76,7 +76,7 @@ class ConfigManager:
         except (json.JSONDecodeError, OSError, ValueError):  # Fallback to default setup on parsing issues
             if os.path.exists(self.DEFAULT_CONFIG_FILE):
                 try:
-                    shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
+                    shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)  # Restore local file from default backup
                     with open(self.LOCAL_CONFIG_FILE, "r") as f:
                         self.config_data = json.load(f)
                 except Exception:
