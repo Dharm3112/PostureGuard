@@ -586,3 +586,8 @@ class AudioPlaybackDeviceNotFoundError(PostureGuardException):
 class AudioVolumeOutOfBoundsError(PostureGuardException):
     """Exception raised when system alert volume configuration is out of range."""
     pass
+
+
+class AudioAlertDurationError(PostureGuardException):
+    """Exception raised when audio play alert duration parameters are invalid."""
+    pass
