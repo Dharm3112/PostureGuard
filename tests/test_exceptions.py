@@ -739,5 +739,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CalibratebaselineInvalidYError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsgraphgenerationerror(self) -> None:
+        from exceptions import StatsGraphGenerationError
+        exc = StatsGraphGenerationError("Test msg")
+        self.assertEqual(exc.error_code, "StatsGraphGenerationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
