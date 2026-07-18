@@ -611,3 +611,8 @@ class ConfigAutoSaveError(PostureGuardException):
 class ConfigEncryptionError(PostureGuardException):
     """Exception raised when encrypting configuration file parameters fails."""
     pass
+
+
+class LogHandlerFlushError(PostureGuardException):
+    """Exception raised when flushing active logger handler streams fails."""
+    pass
