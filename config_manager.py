@@ -161,7 +161,7 @@ class ConfigManager:
             else:
                 self.config_data = self.DEFAULT_SETTINGS.copy()
                 self._save_to_file()
-            return True
+            return True  # Return success flag indicating settings reset complete
         except Exception:
             return False
 
