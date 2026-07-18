@@ -709,5 +709,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIHoverTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_camerafpsoutofrangeerror(self) -> None:
+        from exceptions import CameraFPSOutofRangeError
+        exc = CameraFPSOutofRangeError("Test msg")
+        self.assertEqual(exc.error_code, "CameraFPSOutofRangeError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
