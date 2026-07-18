@@ -591,3 +591,8 @@ class AudioVolumeOutOfBoundsError(PostureGuardException):
 class AudioAlertDurationError(PostureGuardException):
     """Exception raised when audio play alert duration parameters are invalid."""
     pass
+
+
+class NotificationIconNotFoundError(PostureGuardException):
+    """Exception raised when system warning notification icon asset path is missing."""
+    pass
