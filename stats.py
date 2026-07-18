@@ -1,5 +1,5 @@
 import csv  # Import standard csv parsing capabilities
-import os
+import os  # Import standard OS utility module
 from typing import Dict, Any, Optional
 BaseDirectory = os.path.dirname(os.path.abspath(__file__))  # Retrieve canonical parent root path directory settings
 
