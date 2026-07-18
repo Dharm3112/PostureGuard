@@ -1,4 +1,4 @@
-import logging
+import logging  # Import standard logging module capabilities
 from logging.handlers import RotatingFileHandler
 from typing import Optional
 
