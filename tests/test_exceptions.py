@@ -649,5 +649,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationIconNotFoundError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationpayloadformaterror(self) -> None:
+        from exceptions import NotificationPayloadFormatError
+        exc = NotificationPayloadFormatError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationPayloadFormatError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
