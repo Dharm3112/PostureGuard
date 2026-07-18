@@ -606,3 +606,8 @@ class NotificationPayloadFormatError(PostureGuardException):
 class ConfigAutoSaveError(PostureGuardException):
     """Exception raised when auto-saving configuration parameters to disk fails."""
     pass
+
+
+class ConfigEncryptionError(PostureGuardException):
+    """Exception raised when encrypting configuration file parameters fails."""
+    pass
