@@ -596,3 +596,8 @@ class AudioAlertDurationError(PostureGuardException):
 class NotificationIconNotFoundError(PostureGuardException):
     """Exception raised when system warning notification icon asset path is missing."""
     pass
+
+
+class NotificationPayloadFormatError(PostureGuardException):
+    """Exception raised when plyer desktop notification body contains malformed details."""
+    pass
