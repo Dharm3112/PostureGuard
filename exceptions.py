@@ -636,3 +636,8 @@ class CSVFieldMismatchError(PostureGuardException):
 class UIWidgetGeometryBoundsError(PostureGuardException):
     """Exception raised when desktop app window dimensions exceed screen bounds."""
     pass
+
+
+class UIThemeInvalidPaletteError(PostureGuardException):
+    """Exception raised when visual custom theme colors contain invalid hex formats."""
+    pass
