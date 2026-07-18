@@ -656,3 +656,8 @@ class CameraFPSOutofRangeError(PostureGuardException):
 class CameraWarmupTimeoutError(PostureGuardException):
     """Exception raised when webcam initialization stream warmup takes too long."""
     pass
+
+
+class ModelConfigFormatError(PostureGuardException):
+    """Exception raised when loaded Haar cascade configuration structure has invalid keys."""
+    pass
