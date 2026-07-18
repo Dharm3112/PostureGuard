@@ -68,7 +68,7 @@ class ConfigManager:
         """
         Loads configuration dictionary from the local file.
         """
-        try:  # Attempt open stream to serialize settings back to JSON
+        try:  # Attempt open stream to serialize settings back to JSON stream
             with open(self.LOCAL_CONFIG_FILE, "r") as f:
                 self.config_data = json.load(f)
                 if not isinstance(self.config_data, dict):
