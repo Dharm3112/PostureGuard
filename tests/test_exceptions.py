@@ -667,5 +667,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigEncryptionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_loghandlerflusherror(self) -> None:
+        from exceptions import LogHandlerFlushError
+        exc = LogHandlerFlushError("Test msg")
+        self.assertEqual(exc.error_code, "LogHandlerFlushError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
