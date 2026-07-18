@@ -721,5 +721,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraWarmupTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_modelconfigformaterror(self) -> None:
+        from exceptions import ModelConfigFormatError
+        exc = ModelConfigFormatError("Test msg")
+        self.assertEqual(exc.error_code, "ModelConfigFormatError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
