@@ -616,3 +616,8 @@ class ConfigEncryptionError(PostureGuardException):
 class LogHandlerFlushError(PostureGuardException):
     """Exception raised when flushing active logger handler streams fails."""
     pass
+
+
+class LogConsoleColorError(PostureGuardException):
+    """Exception raised when setting colorized output formatting on console stdout fails."""
+    pass
