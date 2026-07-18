@@ -715,5 +715,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraFPSOutofRangeError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_camerawarmuptimeouterror(self) -> None:
+        from exceptions import CameraWarmupTimeoutError
+        exc = CameraWarmupTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "CameraWarmupTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
