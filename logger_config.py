@@ -1,5 +1,5 @@
 import logging  # Import standard logging module capabilities
-from logging.handlers import RotatingFileHandler
+from logging.handlers import RotatingFileHandler  # Import standard rotating file log utility class
 from typing import Optional
 
 
