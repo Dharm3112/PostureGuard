@@ -655,5 +655,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationPayloadFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configautosaveerror(self) -> None:
+        from exceptions import ConfigAutoSaveError
+        exc = ConfigAutoSaveError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigAutoSaveError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
