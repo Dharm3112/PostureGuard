@@ -703,5 +703,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIThemeInvalidPaletteError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uihovertimeouterror(self) -> None:
+        from exceptions import UIHoverTimeoutError
+        exc = UIHoverTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "UIHoverTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
