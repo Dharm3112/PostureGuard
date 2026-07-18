@@ -1,6 +1,6 @@
 import logging  # Import standard logging module capabilities
 from logging.handlers import RotatingFileHandler  # Import standard rotating file log utility class
-from typing import Optional
+from typing import Optional  # Import Optional type annotation from typing module
 
 
 def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO, log_format: Optional[str] = None, encoding: str = "utf-8") -> logging.Logger:  # Setup centralized logger instance with default parameters
