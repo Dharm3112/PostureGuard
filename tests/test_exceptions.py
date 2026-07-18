@@ -631,5 +631,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioPlaybackDeviceNotFoundError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiovolumeoutofboundserror(self) -> None:
+        from exceptions import AudioVolumeOutOfBoundsError
+        exc = AudioVolumeOutOfBoundsError("Test msg")
+        self.assertEqual(exc.error_code, "AudioVolumeOutOfBoundsError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
