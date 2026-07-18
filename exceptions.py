@@ -661,3 +661,8 @@ class CameraWarmupTimeoutError(PostureGuardException):
 class ModelConfigFormatError(PostureGuardException):
     """Exception raised when loaded Haar cascade configuration structure has invalid keys."""
     pass
+
+
+class FaceDetectionSmoothingError(PostureGuardException):
+    """Exception raised when posture detector smoothing queue gets infinite coordinate values."""
+    pass
