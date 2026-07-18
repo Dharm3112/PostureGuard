@@ -641,3 +641,8 @@ class UIWidgetGeometryBoundsError(PostureGuardException):
 class UIThemeInvalidPaletteError(PostureGuardException):
     """Exception raised when visual custom theme colors contain invalid hex formats."""
     pass
+
+
+class UIHoverTimeoutError(PostureGuardException):
+    """Exception raised when hover highlights tooltip elements fail to draw in time."""
+    pass
