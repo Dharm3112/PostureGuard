@@ -671,3 +671,8 @@ class FaceDetectionSmoothingError(PostureGuardException):
 class CalibratebaselineInvalidYError(PostureGuardException):
     """Exception raised when calibrated posture baseline Y falls on screen margins."""
     pass
+
+
+class StatsGraphGenerationError(PostureGuardException):
+    """Exception raised when statistics plotter engine fails to draw graphs."""
+    pass
