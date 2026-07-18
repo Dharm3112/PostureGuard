@@ -621,3 +621,8 @@ class LogHandlerFlushError(PostureGuardException):
 class LogConsoleColorError(PostureGuardException):
     """Exception raised when setting colorized output formatting on console stdout fails."""
     pass
+
+
+class CSVLineReadError(PostureGuardException):
+    """Exception raised when statistics reader gets file read error at specific line."""
+    pass
