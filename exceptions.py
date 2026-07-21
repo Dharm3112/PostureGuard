@@ -736,3 +736,8 @@ class CSVDataTypesMismatchError(PostureGuardException):
 class UIWidgetGeometryCoordinatesError(PostureGuardException):
     """Exception raised when setting dashboard widgets X or Y grid coordinates fails."""
     pass
+
+
+class UIThemeInvalidFontColorError(PostureGuardException):
+    """Exception raised when visual custom theme active foreground colors are invalid."""
+    pass
