@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0] - 2026-07-21
+
+### Added
+- **Audio, Database, and Threading Diagnostic Exceptions:** Declared 25 new exception classes for system volume configurations, audio file support, database timeouts, thread join wait times, and camera resolution errors.
+- **Robust Exception Checking:** Appended 25 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying queue resets and data formats.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [2.1.0] - 2026-07-18
 
 ### Added
