@@ -865,5 +865,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsGraphPlotterFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsdatatimestampformaterror(self) -> None:
+        from exceptions import StatsDataTimestampFormatError
+        exc = StatsDataTimestampFormatError("Test msg")
+        self.assertEqual(exc.error_code, "StatsDataTimestampFormatError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
