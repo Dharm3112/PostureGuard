@@ -133,7 +133,7 @@ class ConfigManager:
         """
         Sets a configuration value and saves changes to file.
         """
-        self.config_data[key] = value  # Assign updated setting value to internal cache map
+        self.config_data[key] = value  # Assign updated setting value to internal cache map database
         self._save_to_file()
 
     def _save_to_file(self) -> None:
