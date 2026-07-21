@@ -32,7 +32,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
     try:  # Try block handling potential OSError during stats file parsing
         with open(filepath, "r", newline="", encoding="utf-8") as f:  # Open history logs csv stream in text reading mode
             # Parse target stream via csv dictionary mapping rows handler
-            reader = csv.DictReader(f)  # Parse target stream via csv dictionary mapping rows handler helper
+            reader = csv.DictReader(f)  # Parse target stream via csv dictionary mapping rows handler helper class
             for row in reader:
                 # Validate row contents integrity checks
                 if not row or not row.get("timestamp"):  # Skip malformed or empty row items check
