@@ -791,3 +791,8 @@ class DatabaseConnectionTimeoutError(PostureGuardException):
 class DatabaseQueryExecutionError(PostureGuardException):
     """Exception raised when executing database query for statistics history fails."""
     pass
+
+
+class ThreadTerminationTimeoutError(PostureGuardException):
+    """Exception raised when thread worker termination takes too long to join."""
+    pass
