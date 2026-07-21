@@ -766,3 +766,8 @@ class ModelCascadeCorruptError(PostureGuardException):
 class FaceDetectionSmoothingEmptyError(PostureGuardException):
     """Exception raised when posture detector smoothing queue returns zero center Y coordinates."""
     pass
+
+
+class CalibrateBaselineOutOfBoundsError(PostureGuardException):
+    """Exception raised when calibrated posture baseline center Y is out of canvas bounds."""
+    pass
