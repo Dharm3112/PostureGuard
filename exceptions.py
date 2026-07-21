@@ -741,3 +741,8 @@ class UIWidgetGeometryCoordinatesError(PostureGuardException):
 class UIThemeInvalidFontColorError(PostureGuardException):
     """Exception raised when visual custom theme active foreground colors are invalid."""
     pass
+
+
+class UIHoverTooltipPlacementError(PostureGuardException):
+    """Exception raised when hover highlights tooltip labels bounds are out of window boundaries."""
+    pass
