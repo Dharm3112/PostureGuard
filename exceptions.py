@@ -786,3 +786,8 @@ class StatsDataTimestampFormatError(PostureGuardException):
 class DatabaseConnectionTimeoutError(PostureGuardException):
     """Exception raised when opening connection to database for stats persistence times out."""
     pass
+
+
+class DatabaseQueryExecutionError(PostureGuardException):
+    """Exception raised when executing database query for statistics history fails."""
+    pass
