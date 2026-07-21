@@ -776,3 +776,8 @@ class CalibrateBaselineOutOfBoundsError(PostureGuardException):
 class StatsGraphPlotterFormatError(PostureGuardException):
     """Exception raised when stats graph plotter engine gets invalid coordinates formats."""
     pass
+
+
+class StatsDataTimestampFormatError(PostureGuardException):
+    """Exception raised when posture records logs have invalid datetime strings format."""
+    pass
