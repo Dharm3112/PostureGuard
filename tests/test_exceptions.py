@@ -769,5 +769,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationChannelCreationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationactioncallbackerror(self) -> None:
+        from exceptions import NotificationActionCallbackError
+        exc = NotificationActionCallbackError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationActionCallbackError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
