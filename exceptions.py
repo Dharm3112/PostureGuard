@@ -761,3 +761,8 @@ class CameraReinitializationTimeoutError(PostureGuardException):
 class ModelCascadeCorruptError(PostureGuardException):
     """Exception raised when loaded cascade model classifier XML structure gets corrupt values."""
     pass
+
+
+class FaceDetectionSmoothingEmptyError(PostureGuardException):
+    """Exception raised when posture detector smoothing queue returns zero center Y coordinates."""
+    pass
