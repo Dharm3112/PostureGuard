@@ -829,5 +829,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIHoverTooltipPlacementError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_camerafpsinvalidboundserror(self) -> None:
+        from exceptions import CameraFPSInvalidBoundsError
+        exc = CameraFPSInvalidBoundsError("Test msg")
+        self.assertEqual(exc.error_code, "CameraFPSInvalidBoundsError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
