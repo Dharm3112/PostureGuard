@@ -811,5 +811,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVDataTypesMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetgeometrycoordinateserror(self) -> None:
+        from exceptions import UIWidgetGeometryCoordinatesError
+        exc = UIWidgetGeometryCoordinatesError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetGeometryCoordinatesError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
