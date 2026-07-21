@@ -805,5 +805,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVHeaderLengthMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvdatatypesmismatcherror(self) -> None:
+        from exceptions import CSVDataTypesMismatchError
+        exc = CSVDataTypesMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "CSVDataTypesMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
