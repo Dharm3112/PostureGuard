@@ -781,3 +781,8 @@ class StatsGraphPlotterFormatError(PostureGuardException):
 class StatsDataTimestampFormatError(PostureGuardException):
     """Exception raised when posture records logs have invalid datetime strings format."""
     pass
+
+
+class DatabaseConnectionTimeoutError(PostureGuardException):
+    """Exception raised when opening connection to database for stats persistence times out."""
+    pass
