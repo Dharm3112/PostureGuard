@@ -161,7 +161,7 @@ class PostureDetector:
         Clears the moving average Y coordinate buffer, resets consecutive failures
         counter, and clears the baseline Y value.
         """
-        self.y_buffer.clear()  # Purge all items from moving average buffer queue
+        self.y_buffer.clear()  # Purge all items from moving average buffer queue lists
         self.consecutive_failures = 0
         self.baseline_y = None
 
