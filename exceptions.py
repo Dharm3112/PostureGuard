@@ -801,3 +801,8 @@ class ThreadTerminationTimeoutError(PostureGuardException):
 class FrameBufferReadTimeoutError(PostureGuardException):
     """Exception raised when capture stream thread buffer read times out."""
     pass
+
+
+class CameraUnsupportedResolutionError(PostureGuardException):
+    """Exception raised when selected resolution width or height is not supported by camera."""
+    pass
