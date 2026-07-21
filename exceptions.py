@@ -696,3 +696,8 @@ class AudioFormatUnsupportedError(PostureGuardException):
 class NotificationChannelCreationError(PostureGuardException):
     """Exception raised when creating desktop notification notification channel channel fails."""
     pass
+
+
+class NotificationActionCallbackError(PostureGuardException):
+    """Exception raised when user interaction action callback on system notification fails."""
+    pass
