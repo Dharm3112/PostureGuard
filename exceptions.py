@@ -726,3 +726,8 @@ class LogRotationFileCreationError(PostureGuardException):
 class CSVHeaderLengthMismatchError(PostureGuardException):
     """Exception raised when stats CSV row fields length mismatches headers length."""
     pass
+
+
+class CSVDataTypesMismatchError(PostureGuardException):
+    """Exception raised when CSV parser gets string types instead of integer deviation pixels."""
+    pass
