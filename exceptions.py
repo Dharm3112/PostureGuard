@@ -756,3 +756,8 @@ class CameraFPSInvalidBoundsError(PostureGuardException):
 class CameraReinitializationTimeoutError(PostureGuardException):
     """Exception raised when re-instantiating camera device takes too long to warm up."""
     pass
+
+
+class ModelCascadeCorruptError(PostureGuardException):
+    """Exception raised when loaded cascade model classifier XML structure gets corrupt values."""
+    pass
