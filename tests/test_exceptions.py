@@ -835,5 +835,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraFPSInvalidBoundsError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_camerareinitializationtimeouterror(self) -> None:
+        from exceptions import CameraReinitializationTimeoutError
+        exc = CameraReinitializationTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "CameraReinitializationTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
