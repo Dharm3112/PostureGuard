@@ -877,5 +877,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "DatabaseConnectionTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_databasequeryexecutionerror(self) -> None:
+        from exceptions import DatabaseQueryExecutionError
+        exc = DatabaseQueryExecutionError("Test msg")
+        self.assertEqual(exc.error_code, "DatabaseQueryExecutionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
