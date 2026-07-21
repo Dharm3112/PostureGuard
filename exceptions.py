@@ -746,3 +746,8 @@ class UIThemeInvalidFontColorError(PostureGuardException):
 class UIHoverTooltipPlacementError(PostureGuardException):
     """Exception raised when hover highlights tooltip labels bounds are out of window boundaries."""
     pass
+
+
+class CameraFPSInvalidBoundsError(PostureGuardException):
+    """Exception raised when webcam capture stream rate limits bounds are out of hardware range."""
+    pass
