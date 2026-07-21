@@ -681,3 +681,8 @@ class StatsGraphGenerationError(PostureGuardException):
 class StatsDataCorruptError(PostureGuardException):
     """Exception raised when posture records logs have invalid timestamps."""
     pass
+
+
+class AudioDeviceMutedError(PostureGuardException):
+    """Exception raised when playing posture alerts warning but audio output device is muted."""
+    pass
