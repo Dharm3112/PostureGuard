@@ -841,5 +841,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraReinitializationTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_modelcascadecorrupterror(self) -> None:
+        from exceptions import ModelCascadeCorruptError
+        exc = ModelCascadeCorruptError("Test msg")
+        self.assertEqual(exc.error_code, "ModelCascadeCorruptError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
