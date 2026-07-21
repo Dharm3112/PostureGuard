@@ -751,3 +751,8 @@ class UIHoverTooltipPlacementError(PostureGuardException):
 class CameraFPSInvalidBoundsError(PostureGuardException):
     """Exception raised when webcam capture stream rate limits bounds are out of hardware range."""
     pass
+
+
+class CameraReinitializationTimeoutError(PostureGuardException):
+    """Exception raised when re-instantiating camera device takes too long to warm up."""
+    pass
