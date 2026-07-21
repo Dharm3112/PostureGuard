@@ -781,5 +781,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyValidationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configreadonlyerror(self) -> None:
+        from exceptions import ConfigReadOnlyError
+        exc = ConfigReadOnlyError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigReadOnlyError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
