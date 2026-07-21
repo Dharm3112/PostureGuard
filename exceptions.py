@@ -771,3 +771,8 @@ class FaceDetectionSmoothingEmptyError(PostureGuardException):
 class CalibrateBaselineOutOfBoundsError(PostureGuardException):
     """Exception raised when calibrated posture baseline center Y is out of canvas bounds."""
     pass
+
+
+class StatsGraphPlotterFormatError(PostureGuardException):
+    """Exception raised when stats graph plotter engine gets invalid coordinates formats."""
+    pass
