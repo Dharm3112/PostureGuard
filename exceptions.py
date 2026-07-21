@@ -706,3 +706,8 @@ class NotificationActionCallbackError(PostureGuardException):
 class ConfigKeyValidationError(PostureGuardException):
     """Exception raised when setting configuration parameter checks violates runtime validation bounds."""
     pass
+
+
+class ConfigReadOnlyError(PostureGuardException):
+    """Exception raised when updating read-only configuration parameter settings."""
+    pass
