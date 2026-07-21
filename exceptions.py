@@ -686,3 +686,8 @@ class StatsDataCorruptError(PostureGuardException):
 class AudioDeviceMutedError(PostureGuardException):
     """Exception raised when playing posture alerts warning but audio output device is muted."""
     pass
+
+
+class AudioFormatUnsupportedError(PostureGuardException):
+    """Exception raised when warning sound file format is unsupported by audio playback library."""
+    pass
