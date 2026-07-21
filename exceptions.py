@@ -701,3 +701,8 @@ class NotificationChannelCreationError(PostureGuardException):
 class NotificationActionCallbackError(PostureGuardException):
     """Exception raised when user interaction action callback on system notification fails."""
     pass
+
+
+class ConfigKeyValidationError(PostureGuardException):
+    """Exception raised when setting configuration parameter checks violates runtime validation bounds."""
+    pass
