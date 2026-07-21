@@ -145,7 +145,7 @@ class ConfigManager:
                 json.dump(self.config_data, f, indent=2)
         except OSError:
             from logger_config import setup_logger
-            setup_logger().error("Failed to write config data to local file.")  # Print file writing fallback errors
+            setup_logger().error("Failed to write config data to local file.")  # Print file writing fallback errors warning
 
     def reset_to_defaults(self) -> bool:
         """
