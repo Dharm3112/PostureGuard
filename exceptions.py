@@ -691,3 +691,8 @@ class AudioDeviceMutedError(PostureGuardException):
 class AudioFormatUnsupportedError(PostureGuardException):
     """Exception raised when warning sound file format is unsupported by audio playback library."""
     pass
+
+
+class NotificationChannelCreationError(PostureGuardException):
+    """Exception raised when creating desktop notification notification channel channel fails."""
+    pass
