@@ -775,5 +775,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationActionCallbackError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configkeyvalidationerror(self) -> None:
+        from exceptions import ConfigKeyValidationError
+        exc = ConfigKeyValidationError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigKeyValidationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
