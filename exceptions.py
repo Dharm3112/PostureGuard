@@ -711,3 +711,8 @@ class ConfigKeyValidationError(PostureGuardException):
 class ConfigReadOnlyError(PostureGuardException):
     """Exception raised when updating read-only configuration parameter settings."""
     pass
+
+
+class LogHandlerRegistrationError(PostureGuardException):
+    """Exception raised when registering custom handler to active logger stream fails."""
+    pass
