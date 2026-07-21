@@ -853,5 +853,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "FaceDetectionSmoothingEmptyError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_calibratebaselineoutofboundserror(self) -> None:
+        from exceptions import CalibrateBaselineOutOfBoundsError
+        exc = CalibrateBaselineOutOfBoundsError("Test msg")
+        self.assertEqual(exc.error_code, "CalibrateBaselineOutOfBoundsError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
