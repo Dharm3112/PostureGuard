@@ -731,3 +731,8 @@ class CSVHeaderLengthMismatchError(PostureGuardException):
 class CSVDataTypesMismatchError(PostureGuardException):
     """Exception raised when CSV parser gets string types instead of integer deviation pixels."""
     pass
+
+
+class UIWidgetGeometryCoordinatesError(PostureGuardException):
+    """Exception raised when setting dashboard widgets X or Y grid coordinates fails."""
+    pass
