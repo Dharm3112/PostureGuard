@@ -871,5 +871,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsDataTimestampFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_databaseconnectiontimeouterror(self) -> None:
+        from exceptions import DatabaseConnectionTimeoutError
+        exc = DatabaseConnectionTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "DatabaseConnectionTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
