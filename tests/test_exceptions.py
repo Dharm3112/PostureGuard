@@ -1003,5 +1003,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "FaceDetectionBoundingBoxError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_calibratebaselinejittererror(self) -> None:
+        from exceptions import CalibrateBaselineJitterError
+        exc = CalibrateBaselineJitterError("Test msg")
+        self.assertEqual(exc.error_code, "CalibrateBaselineJitterError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
