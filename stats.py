@@ -52,7 +52,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                 except (ValueError, TypeError):
                     pass
 
-                state = row.get("state", "Good")  # Retrieve posture state label coordinate classification values maps
+                state = row.get("state", "Good")  # Retrieve posture state label coordinate classification values label
                 if state == "Good":  # Verify if logged state is good posture
                     stats["good_count"] += 1
                 else:
