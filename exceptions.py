@@ -861,3 +861,8 @@ class CSVRecordDelimiterError(PostureGuardException):
 class UIWidgetStateError(PostureGuardException):
     """Exception raised when setting Tkinter widget active or disabled state fails."""
     pass
+
+
+class UIThemeFontFormatError(PostureGuardException):
+    """Exception raised when visual custom theme typography font settings are invalid."""
+    pass
