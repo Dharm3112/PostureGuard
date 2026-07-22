@@ -831,3 +831,8 @@ class NotificationDismissalError(PostureGuardException):
 class ConfigKeyTypeError(PostureGuardException):
     """Exception raised when configuration parameter value type does not match schema requirements."""
     pass
+
+
+class ConfigMigrationError(PostureGuardException):
+    """Exception raised when upgrading legacy configuration file format version fails."""
+    pass
