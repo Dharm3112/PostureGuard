@@ -1015,5 +1015,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsExportFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsaggregationtimeouterror(self) -> None:
+        from exceptions import StatsAggregationTimeoutError
+        exc = StatsAggregationTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "StatsAggregationTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
