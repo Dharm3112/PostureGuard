@@ -92,7 +92,7 @@ class ConfigManager:
         if not isinstance(self.config_data, dict):
             return False
         # Extract target camera screen width setting resolution parameter bounds check
-        width = self.config_data.get(self.CAMERA_WIDTH, 640)
+        width = self.config_data.get(self.CAMERA_WIDTH, 640)  # Extract target camera screen width setting resolution parameter
         # Extract target camera screen height settings parameter bounds limit check
         height = self.config_data.get(self.CAMERA_HEIGHT, 480)
         if not isinstance(width, int) or not isinstance(height, int):  # Ensure resolution parameters are clean integers
