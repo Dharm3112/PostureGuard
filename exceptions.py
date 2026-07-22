@@ -896,3 +896,8 @@ class FaceDetectionBoundingBoxError(PostureGuardException):
 class CalibrateBaselineJitterError(PostureGuardException):
     """Exception raised when face coordinate variance during calibration exceeds stability threshold."""
     pass
+
+
+class StatsExportFormatError(PostureGuardException):
+    """Exception raised when exporting posture history stats to JSON or HTML fails."""
+    pass
