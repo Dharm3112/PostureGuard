@@ -949,5 +949,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogStreamFlushTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvcolumnheadermissingerror(self) -> None:
+        from exceptions import CSVColumnHeaderMissingError
+        exc = CSVColumnHeaderMissingError("Test msg")
+        self.assertEqual(exc.error_code, "CSVColumnHeaderMissingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
