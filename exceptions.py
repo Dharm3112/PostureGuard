@@ -806,3 +806,8 @@ class FrameBufferReadTimeoutError(PostureGuardException):
 class CameraUnsupportedResolutionError(PostureGuardException):
     """Exception raised when selected resolution width or height is not supported by camera."""
     pass
+
+
+class AudioOutputChannelError(PostureGuardException):
+    """Exception raised when opening designated audio channel for alert chimes fails."""
+    pass
