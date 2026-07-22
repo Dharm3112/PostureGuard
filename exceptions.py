@@ -881,3 +881,8 @@ class CameraExposureControlError(PostureGuardException):
 class CameraFrameDropRateError(PostureGuardException):
     """Exception raised when webcam video stream exceeds acceptable dropped frames threshold."""
     pass
+
+
+class ModelCascadeReloadError(PostureGuardException):
+    """Exception raised when reloading OpenCV Haar cascade classifier at runtime fails."""
+    pass
