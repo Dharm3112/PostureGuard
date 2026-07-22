@@ -846,3 +846,8 @@ class LogFileArchiveError(PostureGuardException):
 class LogStreamFlushTimeoutError(PostureGuardException):
     """Exception raised when flushing buffered log stream lines times out."""
     pass
+
+
+class CSVColumnHeaderMissingError(PostureGuardException):
+    """Exception raised when required column headers are missing from history CSV file."""
+    pass
