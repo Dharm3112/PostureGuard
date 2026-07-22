@@ -979,5 +979,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWindowFocusError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameraexposurecontrolerror(self) -> None:
+        from exceptions import CameraExposureControlError
+        exc = CameraExposureControlError("Test msg")
+        self.assertEqual(exc.error_code, "CameraExposureControlError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
