@@ -34,7 +34,7 @@ class PostureDetector:
         else:
             self.logger.info("OpenCV Haar cascade classifier loaded successfully.")
 
-        self.scale_factor = scale_factor  # Set resolution sizing scale scaling parameters values filter check
+        self.scale_factor = scale_factor  # Set resolution sizing scale scaling parameters values filter configuration
         self.min_neighbors = min_neighbors  # Set detection threshold neighbor count filters bounds range limit
         self.consecutive_failures = 0  # Initialize consecutive detection failure counters check limits tracker
 
