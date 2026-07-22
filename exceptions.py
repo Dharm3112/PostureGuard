@@ -816,3 +816,8 @@ class AudioOutputChannelError(PostureGuardException):
 class AudioResourceBusyError(PostureGuardException):
     """Exception raised when audio playback subsystem device is held by another process."""
     pass
+
+
+class NotificationBadgeUpdateError(PostureGuardException):
+    """Exception raised when updating desktop notification icon badge count fails."""
+    pass
