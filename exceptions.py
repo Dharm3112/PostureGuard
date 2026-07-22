@@ -811,3 +811,8 @@ class CameraUnsupportedResolutionError(PostureGuardException):
 class AudioOutputChannelError(PostureGuardException):
     """Exception raised when opening designated audio channel for alert chimes fails."""
     pass
+
+
+class AudioResourceBusyError(PostureGuardException):
+    """Exception raised when audio playback subsystem device is held by another process."""
+    pass
