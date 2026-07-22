@@ -851,3 +851,8 @@ class LogStreamFlushTimeoutError(PostureGuardException):
 class CSVColumnHeaderMissingError(PostureGuardException):
     """Exception raised when required column headers are missing from history CSV file."""
     pass
+
+
+class CSVRecordDelimiterError(PostureGuardException):
+    """Exception raised when CSV row parsing encounters unexpected record delimiter characters."""
+    pass
