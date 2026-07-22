@@ -886,3 +886,8 @@ class CameraFrameDropRateError(PostureGuardException):
 class ModelCascadeReloadError(PostureGuardException):
     """Exception raised when reloading OpenCV Haar cascade classifier at runtime fails."""
     pass
+
+
+class FaceDetectionBoundingBoxError(PostureGuardException):
+    """Exception raised when face detector produces out-of-bounds bounding box dimensions."""
+    pass
