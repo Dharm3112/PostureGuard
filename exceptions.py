@@ -866,3 +866,8 @@ class UIWidgetStateError(PostureGuardException):
 class UIThemeFontFormatError(PostureGuardException):
     """Exception raised when visual custom theme typography font settings are invalid."""
     pass
+
+
+class UIWindowFocusError(PostureGuardException):
+    """Exception raised when setting application top-level window focus fails."""
+    pass
