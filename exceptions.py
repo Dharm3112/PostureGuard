@@ -841,3 +841,8 @@ class ConfigMigrationError(PostureGuardException):
 class LogFileArchiveError(PostureGuardException):
     """Exception raised when compressing rotated log file backups encounters system errors."""
     pass
+
+
+class LogStreamFlushTimeoutError(PostureGuardException):
+    """Exception raised when flushing buffered log stream lines times out."""
+    pass
