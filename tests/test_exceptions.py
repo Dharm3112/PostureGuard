@@ -931,5 +931,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyTypeError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configmigrationerror(self) -> None:
+        from exceptions import ConfigMigrationError
+        exc = ConfigMigrationError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigMigrationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
