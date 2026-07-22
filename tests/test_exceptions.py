@@ -943,5 +943,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogFileArchiveError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logstreamflushtimeouterror(self) -> None:
+        from exceptions import LogStreamFlushTimeoutError
+        exc = LogStreamFlushTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "LogStreamFlushTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
