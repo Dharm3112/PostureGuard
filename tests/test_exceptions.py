@@ -967,5 +967,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetStateError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemefontformaterror(self) -> None:
+        from exceptions import UIThemeFontFormatError
+        exc = UIThemeFontFormatError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemeFontFormatError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
