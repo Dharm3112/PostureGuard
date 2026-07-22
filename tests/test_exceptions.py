@@ -1009,5 +1009,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CalibrateBaselineJitterError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsexportformaterror(self) -> None:
+        from exceptions import StatsExportFormatError
+        exc = StatsExportFormatError("Test msg")
+        self.assertEqual(exc.error_code, "StatsExportFormatError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
