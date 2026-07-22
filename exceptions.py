@@ -876,3 +876,8 @@ class UIWindowFocusError(PostureGuardException):
 class CameraExposureControlError(PostureGuardException):
     """Exception raised when setting webcam automatic exposure properties fails."""
     pass
+
+
+class CameraFrameDropRateError(PostureGuardException):
+    """Exception raised when webcam video stream exceeds acceptable dropped frames threshold."""
+    pass
