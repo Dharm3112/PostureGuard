@@ -110,7 +110,7 @@ class PostureDetector:
         Checks if the current face Y coordinate deviates past the baseline by threshold.
         """
         # Verify if baseline vertical heights calibration has been completed
-        if self.baseline_y is None:  # Return early if no baseline established constraints
+        if self.baseline_y is None:  # Return early if no baseline established constraints check
             return False
         # Compare vertical height coordinate deviations offsets values
         return current_y > (self.baseline_y + threshold_px)
