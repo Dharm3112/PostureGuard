@@ -836,3 +836,8 @@ class ConfigKeyTypeError(PostureGuardException):
 class ConfigMigrationError(PostureGuardException):
     """Exception raised when upgrading legacy configuration file format version fails."""
     pass
+
+
+class LogFileArchiveError(PostureGuardException):
+    """Exception raised when compressing rotated log file backups encounters system errors."""
+    pass
