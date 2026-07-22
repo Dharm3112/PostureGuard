@@ -891,3 +891,8 @@ class ModelCascadeReloadError(PostureGuardException):
 class FaceDetectionBoundingBoxError(PostureGuardException):
     """Exception raised when face detector produces out-of-bounds bounding box dimensions."""
     pass
+
+
+class CalibrateBaselineJitterError(PostureGuardException):
+    """Exception raised when face coordinate variance during calibration exceeds stability threshold."""
+    pass
