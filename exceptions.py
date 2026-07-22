@@ -871,3 +871,8 @@ class UIThemeFontFormatError(PostureGuardException):
 class UIWindowFocusError(PostureGuardException):
     """Exception raised when setting application top-level window focus fails."""
     pass
+
+
+class CameraExposureControlError(PostureGuardException):
+    """Exception raised when setting webcam automatic exposure properties fails."""
+    pass
