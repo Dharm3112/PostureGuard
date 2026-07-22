@@ -821,3 +821,8 @@ class AudioResourceBusyError(PostureGuardException):
 class NotificationBadgeUpdateError(PostureGuardException):
     """Exception raised when updating desktop notification icon badge count fails."""
     pass
+
+
+class NotificationDismissalError(PostureGuardException):
+    """Exception raised when clearing persistent system notification popups fails."""
+    pass
