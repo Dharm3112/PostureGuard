@@ -856,3 +856,8 @@ class CSVColumnHeaderMissingError(PostureGuardException):
 class CSVRecordDelimiterError(PostureGuardException):
     """Exception raised when CSV row parsing encounters unexpected record delimiter characters."""
     pass
+
+
+class UIWidgetStateError(PostureGuardException):
+    """Exception raised when setting Tkinter widget active or disabled state fails."""
+    pass
