@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.0] - 2026-07-22
+
+### Added
+- **Audio, UI, and Model Diagnostic Exceptions:** Declared 20 new exception classes for audio channels, notification badges, config migrations, UI widget state, and face detection jitter.
+- **Robust Exception Checking:** Appended 20 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying settings validation and classification values.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [2.2.0] - 2026-07-21
 
 ### Added
