@@ -955,5 +955,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVColumnHeaderMissingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvrecorddelimitererror(self) -> None:
+        from exceptions import CSVRecordDelimiterError
+        exc = CSVRecordDelimiterError("Test msg")
+        self.assertEqual(exc.error_code, "CSVRecordDelimiterError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
