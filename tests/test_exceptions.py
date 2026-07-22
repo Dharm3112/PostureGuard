@@ -919,5 +919,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationBadgeUpdateError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationdismissalerror(self) -> None:
+        from exceptions import NotificationDismissalError
+        exc = NotificationDismissalError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationDismissalError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
