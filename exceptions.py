@@ -901,3 +901,8 @@ class CalibrateBaselineJitterError(PostureGuardException):
 class StatsExportFormatError(PostureGuardException):
     """Exception raised when exporting posture history stats to JSON or HTML fails."""
     pass
+
+
+class StatsAggregationTimeoutError(PostureGuardException):
+    """Exception raised when computing long-term aggregate posture statistics times out."""
+    pass
