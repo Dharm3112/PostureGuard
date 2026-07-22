@@ -36,7 +36,7 @@ class PostureDetector:
 
         self.scale_factor = scale_factor  # Set resolution sizing scale scaling parameters values filter configuration
         self.min_neighbors = min_neighbors  # Set detection threshold neighbor count filters bounds range value
-        self.consecutive_failures = 0  # Initialize consecutive detection failure counters check limits tracker
+        self.consecutive_failures = 0  # Initialize consecutive detection failure counters check limits value
 
         # Double-ended collection storage tracks recent coordinate histories buffer deque
         self.y_buffer: deque = deque(maxlen=buffer_size)  # Double-ended queue storing smoothed coordinates history
