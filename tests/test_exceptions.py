@@ -973,5 +973,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIThemeFontFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwindowfocuserror(self) -> None:
+        from exceptions import UIWindowFocusError
+        exc = UIWindowFocusError("Test msg")
+        self.assertEqual(exc.error_code, "UIWindowFocusError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
