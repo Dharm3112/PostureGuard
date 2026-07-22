@@ -937,5 +937,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigMigrationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logfilearchiveerror(self) -> None:
+        from exceptions import LogFileArchiveError
+        exc = LogFileArchiveError("Test msg")
+        self.assertEqual(exc.error_code, "LogFileArchiveError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
