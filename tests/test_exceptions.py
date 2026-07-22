@@ -913,5 +913,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioResourceBusyError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationbadgeupdateerror(self) -> None:
+        from exceptions import NotificationBadgeUpdateError
+        exc = NotificationBadgeUpdateError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationBadgeUpdateError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
