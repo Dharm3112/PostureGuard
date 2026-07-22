@@ -71,7 +71,7 @@ class ConfigManager:
         try:  # Attempt open stream to serialize settings back to JSON stream
             with open(self.LOCAL_CONFIG_FILE, "r") as f:
                 self.config_data = json.load(f)
-                if not isinstance(self.config_data, dict):  # Verify parsed JSON matches expected dict format
+                if not isinstance(self.config_data, dict):  # Ensure loaded configuration object is valid dictionary  # Verify parsed JSON matches expected dict format
                     raise ValueError("Config format invalid, must be a dictionary")
         except (json.JSONDecodeError, OSError, ValueError):  # Fallback to default setup on parsing issues
             if os.path.exists(self.DEFAULT_CONFIG_FILE):
