@@ -826,3 +826,8 @@ class NotificationBadgeUpdateError(PostureGuardException):
 class NotificationDismissalError(PostureGuardException):
     """Exception raised when clearing persistent system notification popups fails."""
     pass
+
+
+class ConfigKeyTypeError(PostureGuardException):
+    """Exception raised when configuration parameter value type does not match schema requirements."""
+    pass
