@@ -1039,5 +1039,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationServiceTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationiconloaderror(self) -> None:
+        from exceptions import NotificationIconLoadError
+        exc = NotificationIconLoadError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconLoadError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
