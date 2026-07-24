@@ -996,3 +996,8 @@ class FaceDetectionMinSizeError(PostureGuardException):
 class CalibrateBufferUnderflowError(PostureGuardException):
     """Exception raised when posture calibration request has insufficient face samples."""
     pass
+
+
+class StatsDataRangeFilterError(PostureGuardException):
+    """Exception raised when filtering posture history records by date range fails."""
+    pass
