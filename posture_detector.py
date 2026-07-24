@@ -123,7 +123,7 @@ class PostureDetector:
     @property
     def buffer_data(self) -> list:
         """Returns copy of elements in buffer."""
-        return list(self.y_buffer)  # Convert double-ended queue to standard list
+        return list(self.y_buffer)  # Convert double-ended queue to standard list copy
 
     @property
     def has_baseline(self) -> bool:
