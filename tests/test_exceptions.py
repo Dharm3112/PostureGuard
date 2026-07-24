@@ -1129,5 +1129,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CalibrateBufferUnderflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsdatarangefiltererror(self) -> None:
+        from exceptions import StatsDataRangeFilterError
+        exc = StatsDataRangeFilterError("Test msg")
+        self.assertEqual(exc.error_code, "StatsDataRangeFilterError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
