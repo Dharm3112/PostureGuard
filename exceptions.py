@@ -971,3 +971,8 @@ class UIThemeColorPaletteError(PostureGuardException):
 class UIEventLoopTimeoutError(PostureGuardException):
     """Exception raised when main Tkinter event loop schedule update takes too long."""
     pass
+
+
+class CameraPropertySetError(PostureGuardException):
+    """Exception raised when setting OpenCV VideoCapture property values fails."""
+    pass
