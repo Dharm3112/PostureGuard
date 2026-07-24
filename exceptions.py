@@ -991,3 +991,8 @@ class ModelClassifierFileMissingError(PostureGuardException):
 class FaceDetectionMinSizeError(PostureGuardException):
     """Exception raised when minimum face detection bounding box size parameter is invalid."""
     pass
+
+
+class CalibrateBufferUnderflowError(PostureGuardException):
+    """Exception raised when posture calibration request has insufficient face samples."""
+    pass
