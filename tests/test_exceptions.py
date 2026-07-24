@@ -1063,5 +1063,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogHandlerDetachError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logrotationpermissionserror(self) -> None:
+        from exceptions import LogRotationPermissionsError
+        exc = LogRotationPermissionsError("Test msg")
+        self.assertEqual(exc.error_code, "LogRotationPermissionsError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
