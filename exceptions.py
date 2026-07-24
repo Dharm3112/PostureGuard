@@ -981,3 +981,8 @@ class CameraPropertySetError(PostureGuardException):
 class CameraFrameReadError(PostureGuardException):
     """Exception raised when webcam stream read yields empty or corrupt image frame."""
     pass
+
+
+class ModelClassifierFileMissingError(PostureGuardException):
+    """Exception raised when Haar cascade XML classifier file path does not exist."""
+    pass
