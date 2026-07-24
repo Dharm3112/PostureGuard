@@ -941,3 +941,8 @@ class ConfigBackupRestoreError(PostureGuardException):
 class LogHandlerDetachError(PostureGuardException):
     """Exception raised when removing logging handler from logger instance fails."""
     pass
+
+
+class LogRotationPermissionsError(PostureGuardException):
+    """Exception raised when creating rotated log file backup lacks directory permissions."""
+    pass
