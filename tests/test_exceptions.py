@@ -1081,5 +1081,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRecordFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetpaddingerror(self) -> None:
+        from exceptions import UIWidgetPaddingError
+        exc = UIWidgetPaddingError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetPaddingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
