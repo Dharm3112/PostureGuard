@@ -911,3 +911,8 @@ class StatsAggregationTimeoutError(PostureGuardException):
 class AudioDeviceInitializationError(PostureGuardException):
     """Exception raised when initializing default sound playback hardware device fails."""
     pass
+
+
+class AudioSampleRateMismatchError(PostureGuardException):
+    """Exception raised when audio sample rate does not match sound card output capabilities."""
+    pass
