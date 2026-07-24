@@ -14,7 +14,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
     # Retrieve or register centralized application logger instance
     logger = logging.getLogger("PostureGuard")  # Retrieve application level logger instance identifier
     # Set minimum severity event logging threshold filter level
-    logger.setLevel(level)  # Set minimum log filtering level bounds thresholds filter check
+    logger.setLevel(level)  # Set minimum log filtering level bounds thresholds filter check rule
 
     # Avoid adding duplicate handlers if the logger has already been setup
     # Check if any logging handlers have already been configured
