@@ -931,3 +931,8 @@ class NotificationIconLoadError(PostureGuardException):
 class ConfigParseValidationError(PostureGuardException):
     """Exception raised when config JSON parser encounters schema constraint errors."""
     pass
+
+
+class ConfigBackupRestoreError(PostureGuardException):
+    """Exception raised when restoring configuration settings from backup copy fails."""
+    pass
