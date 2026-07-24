@@ -88,7 +88,7 @@ class PostureDetector:
 
             # Add target center coordinate vertical heights to smoothing buffer
             self.y_buffer.append(center_y)  # Append face center Y coordinate to buffer
-            current_y = self._get_average_y()
+            current_y = self._get_average_y()  # Compute moving average Y coordinate
 
             # Visualization: Draw the Baseline Line if calibrated
             # Verify if baseline vertical calibration is configured
