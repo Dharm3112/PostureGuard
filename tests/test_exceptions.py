@@ -1021,5 +1021,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsAggregationTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiodeviceinitializationerror(self) -> None:
+        from exceptions import AudioDeviceInitializationError
+        exc = AudioDeviceInitializationError("Test msg")
+        self.assertEqual(exc.error_code, "AudioDeviceInitializationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
