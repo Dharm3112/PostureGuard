@@ -1135,5 +1135,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsDataRangeFilterError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statssummarycomputeerror(self) -> None:
+        from exceptions import StatsSummaryComputeError
+        exc = StatsSummaryComputeError("Test msg")
+        self.assertEqual(exc.error_code, "StatsSummaryComputeError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
