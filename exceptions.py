@@ -986,3 +986,8 @@ class CameraFrameReadError(PostureGuardException):
 class ModelClassifierFileMissingError(PostureGuardException):
     """Exception raised when Haar cascade XML classifier file path does not exist."""
     pass
+
+
+class FaceDetectionMinSizeError(PostureGuardException):
+    """Exception raised when minimum face detection bounding box size parameter is invalid."""
+    pass
