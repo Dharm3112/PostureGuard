@@ -956,3 +956,8 @@ class CSVColumnIndexError(PostureGuardException):
 class CSVRecordFormatError(PostureGuardException):
     """Exception raised when CSV parser encounters malformed quote parameters."""
     pass
+
+
+class UIWidgetPaddingError(PostureGuardException):
+    """Exception raised when layout padding configuration parameters are out of range."""
+    pass
