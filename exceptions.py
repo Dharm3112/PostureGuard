@@ -951,3 +951,8 @@ class LogRotationPermissionsError(PostureGuardException):
 class CSVColumnIndexError(PostureGuardException):
     """Exception raised when accessing posture history CSV columns by numeric index fails."""
     pass
+
+
+class CSVRecordFormatError(PostureGuardException):
+    """Exception raised when CSV parser encounters malformed quote parameters."""
+    pass
