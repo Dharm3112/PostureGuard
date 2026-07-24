@@ -906,3 +906,8 @@ class StatsExportFormatError(PostureGuardException):
 class StatsAggregationTimeoutError(PostureGuardException):
     """Exception raised when computing long-term aggregate posture statistics times out."""
     pass
+
+
+class AudioDeviceInitializationError(PostureGuardException):
+    """Exception raised when initializing default sound playback hardware device fails."""
+    pass
