@@ -1001,3 +1001,8 @@ class CalibrateBufferUnderflowError(PostureGuardException):
 class StatsDataRangeFilterError(PostureGuardException):
     """Exception raised when filtering posture history records by date range fails."""
     pass
+
+
+class StatsSummaryComputeError(PostureGuardException):
+    """Exception raised when calculating posture percentage or average deviation fails."""
+    pass
