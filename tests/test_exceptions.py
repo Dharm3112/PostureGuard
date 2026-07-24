@@ -1057,5 +1057,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigBackupRestoreError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_loghandlerdetacherror(self) -> None:
+        from exceptions import LogHandlerDetachError
+        exc = LogHandlerDetachError("Test msg")
+        self.assertEqual(exc.error_code, "LogHandlerDetachError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
