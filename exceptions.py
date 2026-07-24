@@ -946,3 +946,8 @@ class LogHandlerDetachError(PostureGuardException):
 class LogRotationPermissionsError(PostureGuardException):
     """Exception raised when creating rotated log file backup lacks directory permissions."""
     pass
+
+
+class CSVColumnIndexError(PostureGuardException):
+    """Exception raised when accessing posture history CSV columns by numeric index fails."""
+    pass
