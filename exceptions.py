@@ -916,3 +916,8 @@ class AudioDeviceInitializationError(PostureGuardException):
 class AudioSampleRateMismatchError(PostureGuardException):
     """Exception raised when audio sample rate does not match sound card output capabilities."""
     pass
+
+
+class NotificationServiceTimeoutError(PostureGuardException):
+    """Exception raised when desktop notification daemon request times out."""
+    pass
