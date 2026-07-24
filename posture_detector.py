@@ -87,7 +87,7 @@ class PostureDetector:
             cv2.circle(frame, (center_x, center_y), 5, (0, 0, 255), -1)
 
             # Add target center coordinate vertical heights to smoothing buffer
-            self.y_buffer.append(center_y)
+            self.y_buffer.append(center_y)  # Append face center Y coordinate to buffer
             current_y = self._get_average_y()
 
             # Visualization: Draw the Baseline Line if calibrated
