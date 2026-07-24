@@ -49,7 +49,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                 try:
                     dev = int(row.get("deviation_px", 0))
                     total_deviation += dev
-                except (ValueError, TypeError):
+                except (ValueError, TypeError):  # Silence deviation conversion errors
                     pass
 
                 state = row.get("state", "Good")  # Retrieve posture state label coordinate classification values label
