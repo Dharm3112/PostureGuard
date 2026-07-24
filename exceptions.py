@@ -961,3 +961,8 @@ class CSVRecordFormatError(PostureGuardException):
 class UIWidgetPaddingError(PostureGuardException):
     """Exception raised when layout padding configuration parameters are out of range."""
     pass
+
+
+class UIThemeColorPaletteError(PostureGuardException):
+    """Exception raised when custom dark theme color constants contain invalid color values."""
+    pass
