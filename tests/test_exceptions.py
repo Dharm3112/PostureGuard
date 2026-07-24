@@ -1045,5 +1045,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationIconLoadError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configparsevalidationerror(self) -> None:
+        from exceptions import ConfigParseValidationError
+        exc = ConfigParseValidationError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigParseValidationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
