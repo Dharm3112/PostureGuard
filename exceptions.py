@@ -976,3 +976,8 @@ class UIEventLoopTimeoutError(PostureGuardException):
 class CameraPropertySetError(PostureGuardException):
     """Exception raised when setting OpenCV VideoCapture property values fails."""
     pass
+
+
+class CameraFrameReadError(PostureGuardException):
+    """Exception raised when webcam stream read yields empty or corrupt image frame."""
+    pass
