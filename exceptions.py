@@ -926,3 +926,8 @@ class NotificationServiceTimeoutError(PostureGuardException):
 class NotificationIconLoadError(PostureGuardException):
     """Exception raised when notification icon image asset cannot be read from disk."""
     pass
+
+
+class ConfigParseValidationError(PostureGuardException):
+    """Exception raised when config JSON parser encounters schema constraint errors."""
+    pass
