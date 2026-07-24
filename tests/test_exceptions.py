@@ -1111,5 +1111,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraFrameReadError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_modelclassifierfilemissingerror(self) -> None:
+        from exceptions import ModelClassifierFileMissingError
+        exc = ModelClassifierFileMissingError("Test msg")
+        self.assertEqual(exc.error_code, "ModelClassifierFileMissingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
