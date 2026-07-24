@@ -966,3 +966,8 @@ class UIWidgetPaddingError(PostureGuardException):
 class UIThemeColorPaletteError(PostureGuardException):
     """Exception raised when custom dark theme color constants contain invalid color values."""
     pass
+
+
+class UIEventLoopTimeoutError(PostureGuardException):
+    """Exception raised when main Tkinter event loop schedule update takes too long."""
+    pass
