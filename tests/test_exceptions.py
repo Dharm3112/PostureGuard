@@ -1033,5 +1033,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioSampleRateMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationservicetimeouterror(self) -> None:
+        from exceptions import NotificationServiceTimeoutError
+        exc = NotificationServiceTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationServiceTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
