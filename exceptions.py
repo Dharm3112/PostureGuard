@@ -921,3 +921,8 @@ class AudioSampleRateMismatchError(PostureGuardException):
 class NotificationServiceTimeoutError(PostureGuardException):
     """Exception raised when desktop notification daemon request times out."""
     pass
+
+
+class NotificationIconLoadError(PostureGuardException):
+    """Exception raised when notification icon image asset cannot be read from disk."""
+    pass
