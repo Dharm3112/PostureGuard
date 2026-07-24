@@ -1027,5 +1027,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioDeviceInitializationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiosampleratemismatcherror(self) -> None:
+        from exceptions import AudioSampleRateMismatchError
+        exc = AudioSampleRateMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "AudioSampleRateMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
