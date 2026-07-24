@@ -1105,5 +1105,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraPropertySetError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameraframereaderror(self) -> None:
+        from exceptions import CameraFrameReadError
+        exc = CameraFrameReadError("Test msg")
+        self.assertEqual(exc.error_code, "CameraFrameReadError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
