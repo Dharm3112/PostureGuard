@@ -936,3 +936,8 @@ class ConfigParseValidationError(PostureGuardException):
 class ConfigBackupRestoreError(PostureGuardException):
     """Exception raised when restoring configuration settings from backup copy fails."""
     pass
+
+
+class LogHandlerDetachError(PostureGuardException):
+    """Exception raised when removing logging handler from logger instance fails."""
+    pass
