@@ -1219,5 +1219,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIEventDispatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameraresolutionunsupportederror(self) -> None:
+        from exceptions import CameraResolutionUnsupportedError
+        exc = CameraResolutionUnsupportedError("Test msg")
+        self.assertEqual(exc.error_code, "CameraResolutionUnsupportedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
