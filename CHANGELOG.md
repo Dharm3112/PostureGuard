@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.5.0] - 2026-07-25
+
+### Added
+- **Audio, UI, and Camera Diagnostic Exceptions:** Declared 20 new exception classes for audio channel locks, notification toasts, config bounds validation, camera resolution formats, and posture statistics overflows.
+- **Robust Exception Checking:** Appended 20 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying camera identifiers and center coordinate math.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [2.4.0] - 2026-07-24
 
 ### Added
