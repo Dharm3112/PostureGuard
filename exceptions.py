@@ -1066,3 +1066,8 @@ class UIWidgetMarginError(PostureGuardException):
 class UIThemeContrastRatioError(PostureGuardException):
     """Exception raised when custom theme color palette fails minimum contrast calculations."""
     pass
+
+
+class UIEventDispatchError(PostureGuardException):
+    """Exception raised when dispatching UI custom callback events encounters deadlocks."""
+    pass
