@@ -1237,5 +1237,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ModelCascadeParseError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_facedetectionareathresholderror(self) -> None:
+        from exceptions import FaceDetectionAreaThresholdError
+        exc = FaceDetectionAreaThresholdError("Test msg")
+        self.assertEqual(exc.error_code, "FaceDetectionAreaThresholdError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
