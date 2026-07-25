@@ -1091,3 +1091,8 @@ class ModelCascadeParseError(PostureGuardException):
 class FaceDetectionAreaThresholdError(PostureGuardException):
     """Exception raised when face bounding box area falls outside proximity threshold."""
     pass
+
+
+class CalibrateBufferOverflowLimitError(PostureGuardException):
+    """Exception raised when calibration queue size exceeds maximum allowed frame samples."""
+    pass
