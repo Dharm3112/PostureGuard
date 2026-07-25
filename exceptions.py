@@ -1026,3 +1026,8 @@ class NotificationActionTimeoutError(PostureGuardException):
 class NotificationIconRenderError(PostureGuardException):
     """Exception raised when system tray or notification toast fails to draw icon."""
     pass
+
+
+class ConfigValidationBoundsError(PostureGuardException):
+    """Exception raised when numerical config bounds checking encounters invalid values."""
+    pass
