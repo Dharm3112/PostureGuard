@@ -20,7 +20,7 @@ class ConfigManager:
     CAMERA_WIDTH = "camera_width"  # Key identifier for camera width setting
     CAMERA_HEIGHT = "camera_height"  # Key identifier for camera height setting
     SAVE_HISTORY = "save_history"  # Key identifier for history logging setting
-    SAVED_BASELINE_Y = "saved_baseline_y"
+    SAVED_BASELINE_Y = "saved_baseline_y"  # Key identifier for saved baseline setting
     
     SCALE_FACTOR = "scale_factor"
     MIN_NEIGHBORS = "min_neighbors"
