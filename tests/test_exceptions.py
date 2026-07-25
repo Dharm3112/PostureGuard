@@ -1153,5 +1153,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioVolumeSyncError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationactiontimeouterror(self) -> None:
+        from exceptions import NotificationActionTimeoutError
+        exc = NotificationActionTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationActionTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
