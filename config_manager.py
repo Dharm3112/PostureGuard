@@ -19,7 +19,7 @@ class ConfigManager:
     FRAME_DELAY = "frame_delay_ms"
     CAMERA_WIDTH = "camera_width"  # Key identifier for camera width setting
     CAMERA_HEIGHT = "camera_height"  # Key identifier for camera height setting
-    SAVE_HISTORY = "save_history"
+    SAVE_HISTORY = "save_history"  # Key identifier for history logging setting
     SAVED_BASELINE_Y = "saved_baseline_y"
     
     SCALE_FACTOR = "scale_factor"
