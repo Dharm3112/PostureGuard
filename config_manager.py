@@ -17,7 +17,7 @@ class ConfigManager:
     SLOUCH_THRESHOLD = "slouch_threshold_px"  # Key identifier for slouch threshold setting
     TIME_TO_ALERT = "time_to_alert_frames"  # Key identifier for time to alert frames setting
     FRAME_DELAY = "frame_delay_ms"
-    CAMERA_WIDTH = "camera_width"
+    CAMERA_WIDTH = "camera_width"  # Key identifier for camera width setting
     CAMERA_HEIGHT = "camera_height"
     SAVE_HISTORY = "save_history"
     SAVED_BASELINE_Y = "saved_baseline_y"
