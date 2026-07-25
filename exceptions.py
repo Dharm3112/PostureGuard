@@ -1006,3 +1006,8 @@ class StatsDataRangeFilterError(PostureGuardException):
 class StatsSummaryComputeError(PostureGuardException):
     """Exception raised when calculating posture percentage or average deviation fails."""
     pass
+
+
+class AudioChannelBusyError(PostureGuardException):
+    """Exception raised when targeted audio alert channel is locked by another task."""
+    pass
