@@ -1096,3 +1096,8 @@ class FaceDetectionAreaThresholdError(PostureGuardException):
 class CalibrateBufferOverflowLimitError(PostureGuardException):
     """Exception raised when calibration queue size exceeds maximum allowed frame samples."""
     pass
+
+
+class StatsFilterBoundaryError(PostureGuardException):
+    """Exception raised when start date or end date filtering boundaries are inverted."""
+    pass
