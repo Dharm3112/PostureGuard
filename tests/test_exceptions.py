@@ -1207,5 +1207,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetMarginError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemecontrastratioerror(self) -> None:
+        from exceptions import UIThemeContrastRatioError
+        exc = UIThemeContrastRatioError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemeContrastRatioError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
