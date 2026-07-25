@@ -63,7 +63,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
         return stats
 
     total = stats["total_records"]  # Cache total records logged count value parameter item
-    if total > 0:
+    if total > 0:  # Compute percentage metrics if records exist
         stats["good_percent"] = round((stats["good_count"] / total) * 100.0, 2)
         stats["slouch_percent"] = round((stats["slouch_count"] / total) * 100.0, 2)
         stats["avg_deviation"] = round(total_deviation / total, 2)
