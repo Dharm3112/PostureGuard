@@ -1011,3 +1011,8 @@ class StatsSummaryComputeError(PostureGuardException):
 class AudioChannelBusyError(PostureGuardException):
     """Exception raised when targeted audio alert channel is locked by another task."""
     pass
+
+
+class AudioVolumeSyncError(PostureGuardException):
+    """Exception raised when synchronizing notification alert volume with OS settings fails."""
+    pass
