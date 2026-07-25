@@ -1189,5 +1189,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogRotationIndexError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvheadercolumnnameerror(self) -> None:
+        from exceptions import CSVHeaderColumnNameError
+        exc = CSVHeaderColumnNameError("Test msg")
+        self.assertEqual(exc.error_code, "CSVHeaderColumnNameError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
