@@ -1081,3 +1081,8 @@ class CameraResolutionUnsupportedError(PostureGuardException):
 class CameraFrameFormatError(PostureGuardException):
     """Exception raised when webcam frame buffer returns invalid color space channels."""
     pass
+
+
+class ModelCascadeParseError(PostureGuardException):
+    """Exception raised when parsing Haar cascade XML structure encounters invalid elements."""
+    pass
