@@ -1036,3 +1036,8 @@ class ConfigValidationBoundsError(PostureGuardException):
 class ConfigMigrationVersionError(PostureGuardException):
     """Exception raised when config file version header is incompatible with app schema."""
     pass
+
+
+class LogHandlerFlushFailedError(PostureGuardException):
+    """Exception raised when flushing active file log handlers encounters disk write error."""
+    pass
