@@ -1147,5 +1147,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioChannelBusyError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiovolumesyncerror(self) -> None:
+        from exceptions import AudioVolumeSyncError
+        exc = AudioVolumeSyncError("Test msg")
+        self.assertEqual(exc.error_code, "AudioVolumeSyncError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
