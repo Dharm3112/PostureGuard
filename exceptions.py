@@ -1046,3 +1046,8 @@ class LogHandlerFlushFailedError(PostureGuardException):
 class LogRotationIndexError(PostureGuardException):
     """Exception raised when rotating log backup file indexing encounters out-of-range bounds."""
     pass
+
+
+class CSVHeaderColumnNameError(PostureGuardException):
+    """Exception raised when expected column name is missing from posture history log file."""
+    pass
