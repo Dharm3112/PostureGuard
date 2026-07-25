@@ -1086,3 +1086,8 @@ class CameraFrameFormatError(PostureGuardException):
 class ModelCascadeParseError(PostureGuardException):
     """Exception raised when parsing Haar cascade XML structure encounters invalid elements."""
     pass
+
+
+class FaceDetectionAreaThresholdError(PostureGuardException):
+    """Exception raised when face bounding box area falls outside proximity threshold."""
+    pass
