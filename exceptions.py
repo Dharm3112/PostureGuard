@@ -1016,3 +1016,8 @@ class AudioChannelBusyError(PostureGuardException):
 class AudioVolumeSyncError(PostureGuardException):
     """Exception raised when synchronizing notification alert volume with OS settings fails."""
     pass
+
+
+class NotificationActionTimeoutError(PostureGuardException):
+    """Exception raised when system notification user response action times out."""
+    pass
