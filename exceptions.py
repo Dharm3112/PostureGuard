@@ -1021,3 +1021,8 @@ class AudioVolumeSyncError(PostureGuardException):
 class NotificationActionTimeoutError(PostureGuardException):
     """Exception raised when system notification user response action times out."""
     pass
+
+
+class NotificationIconRenderError(PostureGuardException):
+    """Exception raised when system tray or notification toast fails to draw icon."""
+    pass
