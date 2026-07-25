@@ -1031,3 +1031,8 @@ class NotificationIconRenderError(PostureGuardException):
 class ConfigValidationBoundsError(PostureGuardException):
     """Exception raised when numerical config bounds checking encounters invalid values."""
     pass
+
+
+class ConfigMigrationVersionError(PostureGuardException):
+    """Exception raised when config file version header is incompatible with app schema."""
+    pass
