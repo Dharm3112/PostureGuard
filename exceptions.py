@@ -1056,3 +1056,8 @@ class CSVHeaderColumnNameError(PostureGuardException):
 class CSVRecordTypeCastError(PostureGuardException):
     """Exception raised when converting string fields in posture history CSV to numbers fails."""
     pass
+
+
+class UIWidgetMarginError(PostureGuardException):
+    """Exception raised when layout padding or margin specifications violate window bounds."""
+    pass
