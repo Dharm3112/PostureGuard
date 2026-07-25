@@ -1071,3 +1071,8 @@ class UIThemeContrastRatioError(PostureGuardException):
 class UIEventDispatchError(PostureGuardException):
     """Exception raised when dispatching UI custom callback events encounters deadlocks."""
     pass
+
+
+class CameraResolutionUnsupportedError(PostureGuardException):
+    """Exception raised when requesting camera resolution dimensions not supported by driver."""
+    pass
