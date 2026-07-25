@@ -1041,3 +1041,8 @@ class ConfigMigrationVersionError(PostureGuardException):
 class LogHandlerFlushFailedError(PostureGuardException):
     """Exception raised when flushing active file log handlers encounters disk write error."""
     pass
+
+
+class LogRotationIndexError(PostureGuardException):
+    """Exception raised when rotating log backup file indexing encounters out-of-range bounds."""
+    pass
