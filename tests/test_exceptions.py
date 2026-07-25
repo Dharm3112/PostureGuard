@@ -1165,5 +1165,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationIconRenderError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configvalidationboundserror(self) -> None:
+        from exceptions import ConfigValidationBoundsError
+        exc = ConfigValidationBoundsError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigValidationBoundsError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
