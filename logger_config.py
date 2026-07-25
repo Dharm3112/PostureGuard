@@ -27,7 +27,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
                 handler.setFormatter(formatter)
         return logger  # Return fully initialized logger module reference object
 
-    # Format config
+    # Format config settings layout
     # Fallback to default output pattern if format is empty
     fmt_str = log_format or '%(asctime)s [%(levelname)s] %(name)s: %(message)s'  # Fallback to standard logging pattern template
     # Instantiate default message layout format compilation helper
