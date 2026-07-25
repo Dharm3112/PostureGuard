@@ -1213,5 +1213,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIThemeContrastRatioError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uieventdispatcherror(self) -> None:
+        from exceptions import UIEventDispatchError
+        exc = UIEventDispatchError("Test msg")
+        self.assertEqual(exc.error_code, "UIEventDispatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
