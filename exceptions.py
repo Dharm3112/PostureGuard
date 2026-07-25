@@ -1061,3 +1061,8 @@ class CSVRecordTypeCastError(PostureGuardException):
 class UIWidgetMarginError(PostureGuardException):
     """Exception raised when layout padding or margin specifications violate window bounds."""
     pass
+
+
+class UIThemeContrastRatioError(PostureGuardException):
+    """Exception raised when custom theme color palette fails minimum contrast calculations."""
+    pass
