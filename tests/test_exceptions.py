@@ -1177,5 +1177,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigMigrationVersionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_loghandlerflushfailederror(self) -> None:
+        from exceptions import LogHandlerFlushFailedError
+        exc = LogHandlerFlushFailedError("Test msg")
+        self.assertEqual(exc.error_code, "LogHandlerFlushFailedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
