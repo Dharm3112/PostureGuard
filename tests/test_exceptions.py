@@ -1195,5 +1195,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVHeaderColumnNameError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvrecordtypecasterror(self) -> None:
+        from exceptions import CSVRecordTypeCastError
+        exc = CSVRecordTypeCastError("Test msg")
+        self.assertEqual(exc.error_code, "CSVRecordTypeCastError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
