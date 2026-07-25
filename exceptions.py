@@ -1076,3 +1076,8 @@ class UIEventDispatchError(PostureGuardException):
 class CameraResolutionUnsupportedError(PostureGuardException):
     """Exception raised when requesting camera resolution dimensions not supported by driver."""
     pass
+
+
+class CameraFrameFormatError(PostureGuardException):
+    """Exception raised when webcam frame buffer returns invalid color space channels."""
+    pass
