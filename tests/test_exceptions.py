@@ -1171,5 +1171,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigValidationBoundsError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configmigrationversionerror(self) -> None:
+        from exceptions import ConfigMigrationVersionError
+        exc = ConfigMigrationVersionError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigMigrationVersionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
