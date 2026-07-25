@@ -48,7 +48,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                 # Attempt integer numeric conversion checks safely
                 try:
                     dev = int(row.get("deviation_px", 0))
-                    total_deviation += dev
+                    total_deviation += dev  # Accumulate deviation pixel offset
                 except (ValueError, TypeError):  # Silence deviation conversion errors
                     pass
 
