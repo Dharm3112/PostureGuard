@@ -1101,3 +1101,8 @@ class CalibrateBufferOverflowLimitError(PostureGuardException):
 class StatsFilterBoundaryError(PostureGuardException):
     """Exception raised when start date or end date filtering boundaries are inverted."""
     pass
+
+
+class StatsCalculationFloatError(PostureGuardException):
+    """Exception raised when posture percentage math results in floating point overflows."""
+    pass
