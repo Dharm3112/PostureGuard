@@ -1051,3 +1051,8 @@ class LogRotationIndexError(PostureGuardException):
 class CSVHeaderColumnNameError(PostureGuardException):
     """Exception raised when expected column name is missing from posture history log file."""
     pass
+
+
+class CSVRecordTypeCastError(PostureGuardException):
+    """Exception raised when converting string fields in posture history CSV to numbers fails."""
+    pass
