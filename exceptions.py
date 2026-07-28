@@ -1156,3 +1156,8 @@ class CSVRecordDelimiterMismatchError(PostureGuardException):
 class CSVFieldNullValueError(PostureGuardException):
     """Exception raised when mandatory CSV record field contains null or empty string value."""
     pass
+
+
+class UIContainerAlignmentError(PostureGuardException):
+    """Exception raised when alignment or anchor rules for layout container widgets fail."""
+    pass
