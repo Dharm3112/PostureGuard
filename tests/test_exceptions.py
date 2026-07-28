@@ -1339,5 +1339,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIComponentInitializationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameradriverinterfaceerror(self) -> None:
+        from exceptions import CameraDriverInterfaceError
+        exc = CameraDriverInterfaceError("Test msg")
+        self.assertEqual(exc.error_code, "CameraDriverInterfaceError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
