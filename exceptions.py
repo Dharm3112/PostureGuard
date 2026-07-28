@@ -1136,3 +1136,8 @@ class ConfigDefaultsLoadError(PostureGuardException):
 class ConfigPropertyAccessError(PostureGuardException):
     """Exception raised when accessing missing configuration key property."""
     pass
+
+
+class LogFilePermissionsError(PostureGuardException):
+    """Exception raised when active log file descriptor cannot be written due to OS security flags."""
+    pass
