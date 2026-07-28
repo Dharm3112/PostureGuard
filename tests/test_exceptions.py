@@ -1381,5 +1381,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsDataExportWriteError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_databaseschemamigrationerror(self) -> None:
+        from exceptions import DatabaseSchemaMigrationError
+        exc = DatabaseSchemaMigrationError("Test msg")
+        self.assertEqual(exc.error_code, "DatabaseSchemaMigrationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
