@@ -1393,5 +1393,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "DatabaseRecordLockError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_threadexecutiontimeouterror(self) -> None:
+        from exceptions import ThreadExecutionTimeoutError
+        exc = ThreadExecutionTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "ThreadExecutionTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
