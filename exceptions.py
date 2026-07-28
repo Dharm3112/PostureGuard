@@ -1216,3 +1216,8 @@ class DatabaseSchemaMigrationError(PostureGuardException):
 class DatabaseRecordLockError(PostureGuardException):
     """Exception raised when posture history database row or table lock timeout occurs."""
     pass
+
+
+class ThreadExecutionTimeoutError(PostureGuardException):
+    """Exception raised when background worker execution exceeds allocated runtime limit."""
+    pass
