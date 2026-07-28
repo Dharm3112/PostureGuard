@@ -53,7 +53,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                     pass
 
                 state = row.get("state", "Good")  # Retrieve posture state label coordinate classification values label
-                if state == "Good":  # Verify if logged state is good posture
+                if state == "Good":  # Verify if logged state is good posture count
                     stats["good_count"] += 1
                 else:
                     stats["slouch_count"] += 1
