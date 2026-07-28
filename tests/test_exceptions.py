@@ -1333,5 +1333,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIThemePropertyMissingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uicomponentinitializationerror(self) -> None:
+        from exceptions import UIComponentInitializationError
+        exc = UIComponentInitializationError("Test msg")
+        self.assertEqual(exc.error_code, "UIComponentInitializationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
