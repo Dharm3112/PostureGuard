@@ -23,7 +23,7 @@ class ConfigManager:
     SAVED_BASELINE_Y = "saved_baseline_y"  # Key identifier for saved baseline setting
     
     SCALE_FACTOR = "scale_factor"  # Key identifier for cascade scale factor setting
-    MIN_NEIGHBORS = "min_neighbors"
+    MIN_NEIGHBORS = "min_neighbors"  # Key identifier for min neighbors setting
     
     DEFAULT_SETTINGS = {  # Internal default settings database schema mapping dictionary layout
         "camera_index": 0,
