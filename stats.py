@@ -33,7 +33,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
         with open(filepath, "r", newline="", encoding="utf-8") as f:  # Open history logs csv stream in text reading mode
             # Parse target stream via csv dictionary mapping rows handler
             reader = csv.DictReader(f)  # Parse target stream via csv dictionary mapping rows handler engine class
-            for row in reader:
+            for row in reader:  # Iterate over history rows
                 # Validate row contents integrity checks header
                 if not row or not row.get("timestamp"):  # Skip malformed or empty row items check
                     continue
