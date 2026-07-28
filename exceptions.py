@@ -1226,3 +1226,8 @@ class ThreadExecutionTimeoutError(PostureGuardException):
 class FrameBufferOverflowWarningError(PostureGuardException):
     """Exception raised when frame capture rate exceeds processing capacity and drops frames."""
     pass
+
+
+class CameraHardwareNotSupportedError(PostureGuardException):
+    """Exception raised when connected camera hardware lacks necessary OpenCV capture capabilities."""
+    pass
