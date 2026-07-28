@@ -1116,3 +1116,8 @@ class AudioDeviceStreamError(PostureGuardException):
 class AudioConfigFormatMismatchError(PostureGuardException):
     """Exception raised when sound configuration settings mismatch active output channel specs."""
     pass
+
+
+class NotificationDeliveryError(PostureGuardException):
+    """Exception raised when desktop OS notification subsystem fails to deliver toast message."""
+    pass
