@@ -26,7 +26,7 @@ class ConfigManager:
     MIN_NEIGHBORS = "min_neighbors"  # Key identifier for min neighbors setting
     
     DEFAULT_SETTINGS = {  # Internal default settings database schema mapping dictionary layout
-        "camera_index": 0,
+        "camera_index": 0,  # Default camera index value
         "slouch_threshold_px": 40,
         "time_to_alert_frames": 50,
         "frame_delay_ms": 15,
