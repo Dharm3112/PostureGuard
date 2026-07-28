@@ -1387,5 +1387,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "DatabaseSchemaMigrationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_databaserecordlockerror(self) -> None:
+        from exceptions import DatabaseRecordLockError
+        exc = DatabaseRecordLockError("Test msg")
+        self.assertEqual(exc.error_code, "DatabaseRecordLockError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
