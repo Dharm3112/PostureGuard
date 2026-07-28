@@ -1206,3 +1206,8 @@ class StatsTimeIntervalInvalidError(PostureGuardException):
 class StatsDataExportWriteError(PostureGuardException):
     """Exception raised when writing aggregated posture history report to disk fails."""
     pass
+
+
+class DatabaseSchemaMigrationError(PostureGuardException):
+    """Exception raised when upgrading posture database table schema version fails."""
+    pass
