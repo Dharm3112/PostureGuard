@@ -1141,3 +1141,8 @@ class ConfigPropertyAccessError(PostureGuardException):
 class LogFilePermissionsError(PostureGuardException):
     """Exception raised when active log file descriptor cannot be written due to OS security flags."""
     pass
+
+
+class LogFormatterCompileError(PostureGuardException):
+    """Exception raised when log line pattern format string syntax compilation fails."""
+    pass
