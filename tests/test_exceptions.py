@@ -1315,5 +1315,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRecordDelimiterMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvfieldnullvalueerror(self) -> None:
+        from exceptions import CSVFieldNullValueError
+        exc = CSVFieldNullValueError("Test msg")
+        self.assertEqual(exc.error_code, "CSVFieldNullValueError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
