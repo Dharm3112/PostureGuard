@@ -84,7 +84,7 @@ class PostureDetector:
             # Render color border boundaries layout parameters
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)  # Draw green rectangle around face
             # Render center point red dot indicator layout parameters
-            cv2.circle(frame, (center_x, center_y), 5, (0, 0, 255), -1)
+            cv2.circle(frame, (center_x, center_y), 5, (0, 0, 255), -1)  # Draw red circle at face center
 
             # Add target center coordinate vertical heights to smoothing buffer
             self.y_buffer.append(center_y)  # Append face center Y coordinate to buffer
