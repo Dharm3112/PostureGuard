@@ -1345,5 +1345,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraDriverInterfaceError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameraaspectconstrainterror(self) -> None:
+        from exceptions import CameraAspectConstraintError
+        exc = CameraAspectConstraintError("Test msg")
+        self.assertEqual(exc.error_code, "CameraAspectConstraintError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
