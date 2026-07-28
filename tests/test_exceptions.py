@@ -1309,5 +1309,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogFormatterCompileError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvrecorddelimitermismatcherror(self) -> None:
+        from exceptions import CSVRecordDelimiterMismatchError
+        exc = CSVRecordDelimiterMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "CSVRecordDelimiterMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
