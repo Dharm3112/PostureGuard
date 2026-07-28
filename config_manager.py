@@ -27,7 +27,7 @@ class ConfigManager:
     
     DEFAULT_SETTINGS = {  # Internal default settings database schema mapping dictionary layout
         "camera_index": 0,  # Default camera index value
-        "slouch_threshold_px": 40,
+        "slouch_threshold_px": 40,  # Default slouch threshold pixel distance
         "time_to_alert_frames": 50,
         "frame_delay_ms": 15,
         "camera_width": 640,
