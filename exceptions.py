@@ -1196,3 +1196,8 @@ class FaceDetectionBoundingBoxOutOfBoundsError(PostureGuardException):
 class CalibrateSampleVarianceError(PostureGuardException):
     """Exception raised when variance across baseline face coordinate samples is too high."""
     pass
+
+
+class StatsTimeIntervalInvalidError(PostureGuardException):
+    """Exception raised when start timestamp is chronologically after end timestamp."""
+    pass
