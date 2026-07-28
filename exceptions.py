@@ -1181,3 +1181,8 @@ class CameraDriverInterfaceError(PostureGuardException):
 class CameraAspectConstraintError(PostureGuardException):
     """Exception raised when camera capture width and height aspect ratio is unsupported."""
     pass
+
+
+class ModelWeightFileCorruptError(PostureGuardException):
+    """Exception raised when pre-trained face classifier weight matrix file contains corrupt header."""
+    pass
