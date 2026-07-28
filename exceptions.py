@@ -1121,3 +1121,8 @@ class AudioConfigFormatMismatchError(PostureGuardException):
 class NotificationDeliveryError(PostureGuardException):
     """Exception raised when desktop OS notification subsystem fails to deliver toast message."""
     pass
+
+
+class NotificationQueueFullError(PostureGuardException):
+    """Exception raised when system tray notification queue capacity is exceeded."""
+    pass
