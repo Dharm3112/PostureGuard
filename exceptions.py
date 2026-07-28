@@ -1111,3 +1111,8 @@ class StatsCalculationFloatError(PostureGuardException):
 class AudioDeviceStreamError(PostureGuardException):
     """Exception raised when audio output stream experiences buffer underrun or playback interruption."""
     pass
+
+
+class AudioConfigFormatMismatchError(PostureGuardException):
+    """Exception raised when sound configuration settings mismatch active output channel specs."""
+    pass
