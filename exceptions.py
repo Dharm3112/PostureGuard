@@ -1186,3 +1186,8 @@ class CameraAspectConstraintError(PostureGuardException):
 class ModelWeightFileCorruptError(PostureGuardException):
     """Exception raised when pre-trained face classifier weight matrix file contains corrupt header."""
     pass
+
+
+class FaceDetectionBoundingBoxOutOfBoundsError(PostureGuardException):
+    """Exception raised when face detection bounding box falls outside video frame boundaries."""
+    pass
