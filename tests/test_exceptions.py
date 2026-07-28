@@ -1285,5 +1285,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationQueueFullError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configdefaultsloaderror(self) -> None:
+        from exceptions import ConfigDefaultsLoadError
+        exc = ConfigDefaultsLoadError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigDefaultsLoadError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
