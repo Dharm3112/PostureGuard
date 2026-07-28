@@ -1363,5 +1363,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "FaceDetectionBoundingBoxOutOfBoundsError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_calibratesamplevarianceerror(self) -> None:
+        from exceptions import CalibrateSampleVarianceError
+        exc = CalibrateSampleVarianceError("Test msg")
+        self.assertEqual(exc.error_code, "CalibrateSampleVarianceError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
