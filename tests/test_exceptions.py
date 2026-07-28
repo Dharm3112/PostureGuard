@@ -1375,5 +1375,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsTimeIntervalInvalidError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsdataexportwriteerror(self) -> None:
+        from exceptions import StatsDataExportWriteError
+        exc = StatsDataExportWriteError("Test msg")
+        self.assertEqual(exc.error_code, "StatsDataExportWriteError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
