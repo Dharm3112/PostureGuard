@@ -1161,3 +1161,8 @@ class CSVFieldNullValueError(PostureGuardException):
 class UIContainerAlignmentError(PostureGuardException):
     """Exception raised when alignment or anchor rules for layout container widgets fail."""
     pass
+
+
+class UIThemePropertyMissingError(PostureGuardException):
+    """Exception raised when requested custom theme attribute key does not exist in palette."""
+    pass
