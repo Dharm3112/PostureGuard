@@ -1166,3 +1166,8 @@ class UIContainerAlignmentError(PostureGuardException):
 class UIThemePropertyMissingError(PostureGuardException):
     """Exception raised when requested custom theme attribute key does not exist in palette."""
     pass
+
+
+class UIComponentInitializationError(PostureGuardException):
+    """Exception raised when instantiating Tkinter frame or dialog component fails."""
+    pass
