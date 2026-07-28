@@ -1191,3 +1191,8 @@ class ModelWeightFileCorruptError(PostureGuardException):
 class FaceDetectionBoundingBoxOutOfBoundsError(PostureGuardException):
     """Exception raised when face detection bounding box falls outside video frame boundaries."""
     pass
+
+
+class CalibrateSampleVarianceError(PostureGuardException):
+    """Exception raised when variance across baseline face coordinate samples is too high."""
+    pass
