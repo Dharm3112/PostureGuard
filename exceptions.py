@@ -1211,3 +1211,8 @@ class StatsDataExportWriteError(PostureGuardException):
 class DatabaseSchemaMigrationError(PostureGuardException):
     """Exception raised when upgrading posture database table schema version fails."""
     pass
+
+
+class DatabaseRecordLockError(PostureGuardException):
+    """Exception raised when posture history database row or table lock timeout occurs."""
+    pass
