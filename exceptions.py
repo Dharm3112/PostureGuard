@@ -1151,3 +1151,8 @@ class LogFormatterCompileError(PostureGuardException):
 class CSVRecordDelimiterMismatchError(PostureGuardException):
     """Exception raised when history log CSV line uses unexpected column delimiter."""
     pass
+
+
+class CSVFieldNullValueError(PostureGuardException):
+    """Exception raised when mandatory CSV record field contains null or empty string value."""
+    pass
