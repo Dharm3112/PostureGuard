@@ -1146,3 +1146,8 @@ class LogFilePermissionsError(PostureGuardException):
 class LogFormatterCompileError(PostureGuardException):
     """Exception raised when log line pattern format string syntax compilation fails."""
     pass
+
+
+class CSVRecordDelimiterMismatchError(PostureGuardException):
+    """Exception raised when history log CSV line uses unexpected column delimiter."""
+    pass
