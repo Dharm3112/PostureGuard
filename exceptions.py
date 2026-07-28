@@ -1201,3 +1201,8 @@ class CalibrateSampleVarianceError(PostureGuardException):
 class StatsTimeIntervalInvalidError(PostureGuardException):
     """Exception raised when start timestamp is chronologically after end timestamp."""
     pass
+
+
+class StatsDataExportWriteError(PostureGuardException):
+    """Exception raised when writing aggregated posture history report to disk fails."""
+    pass
