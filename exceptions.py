@@ -1176,3 +1176,8 @@ class UIComponentInitializationError(PostureGuardException):
 class CameraDriverInterfaceError(PostureGuardException):
     """Exception raised when communicating with system webcam device driver fails."""
     pass
+
+
+class CameraAspectConstraintError(PostureGuardException):
+    """Exception raised when camera capture width and height aspect ratio is unsupported."""
+    pass
