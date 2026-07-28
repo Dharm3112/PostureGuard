@@ -1291,5 +1291,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigDefaultsLoadError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configpropertyaccesserror(self) -> None:
+        from exceptions import ConfigPropertyAccessError
+        exc = ConfigPropertyAccessError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigPropertyAccessError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
