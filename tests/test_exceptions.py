@@ -1327,5 +1327,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIContainerAlignmentError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemepropertymissingerror(self) -> None:
+        from exceptions import UIThemePropertyMissingError
+        exc = UIThemePropertyMissingError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemePropertyMissingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
