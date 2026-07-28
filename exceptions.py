@@ -1126,3 +1126,8 @@ class NotificationDeliveryError(PostureGuardException):
 class NotificationQueueFullError(PostureGuardException):
     """Exception raised when system tray notification queue capacity is exceeded."""
     pass
+
+
+class ConfigDefaultsLoadError(PostureGuardException):
+    """Exception raised when loading embedded default fallback configuration settings fails."""
+    pass
