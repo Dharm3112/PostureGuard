@@ -1221,3 +1221,8 @@ class DatabaseRecordLockError(PostureGuardException):
 class ThreadExecutionTimeoutError(PostureGuardException):
     """Exception raised when background worker execution exceeds allocated runtime limit."""
     pass
+
+
+class FrameBufferOverflowWarningError(PostureGuardException):
+    """Exception raised when frame capture rate exceeds processing capacity and drops frames."""
+    pass
