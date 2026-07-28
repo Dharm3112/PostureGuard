@@ -1399,5 +1399,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ThreadExecutionTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_framebufferoverflowwarningerror(self) -> None:
+        from exceptions import FrameBufferOverflowWarningError
+        exc = FrameBufferOverflowWarningError("Test msg")
+        self.assertEqual(exc.error_code, "FrameBufferOverflowWarningError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
