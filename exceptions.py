@@ -1106,3 +1106,8 @@ class StatsFilterBoundaryError(PostureGuardException):
 class StatsCalculationFloatError(PostureGuardException):
     """Exception raised when posture percentage math results in floating point overflows."""
     pass
+
+
+class AudioDeviceStreamError(PostureGuardException):
+    """Exception raised when audio output stream experiences buffer underrun or playback interruption."""
+    pass
