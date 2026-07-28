@@ -1131,3 +1131,8 @@ class NotificationQueueFullError(PostureGuardException):
 class ConfigDefaultsLoadError(PostureGuardException):
     """Exception raised when loading embedded default fallback configuration settings fails."""
     pass
+
+
+class ConfigPropertyAccessError(PostureGuardException):
+    """Exception raised when accessing missing configuration key property."""
+    pass
