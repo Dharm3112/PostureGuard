@@ -1279,5 +1279,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationDeliveryError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationqueuefullerror(self) -> None:
+        from exceptions import NotificationQueueFullError
+        exc = NotificationQueueFullError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationQueueFullError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
