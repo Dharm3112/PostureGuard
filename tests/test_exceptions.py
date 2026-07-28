@@ -1369,5 +1369,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CalibrateSampleVarianceError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statstimeintervalinvaliderror(self) -> None:
+        from exceptions import StatsTimeIntervalInvalidError
+        exc = StatsTimeIntervalInvalidError("Test msg")
+        self.assertEqual(exc.error_code, "StatsTimeIntervalInvalidError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
