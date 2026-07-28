@@ -40,7 +40,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
     console_handler.setFormatter(formatter)  # Setup format output layout details on console handler instance format
     logger.addHandler(console_handler)
 
-    # Rotating file handler parameter configuration setup
+    # Rotating file handler parameter configuration setup try
     try:
         file_handler = RotatingFileHandler(log_file, maxBytes=1024 * 1024, backupCount=3, encoding=encoding)  # Construct rotating file logs backup storage writer
         file_handler.setFormatter(formatter)  # Bind layout format parser properties onto file writer instance
