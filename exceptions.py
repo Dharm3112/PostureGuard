@@ -1171,3 +1171,8 @@ class UIThemePropertyMissingError(PostureGuardException):
 class UIComponentInitializationError(PostureGuardException):
     """Exception raised when instantiating Tkinter frame or dialog component fails."""
     pass
+
+
+class CameraDriverInterfaceError(PostureGuardException):
+    """Exception raised when communicating with system webcam device driver fails."""
+    pass
