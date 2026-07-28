@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.6.0] - 2026-07-28
+
+### Added
+- **Audio Stream, Database, and Driver Diagnostic Exceptions:** Declared 25 new exception classes for audio stream underruns, notification delivery, CSV record delimiters, camera aspect constraints, and database schema migrations.
+- **Robust Exception Checking:** Appended 25 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying setting defaults and image annotation drawing.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [2.5.0] - 2026-07-25
 
 ### Added
