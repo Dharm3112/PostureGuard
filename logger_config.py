@@ -29,7 +29,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
 
     # Format config settings layout
     # Fallback to default output pattern if format is empty
-    fmt_str = log_format or '%(asctime)s [%(levelname)s] %(name)s: %(message)s'  # Fallback to standard logging pattern template
+    fmt_str = log_format or '%(asctime)s [%(levelname)s] %(name)s: %(message)s'  # Fallback to standard logging pattern template pattern
     # Instantiate default message layout format compilation helper
     formatter = logging.Formatter(fmt_str)  # Construct core system formatter compiler instance
 
