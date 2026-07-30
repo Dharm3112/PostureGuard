@@ -1261,3 +1261,8 @@ class ConfigSchemaTypeMismatchError(PostureGuardException):
 class ConfigSavePermissionError(PostureGuardException):
     """Exception raised when saving updated config dictionary lacks write permissions."""
     pass
+
+
+class LogHandlerBufferOverflowError(PostureGuardException):
+    """Exception raised when async logging handler buffer memory capacity is exceeded."""
+    pass
