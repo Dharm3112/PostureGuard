@@ -31,7 +31,7 @@ class ConfigManager:
         "time_to_alert_frames": 50,  # Default frames threshold before posture alert
         "frame_delay_ms": 15,  # Default frame refresh delay in milliseconds
         "camera_width": 640,  # Default camera capture width in pixels
-        "camera_height": 480,
+        "camera_height": 480,  # Default camera capture height in pixels
         "save_history": True,
         "saved_baseline_y": None,
         "scale_factor": 1.1,  # Default scale factor multiplier for Haar cascades
