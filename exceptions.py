@@ -1276,3 +1276,8 @@ class LogRotationFileLockError(PostureGuardException):
 class CSVRowFieldCountMismatchError(PostureGuardException):
     """Exception raised when posture history CSV line field count mismatches header length."""
     pass
+
+
+class CSVTimestampParseFormatError(PostureGuardException):
+    """Exception raised when parsing timestamp string in posture log CSV fails."""
+    pass
