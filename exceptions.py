@@ -1251,3 +1251,8 @@ class NotificationChannelPermissionError(PostureGuardException):
 class NotificationIconDimensionsError(PostureGuardException):
     """Exception raised when system tray toast icon dimensions exceed native bounds."""
     pass
+
+
+class ConfigSchemaTypeMismatchError(PostureGuardException):
+    """Exception raised when configuration parameter value data type violates expected schema."""
+    pass
