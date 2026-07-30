@@ -1271,3 +1271,8 @@ class LogHandlerBufferOverflowError(PostureGuardException):
 class LogRotationFileLockError(PostureGuardException):
     """Exception raised when rotating log file descriptor is locked by system process."""
     pass
+
+
+class CSVRowFieldCountMismatchError(PostureGuardException):
+    """Exception raised when posture history CSV line field count mismatches header length."""
+    pass
