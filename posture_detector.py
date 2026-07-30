@@ -154,7 +154,7 @@ class PostureDetector:
     def _get_average_y(self) -> float:
         if not self.y_buffer:  # Check if buffer is empty
             return 0.0
-        return sum(self.y_buffer) / len(self.y_buffer)
+        return sum(self.y_buffer) / len(self.y_buffer)  # Calculate arithmetic mean Y
 
     def reset_buffer(self) -> None:
         """
