@@ -1459,5 +1459,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogRotationFileLockError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvrowfieldcountmismatcherror(self) -> None:
+        from exceptions import CSVRowFieldCountMismatchError
+        exc = CSVRowFieldCountMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "CSVRowFieldCountMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
