@@ -1429,5 +1429,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationChannelPermissionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationicondimensionserror(self) -> None:
+        from exceptions import NotificationIconDimensionsError
+        exc = NotificationIconDimensionsError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconDimensionsError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
