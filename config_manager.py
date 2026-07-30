@@ -32,7 +32,7 @@ class ConfigManager:
         "frame_delay_ms": 15,  # Default frame refresh delay in milliseconds
         "camera_width": 640,  # Default camera capture width in pixels
         "camera_height": 480,  # Default camera capture height in pixels
-        "save_history": True,
+        "save_history": True,  # Default save posture history toggle
         "saved_baseline_y": None,
         "scale_factor": 1.1,  # Default scale factor multiplier for Haar cascades
         "min_neighbors": 5,
