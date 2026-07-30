@@ -1465,5 +1465,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRowFieldCountMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvtimestampparseformaterror(self) -> None:
+        from exceptions import CSVTimestampParseFormatError
+        exc = CSVTimestampParseFormatError("Test msg")
+        self.assertEqual(exc.error_code, "CSVTimestampParseFormatError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
