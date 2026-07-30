@@ -1231,3 +1231,8 @@ class FrameBufferOverflowWarningError(PostureGuardException):
 class CameraHardwareNotSupportedError(PostureGuardException):
     """Exception raised when connected camera hardware lacks necessary OpenCV capture capabilities."""
     pass
+
+
+class AudioDeviceLatencyError(PostureGuardException):
+    """Exception raised when audio output device latency exceeds real-time alert thresholds."""
+    pass
