@@ -1281,3 +1281,8 @@ class CSVRowFieldCountMismatchError(PostureGuardException):
 class CSVTimestampParseFormatError(PostureGuardException):
     """Exception raised when parsing timestamp string in posture log CSV fails."""
     pass
+
+
+class UIWidgetHierarchyError(PostureGuardException):
+    """Exception raised when Tkinter parent widget hierarchy layout assignment fails."""
+    pass
