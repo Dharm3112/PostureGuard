@@ -1423,5 +1423,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioSampleFormatMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationchannelpermissionerror(self) -> None:
+        from exceptions import NotificationChannelPermissionError
+        exc = NotificationChannelPermissionError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationChannelPermissionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
