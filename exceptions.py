@@ -1236,3 +1236,8 @@ class CameraHardwareNotSupportedError(PostureGuardException):
 class AudioDeviceLatencyError(PostureGuardException):
     """Exception raised when audio output device latency exceeds real-time alert thresholds."""
     pass
+
+
+class AudioSampleFormatMismatchError(PostureGuardException):
+    """Exception raised when PCM audio sample resolution does not match playback engine."""
+    pass
