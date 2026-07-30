@@ -1266,3 +1266,8 @@ class ConfigSavePermissionError(PostureGuardException):
 class LogHandlerBufferOverflowError(PostureGuardException):
     """Exception raised when async logging handler buffer memory capacity is exceeded."""
     pass
+
+
+class LogRotationFileLockError(PostureGuardException):
+    """Exception raised when rotating log file descriptor is locked by system process."""
+    pass
