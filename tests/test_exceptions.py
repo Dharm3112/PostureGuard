@@ -1435,5 +1435,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationIconDimensionsError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configschematypemismatcherror(self) -> None:
+        from exceptions import ConfigSchemaTypeMismatchError
+        exc = ConfigSchemaTypeMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigSchemaTypeMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
