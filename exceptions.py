@@ -1241,3 +1241,8 @@ class AudioDeviceLatencyError(PostureGuardException):
 class AudioSampleFormatMismatchError(PostureGuardException):
     """Exception raised when PCM audio sample resolution does not match playback engine."""
     pass
+
+
+class NotificationChannelPermissionError(PostureGuardException):
+    """Exception raised when OS security policy denies desktop notification channel access."""
+    pass
