@@ -1286,3 +1286,8 @@ class CSVTimestampParseFormatError(PostureGuardException):
 class UIWidgetHierarchyError(PostureGuardException):
     """Exception raised when Tkinter parent widget hierarchy layout assignment fails."""
     pass
+
+
+class UIThemeColorHexFormatError(PostureGuardException):
+    """Exception raised when visual custom theme color string is not valid 6-digit hex."""
+    pass
