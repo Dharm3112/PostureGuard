@@ -1246,3 +1246,8 @@ class AudioSampleFormatMismatchError(PostureGuardException):
 class NotificationChannelPermissionError(PostureGuardException):
     """Exception raised when OS security policy denies desktop notification channel access."""
     pass
+
+
+class NotificationIconDimensionsError(PostureGuardException):
+    """Exception raised when system tray toast icon dimensions exceed native bounds."""
+    pass
