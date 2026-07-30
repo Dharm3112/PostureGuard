@@ -1447,5 +1447,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigSavePermissionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_loghandlerbufferoverflowerror(self) -> None:
+        from exceptions import LogHandlerBufferOverflowError
+        exc = LogHandlerBufferOverflowError("Test msg")
+        self.assertEqual(exc.error_code, "LogHandlerBufferOverflowError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
