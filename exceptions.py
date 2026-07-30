@@ -1256,3 +1256,8 @@ class NotificationIconDimensionsError(PostureGuardException):
 class ConfigSchemaTypeMismatchError(PostureGuardException):
     """Exception raised when configuration parameter value data type violates expected schema."""
     pass
+
+
+class ConfigSavePermissionError(PostureGuardException):
+    """Exception raised when saving updated config dictionary lacks write permissions."""
+    pass
