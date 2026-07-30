@@ -1441,5 +1441,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigSchemaTypeMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configsavepermissionerror(self) -> None:
+        from exceptions import ConfigSavePermissionError
+        exc = ConfigSavePermissionError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigSavePermissionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
