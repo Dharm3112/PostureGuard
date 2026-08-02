@@ -1311,3 +1311,8 @@ class NotificationChannelRegisterError(PostureGuardException):
 class NotificationPayloadSizeError(PostureGuardException):
     """Exception raised when notification message body payload exceeds system byte limits."""
     pass
+
+
+class ConfigKeyNameValidationError(PostureGuardException):
+    """Exception raised when configuration key string contains invalid characters."""
+    pass
