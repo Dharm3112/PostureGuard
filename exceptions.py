@@ -1341,3 +1341,8 @@ class CSVRecordHeaderMismatchError(PostureGuardException):
 class CSVTimestampValueRangeError(PostureGuardException):
     """Exception raised when posture history log entry timestamp falls outside epoch bounds."""
     pass
+
+
+class UIWidgetCanvasDrawError(PostureGuardException):
+    """Exception raised when drawing visual posture indicator shapes onto Tkinter canvas fails."""
+    pass
