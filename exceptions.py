@@ -1321,3 +1321,8 @@ class ConfigKeyNameValidationError(PostureGuardException):
 class ConfigDefaultsCorruptError(PostureGuardException):
     """Exception raised when fallback default settings JSON template contains corrupt values."""
     pass
+
+
+class LogHandlerStreamClosedError(PostureGuardException):
+    """Exception raised when writing log messages to an already closed stream handler."""
+    pass
