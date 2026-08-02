@@ -1597,5 +1597,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsGraphPlotError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsdatarecordcorrupterror(self) -> None:
+        from exceptions import StatsDataRecordCorruptError
+        exc = StatsDataRecordCorruptError("Test msg")
+        self.assertEqual(exc.error_code, "StatsDataRecordCorruptError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
