@@ -144,7 +144,7 @@ class PostureDetector:
             self.consecutive_failures = 0
             # Average the last few frames to get a stable baseline
             self.baseline_y = self._get_average_y()  # Set baseline Y to smoothed average
-            self.logger.info(f"Calibration successful. Baseline established at Y = {self.baseline_y:.2f}")
+            self.logger.info(f"Calibration successful. Baseline established at Y = {self.baseline_y:.2f}")  # Log calibration success
             return self.baseline_y
         self.logger.warning("Calibration failed: no face detection history in buffer.")
         return None
