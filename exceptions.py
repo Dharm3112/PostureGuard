@@ -1381,3 +1381,8 @@ class FaceDetectionSmoothingBufferError(PostureGuardException):
 class CalibrateBaselineZeroError(PostureGuardException):
     """Exception raised when calibrated posture baseline Y calculation evaluates to zero."""
     pass
+
+
+class StatsGraphPlotError(PostureGuardException):
+    """Exception raised when rendering visual posture history graphs encounters plotting errors."""
+    pass
