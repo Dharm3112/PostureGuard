@@ -1543,5 +1543,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVTimestampValueRangeError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetcanvasdrawerror(self) -> None:
+        from exceptions import UIWidgetCanvasDrawError
+        exc = UIWidgetCanvasDrawError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetCanvasDrawError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
