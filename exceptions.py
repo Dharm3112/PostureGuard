@@ -1366,3 +1366,8 @@ class CameraFPSSettingError(PostureGuardException):
 class CameraFrameBufferEmptyError(PostureGuardException):
     """Exception raised when webcam frame buffer returns zero-byte array."""
     pass
+
+
+class ModelCascadeEmptyError(PostureGuardException):
+    """Exception raised when loaded OpenCV Haar cascade classifier structure contains zero features."""
+    pass
