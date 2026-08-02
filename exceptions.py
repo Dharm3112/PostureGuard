@@ -1301,3 +1301,8 @@ class AudioDeviceInitTimeoutError(PostureGuardException):
 class AudioFormatBitDepthError(PostureGuardException):
     """Exception raised when audio sample bit depth format is unsupported by audio backend."""
     pass
+
+
+class NotificationChannelRegisterError(PostureGuardException):
+    """Exception raised when registering desktop notification channel fails."""
+    pass
