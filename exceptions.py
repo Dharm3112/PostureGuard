@@ -1361,3 +1361,8 @@ class UIWindowResizeLimitError(PostureGuardException):
 class CameraFPSSettingError(PostureGuardException):
     """Exception raised when applying requested frame rate capture settings to webcam fails."""
     pass
+
+
+class CameraFrameBufferEmptyError(PostureGuardException):
+    """Exception raised when webcam frame buffer returns zero-byte array."""
+    pass
