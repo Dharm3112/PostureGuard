@@ -1483,5 +1483,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIThemeColorHexFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiodeviceinittimeouterror(self) -> None:
+        from exceptions import AudioDeviceInitTimeoutError
+        exc = AudioDeviceInitTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "AudioDeviceInitTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
