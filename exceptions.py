@@ -1356,3 +1356,8 @@ class UIThemeFontFamilyError(PostureGuardException):
 class UIWindowResizeLimitError(PostureGuardException):
     """Exception raised when application main window dimensions violate minimum sizing constraints."""
     pass
+
+
+class CameraFPSSettingError(PostureGuardException):
+    """Exception raised when applying requested frame rate capture settings to webcam fails."""
+    pass
