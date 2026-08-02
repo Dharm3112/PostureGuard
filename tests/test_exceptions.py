@@ -1537,5 +1537,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRecordHeaderMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvtimestampvaluerangeerror(self) -> None:
+        from exceptions import CSVTimestampValueRangeError
+        exc = CSVTimestampValueRangeError("Test msg")
+        self.assertEqual(exc.error_code, "CSVTimestampValueRangeError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
