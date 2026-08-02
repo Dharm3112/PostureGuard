@@ -35,7 +35,7 @@ class ConfigManager:
         "save_history": True,  # Default save posture history toggle
         "saved_baseline_y": None,  # Default saved baseline Y coordinate
         "scale_factor": 1.1,  # Default scale factor multiplier for Haar cascades setting
-        "min_neighbors": 5,
+        "min_neighbors": 5,  # Default min neighbors for Haar cascades
         "log_max_bytes": 1048576,
         "log_backup_count": 3
     }
