@@ -1371,3 +1371,8 @@ class CameraFrameBufferEmptyError(PostureGuardException):
 class ModelCascadeEmptyError(PostureGuardException):
     """Exception raised when loaded OpenCV Haar cascade classifier structure contains zero features."""
     pass
+
+
+class FaceDetectionSmoothingBufferError(PostureGuardException):
+    """Exception raised when posture detector smoothing buffer queue contains NaN values."""
+    pass
