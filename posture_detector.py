@@ -146,7 +146,7 @@ class PostureDetector:
             self.baseline_y = self._get_average_y()  # Set baseline Y to smoothed average
             self.logger.info(f"Calibration successful. Baseline established at Y = {self.baseline_y:.2f}")  # Log calibration success
             return self.baseline_y
-        self.logger.warning("Calibration failed: no face detection history in buffer.")
+        self.logger.warning("Calibration failed: no face detection history in buffer.")  # Log calibration failure
         return None
 
 
