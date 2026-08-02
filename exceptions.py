@@ -1351,3 +1351,8 @@ class UIWidgetCanvasDrawError(PostureGuardException):
 class UIThemeFontFamilyError(PostureGuardException):
     """Exception raised when specified custom font family name is missing from system registry."""
     pass
+
+
+class UIWindowResizeLimitError(PostureGuardException):
+    """Exception raised when application main window dimensions violate minimum sizing constraints."""
+    pass
