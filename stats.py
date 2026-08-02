@@ -26,7 +26,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
 
     # Guard statement checking file existence bounds target path config
     if not os.path.exists(filepath):  # Guard clause against missing stats log file path targets check
-        return stats  # Return computed statistics dictionary
+        return stats  # Return empty stats on error  # Return computed statistics dictionary
 
     total_deviation = 0  # Cumulative tracking for head tracking deviation pixels total tracker
     try:  # Try block handling potential OSError during stats file parsing
