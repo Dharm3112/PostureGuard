@@ -1296,3 +1296,8 @@ class UIThemeColorHexFormatError(PostureGuardException):
 class AudioDeviceInitTimeoutError(PostureGuardException):
     """Exception raised when initializing audio output device hardware times out."""
     pass
+
+
+class AudioFormatBitDepthError(PostureGuardException):
+    """Exception raised when audio sample bit depth format is unsupported by audio backend."""
+    pass
