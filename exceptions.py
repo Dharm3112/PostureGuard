@@ -1336,3 +1336,8 @@ class LogRotationBackupLimitError(PostureGuardException):
 class CSVRecordHeaderMismatchError(PostureGuardException):
     """Exception raised when posture history CSV line headers do not match expected schema."""
     pass
+
+
+class CSVTimestampValueRangeError(PostureGuardException):
+    """Exception raised when posture history log entry timestamp falls outside epoch bounds."""
+    pass
