@@ -1489,5 +1489,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioDeviceInitTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audioformatbitdeptherror(self) -> None:
+        from exceptions import AudioFormatBitDepthError
+        exc = AudioFormatBitDepthError("Test msg")
+        self.assertEqual(exc.error_code, "AudioFormatBitDepthError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
