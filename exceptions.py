@@ -1326,3 +1326,8 @@ class ConfigDefaultsCorruptError(PostureGuardException):
 class LogHandlerStreamClosedError(PostureGuardException):
     """Exception raised when writing log messages to an already closed stream handler."""
     pass
+
+
+class LogRotationBackupLimitError(PostureGuardException):
+    """Exception raised when log rotation backup count exceeds maximum allowed archives."""
+    pass
