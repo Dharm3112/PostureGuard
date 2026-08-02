@@ -1549,5 +1549,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetCanvasDrawError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemefontfamilyerror(self) -> None:
+        from exceptions import UIThemeFontFamilyError
+        exc = UIThemeFontFamilyError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemeFontFamilyError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
