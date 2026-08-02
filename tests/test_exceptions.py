@@ -1513,5 +1513,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyNameValidationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configdefaultscorrupterror(self) -> None:
+        from exceptions import ConfigDefaultsCorruptError
+        exc = ConfigDefaultsCorruptError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigDefaultsCorruptError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
