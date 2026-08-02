@@ -1316,3 +1316,8 @@ class NotificationPayloadSizeError(PostureGuardException):
 class ConfigKeyNameValidationError(PostureGuardException):
     """Exception raised when configuration key string contains invalid characters."""
     pass
+
+
+class ConfigDefaultsCorruptError(PostureGuardException):
+    """Exception raised when fallback default settings JSON template contains corrupt values."""
+    pass
