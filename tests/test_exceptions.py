@@ -1495,5 +1495,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioFormatBitDepthError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationchannelregistererror(self) -> None:
+        from exceptions import NotificationChannelRegisterError
+        exc = NotificationChannelRegisterError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationChannelRegisterError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
