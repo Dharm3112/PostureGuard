@@ -1306,3 +1306,8 @@ class AudioFormatBitDepthError(PostureGuardException):
 class NotificationChannelRegisterError(PostureGuardException):
     """Exception raised when registering desktop notification channel fails."""
     pass
+
+
+class NotificationPayloadSizeError(PostureGuardException):
+    """Exception raised when notification message body payload exceeds system byte limits."""
+    pass
