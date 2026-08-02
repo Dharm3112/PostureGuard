@@ -1555,5 +1555,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIThemeFontFamilyError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwindowresizelimiterror(self) -> None:
+        from exceptions import UIWindowResizeLimitError
+        exc = UIWindowResizeLimitError("Test msg")
+        self.assertEqual(exc.error_code, "UIWindowResizeLimitError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
