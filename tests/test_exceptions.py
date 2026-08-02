@@ -1591,5 +1591,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CalibrateBaselineZeroError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsgraphploterror(self) -> None:
+        from exceptions import StatsGraphPlotError
+        exc = StatsGraphPlotError("Test msg")
+        self.assertEqual(exc.error_code, "StatsGraphPlotError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
