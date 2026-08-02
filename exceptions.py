@@ -1291,3 +1291,8 @@ class UIWidgetHierarchyError(PostureGuardException):
 class UIThemeColorHexFormatError(PostureGuardException):
     """Exception raised when visual custom theme color string is not valid 6-digit hex."""
     pass
+
+
+class AudioDeviceInitTimeoutError(PostureGuardException):
+    """Exception raised when initializing audio output device hardware times out."""
+    pass
