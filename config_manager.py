@@ -33,7 +33,7 @@ class ConfigManager:
         "camera_width": 640,  # Default camera capture width in pixels
         "camera_height": 480,  # Default camera capture height in pixels
         "save_history": True,  # Default save posture history toggle
-        "saved_baseline_y": None,
+        "saved_baseline_y": None,  # Default saved baseline Y coordinate
         "scale_factor": 1.1,  # Default scale factor multiplier for Haar cascades
         "min_neighbors": 5,
         "log_max_bytes": 1048576,
