@@ -1386,3 +1386,8 @@ class CalibrateBaselineZeroError(PostureGuardException):
 class StatsGraphPlotError(PostureGuardException):
     """Exception raised when rendering visual posture history graphs encounters plotting errors."""
     pass
+
+
+class StatsDataRecordCorruptError(PostureGuardException):
+    """Exception raised when posture history CSV file contains corrupt binary entries."""
+    pass
