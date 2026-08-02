@@ -1376,3 +1376,8 @@ class ModelCascadeEmptyError(PostureGuardException):
 class FaceDetectionSmoothingBufferError(PostureGuardException):
     """Exception raised when posture detector smoothing buffer queue contains NaN values."""
     pass
+
+
+class CalibrateBaselineZeroError(PostureGuardException):
+    """Exception raised when calibrated posture baseline Y calculation evaluates to zero."""
+    pass
