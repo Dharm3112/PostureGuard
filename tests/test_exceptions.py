@@ -1579,5 +1579,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ModelCascadeEmptyError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_facedetectionsmoothingbuffererror(self) -> None:
+        from exceptions import FaceDetectionSmoothingBufferError
+        exc = FaceDetectionSmoothingBufferError("Test msg")
+        self.assertEqual(exc.error_code, "FaceDetectionSmoothingBufferError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
