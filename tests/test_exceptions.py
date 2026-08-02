@@ -1525,5 +1525,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogHandlerStreamClosedError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logrotationbackuplimiterror(self) -> None:
+        from exceptions import LogRotationBackupLimitError
+        exc = LogRotationBackupLimitError("Test msg")
+        self.assertEqual(exc.error_code, "LogRotationBackupLimitError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
