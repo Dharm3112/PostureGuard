@@ -59,7 +59,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                     stats["slouch_count"] += 1  # Increment slouch posture count
     except OSError as e:  # Catch file read errors
         from logger_config import setup_logger
-        setup_logger().error(f"Failed to read posture history file: {e}")
+        setup_logger().error(f"Failed to read posture history file: {e}")  # Log error on failure
         return stats
 
     total = stats["total_records"]  # Cache total records logged count value parameter item
