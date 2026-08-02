@@ -1331,3 +1331,8 @@ class LogHandlerStreamClosedError(PostureGuardException):
 class LogRotationBackupLimitError(PostureGuardException):
     """Exception raised when log rotation backup count exceeds maximum allowed archives."""
     pass
+
+
+class CSVRecordHeaderMismatchError(PostureGuardException):
+    """Exception raised when posture history CSV line headers do not match expected schema."""
+    pass
