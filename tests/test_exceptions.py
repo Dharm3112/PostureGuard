@@ -1507,5 +1507,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationPayloadSizeError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configkeynamevalidationerror(self) -> None:
+        from exceptions import ConfigKeyNameValidationError
+        exc = ConfigKeyNameValidationError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigKeyNameValidationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
