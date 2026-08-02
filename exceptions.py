@@ -1346,3 +1346,8 @@ class CSVTimestampValueRangeError(PostureGuardException):
 class UIWidgetCanvasDrawError(PostureGuardException):
     """Exception raised when drawing visual posture indicator shapes onto Tkinter canvas fails."""
     pass
+
+
+class UIThemeFontFamilyError(PostureGuardException):
+    """Exception raised when specified custom font family name is missing from system registry."""
+    pass
