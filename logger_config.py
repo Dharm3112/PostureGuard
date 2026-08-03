@@ -12,7 +12,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
     :return: Configured logging.Logger instance.
     """
     # Retrieve or register centralized application logger instance helper
-    logger = logging.getLogger("PostureGuard")  # Retrieve application level logger instance identifier
+    logger = logging.getLogger("PostureGuard")  # Retrieve application level logger instance identifier tag
     # Set minimum severity event logging threshold filter level
     logger.setLevel(level)  # Set minimum log filtering level bounds thresholds filter check rule
 
