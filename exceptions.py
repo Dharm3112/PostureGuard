@@ -1396,3 +1396,8 @@ class StatsDataRecordCorruptError(PostureGuardException):
 class AudioOutputBufferUnderflowError(PostureGuardException):
     """Exception raised when audio playback stream output buffer drops below minimum samples."""
     pass
+
+
+class AudioSampleChannelMismatchError(PostureGuardException):
+    """Exception raised when input audio channel configuration does not match output hardware."""
+    pass
