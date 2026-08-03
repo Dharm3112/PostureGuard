@@ -1633,5 +1633,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyMissingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configsavewriteerror(self) -> None:
+        from exceptions import ConfigSaveWriteError
+        exc = ConfigSaveWriteError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigSaveWriteError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
