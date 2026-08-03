@@ -1426,3 +1426,8 @@ class ConfigSaveWriteError(PostureGuardException):
 class LogHandlerMemoryError(PostureGuardException):
     """Exception raised when memory allocation for logging buffer exceeds system limit."""
     pass
+
+
+class LogRotationFileNameError(PostureGuardException):
+    """Exception raised when generated log rotation file path string formatting fails."""
+    pass
