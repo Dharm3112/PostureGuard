@@ -1421,3 +1421,8 @@ class ConfigKeyMissingError(PostureGuardException):
 class ConfigSaveWriteError(PostureGuardException):
     """Exception raised when writing updated configuration dictionary to disk encounters OS error."""
     pass
+
+
+class LogHandlerMemoryError(PostureGuardException):
+    """Exception raised when memory allocation for logging buffer exceeds system limit."""
+    pass
