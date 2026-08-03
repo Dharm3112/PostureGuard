@@ -1401,3 +1401,8 @@ class AudioOutputBufferUnderflowError(PostureGuardException):
 class AudioSampleChannelMismatchError(PostureGuardException):
     """Exception raised when input audio channel configuration does not match output hardware."""
     pass
+
+
+class NotificationPriorityError(PostureGuardException):
+    """Exception raised when system desktop notification urgency level exceeds system bounds."""
+    pass
