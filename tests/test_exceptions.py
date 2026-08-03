@@ -1603,5 +1603,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsDataRecordCorruptError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiooutputbufferunderflowerror(self) -> None:
+        from exceptions import AudioOutputBufferUnderflowError
+        exc = AudioOutputBufferUnderflowError("Test msg")
+        self.assertEqual(exc.error_code, "AudioOutputBufferUnderflowError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
