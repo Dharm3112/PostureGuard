@@ -1451,3 +1451,8 @@ class UIWidgetGeometryBoundsError(PostureGuardException):
 class UIThemeStyleNotFoundError(PostureGuardException):
     """Exception raised when requested custom widget theme style name is not registered."""
     pass
+
+
+class UIWindowMinSizeConstraintError(PostureGuardException):
+    """Exception raised when setting window minimum dimensions violates desktop screen size."""
+    pass
