@@ -1416,3 +1416,8 @@ class NotificationIconPathInvalidError(PostureGuardException):
 class ConfigKeyMissingError(PostureGuardException):
     """Exception raised when required parameter key is absent from configuration dictionary."""
     pass
+
+
+class ConfigSaveWriteError(PostureGuardException):
+    """Exception raised when writing updated configuration dictionary to disk encounters OS error."""
+    pass
