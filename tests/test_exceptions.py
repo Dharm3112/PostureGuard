@@ -1651,5 +1651,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogRotationFileNameError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvrecordtypeconversionerror(self) -> None:
+        from exceptions import CSVRecordTypeConversionError
+        exc = CSVRecordTypeConversionError("Test msg")
+        self.assertEqual(exc.error_code, "CSVRecordTypeConversionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
