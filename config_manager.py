@@ -45,7 +45,7 @@ class ConfigManager:
         Initializes the ConfigManager, ensuring that a local config.json exists.
         Loads the config into an in-memory dictionary.
         """
-        self.config_data: Dict[str, Any] = {}  # Initialize empty dictionary cache storage
+        self.config_data: Dict[str, Any] = {}  # Initialize empty dictionary cache storage dict
         if initial_config is not None:  # Validate presence of initial configuration map inputs
             self.config_data = initial_config.copy()
         else:
