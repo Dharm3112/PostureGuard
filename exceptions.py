@@ -1411,3 +1411,8 @@ class NotificationPriorityError(PostureGuardException):
 class NotificationIconPathInvalidError(PostureGuardException):
     """Exception raised when toast notification icon file path does not exist."""
     pass
+
+
+class ConfigKeyMissingError(PostureGuardException):
+    """Exception raised when required parameter key is absent from configuration dictionary."""
+    pass
