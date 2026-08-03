@@ -1681,5 +1681,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWindowMinSizeConstraintError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameraresolutionchangeerror(self) -> None:
+        from exceptions import CameraResolutionChangeError
+        exc = CameraResolutionChangeError("Test msg")
+        self.assertEqual(exc.error_code, "CameraResolutionChangeError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
