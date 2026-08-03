@@ -1466,3 +1466,8 @@ class CameraResolutionChangeError(PostureGuardException):
 class CameraFrameCorruptDataError(PostureGuardException):
     """Exception raised when frame decode yields corrupted pixel data array."""
     pass
+
+
+class ModelCascadeReloadFailedError(PostureGuardException):
+    """Exception raised when re-loading Haar cascade classifier XML file fails."""
+    pass
