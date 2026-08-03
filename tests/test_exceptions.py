@@ -1639,5 +1639,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigSaveWriteError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_loghandlermemoryerror(self) -> None:
+        from exceptions import LogHandlerMemoryError
+        exc = LogHandlerMemoryError("Test msg")
+        self.assertEqual(exc.error_code, "LogHandlerMemoryError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
