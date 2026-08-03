@@ -1431,3 +1431,8 @@ class LogHandlerMemoryError(PostureGuardException):
 class LogRotationFileNameError(PostureGuardException):
     """Exception raised when generated log rotation file path string formatting fails."""
     pass
+
+
+class CSVRecordTypeConversionError(PostureGuardException):
+    """Exception raised when converting string field values in posture history CSV fails."""
+    pass
