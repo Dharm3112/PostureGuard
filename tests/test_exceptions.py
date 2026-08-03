@@ -1627,5 +1627,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationIconPathInvalidError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configkeymissingerror(self) -> None:
+        from exceptions import ConfigKeyMissingError
+        exc = ConfigKeyMissingError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigKeyMissingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
