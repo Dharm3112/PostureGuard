@@ -1406,3 +1406,8 @@ class AudioSampleChannelMismatchError(PostureGuardException):
 class NotificationPriorityError(PostureGuardException):
     """Exception raised when system desktop notification urgency level exceeds system bounds."""
     pass
+
+
+class NotificationIconPathInvalidError(PostureGuardException):
+    """Exception raised when toast notification icon file path does not exist."""
+    pass
