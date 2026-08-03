@@ -1621,5 +1621,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationPriorityError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationiconpathinvaliderror(self) -> None:
+        from exceptions import NotificationIconPathInvalidError
+        exc = NotificationIconPathInvalidError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconPathInvalidError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
