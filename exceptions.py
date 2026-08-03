@@ -1441,3 +1441,8 @@ class CSVRecordTypeConversionError(PostureGuardException):
 class CSVTimestampDateFormatError(PostureGuardException):
     """Exception raised when posture log entry timestamp format string is invalid."""
     pass
+
+
+class UIWidgetGeometryBoundsError(PostureGuardException):
+    """Exception raised when Tkinter widget placement geometry exceeds main window dimensions."""
+    pass
