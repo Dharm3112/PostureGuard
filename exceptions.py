@@ -1436,3 +1436,8 @@ class LogRotationFileNameError(PostureGuardException):
 class CSVRecordTypeConversionError(PostureGuardException):
     """Exception raised when converting string field values in posture history CSV fails."""
     pass
+
+
+class CSVTimestampDateFormatError(PostureGuardException):
+    """Exception raised when posture log entry timestamp format string is invalid."""
+    pass
