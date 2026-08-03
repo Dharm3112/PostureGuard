@@ -1391,3 +1391,8 @@ class StatsGraphPlotError(PostureGuardException):
 class StatsDataRecordCorruptError(PostureGuardException):
     """Exception raised when posture history CSV file contains corrupt binary entries."""
     pass
+
+
+class AudioOutputBufferUnderflowError(PostureGuardException):
+    """Exception raised when audio playback stream output buffer drops below minimum samples."""
+    pass
