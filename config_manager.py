@@ -37,7 +37,7 @@ class ConfigManager:
         "scale_factor": 1.1,  # Default scale factor multiplier for Haar cascades setting
         "min_neighbors": 5,  # Default min neighbors for Haar cascades
         "log_max_bytes": 1048576,  # Default max log file size in bytes
-        "log_backup_count": 3
+        "log_backup_count": 3  # Default log backup archives count
     }
 
     def __init__(self, initial_config: Dict[str, Any] = None) -> None:
