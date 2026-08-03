@@ -1456,3 +1456,8 @@ class UIThemeStyleNotFoundError(PostureGuardException):
 class UIWindowMinSizeConstraintError(PostureGuardException):
     """Exception raised when setting window minimum dimensions violates desktop screen size."""
     pass
+
+
+class CameraResolutionChangeError(PostureGuardException):
+    """Exception raised when switching webcam video stream resolution dimensions at runtime fails."""
+    pass
