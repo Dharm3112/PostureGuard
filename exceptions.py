@@ -1461,3 +1461,8 @@ class UIWindowMinSizeConstraintError(PostureGuardException):
 class CameraResolutionChangeError(PostureGuardException):
     """Exception raised when switching webcam video stream resolution dimensions at runtime fails."""
     pass
+
+
+class CameraFrameCorruptDataError(PostureGuardException):
+    """Exception raised when frame decode yields corrupted pixel data array."""
+    pass
