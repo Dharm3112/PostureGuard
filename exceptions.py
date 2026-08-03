@@ -1446,3 +1446,8 @@ class CSVTimestampDateFormatError(PostureGuardException):
 class UIWidgetGeometryBoundsError(PostureGuardException):
     """Exception raised when Tkinter widget placement geometry exceeds main window dimensions."""
     pass
+
+
+class UIThemeStyleNotFoundError(PostureGuardException):
+    """Exception raised when requested custom widget theme style name is not registered."""
+    pass
