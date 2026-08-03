@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.9.0] - 2026-08-03
+
+### Added
+- **Audio Output, Notification Priority, and UI Geometry Diagnostic Exceptions:** Declared 16 new exception classes for audio buffer underruns, channel mismatches, notification priorities, UI geometry bounds, camera resolution changes, and model cascade reloading.
+- **Robust Exception Checking:** Appended 16 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying log backup settings, percentage calculations, and detector variables.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [2.8.0] - 2026-08-02
 
 ### Added
