@@ -1747,5 +1747,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogRotationFileCreationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvheaderlengthmismatcherror(self) -> None:
+        from exceptions import CSVHeaderLengthMismatchError
+        exc = CSVHeaderLengthMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "CSVHeaderLengthMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
