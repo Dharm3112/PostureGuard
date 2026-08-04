@@ -1511,3 +1511,8 @@ class LogHandlerRegistrationFailedError(PostureGuardException):
 class LogRotationFileCreationError(PostureGuardException):
     """Exception raised when creating next sequential log rotation backup archive fails."""
     pass
+
+
+class CSVHeaderLengthMismatchError(PostureGuardException):
+    """Exception raised when posture history CSV line field count mismatches headers length."""
+    pass
