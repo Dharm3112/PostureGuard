@@ -1,4 +1,4 @@
-import cv2
+import cv2  # Import OpenCV library module
 import numpy as np
 from collections import deque
 from typing import Tuple, Optional
