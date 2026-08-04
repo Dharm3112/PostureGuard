@@ -1481,3 +1481,8 @@ class AudioOutputDeviceMutedError(PostureGuardException):
 class AudioCodecUnsupportedError(PostureGuardException):
     """Exception raised when sound chime file format codec is unsupported by system audio layer."""
     pass
+
+
+class NotificationChannelDisabledError(PostureGuardException):
+    """Exception raised when desktop notifications are disabled in system OS settings."""
+    pass
