@@ -1705,5 +1705,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioOutputDeviceMutedError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiocodecunsupportederror(self) -> None:
+        from exceptions import AudioCodecUnsupportedError
+        exc = AudioCodecUnsupportedError("Test msg")
+        self.assertEqual(exc.error_code, "AudioCodecUnsupportedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
