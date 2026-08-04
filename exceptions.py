@@ -1471,3 +1471,8 @@ class CameraFrameCorruptDataError(PostureGuardException):
 class ModelCascadeReloadFailedError(PostureGuardException):
     """Exception raised when re-loading Haar cascade classifier XML file fails."""
     pass
+
+
+class AudioOutputDeviceMutedError(PostureGuardException):
+    """Exception raised when audio alert playback is triggered while system audio output is muted."""
+    pass
