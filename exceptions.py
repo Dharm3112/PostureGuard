@@ -1541,3 +1541,8 @@ class UIHoverTooltipPlacementError(PostureGuardException):
 class CameraFPSBoundsError(PostureGuardException):
     """Exception raised when target webcam stream frame rate bounds exceed physical camera capabilities."""
     pass
+
+
+class CameraReinitializationTimeoutError(PostureGuardException):
+    """Exception raised when re-initializing camera device takes too long to warm up."""
+    pass
