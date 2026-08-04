@@ -1551,3 +1551,8 @@ class CameraReinitializationTimeoutError(PostureGuardException):
 class ModelCascadeCorruptFileError(PostureGuardException):
     """Exception raised when OpenCV Haar cascade XML classifier structure contains corrupt data."""
     pass
+
+
+class FaceDetectionSmoothingEmptyError(PostureGuardException):
+    """Exception raised when posture detector smoothing queue returns zero Y center coordinates."""
+    pass
