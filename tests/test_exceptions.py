@@ -1765,5 +1765,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetCoordinatesOutOfBoundsError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemeinvalidcolorerror(self) -> None:
+        from exceptions import UIThemeInvalidColorError
+        exc = UIThemeInvalidColorError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemeInvalidColorError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
