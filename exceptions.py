@@ -1506,3 +1506,8 @@ class ConfigReadOnlyViolationError(PostureGuardException):
 class LogHandlerRegistrationFailedError(PostureGuardException):
     """Exception raised when attaching custom logging handler to active logger stream fails."""
     pass
+
+
+class LogRotationFileCreationError(PostureGuardException):
+    """Exception raised when creating next sequential log rotation backup archive fails."""
+    pass
