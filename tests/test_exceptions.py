@@ -1699,5 +1699,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ModelCascadeReloadFailedError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiooutputdevicemutederror(self) -> None:
+        from exceptions import AudioOutputDeviceMutedError
+        exc = AudioOutputDeviceMutedError("Test msg")
+        self.assertEqual(exc.error_code, "AudioOutputDeviceMutedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
