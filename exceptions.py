@@ -1531,3 +1531,8 @@ class UIWidgetCoordinatesOutOfBoundsError(PostureGuardException):
 class UIThemeInvalidColorError(PostureGuardException):
     """Exception raised when active visual theme foreground color specifies an invalid color string."""
     pass
+
+
+class UIHoverTooltipPlacementError(PostureGuardException):
+    """Exception raised when tooltip popup coordinates fall outside application main window."""
+    pass
