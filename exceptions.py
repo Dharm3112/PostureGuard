@@ -1516,3 +1516,8 @@ class LogRotationFileCreationError(PostureGuardException):
 class CSVHeaderLengthMismatchError(PostureGuardException):
     """Exception raised when posture history CSV line field count mismatches headers length."""
     pass
+
+
+class CSVDataTypeCastError(PostureGuardException):
+    """Exception raised when converting string values in posture history log CSV to floats fails."""
+    pass
