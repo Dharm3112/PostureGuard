@@ -1476,3 +1476,8 @@ class ModelCascadeReloadFailedError(PostureGuardException):
 class AudioOutputDeviceMutedError(PostureGuardException):
     """Exception raised when audio alert playback is triggered while system audio output is muted."""
     pass
+
+
+class AudioCodecUnsupportedError(PostureGuardException):
+    """Exception raised when sound chime file format codec is unsupported by system audio layer."""
+    pass
