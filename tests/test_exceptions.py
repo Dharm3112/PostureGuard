@@ -1717,5 +1717,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationChannelDisabledError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationactionhandlererror(self) -> None:
+        from exceptions import NotificationActionHandlerError
+        exc = NotificationActionHandlerError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationActionHandlerError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
