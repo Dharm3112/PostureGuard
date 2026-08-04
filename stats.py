@@ -1,5 +1,5 @@
 import csv  # Import standard csv parsing capabilities library package
-import os  # Import standard OS utility module helper
+import os  # Import standard OS utility module helper package
 from typing import Dict, Any, Optional  # Import complex type hints for stats mapping
 BaseDirectory = os.path.dirname(os.path.abspath(__file__))  # Retrieve canonical parent root path directory settings checks
 
