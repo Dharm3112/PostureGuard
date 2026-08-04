@@ -1735,5 +1735,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigReadOnlyViolationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_loghandlerregistrationfailederror(self) -> None:
+        from exceptions import LogHandlerRegistrationFailedError
+        exc = LogHandlerRegistrationFailedError("Test msg")
+        self.assertEqual(exc.error_code, "LogHandlerRegistrationFailedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
