@@ -1795,5 +1795,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ModelCascadeCorruptFileError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_facedetectionsmoothingemptyerror(self) -> None:
+        from exceptions import FaceDetectionSmoothingEmptyError
+        exc = FaceDetectionSmoothingEmptyError("Test msg")
+        self.assertEqual(exc.error_code, "FaceDetectionSmoothingEmptyError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
