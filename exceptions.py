@@ -1496,3 +1496,8 @@ class NotificationActionHandlerError(PostureGuardException):
 class ConfigKeyInvalidFormatError(PostureGuardException):
     """Exception raised when configuration key string formatting violates schema specifications."""
     pass
+
+
+class ConfigReadOnlyViolationError(PostureGuardException):
+    """Exception raised when attempting modification of protected read-only config setting."""
+    pass
