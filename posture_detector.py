@@ -1,5 +1,5 @@
 import cv2  # Import OpenCV library module
-import numpy as np
+import numpy as np  # Import NumPy numerical array library
 from collections import deque
 from typing import Tuple, Optional
 from logger_config import setup_logger
