@@ -1759,5 +1759,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVDataTypeCastError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetcoordinatesoutofboundserror(self) -> None:
+        from exceptions import UIWidgetCoordinatesOutOfBoundsError
+        exc = UIWidgetCoordinatesOutOfBoundsError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetCoordinatesOutOfBoundsError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
