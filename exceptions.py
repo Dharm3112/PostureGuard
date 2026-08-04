@@ -1491,3 +1491,8 @@ class NotificationChannelDisabledError(PostureGuardException):
 class NotificationActionHandlerError(PostureGuardException):
     """Exception raised when desktop notification click callback action handler fails."""
     pass
+
+
+class ConfigKeyInvalidFormatError(PostureGuardException):
+    """Exception raised when configuration key string formatting violates schema specifications."""
+    pass
