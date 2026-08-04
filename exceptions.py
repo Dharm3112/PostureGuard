@@ -1486,3 +1486,8 @@ class AudioCodecUnsupportedError(PostureGuardException):
 class NotificationChannelDisabledError(PostureGuardException):
     """Exception raised when desktop notifications are disabled in system OS settings."""
     pass
+
+
+class NotificationActionHandlerError(PostureGuardException):
+    """Exception raised when desktop notification click callback action handler fails."""
+    pass
