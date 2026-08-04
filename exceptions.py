@@ -1526,3 +1526,8 @@ class CSVDataTypeCastError(PostureGuardException):
 class UIWidgetCoordinatesOutOfBoundsError(PostureGuardException):
     """Exception raised when setting dashboard widget grid coordinates exceeds display bounds."""
     pass
+
+
+class UIThemeInvalidColorError(PostureGuardException):
+    """Exception raised when active visual theme foreground color specifies an invalid color string."""
+    pass
