@@ -66,7 +66,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
     if total > 0:  # Compute percentage metrics if records exist
         stats["good_percent"] = round((stats["good_count"] / total) * 100.0, 2)  # Compute good posture percentage value
         stats["slouch_percent"] = round((stats["slouch_count"] / total) * 100.0, 2)  # Compute slouch posture percentage value
-        stats["avg_deviation"] = round(total_deviation / total, 2)
+        stats["avg_deviation"] = round(total_deviation / total, 2)  # Compute average deviation in pixels
 
     return stats
 
