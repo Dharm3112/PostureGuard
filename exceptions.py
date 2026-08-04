@@ -1586,3 +1586,8 @@ class DatabaseQueryExecutionError(PostureGuardException):
 class ThreadTerminationTimeoutError(PostureGuardException):
     """Exception raised when thread worker termination takes too long to join."""
     pass
+
+
+class FrameBufferReadTimeoutError(PostureGuardException):
+    """Exception raised when capture stream thread buffer read operation times out."""
+    pass
