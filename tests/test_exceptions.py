@@ -1837,5 +1837,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ThreadTerminationTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_framebufferreadtimeouterror(self) -> None:
+        from exceptions import FrameBufferReadTimeoutError
+        exc = FrameBufferReadTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "FrameBufferReadTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
