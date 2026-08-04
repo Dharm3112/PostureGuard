@@ -1536,3 +1536,8 @@ class UIThemeInvalidColorError(PostureGuardException):
 class UIHoverTooltipPlacementError(PostureGuardException):
     """Exception raised when tooltip popup coordinates fall outside application main window."""
     pass
+
+
+class CameraFPSBoundsError(PostureGuardException):
+    """Exception raised when target webcam stream frame rate bounds exceed physical camera capabilities."""
+    pass
