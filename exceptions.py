@@ -1546,3 +1546,8 @@ class CameraFPSBoundsError(PostureGuardException):
 class CameraReinitializationTimeoutError(PostureGuardException):
     """Exception raised when re-initializing camera device takes too long to warm up."""
     pass
+
+
+class ModelCascadeCorruptFileError(PostureGuardException):
+    """Exception raised when OpenCV Haar cascade XML classifier structure contains corrupt data."""
+    pass
