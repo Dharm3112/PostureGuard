@@ -1521,3 +1521,8 @@ class CSVHeaderLengthMismatchError(PostureGuardException):
 class CSVDataTypeCastError(PostureGuardException):
     """Exception raised when converting string values in posture history log CSV to floats fails."""
     pass
+
+
+class UIWidgetCoordinatesOutOfBoundsError(PostureGuardException):
+    """Exception raised when setting dashboard widget grid coordinates exceeds display bounds."""
+    pass
