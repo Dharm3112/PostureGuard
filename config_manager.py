@@ -10,7 +10,7 @@ class ConfigManager:
     Copies default settings, reads config parameters, and handles runtime updates.
     """
     DEFAULT_CONFIG_FILE = "config.json.default"  # Default configuration template filename settings template
-    LOCAL_CONFIG_FILE = "config.json"  # Active local configuration filename path
+    LOCAL_CONFIG_FILE = "config.json"  # Active local configuration filename path file
     
     # Key Constants
     CAMERA_INDEX = "camera_index"  # Key identifier for webcam index setting
