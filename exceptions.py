@@ -1501,3 +1501,8 @@ class ConfigKeyInvalidFormatError(PostureGuardException):
 class ConfigReadOnlyViolationError(PostureGuardException):
     """Exception raised when attempting modification of protected read-only config setting."""
     pass
+
+
+class LogHandlerRegistrationFailedError(PostureGuardException):
+    """Exception raised when attaching custom logging handler to active logger stream fails."""
+    pass
