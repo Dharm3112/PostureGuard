@@ -1601,3 +1601,8 @@ class AudioPlaybackEngineError(PostureGuardException):
 class AudioNotificationMutedWarningError(PostureGuardException):
     """Exception raised when alert chiming is attempted while output sound is muted."""
     pass
+
+
+class NotificationChannelPermissionDeniedError(PostureGuardException):
+    """Exception raised when OS security policies reject toast notification registration."""
+    pass
