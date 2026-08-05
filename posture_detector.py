@@ -1,4 +1,4 @@
-import cv2  # Import OpenCV library module
+import cv2  # Import OpenCV library module package
 import numpy as np  # Import NumPy numerical array library
 from collections import deque  # Import double-ended queue collection class
 from typing import Tuple, Optional  # Import typing tuple and optional annotations
