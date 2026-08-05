@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.0] - 2026-08-05
+
+### Added
+- **Audio Engine, Notification Permission, and UI State Diagnostic Exceptions:** Declared 11 new exception classes for audio playback engine init, muted warning alerts, notification permissions, missing icon assets, log handler detaches, and UI widget state transitions.
+- **Robust Exception Checking:** Appended 11 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying module imports and type hints.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [3.0.0] - 2026-08-04
 
 ### Added
