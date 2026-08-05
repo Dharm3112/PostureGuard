@@ -1626,3 +1626,8 @@ class ConfigMigrationSchemaMismatchError(PostureGuardException):
 class LogHandlerDetachFailureError(PostureGuardException):
     """Exception raised when removing inactive log handler from logger instance fails."""
     pass
+
+
+class LogRotationDiskSpaceError(PostureGuardException):
+    """Exception raised when creating rotated log file backup lacks required free disk space."""
+    pass
