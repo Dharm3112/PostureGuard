@@ -1621,3 +1621,8 @@ class ConfigKeyValidationBoundsError(PostureGuardException):
 class ConfigMigrationSchemaMismatchError(PostureGuardException):
     """Exception raised when migrating older JSON configuration schema to new layout fails."""
     pass
+
+
+class LogHandlerDetachFailureError(PostureGuardException):
+    """Exception raised when removing inactive log handler from logger instance fails."""
+    pass
