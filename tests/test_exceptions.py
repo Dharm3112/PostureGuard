@@ -1861,5 +1861,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationChannelPermissionDeniedError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationiconassetmissingerror(self) -> None:
+        from exceptions import NotificationIconAssetMissingError
+        exc = NotificationIconAssetMissingError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconAssetMissingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
