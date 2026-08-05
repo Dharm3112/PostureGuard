@@ -1636,3 +1636,8 @@ class LogRotationDiskSpaceError(PostureGuardException):
 class CSVColumnHeaderFormatError(PostureGuardException):
     """Exception raised when posture history log CSV file header contains invalid characters."""
     pass
+
+
+class CSVRecordParsingDelimiterError(PostureGuardException):
+    """Exception raised when CSV parser encounters malformed field delimiter sequences."""
+    pass
