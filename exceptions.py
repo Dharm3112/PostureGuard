@@ -1606,3 +1606,8 @@ class AudioNotificationMutedWarningError(PostureGuardException):
 class NotificationChannelPermissionDeniedError(PostureGuardException):
     """Exception raised when OS security policies reject toast notification registration."""
     pass
+
+
+class NotificationIconAssetMissingError(PostureGuardException):
+    """Exception raised when requested notification icon asset file is missing on disk."""
+    pass
