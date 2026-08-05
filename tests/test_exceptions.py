@@ -1885,5 +1885,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogHandlerDetachFailureError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logrotationdiskspaceerror(self) -> None:
+        from exceptions import LogRotationDiskSpaceError
+        exc = LogRotationDiskSpaceError("Test msg")
+        self.assertEqual(exc.error_code, "LogRotationDiskSpaceError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
