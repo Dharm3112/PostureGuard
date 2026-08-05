@@ -1873,5 +1873,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyValidationBoundsError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configmigrationschemamismatcherror(self) -> None:
+        from exceptions import ConfigMigrationSchemaMismatchError
+        exc = ConfigMigrationSchemaMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigMigrationSchemaMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
