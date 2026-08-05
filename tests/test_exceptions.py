@@ -1879,5 +1879,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigMigrationSchemaMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_loghandlerdetachfailureerror(self) -> None:
+        from exceptions import LogHandlerDetachFailureError
+        exc = LogHandlerDetachFailureError("Test msg")
+        self.assertEqual(exc.error_code, "LogHandlerDetachFailureError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
