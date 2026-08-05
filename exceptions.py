@@ -1596,3 +1596,8 @@ class FrameBufferReadTimeoutError(PostureGuardException):
 class AudioPlaybackEngineError(PostureGuardException):
     """Exception raised when underlying audio playback driver initialization fails."""
     pass
+
+
+class AudioNotificationMutedWarningError(PostureGuardException):
+    """Exception raised when alert chiming is attempted while output sound is muted."""
+    pass
