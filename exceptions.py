@@ -1631,3 +1631,8 @@ class LogHandlerDetachFailureError(PostureGuardException):
 class LogRotationDiskSpaceError(PostureGuardException):
     """Exception raised when creating rotated log file backup lacks required free disk space."""
     pass
+
+
+class CSVColumnHeaderFormatError(PostureGuardException):
+    """Exception raised when posture history log CSV file header contains invalid characters."""
+    pass
