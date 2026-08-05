@@ -1611,3 +1611,8 @@ class NotificationChannelPermissionDeniedError(PostureGuardException):
 class NotificationIconAssetMissingError(PostureGuardException):
     """Exception raised when requested notification icon asset file is missing on disk."""
     pass
+
+
+class ConfigKeyValidationBoundsError(PostureGuardException):
+    """Exception raised when numerical setting values fall outside allowable range bounds."""
+    pass
