@@ -1867,5 +1867,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationIconAssetMissingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configkeyvalidationboundserror(self) -> None:
+        from exceptions import ConfigKeyValidationBoundsError
+        exc = ConfigKeyValidationBoundsError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigKeyValidationBoundsError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
