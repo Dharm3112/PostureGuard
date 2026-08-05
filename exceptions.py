@@ -1616,3 +1616,8 @@ class NotificationIconAssetMissingError(PostureGuardException):
 class ConfigKeyValidationBoundsError(PostureGuardException):
     """Exception raised when numerical setting values fall outside allowable range bounds."""
     pass
+
+
+class ConfigMigrationSchemaMismatchError(PostureGuardException):
+    """Exception raised when migrating older JSON configuration schema to new layout fails."""
+    pass
