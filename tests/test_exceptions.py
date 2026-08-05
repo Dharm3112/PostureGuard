@@ -1897,5 +1897,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVColumnHeaderFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvrecordparsingdelimitererror(self) -> None:
+        from exceptions import CSVRecordParsingDelimiterError
+        exc = CSVRecordParsingDelimiterError("Test msg")
+        self.assertEqual(exc.error_code, "CSVRecordParsingDelimiterError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
