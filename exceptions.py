@@ -1641,3 +1641,8 @@ class CSVColumnHeaderFormatError(PostureGuardException):
 class CSVRecordParsingDelimiterError(PostureGuardException):
     """Exception raised when CSV parser encounters malformed field delimiter sequences."""
     pass
+
+
+class UIWidgetStateTransitionError(PostureGuardException):
+    """Exception raised when updating Tkinter widget state between active and disabled fails."""
+    pass
