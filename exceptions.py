@@ -1591,3 +1591,8 @@ class ThreadTerminationTimeoutError(PostureGuardException):
 class FrameBufferReadTimeoutError(PostureGuardException):
     """Exception raised when capture stream thread buffer read operation times out."""
     pass
+
+
+class AudioPlaybackEngineError(PostureGuardException):
+    """Exception raised when underlying audio playback driver initialization fails."""
+    pass
