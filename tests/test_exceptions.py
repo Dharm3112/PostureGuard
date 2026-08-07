@@ -1993,5 +1993,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraDeviceBusyAccessError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameraexposureautoadjusterror(self) -> None:
+        from exceptions import CameraExposureAutoAdjustError
+        exc = CameraExposureAutoAdjustError("Test msg")
+        self.assertEqual(exc.error_code, "CameraExposureAutoAdjustError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
