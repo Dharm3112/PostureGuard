@@ -16,7 +16,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
     logger.debug(f"Calculating posture stats for file: {filepath}")  # Debug log file path
     # Initializing default return values data structure mapping container keys
     stats = {  # Initialize posture statistics tracking dict
-        "total_records": 0,
+        "total_records": 0,  # Initialize total records count tracker record
         "good_count": 0,
         "slouch_count": 0,
         "good_percent": 0.0,
