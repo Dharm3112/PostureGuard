@@ -15,7 +15,7 @@ class ConfigManager:
     # Key Constants
     CAMERA_INDEX = "camera_index"  # Key identifier for webcam index setting item value key
     SLOUCH_THRESHOLD = "slouch_threshold_px"  # Key identifier for slouch threshold setting item value
-    TIME_TO_ALERT = "time_to_alert_frames"  # Key identifier for time to alert frames setting item
+    TIME_TO_ALERT = "time_to_alert_frames"  # Key identifier for time to alert frames setting item value
     FRAME_DELAY = "frame_delay_ms"
     CAMERA_WIDTH = "camera_width"  # Key identifier for camera width setting
     CAMERA_HEIGHT = "camera_height"  # Key identifier for camera height setting
