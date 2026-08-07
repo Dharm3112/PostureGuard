@@ -1909,5 +1909,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetStateTransitionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiodeviceenumerationfailederror(self) -> None:
+        from exceptions import AudioDeviceEnumerationFailedError
+        exc = AudioDeviceEnumerationFailedError("Test msg")
+        self.assertEqual(exc.error_code, "AudioDeviceEnumerationFailedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
