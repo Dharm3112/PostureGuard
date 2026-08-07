@@ -2017,5 +2017,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CalibrateBaselineNegativeYError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsgraphexportioerror(self) -> None:
+        from exceptions import StatsGraphExportIOError
+        exc = StatsGraphExportIOError("Test msg")
+        self.assertEqual(exc.error_code, "StatsGraphExportIOError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
