@@ -1646,3 +1646,8 @@ class CSVRecordParsingDelimiterError(PostureGuardException):
 class UIWidgetStateTransitionError(PostureGuardException):
     """Exception raised when updating Tkinter widget state between active and disabled fails."""
     pass
+
+
+class AudioDeviceEnumerationFailedError(PostureGuardException):
+    """Exception raised when querying system audio output hardware devices fails."""
+    pass
