@@ -1716,3 +1716,8 @@ class UICanvasRenderPipelineError(PostureGuardException):
 class CameraDeviceBusyAccessError(PostureGuardException):
     """Exception raised when targeted webcam index is occupied by another application."""
     pass
+
+
+class CameraExposureAutoAdjustError(PostureGuardException):
+    """Exception raised when configuring webcam automatic exposure controls fails."""
+    pass
