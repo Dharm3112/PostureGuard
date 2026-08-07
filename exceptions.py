@@ -1701,3 +1701,8 @@ class CSVTimestampTimezoneParseError(PostureGuardException):
 class UIWindowGeometryRestoreError(PostureGuardException):
     """Exception raised when restoring saved window size and position coordinates fails."""
     pass
+
+
+class UIFontRegistryLoadError(PostureGuardException):
+    """Exception raised when loading custom system font family into Tkinter widget context fails."""
+    pass
