@@ -1731,3 +1731,8 @@ class ModelCascadeFeatureCountZeroError(PostureGuardException):
 class FaceDetectionBoundingBoxNaNError(PostureGuardException):
     """Exception raised when detected face rectangular coordinates yield NaN values."""
     pass
+
+
+class CalibrateBaselineNegativeYError(PostureGuardException):
+    """Exception raised when baseline calibration calculates a negative Y coordinate."""
+    pass
