@@ -1696,3 +1696,8 @@ class CSVRecordFieldCountMismatchError(PostureGuardException):
 class CSVTimestampTimezoneParseError(PostureGuardException):
     """Exception raised when parsing UTC timezone offset string in posture log CSV fails."""
     pass
+
+
+class UIWindowGeometryRestoreError(PostureGuardException):
+    """Exception raised when restoring saved window size and position coordinates fails."""
+    pass
