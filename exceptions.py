@@ -1686,3 +1686,8 @@ class LogHandlerFilterConfigurationError(PostureGuardException):
 class LogRotationArchiveLockError(PostureGuardException):
     """Exception raised when rotating log file archive is locked by another process."""
     pass
+
+
+class CSVRecordFieldCountMismatchError(PostureGuardException):
+    """Exception raised when posture history CSV entry field count does not match schema."""
+    pass
