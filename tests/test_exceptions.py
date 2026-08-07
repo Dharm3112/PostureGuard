@@ -1921,5 +1921,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioStreamBufferOverflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationdeliverytimeouterror(self) -> None:
+        from exceptions import NotificationDeliveryTimeoutError
+        exc = NotificationDeliveryTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationDeliveryTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
