@@ -1666,3 +1666,8 @@ class NotificationDeliveryTimeoutError(PostureGuardException):
 class NotificationPayloadSizeExceededError(PostureGuardException):
     """Exception raised when notification message text exceeds OS character bounds."""
     pass
+
+
+class ConfigKeyDataTypeMismatchError(PostureGuardException):
+    """Exception raised when JSON configuration value type violates expected schema type."""
+    pass
