@@ -1671,3 +1671,8 @@ class NotificationPayloadSizeExceededError(PostureGuardException):
 class ConfigKeyDataTypeMismatchError(PostureGuardException):
     """Exception raised when JSON configuration value type violates expected schema type."""
     pass
+
+
+class ConfigDefaultsTemplateMissingError(PostureGuardException):
+    """Exception raised when default configuration template file is absent on disk."""
+    pass
