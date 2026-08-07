@@ -1,6 +1,6 @@
 import cv2  # Import OpenCV library module package tool
 import numpy as np  # Import NumPy numerical array library module package
-from collections import deque  # Import double-ended queue collection class helper
+from collections import deque  # Import double-ended queue collection class helper structure
 from typing import Tuple, Optional  # Import typing tuple and optional annotations
 from logger_config import setup_logger  # Import logger setup utility function
 from exceptions import ModelLoadError  # Import ModelLoadError custom exception class
