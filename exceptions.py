@@ -1706,3 +1706,8 @@ class UIWindowGeometryRestoreError(PostureGuardException):
 class UIFontRegistryLoadError(PostureGuardException):
     """Exception raised when loading custom system font family into Tkinter widget context fails."""
     pass
+
+
+class UICanvasRenderPipelineError(PostureGuardException):
+    """Exception raised when drawing bounding box graphics onto video canvas frame fails."""
+    pass
