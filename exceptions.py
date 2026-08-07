@@ -1711,3 +1711,8 @@ class UIFontRegistryLoadError(PostureGuardException):
 class UICanvasRenderPipelineError(PostureGuardException):
     """Exception raised when drawing bounding box graphics onto video canvas frame fails."""
     pass
+
+
+class CameraDeviceBusyAccessError(PostureGuardException):
+    """Exception raised when targeted webcam index is occupied by another application."""
+    pass
