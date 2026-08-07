@@ -1975,5 +1975,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWindowGeometryRestoreError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uifontregistryloaderror(self) -> None:
+        from exceptions import UIFontRegistryLoadError
+        exc = UIFontRegistryLoadError("Test msg")
+        self.assertEqual(exc.error_code, "UIFontRegistryLoadError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
