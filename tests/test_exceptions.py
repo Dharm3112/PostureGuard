@@ -1927,5 +1927,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationDeliveryTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationpayloadsizeexceedederror(self) -> None:
+        from exceptions import NotificationPayloadSizeExceededError
+        exc = NotificationPayloadSizeExceededError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationPayloadSizeExceededError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
