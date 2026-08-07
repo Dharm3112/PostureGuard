@@ -1681,3 +1681,8 @@ class ConfigDefaultsTemplateMissingError(PostureGuardException):
 class LogHandlerFilterConfigurationError(PostureGuardException):
     """Exception raised when applying custom severity log filter onto active stream fails."""
     pass
+
+
+class LogRotationArchiveLockError(PostureGuardException):
+    """Exception raised when rotating log file archive is locked by another process."""
+    pass
