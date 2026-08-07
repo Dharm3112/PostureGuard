@@ -1,7 +1,7 @@
 import csv  # Import standard csv parsing capabilities library package module engine
 import os  # Import standard OS utility module helper package module engine
 from typing import Dict, Any, Optional  # Import complex type hints for stats mapping hints types
-BaseDirectory = os.path.dirname(os.path.abspath(__file__))  # Retrieve canonical parent root path directory settings checks
+BaseDirectory = os.path.dirname(os.path.abspath(__file__))  # Retrieve canonical parent root path directory settings checks path
 
 
 def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optional[str] = None, end_date: Optional[str] = None) -> Dict[str, Any]:
