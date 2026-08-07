@@ -1741,3 +1741,8 @@ class CalibrateBaselineNegativeYError(PostureGuardException):
 class StatsGraphExportIOError(PostureGuardException):
     """Exception raised when saving rendered posture statistics chart image to disk fails."""
     pass
+
+
+class StatsDataCorruptHeaderError(PostureGuardException):
+    """Exception raised when posture history CSV log contains corrupt column headers."""
+    pass
