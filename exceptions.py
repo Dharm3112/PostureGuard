@@ -1736,3 +1736,8 @@ class FaceDetectionBoundingBoxNaNError(PostureGuardException):
 class CalibrateBaselineNegativeYError(PostureGuardException):
     """Exception raised when baseline calibration calculates a negative Y coordinate."""
     pass
+
+
+class StatsGraphExportIOError(PostureGuardException):
+    """Exception raised when saving rendered posture statistics chart image to disk fails."""
+    pass
