@@ -1656,3 +1656,8 @@ class AudioDeviceEnumerationFailedError(PostureGuardException):
 class AudioStreamBufferOverflowError(PostureGuardException):
     """Exception raised when sound chime playback buffer exceeds allocated memory size."""
     pass
+
+
+class NotificationDeliveryTimeoutError(PostureGuardException):
+    """Exception raised when desktop notification daemon fails to respond within timeout."""
+    pass
