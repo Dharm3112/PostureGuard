@@ -2005,5 +2005,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ModelCascadeFeatureCountZeroError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_facedetectionboundingboxnanerror(self) -> None:
+        from exceptions import FaceDetectionBoundingBoxNaNError
+        exc = FaceDetectionBoundingBoxNaNError("Test msg")
+        self.assertEqual(exc.error_code, "FaceDetectionBoundingBoxNaNError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
