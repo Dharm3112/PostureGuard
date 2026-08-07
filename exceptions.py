@@ -1651,3 +1651,8 @@ class UIWidgetStateTransitionError(PostureGuardException):
 class AudioDeviceEnumerationFailedError(PostureGuardException):
     """Exception raised when querying system audio output hardware devices fails."""
     pass
+
+
+class AudioStreamBufferOverflowError(PostureGuardException):
+    """Exception raised when sound chime playback buffer exceeds allocated memory size."""
+    pass
