@@ -1676,3 +1676,8 @@ class ConfigKeyDataTypeMismatchError(PostureGuardException):
 class ConfigDefaultsTemplateMissingError(PostureGuardException):
     """Exception raised when default configuration template file is absent on disk."""
     pass
+
+
+class LogHandlerFilterConfigurationError(PostureGuardException):
+    """Exception raised when applying custom severity log filter onto active stream fails."""
+    pass
