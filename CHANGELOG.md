@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.2.0] - 2026-08-07
+
+### Added
+- **Audio Device, Camera Exposure, and UI Pipeline Diagnostic Exceptions:** Declared 20 new exception classes for audio device enumeration, stream buffer overflow, notification payload bounds, log archive locks, camera exposure adjustment, and graph export IO errors.
+- **Robust Exception Checking:** Appended 20 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying module imports, total record tracking, and file paths.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [3.1.0] - 2026-08-05
 
 ### Added
