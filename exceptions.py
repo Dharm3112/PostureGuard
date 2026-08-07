@@ -1721,3 +1721,8 @@ class CameraDeviceBusyAccessError(PostureGuardException):
 class CameraExposureAutoAdjustError(PostureGuardException):
     """Exception raised when configuring webcam automatic exposure controls fails."""
     pass
+
+
+class ModelCascadeFeatureCountZeroError(PostureGuardException):
+    """Exception raised when loaded OpenCV Haar cascade XML classifier contains zero features."""
+    pass
