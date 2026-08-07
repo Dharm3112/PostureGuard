@@ -13,7 +13,7 @@ class ConfigManager:
     LOCAL_CONFIG_FILE = "config.json"  # Active local configuration filename path file path string
     
     # Key Constants
-    CAMERA_INDEX = "camera_index"  # Key identifier for webcam index setting item value
+    CAMERA_INDEX = "camera_index"  # Key identifier for webcam index setting item value key
     SLOUCH_THRESHOLD = "slouch_threshold_px"  # Key identifier for slouch threshold setting item
     TIME_TO_ALERT = "time_to_alert_frames"  # Key identifier for time to alert frames setting item
     FRAME_DELAY = "frame_delay_ms"
