@@ -1963,5 +1963,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRecordFieldCountMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvtimestamptimezoneparseerror(self) -> None:
+        from exceptions import CSVTimestampTimezoneParseError
+        exc = CSVTimestampTimezoneParseError("Test msg")
+        self.assertEqual(exc.error_code, "CSVTimestampTimezoneParseError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
