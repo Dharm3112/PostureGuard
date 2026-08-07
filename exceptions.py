@@ -1661,3 +1661,8 @@ class AudioStreamBufferOverflowError(PostureGuardException):
 class NotificationDeliveryTimeoutError(PostureGuardException):
     """Exception raised when desktop notification daemon fails to respond within timeout."""
     pass
+
+
+class NotificationPayloadSizeExceededError(PostureGuardException):
+    """Exception raised when notification message text exceeds OS character bounds."""
+    pass
