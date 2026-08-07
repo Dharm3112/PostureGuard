@@ -2011,5 +2011,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "FaceDetectionBoundingBoxNaNError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_calibratebaselinenegativeyerror(self) -> None:
+        from exceptions import CalibrateBaselineNegativeYError
+        exc = CalibrateBaselineNegativeYError("Test msg")
+        self.assertEqual(exc.error_code, "CalibrateBaselineNegativeYError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
