@@ -1933,5 +1933,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationPayloadSizeExceededError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configkeydatatypemismatcherror(self) -> None:
+        from exceptions import ConfigKeyDataTypeMismatchError
+        exc = ConfigKeyDataTypeMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigKeyDataTypeMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
