@@ -1987,5 +1987,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UICanvasRenderPipelineError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameradevicebusyaccesserror(self) -> None:
+        from exceptions import CameraDeviceBusyAccessError
+        exc = CameraDeviceBusyAccessError("Test msg")
+        self.assertEqual(exc.error_code, "CameraDeviceBusyAccessError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
