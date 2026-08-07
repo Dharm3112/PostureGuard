@@ -1969,5 +1969,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVTimestampTimezoneParseError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwindowgeometryrestoreerror(self) -> None:
+        from exceptions import UIWindowGeometryRestoreError
+        exc = UIWindowGeometryRestoreError("Test msg")
+        self.assertEqual(exc.error_code, "UIWindowGeometryRestoreError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
