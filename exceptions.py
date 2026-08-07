@@ -1691,3 +1691,8 @@ class LogRotationArchiveLockError(PostureGuardException):
 class CSVRecordFieldCountMismatchError(PostureGuardException):
     """Exception raised when posture history CSV entry field count does not match schema."""
     pass
+
+
+class CSVTimestampTimezoneParseError(PostureGuardException):
+    """Exception raised when parsing UTC timezone offset string in posture log CSV fails."""
+    pass
