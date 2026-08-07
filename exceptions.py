@@ -1726,3 +1726,8 @@ class CameraExposureAutoAdjustError(PostureGuardException):
 class ModelCascadeFeatureCountZeroError(PostureGuardException):
     """Exception raised when loaded OpenCV Haar cascade XML classifier contains zero features."""
     pass
+
+
+class FaceDetectionBoundingBoxNaNError(PostureGuardException):
+    """Exception raised when detected face rectangular coordinates yield NaN values."""
+    pass
