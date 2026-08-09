@@ -1766,3 +1766,8 @@ class NotificationChannelRegistrationError(PostureGuardException):
 class NotificationSoundFilePathInvalidError(PostureGuardException):
     """Exception raised when notification chime audio asset file path is invalid."""
     pass
+
+
+class ConfigKeySchemaTypeMismatchError(PostureGuardException):
+    """Exception raised when configuration parameter value violates schema type rules."""
+    pass
