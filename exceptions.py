@@ -1756,3 +1756,8 @@ class AudioDeviceInitializationTimeoutError(PostureGuardException):
 class AudioSampleRateUnsupportedError(PostureGuardException):
     """Exception raised when requested audio playback sample rate is unsupported by hardware."""
     pass
+
+
+class NotificationChannelRegistrationError(PostureGuardException):
+    """Exception raised when registering desktop notification channel with system daemon fails."""
+    pass
