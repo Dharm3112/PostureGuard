@@ -1751,3 +1751,8 @@ class StatsDataCorruptHeaderError(PostureGuardException):
 class AudioDeviceInitializationTimeoutError(PostureGuardException):
     """Exception raised when initializing audio output hardware stream times out."""
     pass
+
+
+class AudioSampleRateUnsupportedError(PostureGuardException):
+    """Exception raised when requested audio playback sample rate is unsupported by hardware."""
+    pass
