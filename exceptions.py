@@ -1781,3 +1781,8 @@ class ConfigSaveBackupCreationFailedError(PostureGuardException):
 class LogHandlerFormatCompilationError(PostureGuardException):
     """Exception raised when compiling custom log format layout string fails."""
     pass
+
+
+class LogRotationFileNameGenerationError(PostureGuardException):
+    """Exception raised when generating dated backup log filename string fails."""
+    pass
