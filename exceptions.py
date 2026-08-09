@@ -1801,3 +1801,8 @@ class CSVTimestampStringParseError(PostureGuardException):
 class UIWidgetLayoutConstraintError(PostureGuardException):
     """Exception raised when placing Tkinter widget violates parent window geometry constraints."""
     pass
+
+
+class UIThemeStyleRegistrationError(PostureGuardException):
+    """Exception raised when registering custom widget theme style name in context fails."""
+    pass
