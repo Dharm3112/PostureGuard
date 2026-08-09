@@ -2029,5 +2029,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsDataCorruptHeaderError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiodeviceinitializationtimeouterror(self) -> None:
+        from exceptions import AudioDeviceInitializationTimeoutError
+        exc = AudioDeviceInitializationTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "AudioDeviceInitializationTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
