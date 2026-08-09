@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.3.0] - 2026-08-09
+
+### Added
+- **Audio Device Timeout, Notification Channel, and UI Layout Diagnostic Exceptions:** Declared 15 new exception classes for audio device init timeouts, sample rate bounds, notification registrations, invalid sound paths, config backup failures, log format compiling, CSV type conversions, and camera resolution switches.
+- **Robust Exception Checking:** Appended 15 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying config keys, stream handlers, posture percentage ratios, and detector instances.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [3.2.0] - 2026-08-07
 
 ### Added
