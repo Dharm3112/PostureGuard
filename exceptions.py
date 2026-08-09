@@ -1746,3 +1746,8 @@ class StatsGraphExportIOError(PostureGuardException):
 class StatsDataCorruptHeaderError(PostureGuardException):
     """Exception raised when posture history CSV log contains corrupt column headers."""
     pass
+
+
+class AudioDeviceInitializationTimeoutError(PostureGuardException):
+    """Exception raised when initializing audio output hardware stream times out."""
+    pass
