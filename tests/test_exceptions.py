@@ -2113,5 +2113,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraFrameBufferDecodeError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_modelcascadereloadingerror(self) -> None:
+        from exceptions import ModelCascadeReloadingError
+        exc = ModelCascadeReloadingError("Test msg")
+        self.assertEqual(exc.error_code, "ModelCascadeReloadingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
