@@ -1816,3 +1816,8 @@ class CameraStreamResolutionSwitchError(PostureGuardException):
 class CameraFrameBufferDecodeError(PostureGuardException):
     """Exception raised when decoding raw camera video frame buffer yields corrupt pixels."""
     pass
+
+
+class ModelCascadeReloadingError(PostureGuardException):
+    """Exception raised when re-loading Haar cascade classifier XML file from disk fails."""
+    pass
