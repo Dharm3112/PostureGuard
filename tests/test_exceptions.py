@@ -2095,5 +2095,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetLayoutConstraintError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemestyleregistrationerror(self) -> None:
+        from exceptions import UIThemeStyleRegistrationError
+        exc = UIThemeStyleRegistrationError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemeStyleRegistrationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
