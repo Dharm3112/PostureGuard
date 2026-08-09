@@ -1761,3 +1761,8 @@ class AudioSampleRateUnsupportedError(PostureGuardException):
 class NotificationChannelRegistrationError(PostureGuardException):
     """Exception raised when registering desktop notification channel with system daemon fails."""
     pass
+
+
+class NotificationSoundFilePathInvalidError(PostureGuardException):
+    """Exception raised when notification chime audio asset file path is invalid."""
+    pass
