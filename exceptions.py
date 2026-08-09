@@ -1786,3 +1786,8 @@ class LogHandlerFormatCompilationError(PostureGuardException):
 class LogRotationFileNameGenerationError(PostureGuardException):
     """Exception raised when generating dated backup log filename string fails."""
     pass
+
+
+class CSVRecordTypeConversionFailedError(PostureGuardException):
+    """Exception raised when casting string fields in posture history log CSV fails."""
+    pass
