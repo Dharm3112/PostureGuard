@@ -1796,3 +1796,8 @@ class CSVRecordTypeConversionFailedError(PostureGuardException):
 class CSVTimestampStringParseError(PostureGuardException):
     """Exception raised when parsing ISO timestamp string in posture log CSV fails."""
     pass
+
+
+class UIWidgetLayoutConstraintError(PostureGuardException):
+    """Exception raised when placing Tkinter widget violates parent window geometry constraints."""
+    pass
