@@ -18,7 +18,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
     stats = {  # Initialize posture statistics tracking dict
         "total_records": 0,  # Initialize total records count tracker record
         "good_count": 0,  # Initialize good count tracker
-        "slouch_count": 0,
+        "slouch_count": 0,  # Initialize slouch count tracker
         "good_percent": 0.0,
         "slouch_percent": 0.0,
         "avg_deviation": 0.0
