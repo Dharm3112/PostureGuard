@@ -1806,3 +1806,8 @@ class UIWidgetLayoutConstraintError(PostureGuardException):
 class UIThemeStyleRegistrationError(PostureGuardException):
     """Exception raised when registering custom widget theme style name in context fails."""
     pass
+
+
+class CameraStreamResolutionSwitchError(PostureGuardException):
+    """Exception raised when changing webcam video capture resolution at runtime fails."""
+    pass
