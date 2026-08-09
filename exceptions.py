@@ -1776,3 +1776,8 @@ class ConfigKeySchemaTypeMismatchError(PostureGuardException):
 class ConfigSaveBackupCreationFailedError(PostureGuardException):
     """Exception raised when creating backup copy before writing configuration JSON fails."""
     pass
+
+
+class LogHandlerFormatCompilationError(PostureGuardException):
+    """Exception raised when compiling custom log format layout string fails."""
+    pass
