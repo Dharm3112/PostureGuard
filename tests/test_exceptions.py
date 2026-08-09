@@ -2059,5 +2059,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeySchemaTypeMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configsavebackupcreationfailederror(self) -> None:
+        from exceptions import ConfigSaveBackupCreationFailedError
+        exc = ConfigSaveBackupCreationFailedError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigSaveBackupCreationFailedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
