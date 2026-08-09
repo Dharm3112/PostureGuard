@@ -2071,5 +2071,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogHandlerFormatCompilationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logrotationfilenamegenerationerror(self) -> None:
+        from exceptions import LogRotationFileNameGenerationError
+        exc = LogRotationFileNameGenerationError("Test msg")
+        self.assertEqual(exc.error_code, "LogRotationFileNameGenerationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
