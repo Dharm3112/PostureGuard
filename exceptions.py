@@ -1771,3 +1771,8 @@ class NotificationSoundFilePathInvalidError(PostureGuardException):
 class ConfigKeySchemaTypeMismatchError(PostureGuardException):
     """Exception raised when configuration parameter value violates schema type rules."""
     pass
+
+
+class ConfigSaveBackupCreationFailedError(PostureGuardException):
+    """Exception raised when creating backup copy before writing configuration JSON fails."""
+    pass
