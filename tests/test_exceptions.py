@@ -2047,5 +2047,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationChannelRegistrationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationsoundfilepathinvaliderror(self) -> None:
+        from exceptions import NotificationSoundFilePathInvalidError
+        exc = NotificationSoundFilePathInvalidError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationSoundFilePathInvalidError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
