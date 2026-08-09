@@ -1811,3 +1811,8 @@ class UIThemeStyleRegistrationError(PostureGuardException):
 class CameraStreamResolutionSwitchError(PostureGuardException):
     """Exception raised when changing webcam video capture resolution at runtime fails."""
     pass
+
+
+class CameraFrameBufferDecodeError(PostureGuardException):
+    """Exception raised when decoding raw camera video frame buffer yields corrupt pixels."""
+    pass
