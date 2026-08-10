@@ -1856,3 +1856,8 @@ class ConfigMigrationVersionMismatchError(PostureGuardException):
 class LogHandlerStreamFlushError(PostureGuardException):
     """Exception raised when flushing active log stream buffer encounters IO error."""
     pass
+
+
+class LogRotationArchiveLimitError(PostureGuardException):
+    """Exception raised when rotated log backup file archive count exceeds system configuration."""
+    pass
