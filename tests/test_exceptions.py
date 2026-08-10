@@ -2227,5 +2227,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsGraphExportFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsdataencodingerror(self) -> None:
+        from exceptions import StatsDataEncodingError
+        exc = StatsDataEncodingError("Test msg")
+        self.assertEqual(exc.error_code, "StatsDataEncodingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
