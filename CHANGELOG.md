@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.4.0] - 2026-08-10
+
+### Added
+- **Audio Output, Notification Resource, and UI Geometry Diagnostic Exceptions:** Declared 19 new exception classes for audio output readiness, PCM sample mismatches, notification channel creation, corrupt icon resources, config range constraints, log stream flushing, and CSV encoding errors.
+- **Robust Exception Checking:** Appended 19 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying function arguments defaults, integer conversions, and baseline assignments.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [3.3.0] - 2026-08-09
 
 ### Added
