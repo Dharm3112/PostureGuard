@@ -1886,3 +1886,8 @@ class UIThemeResourceLoadError(PostureGuardException):
 class CameraStreamFrameGrabberTimeoutError(PostureGuardException):
     """Exception raised when background camera thread fails to yield fresh frame buffer."""
     pass
+
+
+class CameraResolutionConstraintError(PostureGuardException):
+    """Exception raised when setting webcam video resolution violates device hardware constraints."""
+    pass
