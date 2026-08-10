@@ -1851,3 +1851,8 @@ class ConfigKeyRangeConstraintError(PostureGuardException):
 class ConfigMigrationVersionMismatchError(PostureGuardException):
     """Exception raised when upgrading JSON configuration file schema from legacy version."""
     pass
+
+
+class LogHandlerStreamFlushError(PostureGuardException):
+    """Exception raised when flushing active log stream buffer encounters IO error."""
+    pass
