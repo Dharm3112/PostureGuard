@@ -2215,5 +2215,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "FaceDetectionInvalidROIError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_calibratebaselineminframeserror(self) -> None:
+        from exceptions import CalibrateBaselineMinFramesError
+        exc = CalibrateBaselineMinFramesError("Test msg")
+        self.assertEqual(exc.error_code, "CalibrateBaselineMinFramesError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
