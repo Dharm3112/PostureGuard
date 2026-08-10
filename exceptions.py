@@ -1891,3 +1891,8 @@ class CameraStreamFrameGrabberTimeoutError(PostureGuardException):
 class CameraResolutionConstraintError(PostureGuardException):
     """Exception raised when setting webcam video resolution violates device hardware constraints."""
     pass
+
+
+class ModelCascadeFileAccessError(PostureGuardException):
+    """Exception raised when loading OpenCV Haar cascade classifier file encounters file lock error."""
+    pass
