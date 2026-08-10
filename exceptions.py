@@ -1881,3 +1881,8 @@ class UIWidgetGeometryPackingError(PostureGuardException):
 class UIThemeResourceLoadError(PostureGuardException):
     """Exception raised when loading visual theme icon assets into Tkinter UI context fails."""
     pass
+
+
+class CameraStreamFrameGrabberTimeoutError(PostureGuardException):
+    """Exception raised when background camera thread fails to yield fresh frame buffer."""
+    pass
