@@ -1846,3 +1846,8 @@ class NotificationIconResourceCorruptError(PostureGuardException):
 class ConfigKeyRangeConstraintError(PostureGuardException):
     """Exception raised when numerical config parameter exceeds maximum allowable range boundary."""
     pass
+
+
+class ConfigMigrationVersionMismatchError(PostureGuardException):
+    """Exception raised when upgrading JSON configuration file schema from legacy version."""
+    pass
