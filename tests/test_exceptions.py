@@ -2197,5 +2197,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraStreamFrameGrabberTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameraresolutionconstrainterror(self) -> None:
+        from exceptions import CameraResolutionConstraintError
+        exc = CameraResolutionConstraintError("Test msg")
+        self.assertEqual(exc.error_code, "CameraResolutionConstraintError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
