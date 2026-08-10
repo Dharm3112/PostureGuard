@@ -2203,5 +2203,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraResolutionConstraintError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_modelcascadefileaccesserror(self) -> None:
+        from exceptions import ModelCascadeFileAccessError
+        exc = ModelCascadeFileAccessError("Test msg")
+        self.assertEqual(exc.error_code, "ModelCascadeFileAccessError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
