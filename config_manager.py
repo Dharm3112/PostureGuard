@@ -22,7 +22,7 @@ class ConfigManager:
     SAVE_HISTORY = "save_history"  # Key identifier for history logging setting item
     SAVED_BASELINE_Y = "saved_baseline_y"  # Key identifier for saved baseline setting item
     
-    SCALE_FACTOR = "scale_factor"  # Key identifier for cascade scale factor setting
+    SCALE_FACTOR = "scale_factor"  # Key identifier for cascade scale factor setting item
     MIN_NEIGHBORS = "min_neighbors"  # Key identifier for min neighbors setting
     
     DEFAULT_SETTINGS = {  # Internal default settings database schema mapping dictionary layout
