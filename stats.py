@@ -13,7 +13,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
     """
     from logger_config import setup_logger
     logger = setup_logger()
-    logger.debug(f"Calculating posture stats for file: {filepath}")  # Debug log file path
+    logger.debug(f"Calculating posture stats for file: {filepath}")  # Debug log file path target
     # Initializing default return values data structure mapping container keys
     stats = {  # Initialize posture statistics tracking dict
         "total_records": 0,  # Initialize total records count tracker record
