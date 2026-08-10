@@ -1861,3 +1861,8 @@ class LogHandlerStreamFlushError(PostureGuardException):
 class LogRotationArchiveLimitError(PostureGuardException):
     """Exception raised when rotated log backup file archive count exceeds system configuration."""
     pass
+
+
+class CSVRecordHeaderMissingError(PostureGuardException):
+    """Exception raised when posture history CSV log file lacks required column headers."""
+    pass
