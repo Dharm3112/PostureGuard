@@ -2173,5 +2173,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRecordHeaderMissingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvtimestampparseoverflowerror(self) -> None:
+        from exceptions import CSVTimestampParseOverflowError
+        exc = CSVTimestampParseOverflowError("Test msg")
+        self.assertEqual(exc.error_code, "CSVTimestampParseOverflowError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
