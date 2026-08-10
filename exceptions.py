@@ -1896,3 +1896,8 @@ class CameraResolutionConstraintError(PostureGuardException):
 class ModelCascadeFileAccessError(PostureGuardException):
     """Exception raised when loading OpenCV Haar cascade classifier file encounters file lock error."""
     pass
+
+
+class FaceDetectionInvalidROIError(PostureGuardException):
+    """Exception raised when region of interest calculation yields zero height or width bounds."""
+    pass
