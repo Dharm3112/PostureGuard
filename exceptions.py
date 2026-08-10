@@ -1911,3 +1911,8 @@ class CalibrateBaselineMinFramesError(PostureGuardException):
 class StatsGraphExportFormatError(PostureGuardException):
     """Exception raised when exporting rendered posture stats chart image to unsupported format."""
     pass
+
+
+class StatsDataEncodingError(PostureGuardException):
+    """Exception raised when posture history CSV log file contains non-UTF8 encoded characters."""
+    pass
