@@ -2119,5 +2119,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ModelCascadeReloadingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiooutputdevicenotreadyerror(self) -> None:
+        from exceptions import AudioOutputDeviceNotReadyError
+        exc = AudioOutputDeviceNotReadyError("Test msg")
+        self.assertEqual(exc.error_code, "AudioOutputDeviceNotReadyError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
