@@ -1841,3 +1841,8 @@ class NotificationChannelCreationError(PostureGuardException):
 class NotificationIconResourceCorruptError(PostureGuardException):
     """Exception raised when toast notification icon resource image contains invalid bytes."""
     pass
+
+
+class ConfigKeyRangeConstraintError(PostureGuardException):
+    """Exception raised when numerical config parameter exceeds maximum allowable range boundary."""
+    pass
