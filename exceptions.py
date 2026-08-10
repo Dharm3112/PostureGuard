@@ -1876,3 +1876,8 @@ class CSVTimestampParseOverflowError(PostureGuardException):
 class UIWidgetGeometryPackingError(PostureGuardException):
     """Exception raised when packing Tkinter widget into parent frame violates container geometry."""
     pass
+
+
+class UIThemeResourceLoadError(PostureGuardException):
+    """Exception raised when loading visual theme icon assets into Tkinter UI context fails."""
+    pass
