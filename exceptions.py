@@ -1906,3 +1906,8 @@ class FaceDetectionInvalidROIError(PostureGuardException):
 class CalibrateBaselineMinFramesError(PostureGuardException):
     """Exception raised when posture calibration is requested with fewer than required buffer frames."""
     pass
+
+
+class StatsGraphExportFormatError(PostureGuardException):
+    """Exception raised when exporting rendered posture stats chart image to unsupported format."""
+    pass
