@@ -1871,3 +1871,8 @@ class CSVRecordHeaderMissingError(PostureGuardException):
 class CSVTimestampParseOverflowError(PostureGuardException):
     """Exception raised when parsing timestamp string in posture log CSV encounters numeric overflow."""
     pass
+
+
+class UIWidgetGeometryPackingError(PostureGuardException):
+    """Exception raised when packing Tkinter widget into parent frame violates container geometry."""
+    pass
