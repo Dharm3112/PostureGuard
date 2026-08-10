@@ -1821,3 +1821,8 @@ class CameraFrameBufferDecodeError(PostureGuardException):
 class ModelCascadeReloadingError(PostureGuardException):
     """Exception raised when re-loading Haar cascade classifier XML file from disk fails."""
     pass
+
+
+class AudioOutputDeviceNotReadyError(PostureGuardException):
+    """Exception raised when audio alert engine is triggered before hardware initialization completes."""
+    pass
