@@ -56,7 +56,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                 if state == "Good":  # Verify if logged state is good posture count check
                     stats["good_count"] += 1  # Increment good posture count tracker
                 else:
-                    stats["slouch_count"] += 1  # Increment slouch posture count
+                    stats["slouch_count"] += 1  # Increment slouch posture count tracker
     except OSError as e:  # Catch file read errors
         from logger_config import setup_logger
         setup_logger().error(f"Failed to read posture history file: {e}")  # Log error on failure
