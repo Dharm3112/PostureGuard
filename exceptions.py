@@ -1836,3 +1836,8 @@ class AudioSampleFormatMismatchError(PostureGuardException):
 class NotificationChannelCreationError(PostureGuardException):
     """Exception raised when registering desktop notification channel with system notification daemon fails."""
     pass
+
+
+class NotificationIconResourceCorruptError(PostureGuardException):
+    """Exception raised when toast notification icon resource image contains invalid bytes."""
+    pass
