@@ -1826,3 +1826,8 @@ class ModelCascadeReloadingError(PostureGuardException):
 class AudioOutputDeviceNotReadyError(PostureGuardException):
     """Exception raised when audio alert engine is triggered before hardware initialization completes."""
     pass
+
+
+class AudioSampleFormatMismatchError(PostureGuardException):
+    """Exception raised when input PCM audio stream format does not match output device format."""
+    pass
