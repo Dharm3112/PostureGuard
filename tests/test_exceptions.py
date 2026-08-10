@@ -2125,5 +2125,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioOutputDeviceNotReadyError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiosampleformatmismatcherror(self) -> None:
+        from exceptions import AudioSampleFormatMismatchError
+        exc = AudioSampleFormatMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "AudioSampleFormatMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
