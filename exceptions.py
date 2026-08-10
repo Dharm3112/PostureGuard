@@ -1901,3 +1901,8 @@ class ModelCascadeFileAccessError(PostureGuardException):
 class FaceDetectionInvalidROIError(PostureGuardException):
     """Exception raised when region of interest calculation yields zero height or width bounds."""
     pass
+
+
+class CalibrateBaselineMinFramesError(PostureGuardException):
+    """Exception raised when posture calibration is requested with fewer than required buffer frames."""
+    pass
