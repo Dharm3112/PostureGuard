@@ -1866,3 +1866,8 @@ class LogRotationArchiveLimitError(PostureGuardException):
 class CSVRecordHeaderMissingError(PostureGuardException):
     """Exception raised when posture history CSV log file lacks required column headers."""
     pass
+
+
+class CSVTimestampParseOverflowError(PostureGuardException):
+    """Exception raised when parsing timestamp string in posture log CSV encounters numeric overflow."""
+    pass
