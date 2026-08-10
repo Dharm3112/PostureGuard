@@ -2149,5 +2149,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyRangeConstraintError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configmigrationversionmismatcherror(self) -> None:
+        from exceptions import ConfigMigrationVersionMismatchError
+        exc = ConfigMigrationVersionMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigMigrationVersionMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
