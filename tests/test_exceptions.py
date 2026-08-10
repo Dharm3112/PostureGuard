@@ -2185,5 +2185,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetGeometryPackingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemeresourceloaderror(self) -> None:
+        from exceptions import UIThemeResourceLoadError
+        exc = UIThemeResourceLoadError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemeResourceLoadError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
