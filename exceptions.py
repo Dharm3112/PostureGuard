@@ -1831,3 +1831,8 @@ class AudioOutputDeviceNotReadyError(PostureGuardException):
 class AudioSampleFormatMismatchError(PostureGuardException):
     """Exception raised when input PCM audio stream format does not match output device format."""
     pass
+
+
+class NotificationChannelCreationError(PostureGuardException):
+    """Exception raised when registering desktop notification channel with system notification daemon fails."""
+    pass
