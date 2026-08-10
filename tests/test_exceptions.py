@@ -2143,5 +2143,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationIconResourceCorruptError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configkeyrangeconstrainterror(self) -> None:
+        from exceptions import ConfigKeyRangeConstraintError
+        exc = ConfigKeyRangeConstraintError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigKeyRangeConstraintError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
