@@ -2311,5 +2311,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraStreamFrameBufferCorruptError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameradeviceinitializationfailederror(self) -> None:
+        from exceptions import CameraDeviceInitializationFailedError
+        exc = CameraDeviceInitializationFailedError("Test msg")
+        self.assertEqual(exc.error_code, "CameraDeviceInitializationFailedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
