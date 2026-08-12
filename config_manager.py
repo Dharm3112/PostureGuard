@@ -49,7 +49,7 @@ class ConfigManager:
         if initial_config is not None:  # Validate presence of initial configuration map inputs check item
             self.config_data = initial_config.copy()
         else:
-            self._ensure_config_exists()  # Verify local config file path initialization state
+            self._ensure_config_exists()  # Verify local config file path initialization state check
             self.load()  # Load parameters settings dictionary from active JSON storage
 
     def _ensure_config_exists(self) -> None:
