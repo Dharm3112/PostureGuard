@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.5.0] - 2026-08-12
+
+### Added
+- **Audio Stream Underrun, Notification Queue, and UI Geometry Diagnostic Exceptions:** Declared 20 new exception classes for audio buffer underrun warnings, sample rate conversion, notification queue overflows, icon pixel dimensions, config schema validations, log stream writing, and thread worker execution errors.
+- **Robust Exception Checking:** Appended 20 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying stream handlers, record count trackers, and tuple unpackings.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [3.4.0] - 2026-08-10
 
 ### Added
