@@ -1961,3 +1961,8 @@ class LogRotationArchiveCorruptError(PostureGuardException):
 class CSVRecordDelimiterFormatError(PostureGuardException):
     """Exception raised when parsing delimiter fields in posture history log CSV fails."""
     pass
+
+
+class CSVTimestampZoneOffsetError(PostureGuardException):
+    """Exception raised when converting local timestamp to UTC timezone offset fails."""
+    pass
