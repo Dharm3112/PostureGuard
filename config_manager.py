@@ -36,7 +36,7 @@ class ConfigManager:
         "saved_baseline_y": None,  # Default saved baseline Y coordinate
         "scale_factor": 1.1,  # Default scale factor multiplier for Haar cascades setting
         "min_neighbors": 5,  # Default min neighbors for Haar cascades
-        "log_max_bytes": 1048576,  # Default max log file size in bytes
+        "log_max_bytes": 1048576,  # Default max log file size in bytes setting
         "log_backup_count": 3  # Default log backup archives count
     }
 
