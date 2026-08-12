@@ -44,7 +44,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                 # Apply end dates boundary check thresholds limit
                 if end_date and ts > end_date:  # Filter out timestamps after end date boundary check item
                     continue
-                stats["total_records"] += 1  # Increment record count
+                stats["total_records"] += 1  # Increment record count tracker
                 # Attempt integer numeric conversion checks safely
                 try:
                     dev = int(row.get("deviation_px", 0))  # Convert deviation to integer
