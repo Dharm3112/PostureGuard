@@ -1936,3 +1936,8 @@ class NotificationDeliveryQueueOverflowError(PostureGuardException):
 class NotificationIconDimensionsInvalidError(PostureGuardException):
     """Exception raised when toast notification icon pixel dimensions violate OS bounds."""
     pass
+
+
+class ConfigKeyValidationSchemaError(PostureGuardException):
+    """Exception raised when JSON configuration key schema validation check fails."""
+    pass
