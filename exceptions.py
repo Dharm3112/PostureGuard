@@ -1951,3 +1951,8 @@ class ConfigMigrationBackupFailedError(PostureGuardException):
 class LogHandlerStreamWriteError(PostureGuardException):
     """Exception raised when writing log event record bytes to underlying output stream fails."""
     pass
+
+
+class LogRotationArchiveCorruptError(PostureGuardException):
+    """Exception raised when historical log backup archive contains corrupted bytes."""
+    pass
