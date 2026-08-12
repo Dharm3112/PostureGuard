@@ -1981,3 +1981,8 @@ class UIThemeColorPaletteInvalidError(PostureGuardException):
 class CameraStreamFrameBufferCorruptError(PostureGuardException):
     """Exception raised when raw webcam video frame buffer contains corrupt byte array."""
     pass
+
+
+class CameraDeviceInitializationFailedError(PostureGuardException):
+    """Exception raised when initializing webcam hardware driver encounters system error."""
+    pass
