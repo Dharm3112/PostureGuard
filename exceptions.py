@@ -1926,3 +1926,8 @@ class AudioOutputBufferUnderflowWarningError(PostureGuardException):
 class AudioSampleRateConversionError(PostureGuardException):
     """Exception raised when resampling input audio chime waveform to output rate fails."""
     pass
+
+
+class NotificationDeliveryQueueOverflowError(PostureGuardException):
+    """Exception raised when desktop notification request queue exceeds maximum items."""
+    pass
