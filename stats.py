@@ -39,7 +39,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                     continue
                 ts = row.get("timestamp")  # Extract date string for time boundaries verification checks value
                 # Apply chronological limits on start date
-                if start_date and ts < start_date:  # Filter out timestamps before start date boundary
+                if start_date and ts < start_date:  # Filter out timestamps before start date boundary check
                     continue
                 # Apply end dates boundary check thresholds limit
                 if end_date and ts > end_date:  # Filter out timestamps after end date boundary check
