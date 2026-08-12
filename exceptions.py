@@ -1971,3 +1971,8 @@ class CSVTimestampZoneOffsetError(PostureGuardException):
 class UIWidgetGeometryPackingViolationError(PostureGuardException):
     """Exception raised when packing Tkinter widget into parent frame violates container bounds."""
     pass
+
+
+class UIThemeColorPaletteInvalidError(PostureGuardException):
+    """Exception raised when color hex string in visual theme palette is malformed."""
+    pass
