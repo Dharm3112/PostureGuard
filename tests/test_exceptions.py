@@ -2329,5 +2329,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "FaceDetectionROIBoundsExceededError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_calibratebaselinehistoryemptyerror(self) -> None:
+        from exceptions import CalibrateBaselineHistoryEmptyError
+        exc = CalibrateBaselineHistoryEmptyError("Test msg")
+        self.assertEqual(exc.error_code, "CalibrateBaselineHistoryEmptyError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
