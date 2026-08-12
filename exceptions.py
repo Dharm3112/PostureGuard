@@ -1941,3 +1941,8 @@ class NotificationIconDimensionsInvalidError(PostureGuardException):
 class ConfigKeyValidationSchemaError(PostureGuardException):
     """Exception raised when JSON configuration key schema validation check fails."""
     pass
+
+
+class ConfigMigrationBackupFailedError(PostureGuardException):
+    """Exception raised when backing up existing config file prior to schema upgrade fails."""
+    pass
