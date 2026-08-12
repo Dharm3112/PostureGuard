@@ -1991,3 +1991,8 @@ class CameraDeviceInitializationFailedError(PostureGuardException):
 class ModelCascadeFeatureXmlParseError(PostureGuardException):
     """Exception raised when parsing OpenCV Haar cascade XML feature definition structure fails."""
     pass
+
+
+class FaceDetectionROIBoundsExceededError(PostureGuardException):
+    """Exception raised when face bounding box coordinate evaluation exceeds canvas dimensions."""
+    pass
