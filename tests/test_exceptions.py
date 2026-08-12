@@ -2245,5 +2245,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioSampleRateConversionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationdeliveryqueueoverflowerror(self) -> None:
+        from exceptions import NotificationDeliveryQueueOverflowError
+        exc = NotificationDeliveryQueueOverflowError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationDeliveryQueueOverflowError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
