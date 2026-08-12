@@ -1996,3 +1996,8 @@ class ModelCascadeFeatureXmlParseError(PostureGuardException):
 class FaceDetectionROIBoundsExceededError(PostureGuardException):
     """Exception raised when face bounding box coordinate evaluation exceeds canvas dimensions."""
     pass
+
+
+class CalibrateBaselineHistoryEmptyError(PostureGuardException):
+    """Exception raised when calibration is requested while coordinate buffer history is empty."""
+    pass
