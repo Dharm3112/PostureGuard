@@ -2233,5 +2233,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsDataEncodingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiooutputbufferunderflowwarningerror(self) -> None:
+        from exceptions import AudioOutputBufferUnderflowWarningError
+        exc = AudioOutputBufferUnderflowWarningError("Test msg")
+        self.assertEqual(exc.error_code, "AudioOutputBufferUnderflowWarningError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
