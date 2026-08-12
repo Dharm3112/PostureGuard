@@ -1931,3 +1931,8 @@ class AudioSampleRateConversionError(PostureGuardException):
 class NotificationDeliveryQueueOverflowError(PostureGuardException):
     """Exception raised when desktop notification request queue exceeds maximum items."""
     pass
+
+
+class NotificationIconDimensionsInvalidError(PostureGuardException):
+    """Exception raised when toast notification icon pixel dimensions violate OS bounds."""
+    pass
