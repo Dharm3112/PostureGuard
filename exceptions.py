@@ -2006,3 +2006,8 @@ class CalibrateBaselineHistoryEmptyError(PostureGuardException):
 class StatsGraphExportDimensionsError(PostureGuardException):
     """Exception raised when saving rendered posture stats chart image with invalid dimensions."""
     pass
+
+
+class StatsDataRecordFieldMissingError(PostureGuardException):
+    """Exception raised when posture history CSV record lacks required field entries."""
+    pass
