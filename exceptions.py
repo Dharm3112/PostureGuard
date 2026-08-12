@@ -1966,3 +1966,8 @@ class CSVRecordDelimiterFormatError(PostureGuardException):
 class CSVTimestampZoneOffsetError(PostureGuardException):
     """Exception raised when converting local timestamp to UTC timezone offset fails."""
     pass
+
+
+class UIWidgetGeometryPackingViolationError(PostureGuardException):
+    """Exception raised when packing Tkinter widget into parent frame violates container bounds."""
+    pass
