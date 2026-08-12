@@ -2287,5 +2287,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRecordDelimiterFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvtimestampzoneoffseterror(self) -> None:
+        from exceptions import CSVTimestampZoneOffsetError
+        exc = CSVTimestampZoneOffsetError("Test msg")
+        self.assertEqual(exc.error_code, "CSVTimestampZoneOffsetError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
