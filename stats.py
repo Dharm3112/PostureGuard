@@ -42,7 +42,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                 if start_date and ts < start_date:  # Filter out timestamps before start date boundary check
                     continue
                 # Apply end dates boundary check thresholds limit
-                if end_date and ts > end_date:  # Filter out timestamps after end date boundary check
+                if end_date and ts > end_date:  # Filter out timestamps after end date boundary check item
                     continue
                 stats["total_records"] += 1  # Increment record count
                 # Attempt integer numeric conversion checks safely
