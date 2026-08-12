@@ -1946,3 +1946,8 @@ class ConfigKeyValidationSchemaError(PostureGuardException):
 class ConfigMigrationBackupFailedError(PostureGuardException):
     """Exception raised when backing up existing config file prior to schema upgrade fails."""
     pass
+
+
+class LogHandlerStreamWriteError(PostureGuardException):
+    """Exception raised when writing log event record bytes to underlying output stream fails."""
+    pass
