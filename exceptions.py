@@ -1986,3 +1986,8 @@ class CameraStreamFrameBufferCorruptError(PostureGuardException):
 class CameraDeviceInitializationFailedError(PostureGuardException):
     """Exception raised when initializing webcam hardware driver encounters system error."""
     pass
+
+
+class ModelCascadeFeatureXmlParseError(PostureGuardException):
+    """Exception raised when parsing OpenCV Haar cascade XML feature definition structure fails."""
+    pass
