@@ -1976,3 +1976,8 @@ class UIWidgetGeometryPackingViolationError(PostureGuardException):
 class UIThemeColorPaletteInvalidError(PostureGuardException):
     """Exception raised when color hex string in visual theme palette is malformed."""
     pass
+
+
+class CameraStreamFrameBufferCorruptError(PostureGuardException):
+    """Exception raised when raw webcam video frame buffer contains corrupt byte array."""
+    pass
