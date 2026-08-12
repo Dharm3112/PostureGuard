@@ -2293,5 +2293,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVTimestampZoneOffsetError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetgeometrypackingviolationerror(self) -> None:
+        from exceptions import UIWidgetGeometryPackingViolationError
+        exc = UIWidgetGeometryPackingViolationError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetGeometryPackingViolationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
