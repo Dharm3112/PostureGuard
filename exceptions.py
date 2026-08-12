@@ -1956,3 +1956,8 @@ class LogHandlerStreamWriteError(PostureGuardException):
 class LogRotationArchiveCorruptError(PostureGuardException):
     """Exception raised when historical log backup archive contains corrupted bytes."""
     pass
+
+
+class CSVRecordDelimiterFormatError(PostureGuardException):
+    """Exception raised when parsing delimiter fields in posture history log CSV fails."""
+    pass
