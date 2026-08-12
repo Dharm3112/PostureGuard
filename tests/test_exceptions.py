@@ -2347,5 +2347,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsDataRecordFieldMissingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_threadworkerexecutionerror(self) -> None:
+        from exceptions import ThreadWorkerExecutionError
+        exc = ThreadWorkerExecutionError("Test msg")
+        self.assertEqual(exc.error_code, "ThreadWorkerExecutionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
