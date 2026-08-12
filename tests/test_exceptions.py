@@ -2317,5 +2317,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraDeviceInitializationFailedError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_modelcascadefeaturexmlparseerror(self) -> None:
+        from exceptions import ModelCascadeFeatureXmlParseError
+        exc = ModelCascadeFeatureXmlParseError("Test msg")
+        self.assertEqual(exc.error_code, "ModelCascadeFeatureXmlParseError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
