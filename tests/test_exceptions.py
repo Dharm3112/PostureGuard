@@ -2251,5 +2251,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationDeliveryQueueOverflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationicondimensionsinvaliderror(self) -> None:
+        from exceptions import NotificationIconDimensionsInvalidError
+        exc = NotificationIconDimensionsInvalidError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconDimensionsInvalidError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
