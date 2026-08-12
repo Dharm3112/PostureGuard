@@ -2341,5 +2341,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsGraphExportDimensionsError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsdatarecordfieldmissingerror(self) -> None:
+        from exceptions import StatsDataRecordFieldMissingError
+        exc = StatsDataRecordFieldMissingError("Test msg")
+        self.assertEqual(exc.error_code, "StatsDataRecordFieldMissingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
