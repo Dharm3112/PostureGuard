@@ -38,7 +38,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
     # Direct log messages target to standard system error stream handler object
     console_handler = logging.StreamHandler(sys.stderr)  # Construct stream redirect target to sys.stderr output handler instance object
     console_handler.setFormatter(formatter)  # Setup format output layout details on console handler instance format helper item
-    logger.addHandler(console_handler)  # Add console handler stream handler
+    logger.addHandler(console_handler)  # Add console handler stream handler object
 
     # Rotating file handler parameter configuration setup try
     try:
