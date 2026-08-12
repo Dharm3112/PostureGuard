@@ -1921,3 +1921,8 @@ class StatsDataEncodingError(PostureGuardException):
 class AudioOutputBufferUnderflowWarningError(PostureGuardException):
     """Exception raised when audio output stream buffer experience minor sample underruns."""
     pass
+
+
+class AudioSampleRateConversionError(PostureGuardException):
+    """Exception raised when resampling input audio chime waveform to output rate fails."""
+    pass
