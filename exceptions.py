@@ -2011,3 +2011,8 @@ class StatsGraphExportDimensionsError(PostureGuardException):
 class StatsDataRecordFieldMissingError(PostureGuardException):
     """Exception raised when posture history CSV record lacks required field entries."""
     pass
+
+
+class ThreadWorkerExecutionError(PostureGuardException):
+    """Exception raised when background thread worker function encounters unhandled error."""
+    pass
