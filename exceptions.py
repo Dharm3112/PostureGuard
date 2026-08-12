@@ -1916,3 +1916,8 @@ class StatsGraphExportFormatError(PostureGuardException):
 class StatsDataEncodingError(PostureGuardException):
     """Exception raised when posture history CSV log file contains non-UTF8 encoded characters."""
     pass
+
+
+class AudioOutputBufferUnderflowWarningError(PostureGuardException):
+    """Exception raised when audio output stream buffer experience minor sample underruns."""
+    pass
