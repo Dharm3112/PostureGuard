@@ -2041,3 +2041,8 @@ class NotificationIconResourceMissingError(PostureGuardException):
 class ConfigKeySchemaValidationRangeError(PostureGuardException):
     """Exception raised when setting parameter violates schema integer bounds."""
     pass
+
+
+class ConfigMigrationFileCorruptError(PostureGuardException):
+    """Exception raised when existing config file contains corrupt JSON before migration."""
+    pass
