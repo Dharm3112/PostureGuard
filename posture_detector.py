@@ -134,7 +134,7 @@ class PostureDetector:
         # Return active number of coordinate elements inside buffer
         return len(self.y_buffer)
 
-    def calibrate(self) -> Optional[float]:
+    def calibrate(self) -> Optional[float]:  # Establishes good posture baseline from buffer coordinates
         """
         Establishes the 'Good Posture' baseline by averaging the current Y coordinates in the buffer.
 
