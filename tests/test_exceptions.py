@@ -2407,5 +2407,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRecordDelimiterParseError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetgeometryboundsoverflowerror(self) -> None:
+        from exceptions import UIWidgetGeometryBoundsOverflowError
+        exc = UIWidgetGeometryBoundsOverflowError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetGeometryBoundsOverflowError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
