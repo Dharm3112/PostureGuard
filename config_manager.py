@@ -136,7 +136,7 @@ class ConfigManager:
         self.config_data[key] = value  # Assign updated setting value to internal cache map database
         self._save_to_file()
 
-    def _save_to_file(self) -> None:
+    def _save_to_file(self) -> None:  # Persist config data dictionary to disk file
         """
         Saves current config dictionary to JSON file.
         """
