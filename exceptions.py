@@ -2016,3 +2016,8 @@ class StatsDataRecordFieldMissingError(PostureGuardException):
 class ThreadWorkerExecutionError(PostureGuardException):
     """Exception raised when background thread worker function encounters unhandled error."""
     pass
+
+
+class AudioOutputBufferOverflowWarningError(PostureGuardException):
+    """Exception raised when audio output stream buffer experience sample overflows."""
+    pass
