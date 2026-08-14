@@ -2377,5 +2377,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationIconResourceMissingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configkeyschemavalidationrangeerror(self) -> None:
+        from exceptions import ConfigKeySchemaValidationRangeError
+        exc = ConfigKeySchemaValidationRangeError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigKeySchemaValidationRangeError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
