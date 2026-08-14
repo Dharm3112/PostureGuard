@@ -2365,5 +2365,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioSampleRateResampleError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationdeliveryresponsetimeouterror(self) -> None:
+        from exceptions import NotificationDeliveryResponseTimeoutError
+        exc = NotificationDeliveryResponseTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationDeliveryResponseTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
