@@ -2371,5 +2371,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationDeliveryResponseTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationiconresourcemissingerror(self) -> None:
+        from exceptions import NotificationIconResourceMissingError
+        exc = NotificationIconResourceMissingError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconResourceMissingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
