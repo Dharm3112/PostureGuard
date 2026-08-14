@@ -121,7 +121,7 @@ class PostureDetector:
         return self.baseline_y is not None
 
     @property
-    def buffer_data(self) -> list:
+    def buffer_data(self) -> list:  # Property returning list copy of moving average buffer data
         """Returns copy of elements in buffer."""
         return list(self.y_buffer)  # Convert double-ended queue to standard list copy
 
