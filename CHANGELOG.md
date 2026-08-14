@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.6.0] - 2026-08-14
+
+### Added
+- **Audio Buffer Overflow, Notification Response, and UI Geometry Diagnostic Exceptions:** Declared 10 new exception classes for audio buffer overflows, resampling arithmetic errors, notification response timeouts, missing icon resources, config range validations, log stream timeouts, and UI bounds overflow.
+- **Robust Exception Checking:** Appended 10 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying getter/setter persistence, filepath helpers, and calibration methods.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [3.5.0] - 2026-08-12
 
 ### Added
