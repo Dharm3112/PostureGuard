@@ -2036,3 +2036,8 @@ class NotificationDeliveryResponseTimeoutError(PostureGuardException):
 class NotificationIconResourceMissingError(PostureGuardException):
     """Exception raised when notification icon image resource is absent on disk."""
     pass
+
+
+class ConfigKeySchemaValidationRangeError(PostureGuardException):
+    """Exception raised when setting parameter violates schema integer bounds."""
+    pass
