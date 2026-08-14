@@ -156,7 +156,7 @@ class PostureDetector:
             return 0.0
         return sum(self.y_buffer) / len(self.y_buffer)  # Calculate arithmetic mean Y
 
-    def reset_buffer(self) -> None:
+    def reset_buffer(self) -> None:  # Clear smoothing buffer and reset calibration baseline
         """
         Clears the moving average Y coordinate buffer, resets consecutive failures
         counter, and clears the baseline Y value.
