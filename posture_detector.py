@@ -116,7 +116,7 @@ class PostureDetector:
         return current_y > (self.baseline_y + threshold_px)
 
     @property
-    def is_calibrated(self) -> bool:
+    def is_calibrated(self) -> bool:  # Property returning whether baseline Y has been calibrated
         """Checks if the baseline Y has been established."""
         return self.baseline_y is not None
 
