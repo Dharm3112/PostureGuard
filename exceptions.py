@@ -2061,3 +2061,8 @@ class LogRotationArchivePermissionError(PostureGuardException):
 class CSVRecordDelimiterParseError(PostureGuardException):
     """Exception raised when parsing delimiter fields in posture history log CSV fails."""
     pass
+
+
+class UIWidgetGeometryBoundsOverflowError(PostureGuardException):
+    """Exception raised when widget grid coordinates evaluate beyond window size."""
+    pass
