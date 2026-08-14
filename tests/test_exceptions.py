@@ -2395,5 +2395,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogHandlerStreamFlushTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logrotationarchivepermissionerror(self) -> None:
+        from exceptions import LogRotationArchivePermissionError
+        exc = LogRotationArchivePermissionError("Test msg")
+        self.assertEqual(exc.error_code, "LogRotationArchivePermissionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
