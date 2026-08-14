@@ -2051,3 +2051,8 @@ class ConfigMigrationFileCorruptError(PostureGuardException):
 class LogHandlerStreamFlushTimeoutError(PostureGuardException):
     """Exception raised when flushing active log stream buffer encounters timeout."""
     pass
+
+
+class LogRotationArchivePermissionError(PostureGuardException):
+    """Exception raised when writing to rotated log file encounters OS permission denial."""
+    pass
