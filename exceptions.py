@@ -2046,3 +2046,8 @@ class ConfigKeySchemaValidationRangeError(PostureGuardException):
 class ConfigMigrationFileCorruptError(PostureGuardException):
     """Exception raised when existing config file contains corrupt JSON before migration."""
     pass
+
+
+class LogHandlerStreamFlushTimeoutError(PostureGuardException):
+    """Exception raised when flushing active log stream buffer encounters timeout."""
+    pass
