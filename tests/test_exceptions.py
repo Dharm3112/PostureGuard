@@ -2359,5 +2359,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioOutputBufferOverflowWarningError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiosamplerateresampleerror(self) -> None:
+        from exceptions import AudioSampleRateResampleError
+        exc = AudioSampleRateResampleError("Test msg")
+        self.assertEqual(exc.error_code, "AudioSampleRateResampleError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
