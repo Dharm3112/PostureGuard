@@ -2026,3 +2026,8 @@ class AudioOutputBufferOverflowWarningError(PostureGuardException):
 class AudioSampleRateResampleError(PostureGuardException):
     """Exception raised when resampling chime sound waveform encounters arithmetic error."""
     pass
+
+
+class NotificationDeliveryResponseTimeoutError(PostureGuardException):
+    """Exception raised when desktop notification daemon response times out."""
+    pass
