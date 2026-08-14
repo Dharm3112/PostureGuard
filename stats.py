@@ -70,7 +70,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
 
     return stats
 
-def reset_statistics_file(filepath: str = "posture_history.csv") -> bool:  # Reconstruct clean CSV files containing only headers schema layout
+def reset_statistics_file(filepath: str = "posture_history.csv") -> bool:  # Re-initialize history CSV log file with column headers
     """Re-creates the history log file with header columns."""
     try:
         with open(filepath, "w", newline="", encoding="utf-8") as f:
