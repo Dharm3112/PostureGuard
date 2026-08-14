@@ -2401,5 +2401,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogRotationArchivePermissionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvrecorddelimiterparseerror(self) -> None:
+        from exceptions import CSVRecordDelimiterParseError
+        exc = CSVRecordDelimiterParseError("Test msg")
+        self.assertEqual(exc.error_code, "CSVRecordDelimiterParseError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
