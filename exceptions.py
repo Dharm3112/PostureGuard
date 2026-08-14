@@ -2021,3 +2021,8 @@ class ThreadWorkerExecutionError(PostureGuardException):
 class AudioOutputBufferOverflowWarningError(PostureGuardException):
     """Exception raised when audio output stream buffer experience sample overflows."""
     pass
+
+
+class AudioSampleRateResampleError(PostureGuardException):
+    """Exception raised when resampling chime sound waveform encounters arithmetic error."""
+    pass
