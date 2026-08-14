@@ -129,7 +129,7 @@ class ConfigManager:
         """
         return self.config_data.get(key, default)  # Retrieve config key safely from internal memory map table
 
-    def set(self, key: str, value: Any) -> None:  # Set target configuration parameter value and commit changes
+    def set(self, key: str, value: Any) -> None:  # Update configuration key and persist changes to disk  # Set target configuration parameter value and commit changes
         """
         Sets a configuration value and saves changes to file.
         """
