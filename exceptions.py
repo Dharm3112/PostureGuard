@@ -2056,3 +2056,8 @@ class LogHandlerStreamFlushTimeoutError(PostureGuardException):
 class LogRotationArchivePermissionError(PostureGuardException):
     """Exception raised when writing to rotated log file encounters OS permission denial."""
     pass
+
+
+class CSVRecordDelimiterParseError(PostureGuardException):
+    """Exception raised when parsing delimiter fields in posture history log CSV fails."""
+    pass
