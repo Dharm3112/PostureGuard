@@ -2156,3 +2156,8 @@ class CalibrateBaselineBufferEmptyError(PostureGuardException):
 class StatsGraphExportIOFailureError(PostureGuardException):
     """Exception raised when saving rendered posture stats chart image to disk encounters error."""
     pass
+
+
+class StatsDataRecordFieldMissingKeyError(PostureGuardException):
+    """Exception raised when posture history CSV record lacks required dictionary key."""
+    pass
