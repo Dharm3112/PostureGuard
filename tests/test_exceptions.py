@@ -2539,5 +2539,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "DatabaseTransactionRollbackError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwindowfocuslosswarningerror(self) -> None:
+        from exceptions import UIWindowFocusLossWarningError
+        exc = UIWindowFocusLossWarningError("Test msg")
+        self.assertEqual(exc.error_code, "UIWindowFocusLossWarningError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
