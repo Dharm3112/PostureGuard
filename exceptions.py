@@ -2076,3 +2076,8 @@ class AudioOutputBufferUnderflowFatalError(PostureGuardException):
 class AudioCodecInitializationFailedError(PostureGuardException):
     """Exception raised when initializing audio chime decoder codec engine fails."""
     pass
+
+
+class NotificationDeliveryDaemonUnavailableError(PostureGuardException):
+    """Exception raised when system desktop notification daemon process is unavailable."""
+    pass
