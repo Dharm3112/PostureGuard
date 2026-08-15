@@ -2171,3 +2171,8 @@ class ThreadWorkerExecutionTimeoutError(PostureGuardException):
 class DatabaseTransactionRollbackError(PostureGuardException):
     """Exception raised when rolling back database transaction for stats records fails."""
     pass
+
+
+class UIWindowFocusLossWarningError(PostureGuardException):
+    """Exception raised when Tkinter application window loses focus during calibration."""
+    pass
