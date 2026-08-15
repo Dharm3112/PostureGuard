@@ -2437,5 +2437,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationIconResourceFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configkeyvalidationboundsrangeerror(self) -> None:
+        from exceptions import ConfigKeyValidationBoundsRangeError
+        exc = ConfigKeyValidationBoundsRangeError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigKeyValidationBoundsRangeError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
