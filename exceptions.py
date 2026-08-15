@@ -2101,3 +2101,8 @@ class ConfigMigrationWritePermissionError(PostureGuardException):
 class LogHandlerStreamCloseError(PostureGuardException):
     """Exception raised when closing active log output stream handler encounters OS error."""
     pass
+
+
+class LogRotationArchiveStorageFullError(PostureGuardException):
+    """Exception raised when writing log backup archive encounters disk full error."""
+    pass
