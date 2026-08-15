@@ -2116,3 +2116,8 @@ class CSVRecordDelimiterSyntaxError(PostureGuardException):
 class CSVTimestampUTCConversionError(PostureGuardException):
     """Exception raised when converting local timestamp to UTC timezone format string fails."""
     pass
+
+
+class UIWidgetGeometryPlacementError(PostureGuardException):
+    """Exception raised when grid placement coordinates for Tkinter widget are invalid."""
+    pass
