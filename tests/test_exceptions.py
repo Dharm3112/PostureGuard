@@ -2419,5 +2419,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioOutputBufferUnderflowFatalError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiocodecinitializationfailederror(self) -> None:
+        from exceptions import AudioCodecInitializationFailedError
+        exc = AudioCodecInitializationFailedError("Test msg")
+        self.assertEqual(exc.error_code, "AudioCodecInitializationFailedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
