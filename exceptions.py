@@ -2131,3 +2131,8 @@ class UIThemePaletteResourceError(PostureGuardException):
 class CameraStreamBufferUnderrunError(PostureGuardException):
     """Exception raised when webcam video capture stream buffer lacks fresh frames."""
     pass
+
+
+class CameraDeviceAccessPermissionError(PostureGuardException):
+    """Exception raised when OS security denies application access to camera device."""
+    pass
