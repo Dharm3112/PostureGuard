@@ -2066,3 +2066,8 @@ class CSVRecordDelimiterParseError(PostureGuardException):
 class UIWidgetGeometryBoundsOverflowError(PostureGuardException):
     """Exception raised when widget grid coordinates evaluate beyond window size."""
     pass
+
+
+class AudioOutputBufferUnderflowFatalError(PostureGuardException):
+    """Exception raised when audio output stream buffer experience fatal sample underrun."""
+    pass
