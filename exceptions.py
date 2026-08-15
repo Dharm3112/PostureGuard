@@ -2091,3 +2091,8 @@ class NotificationIconResourceFormatError(PostureGuardException):
 class ConfigKeyValidationBoundsRangeError(PostureGuardException):
     """Exception raised when configuration key value is outside valid integer bounds."""
     pass
+
+
+class ConfigMigrationWritePermissionError(PostureGuardException):
+    """Exception raised when writing updated configuration dictionary to disk encounters permission denial."""
+    pass
