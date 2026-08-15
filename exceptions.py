@@ -2106,3 +2106,8 @@ class LogHandlerStreamCloseError(PostureGuardException):
 class LogRotationArchiveStorageFullError(PostureGuardException):
     """Exception raised when writing log backup archive encounters disk full error."""
     pass
+
+
+class CSVRecordDelimiterSyntaxError(PostureGuardException):
+    """Exception raised when parsing delimiter fields in posture history log CSV encounters syntax error."""
+    pass
