@@ -2146,3 +2146,8 @@ class ModelCascadeXmlValidationFailedError(PostureGuardException):
 class FaceDetectionROISizeZeroError(PostureGuardException):
     """Exception raised when face region of interest bounding box evaluates to zero area."""
     pass
+
+
+class CalibrateBaselineBufferEmptyError(PostureGuardException):
+    """Exception raised when calibration is attempted with empty coordinate buffer history."""
+    pass
