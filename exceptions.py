@@ -2136,3 +2136,8 @@ class CameraStreamBufferUnderrunError(PostureGuardException):
 class CameraDeviceAccessPermissionError(PostureGuardException):
     """Exception raised when OS security denies application access to camera device."""
     pass
+
+
+class ModelCascadeXmlValidationFailedError(PostureGuardException):
+    """Exception raised when OpenCV Haar cascade XML feature definition fails validation."""
+    pass
