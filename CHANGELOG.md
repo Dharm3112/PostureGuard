@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.7.0] - 2026-08-15
+
+### Added
+- **Audio Codec, Notification Daemon, and UI Palette Diagnostic Exceptions:** Declared 22 new exception classes for fatal audio buffer underruns, chime codec init, notification daemon availability, corrupted icon formats, log handler close errors, stream buffer underruns, and window focus loss warnings.
+- **Robust Exception Checking:** Appended 22 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying logger setup, total deviation variables, and cascade classifier paths.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [3.6.0] - 2026-08-14
 
 ### Added
