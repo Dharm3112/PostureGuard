@@ -2141,3 +2141,8 @@ class CameraDeviceAccessPermissionError(PostureGuardException):
 class ModelCascadeXmlValidationFailedError(PostureGuardException):
     """Exception raised when OpenCV Haar cascade XML feature definition fails validation."""
     pass
+
+
+class FaceDetectionROISizeZeroError(PostureGuardException):
+    """Exception raised when face region of interest bounding box evaluates to zero area."""
+    pass
