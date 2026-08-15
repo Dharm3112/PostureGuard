@@ -2479,5 +2479,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetGeometryPlacementError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemepaletteresourceerror(self) -> None:
+        from exceptions import UIThemePaletteResourceError
+        exc = UIThemePaletteResourceError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemePaletteResourceError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
