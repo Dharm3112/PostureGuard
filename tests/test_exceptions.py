@@ -2533,5 +2533,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ThreadWorkerExecutionTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_databasetransactionrollbackerror(self) -> None:
+        from exceptions import DatabaseTransactionRollbackError
+        exc = DatabaseTransactionRollbackError("Test msg")
+        self.assertEqual(exc.error_code, "DatabaseTransactionRollbackError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
