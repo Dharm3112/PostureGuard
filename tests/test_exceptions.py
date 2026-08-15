@@ -2413,5 +2413,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetGeometryBoundsOverflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiooutputbufferunderflowfatalerror(self) -> None:
+        from exceptions import AudioOutputBufferUnderflowFatalError
+        exc = AudioOutputBufferUnderflowFatalError("Test msg")
+        self.assertEqual(exc.error_code, "AudioOutputBufferUnderflowFatalError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
