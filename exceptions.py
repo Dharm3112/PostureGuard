@@ -2111,3 +2111,8 @@ class LogRotationArchiveStorageFullError(PostureGuardException):
 class CSVRecordDelimiterSyntaxError(PostureGuardException):
     """Exception raised when parsing delimiter fields in posture history log CSV encounters syntax error."""
     pass
+
+
+class CSVTimestampUTCConversionError(PostureGuardException):
+    """Exception raised when converting local timestamp to UTC timezone format string fails."""
+    pass
