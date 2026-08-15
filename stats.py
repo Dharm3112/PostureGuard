@@ -47,7 +47,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
                 stats["total_records"] += 1  # Increment record count tracker
                 # Attempt integer numeric conversion checks safely
                 try:
-                    dev = int(row.get("deviation_px", 0))  # Convert deviation to integer
+                    dev = int(row.get("deviation_px", 0))  # Convert deviation to integer value
                     total_deviation += dev  # Accumulate deviation pixel offset
                 except (ValueError, TypeError):  # Silence deviation conversion errors
                     pass
