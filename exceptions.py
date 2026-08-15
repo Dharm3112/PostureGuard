@@ -2096,3 +2096,8 @@ class ConfigKeyValidationBoundsRangeError(PostureGuardException):
 class ConfigMigrationWritePermissionError(PostureGuardException):
     """Exception raised when writing updated configuration dictionary to disk encounters permission denial."""
     pass
+
+
+class LogHandlerStreamCloseError(PostureGuardException):
+    """Exception raised when closing active log output stream handler encounters OS error."""
+    pass
