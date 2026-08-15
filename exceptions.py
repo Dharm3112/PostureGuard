@@ -2151,3 +2151,8 @@ class FaceDetectionROISizeZeroError(PostureGuardException):
 class CalibrateBaselineBufferEmptyError(PostureGuardException):
     """Exception raised when calibration is attempted with empty coordinate buffer history."""
     pass
+
+
+class StatsGraphExportIOFailureError(PostureGuardException):
+    """Exception raised when saving rendered posture stats chart image to disk encounters error."""
+    pass
