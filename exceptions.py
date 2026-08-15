@@ -2081,3 +2081,8 @@ class AudioCodecInitializationFailedError(PostureGuardException):
 class NotificationDeliveryDaemonUnavailableError(PostureGuardException):
     """Exception raised when system desktop notification daemon process is unavailable."""
     pass
+
+
+class NotificationIconResourceFormatError(PostureGuardException):
+    """Exception raised when notification icon image format header is corrupted."""
+    pass
