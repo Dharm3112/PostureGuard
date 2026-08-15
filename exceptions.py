@@ -2126,3 +2126,8 @@ class UIWidgetGeometryPlacementError(PostureGuardException):
 class UIThemePaletteResourceError(PostureGuardException):
     """Exception raised when visual theme palette file contains invalid color definitions."""
     pass
+
+
+class CameraStreamBufferUnderrunError(PostureGuardException):
+    """Exception raised when webcam video capture stream buffer lacks fresh frames."""
+    pass
