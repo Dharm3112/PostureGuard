@@ -2491,5 +2491,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraStreamBufferUnderrunError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameradeviceaccesspermissionerror(self) -> None:
+        from exceptions import CameraDeviceAccessPermissionError
+        exc = CameraDeviceAccessPermissionError("Test msg")
+        self.assertEqual(exc.error_code, "CameraDeviceAccessPermissionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
