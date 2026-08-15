@@ -2497,5 +2497,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraDeviceAccessPermissionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_modelcascadexmlvalidationfailederror(self) -> None:
+        from exceptions import ModelCascadeXmlValidationFailedError
+        exc = ModelCascadeXmlValidationFailedError("Test msg")
+        self.assertEqual(exc.error_code, "ModelCascadeXmlValidationFailedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
