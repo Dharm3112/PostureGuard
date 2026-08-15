@@ -2443,5 +2443,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyValidationBoundsRangeError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configmigrationwritepermissionerror(self) -> None:
+        from exceptions import ConfigMigrationWritePermissionError
+        exc = ConfigMigrationWritePermissionError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigMigrationWritePermissionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
