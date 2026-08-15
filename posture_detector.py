@@ -24,7 +24,7 @@ class PostureDetector:
 
         # Setup localized cascade file parameters from libraries tracker loader
         # Verify path config integrity check
-        if not self.CASCADE_PATH:  # Check cascade path exists check
+        if not self.CASCADE_PATH:  # Check cascade path exists check check
             raise ModelLoadError(message="Cascade path is empty.")
         self.face_cascade: cv2.CascadeClassifier = cv2.CascadeClassifier()  # Build cascade handler instance object helper
         # Verify successful configuration load verification checks
