@@ -31,7 +31,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
     # Fallback to default output pattern if format is empty
     fmt_str = log_format or '%(asctime)s [%(levelname)s] %(name)s: %(message)s'  # Fallback to standard logging pattern template pattern string format
     # Instantiate default message layout format compilation helper
-    formatter = logging.Formatter(fmt_str)  # Construct core system formatter compiler instance object
+    formatter = logging.Formatter(fmt_str)  # Construct core system formatter compiler instance object helper
 
     # Console output handler (redirecting errors/warnings to stderr stream)
     import sys  # Import sys module dynamically inside logger configuration setups module import helper package
