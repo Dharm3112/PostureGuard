@@ -2449,5 +2449,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigMigrationWritePermissionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_loghandlerstreamcloseerror(self) -> None:
+        from exceptions import LogHandlerStreamCloseError
+        exc = LogHandlerStreamCloseError("Test msg")
+        self.assertEqual(exc.error_code, "LogHandlerStreamCloseError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
