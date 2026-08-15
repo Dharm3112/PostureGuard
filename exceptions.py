@@ -2071,3 +2071,8 @@ class UIWidgetGeometryBoundsOverflowError(PostureGuardException):
 class AudioOutputBufferUnderflowFatalError(PostureGuardException):
     """Exception raised when audio output stream buffer experience fatal sample underrun."""
     pass
+
+
+class AudioCodecInitializationFailedError(PostureGuardException):
+    """Exception raised when initializing audio chime decoder codec engine fails."""
+    pass
