@@ -12,7 +12,7 @@ def get_posture_stats(filepath: str = "posture_history.csv", start_date: Optiona
     :return: Dictionary containing calculated posture statistics.
     """
     from logger_config import setup_logger
-    logger = setup_logger()
+    logger = setup_logger()  # Setup logger instance for statistics parsing
     logger.debug(f"Calculating posture stats for file: {filepath}")  # Debug log file path target
     # Initializing default return values data structure mapping container keys
     stats = {  # Initialize posture statistics tracking dict
