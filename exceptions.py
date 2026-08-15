@@ -2121,3 +2121,8 @@ class CSVTimestampUTCConversionError(PostureGuardException):
 class UIWidgetGeometryPlacementError(PostureGuardException):
     """Exception raised when grid placement coordinates for Tkinter widget are invalid."""
     pass
+
+
+class UIThemePaletteResourceError(PostureGuardException):
+    """Exception raised when visual theme palette file contains invalid color definitions."""
+    pass
