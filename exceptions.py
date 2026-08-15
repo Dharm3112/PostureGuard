@@ -2161,3 +2161,8 @@ class StatsGraphExportIOFailureError(PostureGuardException):
 class StatsDataRecordFieldMissingKeyError(PostureGuardException):
     """Exception raised when posture history CSV record lacks required dictionary key."""
     pass
+
+
+class ThreadWorkerExecutionTimeoutError(PostureGuardException):
+    """Exception raised when background thread worker task exceeds timeout limit."""
+    pass
