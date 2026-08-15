@@ -2086,3 +2086,8 @@ class NotificationDeliveryDaemonUnavailableError(PostureGuardException):
 class NotificationIconResourceFormatError(PostureGuardException):
     """Exception raised when notification icon image format header is corrupted."""
     pass
+
+
+class ConfigKeyValidationBoundsRangeError(PostureGuardException):
+    """Exception raised when configuration key value is outside valid integer bounds."""
+    pass
