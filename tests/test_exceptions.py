@@ -2521,5 +2521,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsGraphExportIOFailureError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_statsdatarecordfieldmissingkeyerror(self) -> None:
+        from exceptions import StatsDataRecordFieldMissingKeyError
+        exc = StatsDataRecordFieldMissingKeyError("Test msg")
+        self.assertEqual(exc.error_code, "StatsDataRecordFieldMissingKeyError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
