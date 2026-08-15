@@ -2166,3 +2166,8 @@ class StatsDataRecordFieldMissingKeyError(PostureGuardException):
 class ThreadWorkerExecutionTimeoutError(PostureGuardException):
     """Exception raised when background thread worker task exceeds timeout limit."""
     pass
+
+
+class DatabaseTransactionRollbackError(PostureGuardException):
+    """Exception raised when rolling back database transaction for stats records fails."""
+    pass
