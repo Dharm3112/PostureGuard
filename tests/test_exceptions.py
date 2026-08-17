@@ -2575,5 +2575,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyValidationTypeMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configmigrationbackupcorruptederror(self) -> None:
+        from exceptions import ConfigMigrationBackupCorruptedError
+        exc = ConfigMigrationBackupCorruptedError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigMigrationBackupCorruptedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
