@@ -2201,3 +2201,8 @@ class NotificationIconResourceSizeZeroError(PostureGuardException):
 class ConfigKeyValidationTypeMismatchError(PostureGuardException):
     """Exception raised when configuration key value is of unexpected Python type."""
     pass
+
+
+class ConfigMigrationBackupCorruptedError(PostureGuardException):
+    """Exception raised when backup copy of config file is corrupted prior to migration."""
+    pass
