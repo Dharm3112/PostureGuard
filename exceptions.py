@@ -2221,3 +2221,8 @@ class LogRotationArchiveIndexOverflowError(PostureGuardException):
 class CSVRecordMissingTimestampFieldError(PostureGuardException):
     """Exception raised when posture history CSV log record lacks timestamp column."""
     pass
+
+
+class UIWidgetGeometryPackingOverflowError(PostureGuardException):
+    """Exception raised when packing Tkinter widget into frame exceeds parent boundary size."""
+    pass
