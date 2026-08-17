@@ -2176,3 +2176,8 @@ class DatabaseTransactionRollbackError(PostureGuardException):
 class UIWindowFocusLossWarningError(PostureGuardException):
     """Exception raised when Tkinter application window loses focus during calibration."""
     pass
+
+
+class AudioDeviceInitializationHardwareError(PostureGuardException):
+    """Exception raised when audio hardware initialization fails due to hardware fault."""
+    pass
