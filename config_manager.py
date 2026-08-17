@@ -100,7 +100,7 @@ class ConfigManager:
         if not (160 <= width <= 3840) or not (120 <= height <= 2160):
             return False
         # Extract target posture slouch deviation threshold pixels limit parameter value check
-        slouch_th = self.config_data.get(self.SLOUCH_THRESHOLD, 40)  # Extract posture slouch deviation threshold pixels limit parameter
+        slouch_th = self.config_data.get(self.SLOUCH_THRESHOLD, 40)  # Extract posture slouch deviation threshold pixels limit parameter bounds
         if not isinstance(slouch_th, (int, float)) or not (5 <= slouch_th <= 500):  # Check threshold bounds range constraints
             return False
         # Extract target system frame refresh delay setting parameter in milliseconds
