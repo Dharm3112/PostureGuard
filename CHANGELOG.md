@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.8.0] - 2026-08-17
+
+### Added
+- **Audio Hardware, Notification Permission, and Log Handler Diagnostic Exceptions:** Declared 10 new exception classes for audio hardware errors, resampling overflow, notification permission denials, zero-byte icon files, type mismatch errors, backup corruption, log open errors, and geometry overflows.
+- **Robust Exception Checking:** Appended 10 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying camera width/height bounds, timestamp strings, and center coordinates.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [3.7.0] - 2026-08-15
 
 ### Added
