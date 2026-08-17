@@ -2196,3 +2196,8 @@ class NotificationChannelPermissionDeniedError(PostureGuardException):
 class NotificationIconResourceSizeZeroError(PostureGuardException):
     """Exception raised when notification icon image file on disk has zero byte size."""
     pass
+
+
+class ConfigKeyValidationTypeMismatchError(PostureGuardException):
+    """Exception raised when configuration key value is of unexpected Python type."""
+    pass
