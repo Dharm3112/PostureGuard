@@ -2599,5 +2599,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRecordMissingTimestampFieldError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetgeometrypackingoverflowerror(self) -> None:
+        from exceptions import UIWidgetGeometryPackingOverflowError
+        exc = UIWidgetGeometryPackingOverflowError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetGeometryPackingOverflowError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
