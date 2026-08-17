@@ -2581,5 +2581,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigMigrationBackupCorruptedError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_loghandlerstreamopenerror(self) -> None:
+        from exceptions import LogHandlerStreamOpenError
+        exc = LogHandlerStreamOpenError("Test msg")
+        self.assertEqual(exc.error_code, "LogHandlerStreamOpenError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
