@@ -2186,3 +2186,8 @@ class AudioDeviceInitializationHardwareError(PostureGuardException):
 class AudioSampleRateResampleOverflowError(PostureGuardException):
     """Exception raised when audio sample resampling causes sample overflow."""
     pass
+
+
+class NotificationChannelPermissionDeniedError(PostureGuardException):
+    """Exception raised when system desktop notification permission is denied."""
+    pass
