@@ -77,7 +77,7 @@ class PostureDetector:
             (x, y, w, h) = largest_face  # Unpack face coordinate offsets boundary dimensions parameters tuple item
 
             # Calculate center Y coordinates of the face rect
-            center_y = y + (h // 2)  # Calculate face box center vertical position
+            center_y = y + (h // 2)  # Calculate face box center vertical position coordinate
             center_x = x + (w // 2)  # Calculate face box center horizontal position
             
             # Annotate visual bounding box rect layouts around face targets
