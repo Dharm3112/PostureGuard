@@ -2545,5 +2545,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWindowFocusLossWarningError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiodeviceinitializationhardwareerror(self) -> None:
+        from exceptions import AudioDeviceInitializationHardwareError
+        exc = AudioDeviceInitializationHardwareError("Test msg")
+        self.assertEqual(exc.error_code, "AudioDeviceInitializationHardwareError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
