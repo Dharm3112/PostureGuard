@@ -2211,3 +2211,8 @@ class ConfigMigrationBackupCorruptedError(PostureGuardException):
 class LogHandlerStreamOpenError(PostureGuardException):
     """Exception raised when opening log output stream file encounters OS permission or path error."""
     pass
+
+
+class LogRotationArchiveIndexOverflowError(PostureGuardException):
+    """Exception raised when rotated log backup file index exceeds max backup limits."""
+    pass
