@@ -2593,5 +2593,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogRotationArchiveIndexOverflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvrecordmissingtimestampfielderror(self) -> None:
+        from exceptions import CSVRecordMissingTimestampFieldError
+        exc = CSVRecordMissingTimestampFieldError("Test msg")
+        self.assertEqual(exc.error_code, "CSVRecordMissingTimestampFieldError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
