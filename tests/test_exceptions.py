@@ -2557,5 +2557,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioSampleRateResampleOverflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationchannelpermissiondeniederror(self) -> None:
+        from exceptions import NotificationChannelPermissionDeniedError
+        exc = NotificationChannelPermissionDeniedError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationChannelPermissionDeniedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
