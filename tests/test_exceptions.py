@@ -2551,5 +2551,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioDeviceInitializationHardwareError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiosamplerateresampleoverflowerror(self) -> None:
+        from exceptions import AudioSampleRateResampleOverflowError
+        exc = AudioSampleRateResampleOverflowError("Test msg")
+        self.assertEqual(exc.error_code, "AudioSampleRateResampleOverflowError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
