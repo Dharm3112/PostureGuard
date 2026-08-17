@@ -78,7 +78,7 @@ class PostureDetector:
 
             # Calculate center Y coordinates of the face rect
             center_y = y + (h // 2)  # Calculate face box center vertical position coordinate
-            center_x = x + (w // 2)  # Calculate face box center horizontal position
+            center_x = x + (w // 2)  # Calculate face box center horizontal position coordinate
             
             # Annotate visual bounding box rect layouts around face targets
             # Render color border boundaries layout parameters
