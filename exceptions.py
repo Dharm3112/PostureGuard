@@ -2191,3 +2191,8 @@ class AudioSampleRateResampleOverflowError(PostureGuardException):
 class NotificationChannelPermissionDeniedError(PostureGuardException):
     """Exception raised when system desktop notification permission is denied."""
     pass
+
+
+class NotificationIconResourceSizeZeroError(PostureGuardException):
+    """Exception raised when notification icon image file on disk has zero byte size."""
+    pass
