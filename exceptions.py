@@ -2216,3 +2216,8 @@ class LogHandlerStreamOpenError(PostureGuardException):
 class LogRotationArchiveIndexOverflowError(PostureGuardException):
     """Exception raised when rotated log backup file index exceeds max backup limits."""
     pass
+
+
+class CSVRecordMissingTimestampFieldError(PostureGuardException):
+    """Exception raised when posture history CSV log record lacks timestamp column."""
+    pass
