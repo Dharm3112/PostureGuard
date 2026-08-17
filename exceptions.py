@@ -2206,3 +2206,8 @@ class ConfigKeyValidationTypeMismatchError(PostureGuardException):
 class ConfigMigrationBackupCorruptedError(PostureGuardException):
     """Exception raised when backup copy of config file is corrupted prior to migration."""
     pass
+
+
+class LogHandlerStreamOpenError(PostureGuardException):
+    """Exception raised when opening log output stream file encounters OS permission or path error."""
+    pass
