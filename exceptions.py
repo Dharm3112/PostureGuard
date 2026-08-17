@@ -2181,3 +2181,8 @@ class UIWindowFocusLossWarningError(PostureGuardException):
 class AudioDeviceInitializationHardwareError(PostureGuardException):
     """Exception raised when audio hardware initialization fails due to hardware fault."""
     pass
+
+
+class AudioSampleRateResampleOverflowError(PostureGuardException):
+    """Exception raised when audio sample resampling causes sample overflow."""
+    pass
