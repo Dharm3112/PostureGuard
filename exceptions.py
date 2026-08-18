@@ -2251,3 +2251,8 @@ class NotificationIconFilePermissionError(PostureGuardException):
 class ConfigKeyValidationNullValueError(PostureGuardException):
     """Exception raised when non-nullable configuration parameter contains null value."""
     pass
+
+
+class ConfigMigrationSchemaVersionError(PostureGuardException):
+    """Exception raised when configuration file schema version is higher than supported."""
+    pass
