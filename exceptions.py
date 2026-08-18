@@ -2231,3 +2231,8 @@ class UIWidgetGeometryPackingOverflowError(PostureGuardException):
 class AudioOutputDeviceBusyError(PostureGuardException):
     """Exception raised when audio output device is in exclusive use by another process."""
     pass
+
+
+class AudioSampleRateUnsupportedError(PostureGuardException):
+    """Exception raised when requested audio chime sample rate is not supported by driver."""
+    pass
