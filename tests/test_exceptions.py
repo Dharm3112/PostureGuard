@@ -2605,5 +2605,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetGeometryPackingOverflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiooutputdevicebusyerror(self) -> None:
+        from exceptions import AudioOutputDeviceBusyError
+        exc = AudioOutputDeviceBusyError("Test msg")
+        self.assertEqual(exc.error_code, "AudioOutputDeviceBusyError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
