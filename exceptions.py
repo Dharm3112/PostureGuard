@@ -2246,3 +2246,8 @@ class NotificationChannelRegistrationTimeoutError(PostureGuardException):
 class NotificationIconFilePermissionError(PostureGuardException):
     """Exception raised when reading notification icon image encounters permission error."""
     pass
+
+
+class ConfigKeyValidationNullValueError(PostureGuardException):
+    """Exception raised when non-nullable configuration parameter contains null value."""
+    pass
