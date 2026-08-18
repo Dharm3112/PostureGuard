@@ -104,7 +104,7 @@ class ConfigManager:
         if not isinstance(slouch_th, (int, float)) or not (5 <= slouch_th <= 500):  # Check threshold bounds range constraints
             return False
         # Extract target system frame refresh delay setting parameter in milliseconds
-        frame_delay = self.config_data.get(self.FRAME_DELAY, 15)  # Extract target system frame refresh delay setting parameter
+        frame_delay = self.config_data.get(self.FRAME_DELAY, 15)  # Extract target system frame refresh delay setting parameter bounds
         # Extract target slouch alert duration frame threshold limits parameter bounds
         alert_frames = self.config_data.get(self.TIME_TO_ALERT, 50)  # Extract target slouch alert duration frame threshold limits
         if not isinstance(frame_delay, int) or not isinstance(alert_frames, int):  # Verify framing delay variables type safety
