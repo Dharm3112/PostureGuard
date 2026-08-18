@@ -2236,3 +2236,8 @@ class AudioOutputDeviceBusyError(PostureGuardException):
 class AudioSampleRateUnsupportedError(PostureGuardException):
     """Exception raised when requested audio chime sample rate is not supported by driver."""
     pass
+
+
+class NotificationChannelRegistrationTimeoutError(PostureGuardException):
+    """Exception raised when registering desktop notification channel times out."""
+    pass
