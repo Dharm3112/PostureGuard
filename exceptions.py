@@ -2261,3 +2261,8 @@ class ConfigMigrationSchemaVersionError(PostureGuardException):
 class LogHandlerStreamFlushIOError(PostureGuardException):
     """Exception raised when flushing active log stream buffer encounters underlying IO error."""
     pass
+
+
+class LogRotationArchiveAccessDeniedError(PostureGuardException):
+    """Exception raised when moving old log file to backup archive is denied by OS."""
+    pass
