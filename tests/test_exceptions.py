@@ -2635,5 +2635,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyValidationNullValueError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configmigrationschemaversionerror(self) -> None:
+        from exceptions import ConfigMigrationSchemaVersionError
+        exc = ConfigMigrationSchemaVersionError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigMigrationSchemaVersionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
