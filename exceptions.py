@@ -2241,3 +2241,8 @@ class AudioSampleRateUnsupportedError(PostureGuardException):
 class NotificationChannelRegistrationTimeoutError(PostureGuardException):
     """Exception raised when registering desktop notification channel times out."""
     pass
+
+
+class NotificationIconFilePermissionError(PostureGuardException):
+    """Exception raised when reading notification icon image encounters permission error."""
+    pass
