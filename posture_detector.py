@@ -26,7 +26,7 @@ class PostureDetector:
         # Verify path config integrity check
         if not self.CASCADE_PATH:  # Check cascade path exists check check
             raise ModelLoadError(message="Cascade path is empty.")
-        self.face_cascade: cv2.CascadeClassifier = cv2.CascadeClassifier()  # Build cascade handler instance object helper
+        self.face_cascade: cv2.CascadeClassifier = cv2.CascadeClassifier()  # Build cascade handler instance object helper object
         # Verify successful configuration load verification checks
         if not self.face_cascade.load(self.CASCADE_PATH) or self.face_cascade.empty():
             self.logger.error("Failed to load OpenCV face Haar Cascade XML file.")
