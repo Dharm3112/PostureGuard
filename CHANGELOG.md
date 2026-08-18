@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.9.0] - 2026-08-18
+
+### Added
+- **Audio Device Status, Notification Timeouts, and Camera Resolution Diagnostic Exceptions:** Declared 13 new exception classes for audio device busy states, unsupported sample rates, channel registration timeouts, icon permissions, schema version errors, and stream buffer exhaustion.
+- **Robust Exception Checking:** Appended 13 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying frame delays, log byte limits, BaseDirectory paths, and grayscale matrices.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [3.8.0] - 2026-08-17
 
 ### Added
