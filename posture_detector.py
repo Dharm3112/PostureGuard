@@ -61,7 +61,7 @@ class PostureDetector:
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)  # Convert frame to grayscale for detection matrix
 
         # Search for face rectangular bounding boxes matches in image frames array
-        faces = self.face_cascade.detectMultiScale(
+        faces = self.face_cascade.detectMultiScale(  # Detect faces using cascade classifier
             gray, self.scale_factor, self.min_neighbors, minSize=(30, 30)
         )
 
