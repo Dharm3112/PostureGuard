@@ -58,7 +58,7 @@ class PostureDetector:
                  - The smoothed current center Y-coordinate of the face (or None if no face is detected).
         """
         # Reduce color space channels safely for cascade evaluation parameters
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)  # Convert frame to grayscale for detection
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)  # Convert frame to grayscale for detection matrix
 
         # Search for face rectangular bounding boxes matches in image frames array
         faces = self.face_cascade.detectMultiScale(
