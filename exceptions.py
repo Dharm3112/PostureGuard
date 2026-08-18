@@ -2271,3 +2271,8 @@ class LogRotationArchiveAccessDeniedError(PostureGuardException):
 class CSVRecordMalformedColumnCountError(PostureGuardException):
     """Exception raised when posture history CSV record has incorrect number of columns."""
     pass
+
+
+class UIWidgetGeometryPackingCollisionError(PostureGuardException):
+    """Exception raised when widget grid positioning conflicts with adjacent widgets."""
+    pass
