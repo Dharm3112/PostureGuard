@@ -2226,3 +2226,8 @@ class CSVRecordMissingTimestampFieldError(PostureGuardException):
 class UIWidgetGeometryPackingOverflowError(PostureGuardException):
     """Exception raised when packing Tkinter widget into frame exceeds parent boundary size."""
     pass
+
+
+class AudioOutputDeviceBusyError(PostureGuardException):
+    """Exception raised when audio output device is in exclusive use by another process."""
+    pass
