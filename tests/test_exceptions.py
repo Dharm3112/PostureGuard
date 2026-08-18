@@ -2659,5 +2659,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRecordMalformedColumnCountError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetgeometrypackingcollisionerror(self) -> None:
+        from exceptions import UIWidgetGeometryPackingCollisionError
+        exc = UIWidgetGeometryPackingCollisionError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetGeometryPackingCollisionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
