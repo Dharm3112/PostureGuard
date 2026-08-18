@@ -2623,5 +2623,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationChannelRegistrationTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationiconfilepermissionerror(self) -> None:
+        from exceptions import NotificationIconFilePermissionError
+        exc = NotificationIconFilePermissionError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconFilePermissionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
