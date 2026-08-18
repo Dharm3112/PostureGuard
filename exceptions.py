@@ -2276,3 +2276,8 @@ class CSVRecordMalformedColumnCountError(PostureGuardException):
 class UIWidgetGeometryPackingCollisionError(PostureGuardException):
     """Exception raised when widget grid positioning conflicts with adjacent widgets."""
     pass
+
+
+class UIThemeColorHexLengthError(PostureGuardException):
+    """Exception raised when theme palette hex color code has invalid string length."""
+    pass
