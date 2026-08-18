@@ -2281,3 +2281,8 @@ class UIWidgetGeometryPackingCollisionError(PostureGuardException):
 class UIThemeColorHexLengthError(PostureGuardException):
     """Exception raised when theme palette hex color code has invalid string length."""
     pass
+
+
+class CameraStreamBufferExhaustedError(PostureGuardException):
+    """Exception raised when webcam frame circular buffer is completely exhausted."""
+    pass
