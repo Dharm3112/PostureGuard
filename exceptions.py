@@ -2286,3 +2286,8 @@ class UIThemeColorHexLengthError(PostureGuardException):
 class CameraStreamBufferExhaustedError(PostureGuardException):
     """Exception raised when webcam frame circular buffer is completely exhausted."""
     pass
+
+
+class CameraDeviceResolutionNotSupportedError(PostureGuardException):
+    """Exception raised when requested video capture resolution is unsupported."""
+    pass
