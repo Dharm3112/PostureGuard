@@ -2611,5 +2611,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioOutputDeviceBusyError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiosamplerateunsupportederror(self) -> None:
+        from exceptions import AudioSampleRateUnsupportedError
+        exc = AudioSampleRateUnsupportedError("Test msg")
+        self.assertEqual(exc.error_code, "AudioSampleRateUnsupportedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
