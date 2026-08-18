@@ -2266,3 +2266,8 @@ class LogHandlerStreamFlushIOError(PostureGuardException):
 class LogRotationArchiveAccessDeniedError(PostureGuardException):
     """Exception raised when moving old log file to backup archive is denied by OS."""
     pass
+
+
+class CSVRecordMalformedColumnCountError(PostureGuardException):
+    """Exception raised when posture history CSV record has incorrect number of columns."""
+    pass
