@@ -2256,3 +2256,8 @@ class ConfigKeyValidationNullValueError(PostureGuardException):
 class ConfigMigrationSchemaVersionError(PostureGuardException):
     """Exception raised when configuration file schema version is higher than supported."""
     pass
+
+
+class LogHandlerStreamFlushIOError(PostureGuardException):
+    """Exception raised when flushing active log stream buffer encounters underlying IO error."""
+    pass
