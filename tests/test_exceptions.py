@@ -2707,5 +2707,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationIconFileCorruptHeaderError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configkeyvalidationboundaryexceedederror(self) -> None:
+        from exceptions import ConfigKeyValidationBoundaryExceededError
+        exc = ConfigKeyValidationBoundaryExceededError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigKeyValidationBoundaryExceededError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
