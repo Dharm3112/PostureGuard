@@ -2311,3 +2311,8 @@ class NotificationChannelPermissionDeniedWarningError(PostureGuardException):
 class NotificationIconFileCorruptHeaderError(PostureGuardException):
     """Exception raised when notification icon PNG/JPG image header is unreadable."""
     pass
+
+
+class ConfigKeyValidationBoundaryExceededError(PostureGuardException):
+    """Exception raised when numerical setting exceeds hard-coded system boundary limits."""
+    pass
