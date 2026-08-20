@@ -2351,3 +2351,8 @@ class UIWidgetGeometryPlacementConflictError(PostureGuardException):
 class UIThemePaletteColorFormatError(PostureGuardException):
     """Exception raised when color string in visual theme palette is not a valid hex string."""
     pass
+
+
+class CameraStreamBufferReadTimeoutError(PostureGuardException):
+    """Exception raised when reading next frame buffer from camera video stream times out."""
+    pass
