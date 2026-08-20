@@ -2361,3 +2361,8 @@ class CameraStreamBufferReadTimeoutError(PostureGuardException):
 class CameraDeviceConfigurationConstraintError(PostureGuardException):
     """Exception raised when configuring webcam exposure or white balance settings fails."""
     pass
+
+
+class ModelCascadeXmlSchemaValidationError(PostureGuardException):
+    """Exception raised when OpenCV Haar cascade XML file fails structural schema validation."""
+    pass
