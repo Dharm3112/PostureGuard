@@ -2321,3 +2321,8 @@ class ConfigKeyValidationBoundaryExceededError(PostureGuardException):
 class ConfigMigrationRollbackFailedError(PostureGuardException):
     """Exception raised when rolling back failed JSON configuration schema upgrade fails."""
     pass
+
+
+class LogHandlerStreamFlushWriteError(PostureGuardException):
+    """Exception raised when flushing active log stream buffer fails during OS write operation."""
+    pass
