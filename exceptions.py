@@ -2326,3 +2326,8 @@ class ConfigMigrationRollbackFailedError(PostureGuardException):
 class LogHandlerStreamFlushWriteError(PostureGuardException):
     """Exception raised when flushing active log stream buffer fails during OS write operation."""
     pass
+
+
+class LogRotationArchiveLimitExceededError(PostureGuardException):
+    """Exception raised when total size of archived log backup files exceeds system threshold."""
+    pass
