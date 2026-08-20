@@ -147,7 +147,7 @@ class ConfigManager:
             from logger_config import setup_logger
             setup_logger().error("Failed to write config data to local file.")  # Print file writing fallback errors warning
 
-    def reset_to_defaults(self) -> bool:
+    def reset_to_defaults(self) -> bool:  # Reset configuration settings to factory default template
         """
         Resets configurations to the default template.
         """
