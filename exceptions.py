@@ -2366,3 +2366,8 @@ class CameraDeviceConfigurationConstraintError(PostureGuardException):
 class ModelCascadeXmlSchemaValidationError(PostureGuardException):
     """Exception raised when OpenCV Haar cascade XML file fails structural schema validation."""
     pass
+
+
+class FaceDetectionROICoordinateOutOfBoundsError(PostureGuardException):
+    """Exception raised when face bounding box coordinate evaluation exceeds canvas frame boundaries."""
+    pass
