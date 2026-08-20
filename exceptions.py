@@ -2356,3 +2356,8 @@ class UIThemePaletteColorFormatError(PostureGuardException):
 class CameraStreamBufferReadTimeoutError(PostureGuardException):
     """Exception raised when reading next frame buffer from camera video stream times out."""
     pass
+
+
+class CameraDeviceConfigurationConstraintError(PostureGuardException):
+    """Exception raised when configuring webcam exposure or white balance settings fails."""
+    pass
