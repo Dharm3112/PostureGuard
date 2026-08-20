@@ -2336,3 +2336,8 @@ class LogRotationArchiveLimitExceededError(PostureGuardException):
 class CSVRecordDelimiterParseSyntaxError(PostureGuardException):
     """Exception raised when parsing delimiter fields in posture history log CSV encounters unexpected token."""
     pass
+
+
+class CSVTimestampFormatParseError(PostureGuardException):
+    """Exception raised when converting ISO date string in posture log CSV fails parsing."""
+    pass
