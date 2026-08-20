@@ -2306,3 +2306,8 @@ class AudioSampleFormatConversionOverflowError(PostureGuardException):
 class NotificationChannelPermissionDeniedWarningError(PostureGuardException):
     """Exception raised when desktop notification permission is revoked at runtime."""
     pass
+
+
+class NotificationIconFileCorruptHeaderError(PostureGuardException):
+    """Exception raised when notification icon PNG/JPG image header is unreadable."""
+    pass
