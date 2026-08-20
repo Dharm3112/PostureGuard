@@ -2713,5 +2713,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyValidationBoundaryExceededError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configmigrationrollbackfailederror(self) -> None:
+        from exceptions import ConfigMigrationRollbackFailedError
+        exc = ConfigMigrationRollbackFailedError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigMigrationRollbackFailedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
