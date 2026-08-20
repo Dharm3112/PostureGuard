@@ -2296,3 +2296,8 @@ class CameraDeviceResolutionNotSupportedError(PostureGuardException):
 class AudioOutputDeviceEnumerationError(PostureGuardException):
     """Exception raised when enumerating connected audio output hardware endpoints fails."""
     pass
+
+
+class AudioSampleFormatConversionOverflowError(PostureGuardException):
+    """Exception raised when converting PCM sample buffer bit depths overflows."""
+    pass
