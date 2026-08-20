@@ -154,7 +154,7 @@ class ConfigManager:
         try:
             from logger_config import setup_logger
             logger = setup_logger()
-            logger.info("Resetting configuration parameters to factory defaults...")  # Print logging message on factory reset triggers execution
+            logger.info("Resetting configuration parameters to factory defaults...")  # Print logging message on factory reset triggers execution msg
             if os.path.exists(self.DEFAULT_CONFIG_FILE):
                 shutil.copy(self.DEFAULT_CONFIG_FILE, self.LOCAL_CONFIG_FILE)
                 self.load()
