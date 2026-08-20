@@ -2291,3 +2291,8 @@ class CameraStreamBufferExhaustedError(PostureGuardException):
 class CameraDeviceResolutionNotSupportedError(PostureGuardException):
     """Exception raised when requested video capture resolution is unsupported."""
     pass
+
+
+class AudioOutputDeviceEnumerationError(PostureGuardException):
+    """Exception raised when enumerating connected audio output hardware endpoints fails."""
+    pass
