@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.0.0] - 2026-08-20
+
+### Added
+- **Audio Device Enumeration, Notification Permission Revocation, and Cascade Schema Diagnostic Exceptions:** Declared 17 new exception classes for audio device enumeration failures, sample conversion overflow, notification permission revocation, corrupted icon headers, boundary limit violations, stream timeouts, and calibration buffer insufficiency.
+- **Robust Exception Checking:** Appended 17 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying factory default resets, fallback alert warnings, percentage metrics, and limit line rendering.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [3.9.0] - 2026-08-18
 
 ### Added
