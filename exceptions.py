@@ -2341,3 +2341,8 @@ class CSVRecordDelimiterParseSyntaxError(PostureGuardException):
 class CSVTimestampFormatParseError(PostureGuardException):
     """Exception raised when converting ISO date string in posture log CSV fails parsing."""
     pass
+
+
+class UIWidgetGeometryPlacementConflictError(PostureGuardException):
+    """Exception raised when widget grid positioning conflicts with adjacent container layouts."""
+    pass
