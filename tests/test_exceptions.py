@@ -2779,5 +2779,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "FaceDetectionROICoordinateOutOfBoundsError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_calibratebaselinebufferinsufficienterror(self) -> None:
+        from exceptions import CalibrateBaselineBufferInsufficientError
+        exc = CalibrateBaselineBufferInsufficientError("Test msg")
+        self.assertEqual(exc.error_code, "CalibrateBaselineBufferInsufficientError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
