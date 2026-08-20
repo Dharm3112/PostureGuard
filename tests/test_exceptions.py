@@ -2743,5 +2743,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVTimestampFormatParseError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetgeometryplacementconflicterror(self) -> None:
+        from exceptions import UIWidgetGeometryPlacementConflictError
+        exc = UIWidgetGeometryPlacementConflictError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetGeometryPlacementConflictError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
