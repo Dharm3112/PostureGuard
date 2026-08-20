@@ -94,7 +94,7 @@ class PostureDetector:
             # Verify if baseline vertical calibration is configured
             if self.baseline_y is not None:
                 # Draw a line where the "limit" is
-                limit_y = int(self.baseline_y + 30)  # Calculate slouch limit Y line
+                limit_y = int(self.baseline_y + 30)  # Calculate slouch limit Y line position
                 cv2.line(frame, (0, limit_y), (frame.shape[1], limit_y), (0, 255, 255), 1)
                 cv2.putText(frame, "Limit", (10, limit_y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 1)
 
