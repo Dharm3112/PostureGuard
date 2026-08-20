@@ -87,7 +87,7 @@ class PostureDetector:
             cv2.circle(frame, (center_x, center_y), 5, (0, 0, 255), -1)  # Draw red circle at face center point
 
             # Add target center coordinate vertical heights to smoothing buffer
-            self.y_buffer.append(center_y)  # Append face center Y coordinate to buffer
+            self.y_buffer.append(center_y)  # Append face center Y coordinate to buffer queue
             current_y = self._get_average_y()  # Compute moving average Y coordinate
 
             # Visualization: Draw the Baseline Line if calibrated
