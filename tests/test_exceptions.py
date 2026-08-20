@@ -2749,5 +2749,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetGeometryPlacementConflictError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemepalettecolorformaterror(self) -> None:
+        from exceptions import UIThemePaletteColorFormatError
+        exc = UIThemePaletteColorFormatError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemePaletteColorFormatError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
