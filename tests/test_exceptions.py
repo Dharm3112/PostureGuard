@@ -2701,5 +2701,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationChannelPermissionDeniedWarningError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationiconfilecorruptheadererror(self) -> None:
+        from exceptions import NotificationIconFileCorruptHeaderError
+        exc = NotificationIconFileCorruptHeaderError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconFileCorruptHeaderError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
