@@ -2773,5 +2773,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ModelCascadeXmlSchemaValidationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_facedetectionroicoordinateoutofboundserror(self) -> None:
+        from exceptions import FaceDetectionROICoordinateOutOfBoundsError
+        exc = FaceDetectionROICoordinateOutOfBoundsError("Test msg")
+        self.assertEqual(exc.error_code, "FaceDetectionROICoordinateOutOfBoundsError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
