@@ -2316,3 +2316,8 @@ class NotificationIconFileCorruptHeaderError(PostureGuardException):
 class ConfigKeyValidationBoundaryExceededError(PostureGuardException):
     """Exception raised when numerical setting exceeds hard-coded system boundary limits."""
     pass
+
+
+class ConfigMigrationRollbackFailedError(PostureGuardException):
+    """Exception raised when rolling back failed JSON configuration schema upgrade fails."""
+    pass
