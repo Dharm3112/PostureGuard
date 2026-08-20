@@ -2331,3 +2331,8 @@ class LogHandlerStreamFlushWriteError(PostureGuardException):
 class LogRotationArchiveLimitExceededError(PostureGuardException):
     """Exception raised when total size of archived log backup files exceeds system threshold."""
     pass
+
+
+class CSVRecordDelimiterParseSyntaxError(PostureGuardException):
+    """Exception raised when parsing delimiter fields in posture history log CSV encounters unexpected token."""
+    pass
