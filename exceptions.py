@@ -2301,3 +2301,8 @@ class AudioOutputDeviceEnumerationError(PostureGuardException):
 class AudioSampleFormatConversionOverflowError(PostureGuardException):
     """Exception raised when converting PCM sample buffer bit depths overflows."""
     pass
+
+
+class NotificationChannelPermissionDeniedWarningError(PostureGuardException):
+    """Exception raised when desktop notification permission is revoked at runtime."""
+    pass
