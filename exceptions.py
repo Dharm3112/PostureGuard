@@ -2371,3 +2371,8 @@ class ModelCascadeXmlSchemaValidationError(PostureGuardException):
 class FaceDetectionROICoordinateOutOfBoundsError(PostureGuardException):
     """Exception raised when face bounding box coordinate evaluation exceeds canvas frame boundaries."""
     pass
+
+
+class CalibrateBaselineBufferInsufficientError(PostureGuardException):
+    """Exception raised when posture calibration is requested with fewer than required buffer frames history."""
+    pass
