@@ -2396,3 +2396,8 @@ class NotificationChannelPermissionRevokedError(PostureGuardException):
 class NotificationIconCorruptImageDataError(PostureGuardException):
     """Exception raised when notification icon image binary data is corrupted."""
     pass
+
+
+class ConfigKeyValidationNumericLimitError(PostureGuardException):
+    """Exception raised when numerical configuration parameter violates system limits."""
+    pass
