@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.1.0] - 2026-08-21
+
+### Added
+- **Audio Output Stream, Notification Revocation, and UI Bounds Diagnostic Exceptions:** Declared 10 new exception classes for audio stream initialization errors, sample conversion underflow, permission revocation, corrupt image binary data, numeric limit errors, log flush timeouts, and widget bounds invalidation.
+- **Robust Exception Checking:** Appended 10 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying get_config_filepath returns, setup_logger instance objects, and detector property methods.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [4.0.0] - 2026-08-20
 
 ### Added
