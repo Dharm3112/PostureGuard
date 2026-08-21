@@ -2391,3 +2391,8 @@ class AudioSampleFormatConversionUnderflowError(PostureGuardException):
 class NotificationChannelPermissionRevokedError(PostureGuardException):
     """Exception raised when desktop notification permission is revoked by user."""
     pass
+
+
+class NotificationIconCorruptImageDataError(PostureGuardException):
+    """Exception raised when notification icon image binary data is corrupted."""
+    pass
