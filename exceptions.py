@@ -2381,3 +2381,8 @@ class CalibrateBaselineBufferInsufficientError(PostureGuardException):
 class AudioOutputDeviceStreamInitError(PostureGuardException):
     """Exception raised when initializing audio output stream object encounters device error."""
     pass
+
+
+class AudioSampleFormatConversionUnderflowError(PostureGuardException):
+    """Exception raised when converting PCM sample buffer bit depths underflows."""
+    pass
