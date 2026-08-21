@@ -104,7 +104,7 @@ class PostureDetector:
                 self.logger.warning(f"No face detected for {self.consecutive_failures} frames.")
         return frame, current_y  # Return current frame and smoothed height values
 
-    def is_slouching(self, current_y: float, threshold_px: float) -> bool:  # Check if face Y position exceeds calibrated threshold
+    def is_slouching(self, current_y: float, threshold_px: float) -> bool:  # Check if face Y position exceeds calibrated threshold check
         # Verify if vertical coordinates height values drop below baseline thresholds checks limits
         """
         Checks if the current face Y coordinate deviates past the baseline by threshold.
