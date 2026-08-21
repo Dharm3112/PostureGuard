@@ -2421,3 +2421,8 @@ class LogRotationArchiveStoragePermissionError(PostureGuardException):
 class CSVRecordDelimiterParsingError(PostureGuardException):
     """Exception raised when parsing delimiter fields in posture history log CSV fails."""
     pass
+
+
+class UIWidgetGeometryBoundsInvalidError(PostureGuardException):
+    """Exception raised when Tkinter widget geometry bounds are negative or invalid."""
+    pass
