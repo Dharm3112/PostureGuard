@@ -169,5 +169,5 @@ class ConfigManager:
         """
         Returns the absolute path of the configuration file.
         """
-        return os.path.abspath(self.LOCAL_CONFIG_FILE)  # Compute absolute filepath location parameters
+        return os.path.abspath(self.LOCAL_CONFIG_FILE)  # Compute absolute filepath location parameters string
 
