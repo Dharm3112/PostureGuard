@@ -2411,3 +2411,8 @@ class ConfigMigrationBackupRestoreFailedError(PostureGuardException):
 class LogHandlerStreamFlushWriteTimeoutError(PostureGuardException):
     """Exception raised when flushing active log stream buffer times out."""
     pass
+
+
+class LogRotationArchiveStoragePermissionError(PostureGuardException):
+    """Exception raised when moving log archive file encounters OS permission denial."""
+    pass
