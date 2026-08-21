@@ -2791,5 +2791,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioOutputDeviceStreamInitError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiosampleformatconversionunderflowerror(self) -> None:
+        from exceptions import AudioSampleFormatConversionUnderflowError
+        exc = AudioSampleFormatConversionUnderflowError("Test msg")
+        self.assertEqual(exc.error_code, "AudioSampleFormatConversionUnderflowError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
