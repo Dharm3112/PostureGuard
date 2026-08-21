@@ -2406,3 +2406,8 @@ class ConfigKeyValidationNumericLimitError(PostureGuardException):
 class ConfigMigrationBackupRestoreFailedError(PostureGuardException):
     """Exception raised when restoring configuration backup file fails."""
     pass
+
+
+class LogHandlerStreamFlushWriteTimeoutError(PostureGuardException):
+    """Exception raised when flushing active log stream buffer times out."""
+    pass
