@@ -2809,5 +2809,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationIconCorruptImageDataError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configkeyvalidationnumericlimiterror(self) -> None:
+        from exceptions import ConfigKeyValidationNumericLimitError
+        exc = ConfigKeyValidationNumericLimitError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigKeyValidationNumericLimitError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
