@@ -2401,3 +2401,8 @@ class NotificationIconCorruptImageDataError(PostureGuardException):
 class ConfigKeyValidationNumericLimitError(PostureGuardException):
     """Exception raised when numerical configuration parameter violates system limits."""
     pass
+
+
+class ConfigMigrationBackupRestoreFailedError(PostureGuardException):
+    """Exception raised when restoring configuration backup file fails."""
+    pass
