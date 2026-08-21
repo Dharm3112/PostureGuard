@@ -2386,3 +2386,8 @@ class AudioOutputDeviceStreamInitError(PostureGuardException):
 class AudioSampleFormatConversionUnderflowError(PostureGuardException):
     """Exception raised when converting PCM sample buffer bit depths underflows."""
     pass
+
+
+class NotificationChannelPermissionRevokedError(PostureGuardException):
+    """Exception raised when desktop notification permission is revoked by user."""
+    pass
