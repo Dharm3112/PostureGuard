@@ -2376,3 +2376,8 @@ class FaceDetectionROICoordinateOutOfBoundsError(PostureGuardException):
 class CalibrateBaselineBufferInsufficientError(PostureGuardException):
     """Exception raised when posture calibration is requested with fewer than required buffer frames history."""
     pass
+
+
+class AudioOutputDeviceStreamInitError(PostureGuardException):
+    """Exception raised when initializing audio output stream object encounters device error."""
+    pass
