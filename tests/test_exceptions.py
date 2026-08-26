@@ -2881,5 +2881,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigMigrationBackupRestoreIOError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_loghandlerstreamflushwritetimeouterror(self) -> None:
+        from exceptions import LogHandlerStreamFlushWriteTimeoutError
+        exc = LogHandlerStreamFlushWriteTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "LogHandlerStreamFlushWriteTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
