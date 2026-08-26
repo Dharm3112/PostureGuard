@@ -2516,3 +2516,8 @@ class CameraStreamBufferReadOverflowError(PostureGuardException):
 class CameraDeviceResolutionConstraintViolationError(PostureGuardException):
     """Exception raised when requested video resolution exceeds camera hardware specs."""
     pass
+
+
+class ModelCascadeXmlSchemaParseError(PostureGuardException):
+    """Exception raised when parsing OpenCV Haar cascade XML schema structure encounters syntax error."""
+    pass
