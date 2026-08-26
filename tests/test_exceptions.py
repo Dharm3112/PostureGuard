@@ -2905,5 +2905,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetGeometryBoundsInvalidRangeError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiooutputdevicedrivermismatcherror(self) -> None:
+        from exceptions import AudioOutputDeviceDriverMismatchError
+        exc = AudioOutputDeviceDriverMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "AudioOutputDeviceDriverMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
