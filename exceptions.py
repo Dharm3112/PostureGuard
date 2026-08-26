@@ -2511,3 +2511,8 @@ class UIWidgetLayoutPackingMarginOverflowError(PostureGuardException):
 class CameraStreamBufferReadOverflowError(PostureGuardException):
     """Exception raised when camera video capture frame buffer buffer overflows."""
     pass
+
+
+class CameraDeviceResolutionConstraintViolationError(PostureGuardException):
+    """Exception raised when requested video resolution exceeds camera hardware specs."""
+    pass
