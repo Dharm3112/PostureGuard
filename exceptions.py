@@ -2501,3 +2501,8 @@ class LogRotationArchiveFileAccessError(PostureGuardException):
 class CSVTimestampParseChronologyError(PostureGuardException):
     """Exception raised when parsing posture history log CSV timestamps yields non-chronological order."""
     pass
+
+
+class UIWidgetLayoutPackingMarginOverflowError(PostureGuardException):
+    """Exception raised when Tkinter widget packing margins exceed container window bounds."""
+    pass
