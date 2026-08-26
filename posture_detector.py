@@ -20,7 +20,7 @@ class PostureDetector:
         :param buffer_size: Number of frames to average for smoothing vertical movement jitter.
         """
         self.logger = setup_logger()  # Bind logger output streams helper instance
-        self.logger.info("Initializing PostureDetector...")  # Log detector initialization start message item
+        self.logger.info("Initializing PostureDetector...")  # Log detector initialization start message item log
 
         # Setup localized cascade file parameters from libraries tracker loader
         # Verify path config integrity check
