@@ -2953,5 +2953,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraDeviceResolutionConstraintViolationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_modelcascadexmlschemaparseerror(self) -> None:
+        from exceptions import ModelCascadeXmlSchemaParseError
+        exc = ModelCascadeXmlSchemaParseError("Test msg")
+        self.assertEqual(exc.error_code, "ModelCascadeXmlSchemaParseError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
