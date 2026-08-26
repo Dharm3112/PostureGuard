@@ -50,7 +50,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
 
     return logger
 
-def get_log_filepath(logger: logging.Logger) -> Optional[str]:  # Retrieve filepath of rotating file handler
+def get_log_filepath(logger: logging.Logger) -> Optional[str]:  # Retrieve filepath of rotating file handler helper
     """Utility to retrieve path of file handler log file."""
     for handler in logger.handlers:
         if isinstance(handler, RotatingFileHandler):  # Filter log handler checks by RotatingFileHandler type subclasses
