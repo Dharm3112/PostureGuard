@@ -2875,5 +2875,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyValidationNumericLimitExceededError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configmigrationbackuprestoreioerror(self) -> None:
+        from exceptions import ConfigMigrationBackupRestoreIOError
+        exc = ConfigMigrationBackupRestoreIOError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigMigrationBackupRestoreIOError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
