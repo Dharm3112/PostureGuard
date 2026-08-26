@@ -2441,3 +2441,8 @@ class AudioSampleFormatBitDepthConversionError(PostureGuardException):
 class NotificationChannelPermissionRevocationWarningError(PostureGuardException):
     """Exception raised when desktop notification permission is revoked during active session."""
     pass
+
+
+class NotificationIconHeaderCorruptFormatError(PostureGuardException):
+    """Exception raised when notification icon image header format is unreadable."""
+    pass
