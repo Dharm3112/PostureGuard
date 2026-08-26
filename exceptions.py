@@ -2491,3 +2491,8 @@ class NotificationIconResourceDimensionError(PostureGuardException):
 class ConfigKeyValidationSchemaTypeMismatchError(PostureGuardException):
     """Exception raised when config JSON schema validation encounters unexpected value type."""
     pass
+
+
+class LogRotationArchiveFileAccessError(PostureGuardException):
+    """Exception raised when creating rotated log file backup archive encounters file lock error."""
+    pass
