@@ -2923,5 +2923,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyValidationSchemaTypeMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logrotationarchivefileaccesserror(self) -> None:
+        from exceptions import LogRotationArchiveFileAccessError
+        exc = LogRotationArchiveFileAccessError("Test msg")
+        self.assertEqual(exc.error_code, "LogRotationArchiveFileAccessError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
