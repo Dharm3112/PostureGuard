@@ -2965,5 +2965,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "FaceDetectionROICoordinateNegativeError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_calibratebaselinebufferframetimeouterror(self) -> None:
+        from exceptions import CalibrateBaselineBufferFrameTimeoutError
+        exc = CalibrateBaselineBufferFrameTimeoutError("Test msg")
+        self.assertEqual(exc.error_code, "CalibrateBaselineBufferFrameTimeoutError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
