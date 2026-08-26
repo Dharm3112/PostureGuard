@@ -2486,3 +2486,8 @@ class AudioOutputDeviceDriverMismatchError(PostureGuardException):
 class NotificationIconResourceDimensionError(PostureGuardException):
     """Exception raised when desktop notification icon file pixel dimensions violate OS bounds."""
     pass
+
+
+class ConfigKeyValidationSchemaTypeMismatchError(PostureGuardException):
+    """Exception raised when config JSON schema validation encounters unexpected value type."""
+    pass
