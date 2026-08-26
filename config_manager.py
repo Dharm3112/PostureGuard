@@ -29,7 +29,7 @@ class ConfigManager:
         "camera_index": 0,  # Default camera index value setting
         "slouch_threshold_px": 40,  # Default slouch threshold pixel distance setting
         "time_to_alert_frames": 50,  # Default frames threshold before posture alert
-        "frame_delay_ms": 15,  # Default frame refresh delay in milliseconds
+        "frame_delay_ms": 15,  # Default frame refresh delay in milliseconds setting
         "camera_width": 640,  # Default camera capture width in pixels
         "camera_height": 480,  # Default camera capture height in pixels
         "save_history": True,  # Default save posture history toggle
