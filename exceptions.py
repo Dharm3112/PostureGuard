@@ -2476,3 +2476,8 @@ class CSVRecordDelimiterParseSyntaxWarningError(PostureGuardException):
 class UIWidgetGeometryBoundsInvalidRangeError(PostureGuardException):
     """Exception raised when Tkinter widget geometry bounds exceed range limits."""
     pass
+
+
+class AudioOutputDeviceDriverMismatchError(PostureGuardException):
+    """Exception raised when audio output hardware driver configuration does not match expected device settings."""
+    pass
