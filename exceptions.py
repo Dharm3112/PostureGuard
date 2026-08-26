@@ -2526,3 +2526,8 @@ class ModelCascadeXmlSchemaParseError(PostureGuardException):
 class FaceDetectionROICoordinateNegativeError(PostureGuardException):
     """Exception raised when face bounding box coordinate evaluation yields negative offsets."""
     pass
+
+
+class CalibrateBaselineBufferFrameTimeoutError(PostureGuardException):
+    """Exception raised when acquiring calibration frame samples from webcam stream times out."""
+    pass
