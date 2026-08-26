@@ -2466,3 +2466,8 @@ class LogHandlerStreamFlushWriteTimeoutError(PostureGuardException):
 class LogRotationArchiveStorageFullError(PostureGuardException):
     """Exception raised when archiving log backup files encounters storage full condition."""
     pass
+
+
+class CSVRecordDelimiterParseSyntaxWarningError(PostureGuardException):
+    """Exception raised when parsing delimiter fields in posture history log CSV encounters syntax warning."""
+    pass
