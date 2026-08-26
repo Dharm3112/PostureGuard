@@ -2496,3 +2496,8 @@ class ConfigKeyValidationSchemaTypeMismatchError(PostureGuardException):
 class LogRotationArchiveFileAccessError(PostureGuardException):
     """Exception raised when creating rotated log file backup archive encounters file lock error."""
     pass
+
+
+class CSVTimestampParseChronologyError(PostureGuardException):
+    """Exception raised when parsing posture history log CSV timestamps yields non-chronological order."""
+    pass
