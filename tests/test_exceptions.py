@@ -2893,5 +2893,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogRotationArchiveStorageFullError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvrecorddelimiterparsesyntaxwarningerror(self) -> None:
+        from exceptions import CSVRecordDelimiterParseSyntaxWarningError
+        exc = CSVRecordDelimiterParseSyntaxWarningError("Test msg")
+        self.assertEqual(exc.error_code, "CSVRecordDelimiterParseSyntaxWarningError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
