@@ -2446,3 +2446,8 @@ class NotificationChannelPermissionRevocationWarningError(PostureGuardException)
 class NotificationIconHeaderCorruptFormatError(PostureGuardException):
     """Exception raised when notification icon image header format is unreadable."""
     pass
+
+
+class ConfigKeyValidationNumericLimitExceededError(PostureGuardException):
+    """Exception raised when numerical setting value exceeds maximum allowable range limit."""
+    pass
