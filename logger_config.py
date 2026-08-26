@@ -54,5 +54,5 @@ def get_log_filepath(logger: logging.Logger) -> Optional[str]:  # Retrieve filep
     """Utility to retrieve path of file handler log file."""
     for handler in logger.handlers:
         if isinstance(handler, RotatingFileHandler):  # Filter log handler checks by RotatingFileHandler type subclasses
-            return handler.baseFilename  # Extract file path location metadata parameters
+            return handler.baseFilename  # Extract file path location metadata parameters string
     return None  # Return None if RotatingFileHandler is not configured fallback value
