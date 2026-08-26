@@ -2506,3 +2506,8 @@ class CSVTimestampParseChronologyError(PostureGuardException):
 class UIWidgetLayoutPackingMarginOverflowError(PostureGuardException):
     """Exception raised when Tkinter widget packing margins exceed container window bounds."""
     pass
+
+
+class CameraStreamBufferReadOverflowError(PostureGuardException):
+    """Exception raised when camera video capture frame buffer buffer overflows."""
+    pass
