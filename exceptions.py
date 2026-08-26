@@ -2451,3 +2451,8 @@ class NotificationIconHeaderCorruptFormatError(PostureGuardException):
 class ConfigKeyValidationNumericLimitExceededError(PostureGuardException):
     """Exception raised when numerical setting value exceeds maximum allowable range limit."""
     pass
+
+
+class ConfigMigrationBackupRestoreIOError(PostureGuardException):
+    """Exception raised when restoring configuration backup file encounters IO error."""
+    pass
