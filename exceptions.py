@@ -2521,3 +2521,8 @@ class CameraDeviceResolutionConstraintViolationError(PostureGuardException):
 class ModelCascadeXmlSchemaParseError(PostureGuardException):
     """Exception raised when parsing OpenCV Haar cascade XML schema structure encounters syntax error."""
     pass
+
+
+class FaceDetectionROICoordinateNegativeError(PostureGuardException):
+    """Exception raised when face bounding box coordinate evaluation yields negative offsets."""
+    pass
