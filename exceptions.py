@@ -2436,3 +2436,8 @@ class AudioOutputDeviceStreamCloseError(PostureGuardException):
 class AudioSampleFormatBitDepthConversionError(PostureGuardException):
     """Exception raised when converting PCM sample buffer bit depth encounters conversion error."""
     pass
+
+
+class NotificationChannelPermissionRevocationWarningError(PostureGuardException):
+    """Exception raised when desktop notification permission is revoked during active session."""
+    pass
