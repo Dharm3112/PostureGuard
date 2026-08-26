@@ -2911,5 +2911,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioOutputDeviceDriverMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationiconresourcedimensionerror(self) -> None:
+        from exceptions import NotificationIconResourceDimensionError
+        exc = NotificationIconResourceDimensionError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconResourceDimensionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
