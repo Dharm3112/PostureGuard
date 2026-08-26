@@ -2845,5 +2845,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetGeometryBoundsInvalidError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiooutputdevicestreamcloseerror(self) -> None:
+        from exceptions import AudioOutputDeviceStreamCloseError
+        exc = AudioOutputDeviceStreamCloseError("Test msg")
+        self.assertEqual(exc.error_code, "AudioOutputDeviceStreamCloseError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
