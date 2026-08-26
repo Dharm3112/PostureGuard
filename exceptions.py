@@ -2426,3 +2426,8 @@ class CSVRecordDelimiterParsingError(PostureGuardException):
 class UIWidgetGeometryBoundsInvalidError(PostureGuardException):
     """Exception raised when Tkinter widget geometry bounds are negative or invalid."""
     pass
+
+
+class AudioOutputDeviceStreamCloseError(PostureGuardException):
+    """Exception raised when closing audio output stream object encounters OS device error."""
+    pass
