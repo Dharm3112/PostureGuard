@@ -2899,5 +2899,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRecordDelimiterParseSyntaxWarningError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetgeometryboundsinvalidrangeerror(self) -> None:
+        from exceptions import UIWidgetGeometryBoundsInvalidRangeError
+        exc = UIWidgetGeometryBoundsInvalidRangeError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetGeometryBoundsInvalidRangeError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
