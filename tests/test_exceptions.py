@@ -2947,5 +2947,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraStreamBufferReadOverflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameradeviceresolutionconstraintviolationerror(self) -> None:
+        from exceptions import CameraDeviceResolutionConstraintViolationError
+        exc = CameraDeviceResolutionConstraintViolationError("Test msg")
+        self.assertEqual(exc.error_code, "CameraDeviceResolutionConstraintViolationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
