@@ -2456,3 +2456,8 @@ class ConfigKeyValidationNumericLimitExceededError(PostureGuardException):
 class ConfigMigrationBackupRestoreIOError(PostureGuardException):
     """Exception raised when restoring configuration backup file encounters IO error."""
     pass
+
+
+class LogHandlerStreamFlushWriteTimeoutError(PostureGuardException):
+    """Exception raised when flushing active log stream write buffer encounters timeout."""
+    pass
