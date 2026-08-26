@@ -2461,3 +2461,8 @@ class ConfigMigrationBackupRestoreIOError(PostureGuardException):
 class LogHandlerStreamFlushWriteTimeoutError(PostureGuardException):
     """Exception raised when flushing active log stream write buffer encounters timeout."""
     pass
+
+
+class LogRotationArchiveStorageFullError(PostureGuardException):
+    """Exception raised when archiving log backup files encounters storage full condition."""
+    pass
