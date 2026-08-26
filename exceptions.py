@@ -2481,3 +2481,8 @@ class UIWidgetGeometryBoundsInvalidRangeError(PostureGuardException):
 class AudioOutputDeviceDriverMismatchError(PostureGuardException):
     """Exception raised when audio output hardware driver configuration does not match expected device settings."""
     pass
+
+
+class NotificationIconResourceDimensionError(PostureGuardException):
+    """Exception raised when desktop notification icon file pixel dimensions violate OS bounds."""
+    pass
