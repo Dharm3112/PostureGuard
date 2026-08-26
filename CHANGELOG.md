@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.2.0] - 2026-08-26
+
+### Added
+- **Audio Stream Driver, Notification Dimensions, and Camera Resolution Diagnostic Exceptions:** Declared 21 new exception classes for audio stream closing errors, bit depth conversion errors, notification icon dimension violations, log archive lock errors, camera read overflow errors, and calibration buffer timeouts.
+- **Robust Exception Checking:** Appended 21 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying default settings dictionaries, baseFilename returns, timestamp items, and baseline indicators.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [4.1.0] - 2026-08-21
 
 ### Added
