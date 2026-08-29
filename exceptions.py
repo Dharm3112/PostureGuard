@@ -2591,3 +2591,8 @@ class UIWidgetGeometryPackingMarginOverflowError(PostureGuardException):
 class UIThemeColorHexParsingError(PostureGuardException):
     """Exception raised when color hex string in visual theme palette cannot be parsed."""
     pass
+
+
+class CameraStreamBufferReadTimeoutWarningError(PostureGuardException):
+    """Exception raised when reading next frame buffer from camera video stream encounters timeout."""
+    pass
