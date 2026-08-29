@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.3.0] - 2026-08-29
+
+### Added
+- **Audio Mute State, Notification Channel Permissions, and Chart Export Diagnostic Exceptions:** Declared 18 new exception classes for audio mute state errors, downsampling errors, channel creation permissions, corrupt icon formats, null value disallowance, and chart export format errors.
+- **Robust Exception Checking:** Appended 18 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying Key Constants, handler loops, posture counts, and arithmetic mean Y calculations.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [4.2.0] - 2026-08-26
 
 ### Added
