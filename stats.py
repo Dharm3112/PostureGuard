@@ -76,6 +76,6 @@ def reset_statistics_file(filepath: str = "posture_history.csv") -> bool:  # Re-
         with open(filepath, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)  # Instantiate CSV writer for header initialization
             writer.writerow(["timestamp", "deviation_px", "state"])
-        return True  # Return boolean validation flags indicating success status code
+        return True  # Return boolean validation flags indicating success status code value
     except OSError:
         return False
