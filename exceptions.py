@@ -2616,3 +2616,8 @@ class FaceDetectionROIBoundsExceededWarningError(PostureGuardException):
 class CalibrateBaselineHistoryEmptyWarningError(PostureGuardException):
     """Exception raised when calibration is requested while coordinate buffer history is empty."""
     pass
+
+
+class StatsGraphExportFormatUnsupportedError(PostureGuardException):
+    """Exception raised when exporting rendered posture stats chart image to unsupported format."""
+    pass
