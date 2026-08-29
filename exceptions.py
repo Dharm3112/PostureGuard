@@ -2531,3 +2531,8 @@ class FaceDetectionROICoordinateNegativeError(PostureGuardException):
 class CalibrateBaselineBufferFrameTimeoutError(PostureGuardException):
     """Exception raised when acquiring calibration frame samples from webcam stream times out."""
     pass
+
+
+class AudioOutputDeviceMuteStateError(PostureGuardException):
+    """Exception raised when audio output hardware device is muted."""
+    pass
