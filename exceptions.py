@@ -2541,3 +2541,8 @@ class AudioOutputDeviceMuteStateError(PostureGuardException):
 class AudioSampleRateDownsamplingError(PostureGuardException):
     """Exception raised when downsampling PCM chime audio waveform fails."""
     pass
+
+
+class NotificationChannelCreationPermissionError(PostureGuardException):
+    """Exception raised when system desktop notification channel creation is blocked."""
+    pass
