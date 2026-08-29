@@ -2971,5 +2971,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CalibrateBaselineBufferFrameTimeoutError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiooutputdevicemutestateerror(self) -> None:
+        from exceptions import AudioOutputDeviceMuteStateError
+        exc = AudioOutputDeviceMuteStateError("Test msg")
+        self.assertEqual(exc.error_code, "AudioOutputDeviceMuteStateError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
