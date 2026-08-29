@@ -2571,3 +2571,8 @@ class LogHandlerStreamFlushWriteIOError(PostureGuardException):
 class LogRotationArchiveLimitExceededWarningError(PostureGuardException):
     """Exception raised when total size of archived log files exceeds soft limit."""
     pass
+
+
+class CSVRecordDelimiterParseSyntaxFailureError(PostureGuardException):
+    """Exception raised when parsing posture log CSV delimiter encounters syntax error."""
+    pass
