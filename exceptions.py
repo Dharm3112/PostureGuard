@@ -2551,3 +2551,8 @@ class NotificationChannelCreationPermissionError(PostureGuardException):
 class NotificationIconResourceCorruptFormatError(PostureGuardException):
     """Exception raised when toast notification icon resource image format is corrupted."""
     pass
+
+
+class ConfigKeyValidationNullValueDisallowedError(PostureGuardException):
+    """Exception raised when required configuration parameter value is null."""
+    pass
