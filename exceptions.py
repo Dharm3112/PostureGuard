@@ -2546,3 +2546,8 @@ class AudioSampleRateDownsamplingError(PostureGuardException):
 class NotificationChannelCreationPermissionError(PostureGuardException):
     """Exception raised when system desktop notification channel creation is blocked."""
     pass
+
+
+class NotificationIconResourceCorruptFormatError(PostureGuardException):
+    """Exception raised when toast notification icon resource image format is corrupted."""
+    pass
