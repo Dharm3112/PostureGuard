@@ -3007,5 +3007,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigMigrationVersionIncompatibleError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_loghandlerstreamflushwriteioerror(self) -> None:
+        from exceptions import LogHandlerStreamFlushWriteIOError
+        exc = LogHandlerStreamFlushWriteIOError("Test msg")
+        self.assertEqual(exc.error_code, "LogHandlerStreamFlushWriteIOError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
