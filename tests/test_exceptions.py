@@ -3061,5 +3061,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ModelCascadeFeatureXmlParseSyntaxError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_facedetectionroiboundsexceededwarningerror(self) -> None:
+        from exceptions import FaceDetectionROIBoundsExceededWarningError
+        exc = FaceDetectionROIBoundsExceededWarningError("Test msg")
+        self.assertEqual(exc.error_code, "FaceDetectionROIBoundsExceededWarningError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
