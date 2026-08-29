@@ -2561,3 +2561,8 @@ class ConfigKeyValidationNullValueDisallowedError(PostureGuardException):
 class ConfigMigrationVersionIncompatibleError(PostureGuardException):
     """Exception raised when upgrading JSON config file schema from incompatible legacy version."""
     pass
+
+
+class LogHandlerStreamFlushWriteIOError(PostureGuardException):
+    """Exception raised when flushing active log stream buffer encounters IO error."""
+    pass
