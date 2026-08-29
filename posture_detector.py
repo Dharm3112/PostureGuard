@@ -99,7 +99,7 @@ class PostureDetector:
                 cv2.putText(frame, "Limit", (10, limit_y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 1)  # Annotate text label
 
         else:
-            self.consecutive_failures += 1  # Increment sequential tracking failures tracker parameter
+            self.consecutive_failures += 1  # Increment sequential tracking failures tracker parameter counter
             if self.consecutive_failures % 30 == 0:
                 self.logger.warning(f"No face detected for {self.consecutive_failures} frames.")
         return frame, current_y  # Return current frame and smoothed height values
