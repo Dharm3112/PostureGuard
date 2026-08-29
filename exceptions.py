@@ -2576,3 +2576,8 @@ class LogRotationArchiveLimitExceededWarningError(PostureGuardException):
 class CSVRecordDelimiterParseSyntaxFailureError(PostureGuardException):
     """Exception raised when parsing posture log CSV delimiter encounters syntax error."""
     pass
+
+
+class CSVTimestampZoneOffsetParseError(PostureGuardException):
+    """Exception raised when converting local timestamp string to UTC timezone offset fails."""
+    pass
