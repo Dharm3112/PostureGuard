@@ -2586,3 +2586,8 @@ class CSVTimestampZoneOffsetParseError(PostureGuardException):
 class UIWidgetGeometryPackingMarginOverflowError(PostureGuardException):
     """Exception raised when packing Tkinter widget into frame exceeds container margins."""
     pass
+
+
+class UIThemeColorHexParsingError(PostureGuardException):
+    """Exception raised when color hex string in visual theme palette cannot be parsed."""
+    pass
