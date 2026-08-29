@@ -2556,3 +2556,8 @@ class NotificationIconResourceCorruptFormatError(PostureGuardException):
 class ConfigKeyValidationNullValueDisallowedError(PostureGuardException):
     """Exception raised when required configuration parameter value is null."""
     pass
+
+
+class ConfigMigrationVersionIncompatibleError(PostureGuardException):
+    """Exception raised when upgrading JSON config file schema from incompatible legacy version."""
+    pass
