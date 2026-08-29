@@ -3037,5 +3037,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetGeometryPackingMarginOverflowError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemecolorhexparsingerror(self) -> None:
+        from exceptions import UIThemeColorHexParsingError
+        exc = UIThemeColorHexParsingError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemeColorHexParsingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
