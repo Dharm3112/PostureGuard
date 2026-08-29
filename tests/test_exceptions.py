@@ -2989,5 +2989,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationChannelCreationPermissionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationiconresourcecorruptformaterror(self) -> None:
+        from exceptions import NotificationIconResourceCorruptFormatError
+        exc = NotificationIconResourceCorruptFormatError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconResourceCorruptFormatError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
