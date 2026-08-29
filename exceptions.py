@@ -2536,3 +2536,8 @@ class CalibrateBaselineBufferFrameTimeoutError(PostureGuardException):
 class AudioOutputDeviceMuteStateError(PostureGuardException):
     """Exception raised when audio output hardware device is muted."""
     pass
+
+
+class AudioSampleRateDownsamplingError(PostureGuardException):
+    """Exception raised when downsampling PCM chime audio waveform fails."""
+    pass
