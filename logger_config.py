@@ -23,7 +23,7 @@ def setup_logger(log_file: str = "posture_guard.log", level: int = logging.INFO,
         if log_format:  # Verify user provided explicit formatter settings parameter
             # Compile new formatter based on configuration string parameter
             formatter = logging.Formatter(log_format)  # Build format map pattern compiled helper instance format
-            for handler in logger.handlers:  # Iterate over active logger handlers  # Reconfigure format bounds templates on active logging handlers loop
+            for handler in logger.handlers:  # Iterate over active logger handlers  # Reconfigure format bounds templates on active logging handlers loop list
                 handler.setFormatter(formatter)
         return logger  # Return fully initialized logger module reference object reference
 
