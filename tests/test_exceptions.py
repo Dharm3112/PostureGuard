@@ -3031,5 +3031,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVTimestampZoneOffsetParseError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetgeometrypackingmarginoverflowerror(self) -> None:
+        from exceptions import UIWidgetGeometryPackingMarginOverflowError
+        exc = UIWidgetGeometryPackingMarginOverflowError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetGeometryPackingMarginOverflowError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
