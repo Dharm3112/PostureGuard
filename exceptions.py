@@ -2566,3 +2566,8 @@ class ConfigMigrationVersionIncompatibleError(PostureGuardException):
 class LogHandlerStreamFlushWriteIOError(PostureGuardException):
     """Exception raised when flushing active log stream buffer encounters IO error."""
     pass
+
+
+class LogRotationArchiveLimitExceededWarningError(PostureGuardException):
+    """Exception raised when total size of archived log files exceeds soft limit."""
+    pass
