@@ -2606,3 +2606,8 @@ class CameraDeviceInitializationHardwareFailureError(PostureGuardException):
 class ModelCascadeFeatureXmlParseSyntaxError(PostureGuardException):
     """Exception raised when parsing OpenCV Haar cascade XML feature structure encounters syntax error."""
     pass
+
+
+class FaceDetectionROIBoundsExceededWarningError(PostureGuardException):
+    """Exception raised when face bounding box coordinate evaluation exceeds canvas bounds."""
+    pass
