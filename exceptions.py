@@ -2601,3 +2601,8 @@ class CameraStreamBufferReadTimeoutWarningError(PostureGuardException):
 class CameraDeviceInitializationHardwareFailureError(PostureGuardException):
     """Exception raised when initializing webcam hardware driver encounters hardware error."""
     pass
+
+
+class ModelCascadeFeatureXmlParseSyntaxError(PostureGuardException):
+    """Exception raised when parsing OpenCV Haar cascade XML feature structure encounters syntax error."""
+    pass
