@@ -2596,3 +2596,8 @@ class UIThemeColorHexParsingError(PostureGuardException):
 class CameraStreamBufferReadTimeoutWarningError(PostureGuardException):
     """Exception raised when reading next frame buffer from camera video stream encounters timeout."""
     pass
+
+
+class CameraDeviceInitializationHardwareFailureError(PostureGuardException):
+    """Exception raised when initializing webcam hardware driver encounters hardware error."""
+    pass
