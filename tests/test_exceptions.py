@@ -3013,5 +3013,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogHandlerStreamFlushWriteIOError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logrotationarchivelimitexceededwarningerror(self) -> None:
+        from exceptions import LogRotationArchiveLimitExceededWarningError
+        exc = LogRotationArchiveLimitExceededWarningError("Test msg")
+        self.assertEqual(exc.error_code, "LogRotationArchiveLimitExceededWarningError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
