@@ -3049,5 +3049,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraStreamBufferReadTimeoutWarningError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_cameradeviceinitializationhardwarefailureerror(self) -> None:
+        from exceptions import CameraDeviceInitializationHardwareFailureError
+        exc = CameraDeviceInitializationHardwareFailureError("Test msg")
+        self.assertEqual(exc.error_code, "CameraDeviceInitializationHardwareFailureError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
