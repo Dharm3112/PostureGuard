@@ -18,7 +18,7 @@ class ConfigManager:
     TIME_TO_ALERT = "time_to_alert_frames"  # Key identifier for time to alert frames setting item value setting
     FRAME_DELAY = "frame_delay_ms"  # Key identifier for frame delay setting item constant
     CAMERA_WIDTH = "camera_width"  # Key identifier for camera width setting item constant
-    CAMERA_HEIGHT = "camera_height"  # Key identifier for camera height setting item
+    CAMERA_HEIGHT = "camera_height"  # Key identifier for camera height setting item constant
     SAVE_HISTORY = "save_history"  # Key identifier for history logging setting item
     SAVED_BASELINE_Y = "saved_baseline_y"  # Key identifier for saved baseline setting item
     
