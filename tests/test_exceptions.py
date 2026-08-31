@@ -3085,5 +3085,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioOutputDeviceChannelMappingError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiosampleformatbitdepthmismatcherror(self) -> None:
+        from exceptions import AudioSampleFormatBitDepthMismatchError
+        exc = AudioSampleFormatBitDepthMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "AudioSampleFormatBitDepthMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
