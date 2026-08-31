@@ -2636,3 +2636,8 @@ class AudioSampleFormatBitDepthMismatchError(PostureGuardException):
 class NotificationChannelPermissionExpiredError(PostureGuardException):
     """Exception raised when desktop notification permission session expires."""
     pass
+
+
+class NotificationIconFileMissingError(PostureGuardException):
+    """Exception raised when specified notification icon image file path does not exist."""
+    pass
