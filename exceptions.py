@@ -2671,3 +2671,8 @@ class CSVRecordFieldCountMismatchError(PostureGuardException):
 class CSVTimestampDateFormatInvalidError(PostureGuardException):
     """Exception raised when parsing timestamp date string format in posture log CSV fails."""
     pass
+
+
+class UIWidgetGeometryPackingConflictError(PostureGuardException):
+    """Exception raised when widget grid positioning conflicts with adjacent container bounds."""
+    pass
