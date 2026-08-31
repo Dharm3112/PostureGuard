@@ -3109,5 +3109,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "ConfigKeyValidationTypeMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_configmigrationschemaversionmissingerror(self) -> None:
+        from exceptions import ConfigMigrationSchemaVersionMissingError
+        exc = ConfigMigrationSchemaVersionMissingError("Test msg")
+        self.assertEqual(exc.error_code, "ConfigMigrationSchemaVersionMissingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
