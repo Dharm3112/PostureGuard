@@ -3145,5 +3145,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetGeometryPackingConflictError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemepalettecolorinvaliderror(self) -> None:
+        from exceptions import UIThemePaletteColorInvalidError
+        exc = UIThemePaletteColorInvalidError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemePaletteColorInvalidError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
