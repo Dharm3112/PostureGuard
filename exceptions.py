@@ -2681,3 +2681,8 @@ class UIWidgetGeometryPackingConflictError(PostureGuardException):
 class UIThemePaletteColorInvalidError(PostureGuardException):
     """Exception raised when visual theme palette color string is invalid."""
     pass
+
+
+class CameraStreamBufferInitializationError(PostureGuardException):
+    """Exception raised when webcam video capture buffer initialization fails."""
+    pass
