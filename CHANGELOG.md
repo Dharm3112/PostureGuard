@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.4.0] - 2026-08-31
+
+### Added
+- **Audio Channel Mapping, Notification Permission Expiration, and Camera Buffer Diagnostic Exceptions:** Declared 13 new exception classes for audio channel mapping errors, sample bit depth mismatch, notification session expiration, missing icon files, schema type mismatch, log write failures, and camera buffer initialization errors.
+- **Robust Exception Checking:** Appended 13 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying template names, scale factor constants, import packages, and library modules.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [4.3.0] - 2026-08-29
 
 ### Added
