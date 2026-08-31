@@ -3151,5 +3151,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIThemePaletteColorInvalidError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_camerastreambufferinitializationerror(self) -> None:
+        from exceptions import CameraStreamBufferInitializationError
+        exc = CameraStreamBufferInitializationError("Test msg")
+        self.assertEqual(exc.error_code, "CameraStreamBufferInitializationError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
