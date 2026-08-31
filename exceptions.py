@@ -2676,3 +2676,8 @@ class CSVTimestampDateFormatInvalidError(PostureGuardException):
 class UIWidgetGeometryPackingConflictError(PostureGuardException):
     """Exception raised when widget grid positioning conflicts with adjacent container bounds."""
     pass
+
+
+class UIThemePaletteColorInvalidError(PostureGuardException):
+    """Exception raised when visual theme palette color string is invalid."""
+    pass
