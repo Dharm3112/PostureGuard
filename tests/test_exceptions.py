@@ -3121,5 +3121,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogHandlerStreamWriteFailureError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logrotationarchivecompressionerror(self) -> None:
+        from exceptions import LogRotationArchiveCompressionError
+        exc = LogRotationArchiveCompressionError("Test msg")
+        self.assertEqual(exc.error_code, "LogRotationArchiveCompressionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
