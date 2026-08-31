@@ -2646,3 +2646,8 @@ class NotificationIconFileMissingError(PostureGuardException):
 class ConfigKeyValidationTypeMismatchError(PostureGuardException):
     """Exception raised when configuration parameter value type does not match JSON schema."""
     pass
+
+
+class ConfigMigrationSchemaVersionMissingError(PostureGuardException):
+    """Exception raised when configuration JSON file is missing required schema version tag."""
+    pass
