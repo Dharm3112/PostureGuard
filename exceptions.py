@@ -2651,3 +2651,8 @@ class ConfigKeyValidationTypeMismatchError(PostureGuardException):
 class ConfigMigrationSchemaVersionMissingError(PostureGuardException):
     """Exception raised when configuration JSON file is missing required schema version tag."""
     pass
+
+
+class LogHandlerStreamWriteFailureError(PostureGuardException):
+    """Exception raised when writing log record entry to stream handler encounters write failure."""
+    pass
