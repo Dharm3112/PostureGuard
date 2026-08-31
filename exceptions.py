@@ -2631,3 +2631,8 @@ class AudioOutputDeviceChannelMappingError(PostureGuardException):
 class AudioSampleFormatBitDepthMismatchError(PostureGuardException):
     """Exception raised when PCM audio sample bit depth does not match active stream config."""
     pass
+
+
+class NotificationChannelPermissionExpiredError(PostureGuardException):
+    """Exception raised when desktop notification permission session expires."""
+    pass
