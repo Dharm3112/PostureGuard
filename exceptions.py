@@ -2656,3 +2656,8 @@ class ConfigMigrationSchemaVersionMissingError(PostureGuardException):
 class LogHandlerStreamWriteFailureError(PostureGuardException):
     """Exception raised when writing log record entry to stream handler encounters write failure."""
     pass
+
+
+class LogRotationArchiveCompressionError(PostureGuardException):
+    """Exception raised when compressing rotated log file backup archive fails."""
+    pass
