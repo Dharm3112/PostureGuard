@@ -2641,3 +2641,8 @@ class NotificationChannelPermissionExpiredError(PostureGuardException):
 class NotificationIconFileMissingError(PostureGuardException):
     """Exception raised when specified notification icon image file path does not exist."""
     pass
+
+
+class ConfigKeyValidationTypeMismatchError(PostureGuardException):
+    """Exception raised when configuration parameter value type does not match JSON schema."""
+    pass
