@@ -1,4 +1,4 @@
-import logging  # Import standard logging module capabilities module package library
+import logging  # Import standard logging module capabilities module package library pkg
 from logging.handlers import RotatingFileHandler  # Import standard rotating file log utility class helper module package
 from typing import Optional  # Import Optional type annotation from typing module package import annotation
 
