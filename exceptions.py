@@ -2626,3 +2626,8 @@ class StatsGraphExportFormatUnsupportedError(PostureGuardException):
 class AudioOutputDeviceChannelMappingError(PostureGuardException):
     """Exception raised when audio output channel mapping is invalid."""
     pass
+
+
+class AudioSampleFormatBitDepthMismatchError(PostureGuardException):
+    """Exception raised when PCM audio sample bit depth does not match active stream config."""
+    pass
