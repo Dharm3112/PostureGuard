@@ -2661,3 +2661,8 @@ class LogHandlerStreamWriteFailureError(PostureGuardException):
 class LogRotationArchiveCompressionError(PostureGuardException):
     """Exception raised when compressing rotated log file backup archive fails."""
     pass
+
+
+class CSVRecordFieldCountMismatchError(PostureGuardException):
+    """Exception raised when CSV posture log record row contains unexpected field count."""
+    pass
