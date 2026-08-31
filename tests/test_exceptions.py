@@ -3091,5 +3091,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioSampleFormatBitDepthMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationchannelpermissionexpirederror(self) -> None:
+        from exceptions import NotificationChannelPermissionExpiredError
+        exc = NotificationChannelPermissionExpiredError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationChannelPermissionExpiredError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
