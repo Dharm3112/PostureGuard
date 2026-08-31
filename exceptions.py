@@ -2666,3 +2666,8 @@ class LogRotationArchiveCompressionError(PostureGuardException):
 class CSVRecordFieldCountMismatchError(PostureGuardException):
     """Exception raised when CSV posture log record row contains unexpected field count."""
     pass
+
+
+class CSVTimestampDateFormatInvalidError(PostureGuardException):
+    """Exception raised when parsing timestamp date string format in posture log CSV fails."""
+    pass
