@@ -3097,5 +3097,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "NotificationChannelPermissionExpiredError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationiconfilemissingerror(self) -> None:
+        from exceptions import NotificationIconFileMissingError
+        exc = NotificationIconFileMissingError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationIconFileMissingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
