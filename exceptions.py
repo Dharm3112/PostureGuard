@@ -2621,3 +2621,8 @@ class CalibrateBaselineHistoryEmptyWarningError(PostureGuardException):
 class StatsGraphExportFormatUnsupportedError(PostureGuardException):
     """Exception raised when exporting rendered posture stats chart image to unsupported format."""
     pass
+
+
+class AudioOutputDeviceChannelMappingError(PostureGuardException):
+    """Exception raised when audio output channel mapping is invalid."""
+    pass
