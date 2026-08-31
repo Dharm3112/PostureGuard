@@ -3079,5 +3079,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "StatsGraphExportFormatUnsupportedError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiooutputdevicechannelmappingerror(self) -> None:
+        from exceptions import AudioOutputDeviceChannelMappingError
+        exc = AudioOutputDeviceChannelMappingError("Test msg")
+        self.assertEqual(exc.error_code, "AudioOutputDeviceChannelMappingError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
