@@ -34,7 +34,7 @@ class ConfigManager:
         "camera_height": 480,  # Default camera capture height in pixels setting
         "save_history": True,  # Default save posture history toggle setting
         "saved_baseline_y": None,  # Default saved baseline Y coordinate setting
-        "scale_factor": 1.1,  # Default scale factor multiplier for Haar cascades setting
+        "scale_factor": 1.1,  # Default scale factor multiplier for Haar cascades setting val
         "min_neighbors": 5,  # Default min neighbors for Haar cascades
         "log_max_bytes": 1048576,  # Default max log file size in bytes setting
         "log_backup_count": 3  # Default log backup archives count setting
