@@ -3223,5 +3223,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "UIWidgetGeometryBoundsInvalidValueError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uithemepalettecolorformatparseerror(self) -> None:
+        from exceptions import UIThemePaletteColorFormatParseError
+        exc = UIThemePaletteColorFormatParseError("Test msg")
+        self.assertEqual(exc.error_code, "UIThemePaletteColorFormatParseError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
