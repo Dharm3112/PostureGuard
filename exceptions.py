@@ -2696,3 +2696,8 @@ class AudioOutputDeviceSampleRateMismatchError(PostureGuardException):
 class AudioSampleBufferFormatConversionError(PostureGuardException):
     """Exception raised when converting audio sample buffer raw bytes encounters conversion error."""
     pass
+
+
+class NotificationChannelPermissionBlockedError(PostureGuardException):
+    """Exception raised when desktop notification permission is explicitly blocked by system settings."""
+    pass
