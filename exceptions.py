@@ -2746,3 +2746,8 @@ class UIWidgetGeometryBoundsInvalidValueError(PostureGuardException):
 class UIThemePaletteColorFormatParseError(PostureGuardException):
     """Exception raised when parsing hex color code in visual theme palette fails."""
     pass
+
+
+class CameraStreamBufferReadTimeoutFailureError(PostureGuardException):
+    """Exception raised when reading next frame buffer from camera video stream times out repeatedly."""
+    pass
