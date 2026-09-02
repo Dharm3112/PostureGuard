@@ -3199,5 +3199,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogHandlerStreamFlushWriteFailureError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_logrotationarchivestoragequotaexceedederror(self) -> None:
+        from exceptions import LogRotationArchiveStorageQuotaExceededError
+        exc = LogRotationArchiveStorageQuotaExceededError("Test msg")
+        self.assertEqual(exc.error_code, "LogRotationArchiveStorageQuotaExceededError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
