@@ -2691,3 +2691,8 @@ class CameraStreamBufferInitializationError(PostureGuardException):
 class AudioOutputDeviceSampleRateMismatchError(PostureGuardException):
     """Exception raised when audio output device sample rate does not match stream hardware capability."""
     pass
+
+
+class AudioSampleBufferFormatConversionError(PostureGuardException):
+    """Exception raised when converting audio sample buffer raw bytes encounters conversion error."""
+    pass
