@@ -2706,3 +2706,8 @@ class NotificationChannelPermissionBlockedError(PostureGuardException):
 class NotificationIconResourceFormatCorruptError(PostureGuardException):
     """Exception raised when notification icon resource binary format is corrupted."""
     pass
+
+
+class ConfigKeyValidationBoundaryViolationError(PostureGuardException):
+    """Exception raised when configuration parameter value violates lower or upper boundary constraints."""
+    pass
