@@ -2686,3 +2686,8 @@ class UIThemePaletteColorInvalidError(PostureGuardException):
 class CameraStreamBufferInitializationError(PostureGuardException):
     """Exception raised when webcam video capture buffer initialization fails."""
     pass
+
+
+class AudioOutputDeviceSampleRateMismatchError(PostureGuardException):
+    """Exception raised when audio output device sample rate does not match stream hardware capability."""
+    pass
