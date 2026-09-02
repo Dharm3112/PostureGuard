@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.5.0] - 2026-09-02
+
+### Added
+- **Audio Device Sample Rate, Notification Permission Blocked, and Camera Read Failure Diagnostic Exceptions:** Declared 13 new exception classes for audio sample rate mismatch, sample buffer conversion errors, notification permission blocked, corrupt icon resource formats, boundary violations, log write failures, disk quota exceeded errors, and camera stream read timeout failures.
+- **Robust Exception Checking:** Appended 13 unit test cases verifying correct initialization, custom error codes, and message parameters constraints checks.
+- **System Config and Logger Comments:** Added inline annotations inside `config_manager.py`, `logger_config.py`, `stats.py`, and `posture_detector.py` clarifying default settings values, Formatter instances, debug log messages, and CASCADE_PATH constants.
+
+### Changed
+- **Codebase Health Check:** Validated the application test suite on each incremental update.
+
+
 ## [4.4.0] - 2026-08-31
 
 ### Added
