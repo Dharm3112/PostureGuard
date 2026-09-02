@@ -2721,3 +2721,8 @@ class ConfigMigrationSchemaVersionIncompatibleError(PostureGuardException):
 class LogHandlerStreamFlushWriteFailureError(PostureGuardException):
     """Exception raised when flushing log handler stream buffer encounters OS write failure."""
     pass
+
+
+class LogRotationArchiveStorageQuotaExceededError(PostureGuardException):
+    """Exception raised when archiving log backups exceeds allocated disk quota."""
+    pass
