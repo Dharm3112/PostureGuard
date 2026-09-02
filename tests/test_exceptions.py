@@ -3211,5 +3211,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVRecordFieldDelimiterFormatError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvtimestampdateformatconversionerror(self) -> None:
+        from exceptions import CSVTimestampDateFormatConversionError
+        exc = CSVTimestampDateFormatConversionError("Test msg")
+        self.assertEqual(exc.error_code, "CSVTimestampDateFormatConversionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
