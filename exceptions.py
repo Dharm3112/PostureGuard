@@ -2711,3 +2711,8 @@ class NotificationIconResourceFormatCorruptError(PostureGuardException):
 class ConfigKeyValidationBoundaryViolationError(PostureGuardException):
     """Exception raised when configuration parameter value violates lower or upper boundary constraints."""
     pass
+
+
+class ConfigMigrationSchemaVersionIncompatibleError(PostureGuardException):
+    """Exception raised when JSON configuration file schema version is incompatible with current code."""
+    pass
