@@ -2726,3 +2726,8 @@ class LogHandlerStreamFlushWriteFailureError(PostureGuardException):
 class LogRotationArchiveStorageQuotaExceededError(PostureGuardException):
     """Exception raised when archiving log backups exceeds allocated disk quota."""
     pass
+
+
+class CSVRecordFieldDelimiterFormatError(PostureGuardException):
+    """Exception raised when parsing delimiter fields in posture history log CSV encounters syntax error."""
+    pass
