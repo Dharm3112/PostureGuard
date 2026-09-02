@@ -3205,5 +3205,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "LogRotationArchiveStorageQuotaExceededError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_csvrecordfielddelimiterformaterror(self) -> None:
+        from exceptions import CSVRecordFieldDelimiterFormatError
+        exc = CSVRecordFieldDelimiterFormatError("Test msg")
+        self.assertEqual(exc.error_code, "CSVRecordFieldDelimiterFormatError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
