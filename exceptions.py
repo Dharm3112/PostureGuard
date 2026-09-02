@@ -2731,3 +2731,8 @@ class LogRotationArchiveStorageQuotaExceededError(PostureGuardException):
 class CSVRecordFieldDelimiterFormatError(PostureGuardException):
     """Exception raised when parsing delimiter fields in posture history log CSV encounters syntax error."""
     pass
+
+
+class CSVTimestampDateFormatConversionError(PostureGuardException):
+    """Exception raised when converting timestamp date string in posture log CSV fails."""
+    pass
