@@ -2736,3 +2736,8 @@ class CSVRecordFieldDelimiterFormatError(PostureGuardException):
 class CSVTimestampDateFormatConversionError(PostureGuardException):
     """Exception raised when converting timestamp date string in posture log CSV fails."""
     pass
+
+
+class UIWidgetGeometryBoundsInvalidValueError(PostureGuardException):
+    """Exception raised when Tkinter widget geometry bounds contain invalid non-integer values."""
+    pass
