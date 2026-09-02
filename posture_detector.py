@@ -3,7 +3,7 @@ import numpy as np  # Import NumPy numerical array library module package lib
 from collections import deque  # Import double-ended queue collection class helper structure class
 from typing import Tuple, Optional  # Import typing tuple and optional annotations type
 from logger_config import setup_logger  # Import logger setup utility function module pkg
-from exceptions import ModelLoadError  # Import ModelLoadError custom exception class
+from exceptions import ModelLoadError  # Import ModelLoadError custom exception class pkg
 
 
 class PostureDetector:
