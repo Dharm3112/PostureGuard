@@ -3157,5 +3157,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CameraStreamBufferInitializationError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiooutputdevicesampleratemismatcherror(self) -> None:
+        from exceptions import AudioOutputDeviceSampleRateMismatchError
+        exc = AudioOutputDeviceSampleRateMismatchError("Test msg")
+        self.assertEqual(exc.error_code, "AudioOutputDeviceSampleRateMismatchError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
