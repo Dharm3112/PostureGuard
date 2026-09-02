@@ -28,7 +28,7 @@ class ConfigManager:
     DEFAULT_SETTINGS = {  # Internal default settings database schema mapping dictionary layout
         "camera_index": 0,  # Default camera index value setting val
         "slouch_threshold_px": 40,  # Default slouch threshold pixel distance setting val
-        "time_to_alert_frames": 50,  # Default frames threshold before posture alert
+        "time_to_alert_frames": 50,  # Default frames threshold before posture alert val
         "frame_delay_ms": 15,  # Default frame refresh delay in milliseconds setting
         "camera_width": 640,  # Default camera capture width in pixels setting
         "camera_height": 480,  # Default camera capture height in pixels setting
