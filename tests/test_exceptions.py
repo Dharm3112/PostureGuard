@@ -3217,5 +3217,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "CSVTimestampDateFormatConversionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_uiwidgetgeometryboundsinvalidvalueerror(self) -> None:
+        from exceptions import UIWidgetGeometryBoundsInvalidValueError
+        exc = UIWidgetGeometryBoundsInvalidValueError("Test msg")
+        self.assertEqual(exc.error_code, "UIWidgetGeometryBoundsInvalidValueError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
