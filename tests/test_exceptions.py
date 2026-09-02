@@ -3169,5 +3169,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioSampleBufferFormatConversionError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_notificationchannelpermissionblockederror(self) -> None:
+        from exceptions import NotificationChannelPermissionBlockedError
+        exc = NotificationChannelPermissionBlockedError("Test msg")
+        self.assertEqual(exc.error_code, "NotificationChannelPermissionBlockedError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
