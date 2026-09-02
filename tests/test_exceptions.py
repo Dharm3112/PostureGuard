@@ -3163,5 +3163,11 @@ class TestExceptions(unittest.TestCase):
         self.assertEqual(exc.error_code, "AudioOutputDeviceSampleRateMismatchError")
         self.assertEqual(exc.message, "Test msg")
 
+    def test_audiosamplebufferformatconversionerror(self) -> None:
+        from exceptions import AudioSampleBufferFormatConversionError
+        exc = AudioSampleBufferFormatConversionError("Test msg")
+        self.assertEqual(exc.error_code, "AudioSampleBufferFormatConversionError")
+        self.assertEqual(exc.message, "Test msg")
+
 if __name__ == "__main__":
     unittest.main()
