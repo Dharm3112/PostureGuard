@@ -2716,3 +2716,8 @@ class ConfigKeyValidationBoundaryViolationError(PostureGuardException):
 class ConfigMigrationSchemaVersionIncompatibleError(PostureGuardException):
     """Exception raised when JSON configuration file schema version is incompatible with current code."""
     pass
+
+
+class LogHandlerStreamFlushWriteFailureError(PostureGuardException):
+    """Exception raised when flushing log handler stream buffer encounters OS write failure."""
+    pass
