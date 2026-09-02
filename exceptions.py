@@ -2701,3 +2701,8 @@ class AudioSampleBufferFormatConversionError(PostureGuardException):
 class NotificationChannelPermissionBlockedError(PostureGuardException):
     """Exception raised when desktop notification permission is explicitly blocked by system settings."""
     pass
+
+
+class NotificationIconResourceFormatCorruptError(PostureGuardException):
+    """Exception raised when notification icon resource binary format is corrupted."""
+    pass
