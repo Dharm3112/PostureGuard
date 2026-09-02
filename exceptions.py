@@ -2741,3 +2741,8 @@ class CSVTimestampDateFormatConversionError(PostureGuardException):
 class UIWidgetGeometryBoundsInvalidValueError(PostureGuardException):
     """Exception raised when Tkinter widget geometry bounds contain invalid non-integer values."""
     pass
+
+
+class UIThemePaletteColorFormatParseError(PostureGuardException):
+    """Exception raised when parsing hex color code in visual theme palette fails."""
+    pass
